@@ -18,18 +18,18 @@
 
 ##编译环境
 **Android Studio、NDK**</br>
-**XCode**
-**VS2015**
+**XCode**</br>
+**VS2015**</br>
 
 ##支持的系统平台
-**Android** 4.0及以上
-**iOS** 6.0及以上
-**Windows** 7及以上
+**Android** 4.0及以上</br>
+**iOS** 6.0及以上</br>
+**Windows** 7及以上</br>
 
 ##支持的CPU架构
-**Android** armv7 arm64  
-**iOS** armv7 armv7s arm64及以上
-**Windows** win32、x64
+**Android** armv7 arm64</br>
+**iOS** armv7 armv7s arm64</br>
+**Windows** win32、x64</br>
 
 ##支持的流媒体服务端
 fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准RTMP协议服务端
@@ -54,14 +54,14 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 * 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
 
 ##商用授权
-本次开源在未授权情况下不可应用于任何的闭源商业项目，具体请参照GNU License中的声明。
+本次开源在未授权情况下不可应用于任何的闭源商业项目，具体请参照GNU License中的声明。</br>
 QQ:547777245 </br>
 技术咨询QQ:809564859</br>
 联系电话:021-65650071</br>
 
 ##技术交流
-直播技术QQ群：554714720
-连麦技术QQ群：580477436
+直播技术QQ群：554714720</br>
+连麦技术QQ群：580477436</br>
 
 ## License
 AnyRTC-RTMP is available under the GNU license. See the LICENSE file for more info.
