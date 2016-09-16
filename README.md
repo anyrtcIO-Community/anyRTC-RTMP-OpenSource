@@ -16,4 +16,53 @@
 # 为什么开源？
 本公司此次开源移动直播解决方案的根本目的：回馈开源社区，特别是SRS和WebRTC项目，大家也可以看到本次开源项目的框架使用了WebRTC，RTMP协议部分使用的是srs_librtmp；这两个开源项目可以说在流媒体领域给予了大家太多，所以适当的回馈是理所应当。
 
-# 尽请期待（九月中旬见哦）
+##编译环境
+**Android Studio、NDK**</br>
+**XCode**
+**VS2015**
+
+##支持的系统平台
+**Android** 4.0及以上
+**iOS** 6.0及以上
+**Windows** 7及以上
+
+##支持的CPU架构
+**Android** armv7 arm64  
+**iOS** armv7 armv7s arm64及以上
+**Windows** win32、x64
+
+##支持的流媒体服务端
+fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准RTMP协议服务端
+
+##支持的流媒体云服务器
+[奥点云](http://www.aodianyun.com/)、[七牛](http://www.qiniu.com/)、[网宿](http://www.wangsucloud.com/)、[UCloud](https://www.ucloud.cn/)及其他标准RTMP协议云服务器
+
+##直播发布特性
+* H.264/AAC 组合的RTMP协议音视频流发布
+* 全屏视频采集，原画质缩放
+* 集优化H.264软/硬件编码器，性能强劲，兼容性极强
+* 视频分辨率以及码率自选
+* 支持发布中途切换前后摄像头
+* 支持发布中网络自适应，根据带宽大小来自动适应分辨率以及码率，让视频更顺畅
+* 支持基于GPU加速的实时美颜滤镜
+
+##直播播放特性
+* 只为RTMP/FLV协议优化的码流解析器，极短的分析时间，秒开RTMP视频流
+* 支持的视频解码器:H.264
+* 支持的音频解码器:AAC
+* OpenGL ES视频渲染
+* 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
+
+##商用授权
+本次开源在未授权情况下不可应用于任何的闭源商业项目，具体请参照GNU License中的声明。
+QQ:547777245 </br>
+技术咨询QQ:809564859</br>
+联系电话:021-65650071</br>
+
+##技术交流
+直播技术QQ群：554714720
+连麦技术QQ群：580477436
+
+## License
+AnyRTC-RTMP is available under the GNU license. See the LICENSE file for more info.
+
