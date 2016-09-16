@@ -55,8 +55,7 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 
 ##商用授权
 本次开源在未授权情况下不可应用于任何的闭源商业项目，具体请参照GNU License中的声明。</br>
-QQ:547777245 </br>
-技术咨询QQ:809564859</br>
+咨询QQ:2628840833 </br>
 联系电话:021-65650071</br>
 
 ##技术交流
