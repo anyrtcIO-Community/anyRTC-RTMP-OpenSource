@@ -20,7 +20,7 @@
 #ifndef __RTMP_HOSTER_IMPL_H__
 #define __RTMP_HOSTER_IMPL_H__
 
-#include "RTMPHoster.h"
+#include "RtmpHoster.h"
 #include "anyrtmpcore.h"
 #include "anyrtmpstreamer.h"
 #include "videofilter.h"
