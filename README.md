@@ -53,6 +53,13 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 * OpenGL ES视频渲染
 * 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
 
+##第三方库版本
+libfaac		1.28
+libfaad2	2.7
+ffmpeg		3.0
+libyuv		newest
+openh264	1.6.0
+
 ##商用授权
 本次开源在未授权情况下不可应用于任何的闭源商业项目，具体请参照GNU License中的声明。</br>
 咨询QQ:2628840833 </br>
