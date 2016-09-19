@@ -1,0 +1,58 @@
+1.2.1 (April 4, 2004) 
+    compiles cleanly with just about every -W warning flag under the sun
+
+    reorganized kiss_fft_state so it could be read-only/const. This may be useful for embedded systems
+    that are willing to predeclare twiddle factors, factorization.
+
+    Fixed C_MUL,S_MUL on 16-bit platforms.
+
+    tmpbuf will only be allocated if input & output buffers are same
+    scratchbuf will only be allocated for ffts that are not multiples of 2,3,5
+ 
+    NOTE: The tmpbuf,scratchbuf changes may require synchronization code for multi-threaded apps.
+
+
+1.2 (Feb 23, 2004)
+    interface change -- cfg object is forward declaration of struct instead of void*
+    This maintains type saftey and lets the compiler warn/error about stupid mistakes.
+            (prompted by suggestion from Erik de Castro Lopo)
+
+    small speed improvements
+
+    added psdpng.c -- sample utility that will create png spectrum "waterfalls" from an input file
+        ( not terribly useful yet)
+
+1.1.1 (Feb 1, 2004 )
+    minor bug fix -- only affects odd rank, in-place, multi-dimensional FFTs
+
+1.1 : (Jan 30,2004)
+    split sample_code/ into test/ and tools/
+
+    Removed 2-D fft and added N-D fft (arbitrary)
+
+    modified fftutil.c to allow multi-d FFTs
+
+    Modified core fft routine to allow an input stride via kiss_fft_stride()
+    (eased support of multi-D ffts)
+
+    Added fast convolution filtering (FIR filtering using overlap-scrap method, with tail scrap)
+
+    Add kfc.[ch]: the KISS FFT Cache. It takes care of allocs for you ( suggested by Oscar Lesta ).
+
+1.0.1 (Dec 15, 2003)
+    fixed bug that occurred when nfft==1
+    
+1.0 : (Dec 14, 2003)
+    changed kiss_fft function from using a single buffer, to two buffers.
+    If the same buffer pointer is supplied for both in and out, kiss will
+    manage the buffer copies.
+
+    added kiss_fft2d and kiss_fftr as separate source files (declarations in kiss_fft.h )
+
+0.4 :(Nov 4,2003) optimized for radix 2,3,4,5
+
+0.3 :(Oct 28, 2003) woops, version 2 didn't actually factor out any radices other than 2
+
+0.2 :(Oct 27, 2003) added mixed radix, only radix 2,4 optimized versions
+
+0.1 :(May 19 2003)  initial release, radix 2 only

@@ -1,0 +1,7 @@
+【Android - NDK编译篇】
+适用于Windows - Cygwin、 Ubuntu、 Mac OS
+1，配置NDK编译环境，如何配置请搜素相关资料
+2，命令行至xxx/Prj-Android下
+3，执行ndk-build  
+
+注：笔者使用ndk-r9d 和 ndk-r10e 均可编译成功

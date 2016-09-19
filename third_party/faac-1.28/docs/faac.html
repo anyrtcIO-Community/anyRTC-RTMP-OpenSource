@@ -1,0 +1,243 @@
+<html>
+
+<head>
+<title>
+FAAC - Freeware Advanced Audio Coder
+</title>
+</head>
+
+</body>
+
+<h3>
+<center>
+FAAC 1.18 beta (<a href="http://www.audiocoding.com/">www.audiocoding.com</a>)
+</center>
+</h3>
+<br>
+
+<a name="toc">
+<h3>
+Contents
+</h3>
+<menu>
+<li><a href="#usage">Usage</a>
+<menu>
+<li><a href="#opts">options</a>
+<li><a href="#notes">notes</a>
+</menu>
+<li><a href="#copyrights">Copyrights</a>
+<li><a href="#patents">Patents</a>
+<li><a href="#people">People</a>
+</menu>
+
+<br><br>
+<a name="usage">
+<h3>
+Usage
+</h3>
+(More up to date info can be found at
+<a href="http://www.audiocoding.com/wiki/index.php?page=FAAC">
+FAAC wiki page</a> by Hans-J&uuml;rgen Bardenhagen)<br><br>
+<kbd>faac [options] &lt;infile&gt; &lt;outfile&gt;</kbd>
+<br><br>
+
+<a name="opts">
+<b>Options:</b><br>
+<menu>
+<li>
+<kbd>-a X</kbd>
+	Set average bitrate to approximately X kbps per channel
+	(i.e. using -a 64 averages at 128 kbps/stereo).
+<li>
+<kbd>-c &lt;bandwidth&gt;</kbd>
+	Set the bandwidth in Hz (default value depends on sample rate)
+<li>
+<kbd>-q &lt;quality&gt;</kbd>
+	Set quantizer quality (default: 100, averages at approx. 128 kbps VBR for
+	a normal stereo input file at 16 bit and 44.1 kHz sample rate).
+<li>
+<kbd>--tns</kbd>
+	Enable TNS coding.
+<li>
+<kbd>--notns</kbd>
+	Disable TNS coding.
+<li>
+<kbd>-n</kbd>
+	Disable mid/side coding.
+<li>
+<kbd>-m X</kbd>
+	AAC MPEG version, X can be 2 or 4 (default: MPEG-2, so for
+	the sake of interoperability with non-standard compliant players
+	like QuickTime 6 you should set it to "4").
+<li>
+<kbd>-o X</kbd>
+	AAC object type, X can be LC, MAIN or LTP (default: LC, for the
+	same reason as with the MPEG version don't use Main or LTP).
+<li>
+<kbd>-r</kbd>
+	RAW AAC output file (i.e. without ADTS headers).
+<li>
+<kbd>-P</kbd>
+	Raw PCM input mode.
+<li>
+<kbd>-R</kbd>
+	Raw PCM input sample rate in Hz (default: 44100 Hz).
+<li>
+<kbd>-B</kbd>
+	Raw PCM input bit depth (default: 16 bits, also possible 8 bits).
+<li>
+<kbd>-C</kbd>
+	Raw PCM input channels (default: 2).
+</menu>
+
+<kbd>- &lt;stdin&gt;</kbd>
+  If you simply use a hyphen/minus sign instead of an input
+  file name, FAAC can encode directly from stdin, thus enabling piping
+  within other applications like foobar2000 or mp4live.
+<br><br>
+
+<a name="notes">
+<strong>Note:</strong> VBR output bitrate depends on -q
+<em><strong>AND</strong></em> -c, so you should only vary the default
+setting -q 100 -c 16000 if you know what you're doing and/or want to
+experiment with other cutoff frequencies at a given quality setting.
+<br><br>
+The ABR setting with -a is an approximate average bitrate that does not use 
+a bit reservoir, i.e -a 64 and -q 100 at 44.1 kHz will result in exactly 
+the same output file.<br>
+<br>
+The following list should give some orientation for useful -q and -c settings,
+based on FAAC v1.17. The resulting VBR bitrates are referring to an average
+sounding stereo file with 16bit, 44.1 kHz, i.e. 
+ct_reference.wav in this case. Multiplexing these AAC files to MP4 with e.g. mp4creator will result in a ~3 kbps lower bitrate because of the stripped ADTS headers:<br>
+<br>
+-q 130 -c 22000 -m 4 (~218 kbps)<br>
+-q 120 -c 20000 -m 4 (~194 kbps)<br>
+-q 110 -c 18000 -m 4 (~158 kbps)<br>
+-q 100 -c 16000 -m 4 (~129 kbps)<br>
+-q 90 -c 14000 -m 4 (~103 kbps)<br>
+-q 80 -c 12000 -m 4 (~79 kbps)<br>
+-q 70 -c 10000 -m 4 (~62 kbps)<br>
+<br>
+The added -m 4 switch does not change the bitrate or sound of course,
+but is recommended for most AAC/MP4 players that use an updated FAAD2-based
+plugin from this year (Winamp 2.x, foobar2000 etc.) or can't decode
+MPEG-2 AAC LC files like QuickTime 6. Philips Expanium users should not use
+this switch, because their CD portable does not know MPEG-4 AAC files.
+<br>
+
+
+<br><br><br>
+<a name="copyrights">
+<h3>
+Copyrights
+</h3>
+FAAC - Freeware Advanced Audio Coder
+(<a href="http://www.audiocoding.com/">www.audiocoding.com</a>)
+<pre>
+	Portions Copyright &copy; 1999,2000,2001 Menno Bakker
+	Portions Copyright &copy; 2002,2003 Krzysztof Nikiel
+</pre>
+FAAC is based on the ISO MPEG-4 reference code. For this base code the
+following license applies:
+<br>
+<pre>
+This software module was originally developed by
+
+FirstName LastName (CompanyName)
+
+and edited by
+
+FirstName LastName (CompanyName)
+FirstName LastName (CompanyName)
+
+in the course of development of the MPEG-2 NBC/MPEG-4 Audio standard
+ISO/IEC 13818-7, 14496-1,2 and 3. This software module is an
+implementation of a part of one or more MPEG-2 NBC/MPEG-4 Audio tools
+as specified by the MPEG-2 NBC/MPEG-4 Audio standard. ISO/IEC gives
+users of the MPEG-2 NBC/MPEG-4 Audio standards free license to this
+software module or modifications thereof for use in hardware or
+software products claiming conformance to the MPEG-2 NBC/ MPEG-4 Audio
+standards. Those intending to use this software module in hardware or
+software products are advised that this use may infringe existing
+patents. The original developer of this software module and his/her
+company, the subsequent editors and their companies, and ISO/IEC have
+no liability for use of this software module or modifications thereof
+in an implementation. Copyright is not released for non MPEG-2
+NBC/MPEG-4 Audio conforming products. The original developer retains
+full right to use the code for his/her own purpose, assign or donate
+the code to a third party and to inhibit third party from using the
+code for non MPEG-2 NBC/MPEG-4 Audio conforming products. This
+copyright notice must be included in all copies or derivative works.
+
+Copyright &copy; 1997.
+</pre>
+
+<br>
+For the changes made for the FAAC project the GNU Library General
+Public License (LGPL), version 2 1991 applies. For the changes the
+following statement applies:
+<br>
+
+<pre>
+FAAC - Freeware Advanced Audio Coder
+Copyright &copy; 1999,2000,2001,2002,2003 <a href="#people">FAAC developers</a>
+
+This library is free software; you can redistribute it and/or
+modify it under the terms of the GNU Lesser General Public
+License as published by the Free Software Foundation; either
+version 2.1 of the License, or (at your option) any later version.
+
+This library is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+Lesser General Public License for more details.
+
+You should have received a copy of the GNU Lesser General Public
+License along with this library; if not, write to the Free Software
+Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+</pre>
+
+<br>
+<a name="patents">
+<h3>
+Patents
+</h3>
+Please note that the use of this software may require the payment of
+patent royalties. You need to consider this issue before you start
+building derivative works. We are not warranting or indemnifying you in
+any way for patent royalities! YOU ARE SOLELY RESPONSIBLE FOR YOUR OWN
+ACTIONS!
+<br>
+
+
+<br><br><br>
+<a name="people">
+<h3>
+People
+</h3>
+
+<i>Currently maintained by</i> M. Bakker (menno)</a><br><br>
+
+<i>Other contributors:</i><br>
+Tony Lenox<br>
+RageOMatic<br>
+thebard<br>
+Ivan Dimkovic<br>
+Krzysztof Nikiel (knik)<br>
+Janne Hyvärinen (ca5e)<br>
+Stuart Espey (stux)<br>
+Andrew Voznytsa<br>
+Måns Rullgård<br>
+Bill May<br>
+
+<br><br>
+
+<h6>
+<center><i>
+Copyright &copy; 2003 <a href="http://www.audiocoding.com/">AudioCoding.com</a>
+<br></i></center>
+</h6>
+
+</body>
+</html>

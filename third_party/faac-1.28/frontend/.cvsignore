@@ -1,0 +1,13 @@
+*.o
+*.so
+*.a
+*.ncb
+*.plg
+*.aps
+*.opt
+*.aac
+*.wav
+Release
+Debug
+ReleaseGUI
+DebugGUI

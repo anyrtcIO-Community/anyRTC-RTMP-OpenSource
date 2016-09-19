@@ -1,0 +1,210 @@
+<html>
+
+<head>
+<title>FAAC - ISO/MPEG 2/4 AAC Encoder Library</title>
+</head>
+
+<body>
+
+<h3>
+<center>
+FAAC - ISO/MPEG 2/4 AAC Encoder Library version 1.0<br>
+(<a href="http://www.audiocoding.com/">www.audiocoding.com</a>)
+</center>
+</h3>
+
+<h4>
+Contents
+</h4>
+<menu>
+ <li><a href="#scope">Scope</a>
+ <li><a href="#interface">Interface description</a>
+ <li><a href="#usage">Usage</a>
+ <menu>
+  <li><a href="#callseq">Calling sequence</a>
+ </menu>
+ <li><a href="#funcref">Function reference</a>
+ <menu>
+  <li><a href="#init">Initialization / De-initialization</a>
+  <menu>
+   <li><a href="#encopen">faacEncOpen()</a>
+   <li><a href="#encclose">faacEncClose()</a>
+  </menu>
+  <li><a href="#encconf">Encoder configuration</a>
+  <menu>
+   <li><a href="#getconf">faacEncGetCurrentConfiguration()</a>
+   <li><a href="#setconfig">faacEncSetConfiguration()</a>
+  </menu>
+  <li><a href="#encfunc">Encoding functions</a>
+  <menu>
+   <li><a href="#encenc">faacEncEncode()</a>
+  </menu>
+ </menu>
+  <li><a href="#datastruct">Data structures reference</a>
+  <menu>
+  <li><a href="#encconfig">faacEncConfiguration</a>
+  </menu>
+</menu>
+
+
+<a name="scope">
+<h4>Scope</h4>
+This document describes the interface and usage of the
+FAAC - ISO/MPEG 2/4 AAC Encoder Library
+Developed for the Freeware Advanced Audio Coding project.
+
+<a name="interface">
+<h4>Interface description</h4>
+The ISO/MPEG 2/4 AAC Encoder Library provides a high-level
+interface for encoding MPEG2 and MPEG4 ISO AAC files. The
+following header file is provided for usage in C/C++ programs:<br><br>
+
+<b>faac.h</b>: function prototypes<br><br>
+
+The encoder core resides in a statically linkable library called
+
+libfaac.lib <i>(Microsoft Window</i>s) or libfaac.a <i>(UNI</i>X). There
+are various example programs that show how to use the library.
+
+<a name="usage">
+<h4>Usage</h4>
+
+<a name="callseq">
+<h4>Calling sequence</h4>
+
+For encoding AAC bitstreams the following calling sequence is
+mandatory:<br>
+
+<menu>
+<li>Call <i>faacEncOpen()</i>
+ for every encoder instance you need.
+<li>To set encoder options, call <i>faacEncGetCurrentConfiguration()</i>,
+ change the parameters in the structure accessible by the returned pointer
+ and then call <i>faacEncSetConfiguration()</i>.
+<li>As long as there are still samples left to encode, call
+ <i>faacEncEncode()</i>
+ to encode the data.
+ The encoder returns
+ the bitstream data in a client-supplied buffer.
+<li>
+ Once you call
+ <i>faacEncEncode()</i>
+ with zero samples of input
+ the flushing process is initiated; afterwards you may call
+ <i>faacEncEncode()</i>
+ with zero samples input only.<br>
+ <i>faacEncEncode()</i> will continue to write out data until all audio
+ samples have been encoded.
+<li>
+ Once 
+ <i>faacEncEncode()</i>
+	has returned with zero bytes written,
+	call <i>faacEncClose()</i>
+	to destroy this encoder instance.
+</menu>
+
+<a name="funcref">
+<h4>Function reference</h4>
+
+<a name="init">
+<h4>Initialization / De-initialization</h4>
+
+<a name="encopen">
+<h5><i>faacEncOpen()</i></h5>
+
+<pre>
+<b>Prototype</b>
+faacEncHandle FAACAPI faacEncOpen
+(
+unsigned long sampleRate,
+unsigned int numChannels,
+unsigned long *inputSamples,
+unsigned long *maxOutputBytes
+);
+<b>Description</b>
+Open and initialize one instance of the encoder.
+<b>Parameters</b>
+<li><i>sampleRate</i>
+	The samplerate of the encoder input data.
+<li><i>numChannels</i>
+	The number of channels of the encoder input data.
+<li><i>inputSamples</i>
+	Receives the total number of samples that should be fed to
+	faacEncEncode() in each call.
+<li><i>maxOutputBytes</i>
+	Receives the maximum number of bytes that can be in the
+	output buffer after a call to faacEncEncode().
+<b>Return value</b>
+An initialized encoder handle. If anything goes wrong NULL is returned.
+</pre>
+
+<a name="encclose">
+<h5><i>faacEncClose()</i></h5>
+<pre>
+<b>Prototype</b>
+void FAACAPI faacEncClose
+(
+faacEncHandle hEncoder
+);
+<b>Description</b>
+Closes an encoder instance.
+<b>Parameters</b>
+<li>hEncoder
+	An encoder handle returned by faacEncOpen().
+</pre>
+
+<a name="encconf">
+<h4>Encoder configuration</h4>
+
+<a name="getconf">
+<h5><i>faacEncGetCurrentConfiguration()</i></h5>
+
+<pre>
+<b>Prototype</b>
+faacEncConfigurationPtr FAACAPI
+faacEncGetCurrentConfiguration
+(
+faacEncHandle hEncoder
+);
+<b>Description</b>
+Get a pointer to a structure describing the current encoder
+configuration. You may change this structure and feed it into
+<i>faacEncSetConfiguration()</i>.
+</pre>
+
+<a name="setconf">
+<h5><i>faacEncSetConfiguration()</i></h4>
+
+<pre>
+<b>Prototype</b>
+int FAACAPI faacEncSetConfiguration
+(
+faacDecHandle hDecoder,
+faacEncConfigurationPtr config
+);
+<b>Description</b>
+Set a new encoder configuration. See
+faacEncGetCurrentConfiguration().
+</pre>
+
+
+<a name="">
+<h4></h4>
+<a name="">
+<h4></h4>
+
+
+
+<center>
+<br>
+<i>
+Copyright &copy; 2001,2003 <a href="http://www.audiocoding.com/">AudioCoding.com</a>. All rights reserved.
+</i>
+</center>
+
+</body>
+
+</html>
+
+
+

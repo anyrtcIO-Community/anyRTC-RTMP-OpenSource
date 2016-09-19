@@ -1,0 +1,74 @@
+# Copyright 2015 The Chromium Authors. All rights reserved.
+# Use of this source code is governed by a BSD-style license that can be
+# found in the LICENSE file.
+
+import("//third_party/openh264/openh264_args.gni")
+
+# Import source and include variables from openh264.gypi.
+openh264_gypi_values = exec_script("//build/gypi_to_gn.py",
+                                   [ rebase_path("openh264.gypi") ],
+                                   "scope")
+
+# Config shared by all openh264 targets.
+config("config") {
+  cflags = []
+  defines = []
+
+  # GCC and clang flags. MSVS (is_win && !is_clang) does not use cflags.
+  if (!is_win || is_clang) {
+    cflags += [
+      "-Wno-format",
+      "-Wno-header-hygiene",
+      "-Wno-unused-function",
+      "-Wno-unused-value",
+    ]
+  }
+
+  # Platform-specific defines.
+  if (is_android) {
+    # Android NDK is necessary for its cpufeatures and this define is what
+    # OpenH264 code uses to check if it should be used.
+    defines += [ "ANDROID_NDK" ]
+  }
+}
+
+source_set("common") {
+  sources = openh264_gypi_values.openh264_common_sources
+  include_dirs = openh264_gypi_values.openh264_common_includes
+  configs -= [ "//build/config/compiler:chromium_code" ]
+  configs += [ "//build/config/compiler:no_chromium_code" ]
+  configs += [ ":config" ]
+  deps = []
+  if (is_android) {
+    deps += [
+      # Defines "android_get/setCpu..." functions. The original OpenH264 build
+      # files replaces these using macros for "wels_..." versions of the same
+      # functions. We do not have access to these and use the <cpu-features.h>
+      # ones instead.
+      "//third_party/android_tools:cpu_features",
+    ]
+  }
+}
+
+source_set("processing") {
+  sources = openh264_gypi_values.openh264_processing_sources
+  include_dirs = openh264_gypi_values.openh264_processing_includes
+  configs -= [ "//build/config/compiler:chromium_code" ]
+  configs += [ "//build/config/compiler:no_chromium_code" ]
+  configs += [ ":config" ]
+  deps = [
+    ":common",
+  ]
+}
+
+source_set("encoder") {
+  sources = openh264_gypi_values.openh264_encoder_sources
+  include_dirs = openh264_gypi_values.openh264_encoder_includes
+  configs -= [ "//build/config/compiler:chromium_code" ]
+  configs += [ "//build/config/compiler:no_chromium_code" ]
+  configs += [ ":config" ]
+  deps = [
+    ":common",
+    ":processing",
+  ]
+}

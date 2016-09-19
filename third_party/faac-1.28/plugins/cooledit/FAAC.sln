@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FAAC", "FAAC.vcproj", "{DEC2740A-F3D5-430C-BB81-C57006D20378}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2E6FD2E8-55B9-4740-8882-CF823F77F7E1} = {2E6FD2E8-55B9-4740-8882-CF823F77F7E1}
+		{429A062F-81E0-4EFD-832B-55E0DE931FC8} = {429A062F-81E0-4EFD-832B-55E0DE931FC8}
+		{BD8FBE75-314D-476B-B13C-A206C52F0BD1} = {BD8FBE75-314D-476B-B13C-A206C52F0BD1}
+		{7F01A591-0084-4749-B53F-F9D2BFE8DF6E} = {7F01A591-0084-4749-B53F-F9D2BFE8DF6E}
+		{6440BFC6-57A6-4F6E-A8FB-F960D088ADEE} = {6440BFC6-57A6-4F6E-A8FB-F960D088ADEE}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "aacInfoLib", "aacInfoLib.vcproj", "{3257D980-5029-486B-94DC-AA520B501C62}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "id3lib", "..\..\..\faad2\common\id3lib\libprj\id3lib.dsp", "{7F01A591-0084-4749-B53F-F9D2BFE8DF6E}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "libfaac", "..\..\libfaac\libfaac.dsp", "{2E6FD2E8-55B9-4740-8882-CF823F77F7E1}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "libfaad", "..\..\..\faad2\libfaad\libfaad.dsp", "{429A062F-81E0-4EFD-832B-55E0DE931FC8}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "libmp4v2_st", "..\..\..\faad2\common\mp4v2\libmp4v2_st60.dsp", "{BD8FBE75-314D-476B-B13C-A206C52F0BD1}"
+EndProject
+Project("{059D6162-CD51-11D0-AE1F-00A0C90FFFC3}") = "zlib", "..\..\..\faad2\common\id3lib\zlib\prj\zlib.dsp", "{6440BFC6-57A6-4F6E-A8FB-F960D088ADEE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEC2740A-F3D5-430C-BB81-C57006D20378}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DEC2740A-F3D5-430C-BB81-C57006D20378}.Debug|Win32.Build.0 = Debug|Win32
+		{DEC2740A-F3D5-430C-BB81-C57006D20378}.Release|Win32.ActiveCfg = Release|Win32
+		{DEC2740A-F3D5-430C-BB81-C57006D20378}.Release|Win32.Build.0 = Release|Win32
+		{3257D980-5029-486B-94DC-AA520B501C62}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3257D980-5029-486B-94DC-AA520B501C62}.Debug|Win32.Build.0 = Debug|Win32
+		{3257D980-5029-486B-94DC-AA520B501C62}.Release|Win32.ActiveCfg = Release|Win32
+		{3257D980-5029-486B-94DC-AA520B501C62}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

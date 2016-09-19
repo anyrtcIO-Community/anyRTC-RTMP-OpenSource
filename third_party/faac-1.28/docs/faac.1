@@ -1,0 +1,127 @@
+.TH FAAC 1 "2007-10-11" "1.26" "Free Advanced Audio Coder"
+
+.SH NAME
+faac \- open source MPEG-4 and MPEG-2 AAC encoder
+
+.SH SYNOPSIS
+.B faac
+.RI [ options ]
+.RI [\-o\  outfile ]
+.I infiles
+.RI ...
+.PP
+.RI < infiles >
+and/or
+.RI < outfile >
+can be "\-", which means stdin/stdout.
+
+.SH DESCRIPTION
+.B FAAC
+is an open source MPEG-4 and MPEG-2 AAC encoder, it is licensed under the LGPL license.
+Note that the quality of 
+.B FAAC
+is not up to par with the currently best AAC encoders available.
+
+.SH FEATURES
+.TP
+* Portable
+.TP
+* Reasonably fast
+.TP
+* LC, Main, LTP support
+.TP
+* DRM support through DreaM (optional)
+
+.SH OPTIONS
+.TP
+.BR \-q\  <\fIquality\fP>
+Set default variable bitrate (VBR) quantizer quality in percent (default: 100).
+.TP
+.BR \-b\  <\fIbitrate\fP>
+Set average bitrate (ABR, lower quality mode) to approximately \fIbitrate\fP kbps.
+.TP
+.BR \-c\  <\fIfreq\fP>
+Set the bandwidth in Hz (default: automatic).
+.TP
+.BR \-o\  \fIX\fP
+Set output file to \fIX\fP (only for one input file).
+.TP
+.BR \-r
+Use RAW AAC output file.
+.TP
+.BR \-P
+Raw PCM input mode (default: 44100Hz 16bit stereo).
+.TP
+.BR \-R
+Raw PCM input rate.
+.TP
+.BR \-B
+Raw PCM input sample size (8, 16 [default], 24 or 32bits).
+.TP
+.BR \-C
+Raw PCM input channels.
+.TP
+.BR \-X
+Raw PCM swap input bytes
+.TP
+.BR \-I\  <\fIC\fP,\fILF\fP>
+Input channel config (default: 3,4 [which means Center is third and LFE is fourth]).
+
+.SH MP4-SPECIFIC OPTIONS (if built with MP4V2)
+.TP
+.BR \-w
+Wrap AAC data in MP4 container (default for *.mp4 and *.m4a).
+.TP
+.BR \-s
+Optimize MP4 container layout after encoding.
+.TP
+.BR \-\-artist\  \fIX\fP
+Set artist to \fIX\fP
+.TP
+.BR \-\-writer\  \fIX\fP
+Set writer to \fIX\fP
+.TP
+.BR \-\-title\  \fIX\fP
+Set title to \fIX\fP
+.TP
+.BR \-\-genre\  \fIX\fP
+Set genre to \fIX\fP
+.TP
+.BR \-\-album\  \fIX\fP
+Set album to \fIX\fP
+.TP
+.BR \-\-compilation
+Set compilation
+.TP
+.BR \-\-track\  \fIX\fP
+Set track to \fIX\fP (number/total)
+.TP
+.BR \-\-disc\  \fIX\fP
+Set disc to \fIX\fP (number/total)
+.TP
+.BR \-\-year\  \fIX\fP
+Set year to \fIX\fP
+.TP
+.BR \-\-cover-art\  \fIX\fP
+Read cover art from file \fIX\fP
+.TP
+.BR \-\-comment\  \fIX\fP
+Set comment to \fIX\fP
+
+.SH DOCUMENTATION
+.TP
+.BR \-\-help
+for short help on using FAAC.
+.TP
+.BR \-\-long-help
+for a description of all options for FAAC.
+.TP
+.BR \-\-license
+for the license terms for FAAC.
+
+.SH AUTHORS
+.B FAAC
+was written by M. Bakker <menno@audiocoding.com>.
+.PP
+This manpage was written by Fabian Greffrath <fabian@debian\-unofficial.org>
+for the Debian Unofficial project (but may be used by others, of course).
