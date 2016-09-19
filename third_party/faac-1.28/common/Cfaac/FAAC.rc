@@ -1,0 +1,343 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ENCODER DIALOGEX 0, 0, 338, 219
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "MPEG4-AAC options"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,12,200,36,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,48,200,36,14
+    PUSHBUTTON      "&About",IDC_BTN_ABOUT,84,200,36,14
+    PUSHBUTTON      "&License",IDC_BTN_LICENSE,120,200,36,14
+    CONTROL         "Automatic configuration",IDC_CHK_AUTOCFG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,4,4,90,10
+    CONTROL         "Main",IDC_RADIO_MAIN,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,9,28,31,10
+    CONTROL         "LC",IDC_RADIO_LOW,"Button",BS_AUTORADIOBUTTON,9,40,25,
+                    10
+    CONTROL         "LTP",IDC_RADIO_LTP,"Button",BS_AUTORADIOBUTTON,9,52,29,
+                    10
+    CONTROL         "SSR",IDC_RADIO_SSR,"Button",BS_AUTORADIOBUTTON | NOT 
+                    WS_VISIBLE | WS_DISABLED,9,63,31,10
+    CONTROL         "MPEG4",IDC_RADIO_MPEG4,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,62,27,40,10
+    CONTROL         "MPEG2",IDC_RADIO_MPEG2,"Button",BS_AUTORADIOBUTTON,62,
+                    40,40,9
+    CONTROL         "Raw",IDC_RADIO_RAW,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,112,27,42,10
+    CONTROL         "ADTS",IDC_RADIO_ADTS,"Button",BS_AUTORADIOBUTTON,112,40,
+                    41,9
+    CONTROL         "Quality",IDC_RADIO_QUALITY,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,9,84,37,10
+    COMBOBOX        IDC_CB_QUALITY,102,81,48,97,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_GROUP | WS_TABSTOP
+    CONTROL         "Bitrate",IDC_RADIO_BITRATE,"Button",BS_AUTORADIOBUTTON,
+                    9,100,36,10
+    COMBOBOX        IDC_CB_BITRATE,102,97,48,86,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Cutoff",IDC_STATIC,21,121,20,8
+    COMBOBOX        IDC_CB_BANDWIDTH,102,118,48,81,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    LTEXT           "Write",IDC_STATIC,22,138,18,8
+    COMBOBOX        IDC_CB_EXT,102,135,48,81,CBS_DROPDOWNLIST | WS_VSCROLL | 
+                    WS_TABSTOP
+    CONTROL         "Allow Mid/Side",IDC_CHK_ALLOWMIDSIDE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,9,152,63,10
+    CONTROL         "Use TNS",IDC_CHK_USETNS,"Button",BS_AUTOCHECKBOX | NOT 
+                    WS_VISIBLE | WS_DISABLED | WS_TABSTOP,9,162,45,10
+    CONTROL         "Use LFE channel",IDC_CHK_USELFE,"Button",
+                    BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_DISABLED | 
+                    WS_TABSTOP,88,152,67,10
+    EDITTEXT        IDC_E_BROWSE,50,172,83,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BTN_BROWSE,137,172,18,14,BS_BITMAP | 
+                    BS_FLAT
+    GROUPBOX        "",IDC_GRP_TAG,160,4,174,210
+    CONTROL         "Tag",IDC_CHK_TAG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    165,3,29,10
+    CONTROL         "Import",IDC_CHK_IMPORTTAG,"Button",BS_AUTOCHECKBOX | 
+                    NOT WS_VISIBLE | WS_TABSTOP,165,15,35,10
+    EDITTEXT        IDC_E_SOURCEPATH,207,11,63,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    PUSHBUTTON      "Browse",IDC_BTN_BROWSEIMPORT,273,11,18,14,BS_BITMAP | 
+                    BS_FLAT | NOT WS_VISIBLE
+    EDITTEXT        IDC_E_SOURCEEXT,294,11,34,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    EDITTEXT        IDC_E_ARTIST,207,27,121,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_TITLE,207,42,121,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_ALBUM,207,57,121,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_YEAR,207,72,121,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_CB_GENRE,207,87,121,161,CBS_DROPDOWN | WS_VSCROLL | 
+                    WS_TABSTOP
+    EDITTEXT        IDC_E_WRITER,207,101,121,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_COMMENT,207,116,121,29,ES_MULTILINE | 
+                    ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_COMPILATION,207,146,121,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    CONTROL         "Part of a compilation",IDC_CHK_COMPILATION,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,165,148,80,10
+    EDITTEXT        IDC_E_TRACK,233,162,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_NTRACKS,288,162,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_DISK,233,177,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_NDISKS,288,177,40,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_E_ARTFILE,207,192,98,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "&...",IDC_BTN_ARTFILE,311,192,17,14,BS_BITMAP | BS_FLAT
+    GROUPBOX        "AAC type",IDC_STATIC,56,16,48,52
+    GROUPBOX        "Profile",IDC_STATIC,4,16,48,52
+    GROUPBOX        "Header",IDC_STATIC,108,16,48,52
+    GROUPBOX        "Encoding mode",IDC_STATIC,4,73,152,42
+    LTEXT           "Artist",IDC_STATIC,165,29,16,8
+    LTEXT           "Title",IDC_STATIC,165,44,14,8
+    LTEXT           "Album",IDC_STATIC,165,59,20,8
+    LTEXT           "Year",IDC_STATIC,165,74,16,8
+    LTEXT           "Genre",IDC_STATIC,165,89,20,8
+    LTEXT           "Writer",IDC_STATIC,165,103,20,8
+    LTEXT           "Comment\n(ctrl-Enter\nto go down)",IDC_STATIC,165,118,
+                    37,26
+    LTEXT           "Track",IDC_STATIC,165,166,20,8
+    LTEXT           "/",IDC_STATIC,277,166,8,8
+    LTEXT           "Disk",IDC_STATIC,165,180,15,8
+    LTEXT           "/",IDC_STATIC,277,180,8,8
+    LTEXT           "Cover art file",IDC_STATIC,165,195,40,8
+    LTEXT           "Output folder",IDC_L_BROWSE,4,175,42,8
+END
+
+IDD_DECODER DIALOGEX 0, 0, 162, 153
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Raw .AAC options"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,47,132,36,14
+    PUSHBUTTON      "&Cancel",IDCANCEL,83,132,36,14
+    PUSHBUTTON      "&About",IDC_BTN_ABOUT,119,132,36,14
+    CONTROL         "Main",IDC_RADIO_MAIN,"Button",BS_AUTORADIOBUTTON | 
+                    WS_GROUP,19,33,31,10
+    CONTROL         "Low",IDC_RADIO_LOW,"Button",BS_AUTORADIOBUTTON,19,44,29,
+                    10
+    CONTROL         "SSR",IDC_RADIO_SSR,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,19,56,31,10
+    CONTROL         "LTP",IDC_RADIO_LTP,"Button",BS_AUTORADIOBUTTON,19,68,29,
+                    10
+    GROUPBOX        "Profile",IDC_STATIC,13,23,48,70
+    COMBOBOX        IDC_CB_SAMPLERATE,72,74,69,87,CBS_DROPDOWN | WS_DISABLED | 
+                    WS_VSCROLL | WS_TABSTOP
+    CONTROL         "Default settings",IDC_CHK_DEFAULTCFG,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,7,64,10
+    GROUPBOX        "Sample rate",IDC_STATIC,66,61,81,32
+    CONTROL         "HE",IDC_RADIO_HE,"Button",BS_AUTORADIOBUTTON | 
+                    WS_DISABLED,19,80,26,10
+    CONTROL         "Down matrix 5.1 to 2 channels",IDC_CHK_DOWNMATRIX,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,13,98,111,10
+    CONTROL         "Assume old ADTS format",IDC_CHK_OLDADTS,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,13,110,95,10
+    COMBOBOX        IDC_CB_BITSPERSAMPLE,72,35,69,87,CBS_DROPDOWNLIST | 
+                    WS_DISABLED | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Output bits per sample",IDC_STATIC,66,23,81,32
+    GROUPBOX        "",IDC_GRP_DEFAULT,7,8,147,118
+END
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ENCODER, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 334
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 214
+    END
+
+    IDD_DECODER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 154
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 146
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Italian (Italy) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ITA)
+#ifdef _WIN32
+LANGUAGE LANG_ITALIAN, SUBLANG_ITALIAN
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUT DIALOGEX 0, 0, 191, 230
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION
+CAPTION "About"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "&OK",IDOK,145,208,39,14
+    CONTROL         104,IDC_AUDIOCODING,"Static",SS_BITMAP | SS_NOTIFY | 
+                    SS_SUNKEN,7,7,178,69
+    CONTROL         107,IDC_MPEG4IP,"Static",SS_BITMAP | SS_NOTIFY | 
+                    SS_SUNKEN,7,202,59,20
+    CONTROL         106,IDC_EMAIL,"Static",SS_BITMAP | SS_NOTIFY,96,204,43,
+                    18
+    LTEXT           "Text",IDC_L_ABOUT,7,55,177,142
+    ICON            IDI_ID3,IDC_ID3,70,202,20,20,SS_NOTIFY | SS_SUNKEN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 184
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 222
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_AUDIOCODING         BITMAP                  "AudioCoding.bmp"
+IDB_EMAIL               BITMAP                  "Email.bmp"
+IDB_MPEG4IP             BITMAP                  "mpeg4ip-v.bmp"
+IDB_BROWSE              BITMAP                  "Open.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ID3                 ICON                    "id3v2.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,3,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x17L
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041004b0"
+        BEGIN
+            VALUE "FileDescription", "CFAAC"
+            VALUE "FileVersion", "1, 3, 0, 0"
+            VALUE "InternalName", "FAAC"
+            VALUE "LegalCopyright", "Copyright (C) 2004"
+            VALUE "OriginalFilename", "FAAC.dll"
+            VALUE "ProductName", " FAAC Dynamic Link Library"
+            VALUE "ProductVersion", "1, 0, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x410, 1200
+    END
+END
+
+#endif    // Italian (Italy) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

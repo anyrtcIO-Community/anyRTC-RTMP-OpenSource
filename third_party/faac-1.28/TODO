@@ -1,0 +1,39 @@
+TODO: In any order
+
+Big list, but a lot of it can be done fairly easily with some old code.
+Note: most of these issues are quite old, and it's not clear who submitted them
+in this file and why and/or if some of them are fixed in the meantime. The
+ChangeLog might give some insight on this though.
+
+- DONE: Add frequency cutoff filter
+- DONE: Add ADTS headers
+- DONE: Write GUI
+- DONE: Add TNS
+- DONE: Add LTP
+- DONE: Add backward prediction (MPEG2-AAC)????
+- DONE: Test (and maybe fix) sample rates other than 44100 Hz
+- DONE: Test (and maybe fix) multichannel and mono support
+- DONE: Figure out how to read and write ".mp4" format
+- DONE: Write documentation for library interface
+- DONE: Improve command line tool
+- DONE: VBR quantizer
+- DONE: Speedup
+- Done: Clean up psychoacoustics code
+- Done: Add Window shape switching
+
+- Add PNS
+- Add IS
+- Add bit reservoir control
+- Add pulse coding (?)
+- Rewrite noiseless coding (now taken from old version) (?)
+- Better grouping support (?)
+- Fix short block psychoacoustics (?)
+- Fix TNS (hans-juergen, Oct 17, 2004)
+- Fix LTP (hans-juergen, Oct 17, 2004)
+- Fix Main (hans-juergen, Oct 17, 2004)
+- Add resampler and downmixer (hans-juergen, Oct 17, 2004)
+- Add HE AAC (hans-juergen, Oct 17, 2004)
+- Fix mysterious crash/freeze with some decoded WAV files on
+  Linux: endianness? TNS? M/S? decoder bug? (hans-juergen, Oct 17, 2004)
+- Fix default ABR cutoff frequencies at different bitrates
+  (hans-juergen, Oct 17, 2004)

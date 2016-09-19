@@ -1,0 +1,6 @@
+2009-02-02 - Version 1.28
+	* Prevent out of range scalefactors
+	* Updated to latest mpeg4ip mp4 file format library
+	* Added -s option to make the encoder output optimized mp4 layout
+	* Improved JPEG detection for album art
+	* Lot's of compilation issues solved

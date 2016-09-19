@@ -1,0 +1,10 @@
+*.o
+*.so
+*.a
+*.ncb
+*.plg
+*.opt
+Debug
+Release
+DebugDLL
+ReleaseDLL

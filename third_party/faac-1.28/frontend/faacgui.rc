@@ -1,0 +1,150 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAINDIALOG DIALOGEX 0, 0, 264, 190
+STYLE DS_MODALFRAME | DS_CENTER | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "FAAC GUI"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "...",IDC_SELECT_INPUTFILE,225,12,19,14,0,
+                    WS_EX_STATICEDGE
+    PUSHBUTTON      "...",IDC_SELECT_OUTPUTFILE,225,33,19,14,WS_DISABLED,
+                    WS_EX_STATICEDGE
+    CONTROL         "Allow Mid/Side",IDC_ALLOWMIDSIDE,"Button",
+                    BS_AUTOCHECKBOX | BS_LEFTTEXT | WS_TABSTOP,14,81,71,10
+    LTEXT           "Quantizer\nquality", IDC_STATIC, 98, 73, 44, 18
+    EDITTEXT        IDC_QUALITY, 138, 76, 30, 12, ES_AUTOHSCROLL
+    CONTROL         "", IDC_STATIC, "static", SS_SUNKEN, 98, 94, 70, 30
+    CONTROL         "Set bandwidth", IDC_BWCTL, "Button", BS_AUTOCHECKBOX
+                    | WS_TABSTOP, 102, 96, 62, 12
+    EDITTEXT        IDC_BANDWIDTH,102,109,34,12,ES_AUTOHSCROLL | WS_DISABLED | WS_TABSTOP
+    LTEXT           "Hz", IDC_STATIC, 140, 111, 10, 8
+    DEFPUSHBUTTON   "Encode",IDOK,200,152,50,14,WS_DISABLED
+    PUSHBUTTON      "Quit",IDCANCEL,200,170,50,14
+    LTEXT           "",IDC_TIME,7,151,190,20
+    LTEXT           "", IDC_COMPILEDATE, 20, 176, 150, 8
+    EDITTEXT        IDC_INPUTFILENAME,61,12,158,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_OUTPUTFILENAME,61,33,158,14,ES_AUTOHSCROLL | 
+                    WS_DISABLED
+    LTEXT           "Input File:",IDC_STATIC,18,13,38,8
+    LTEXT           "Output File:",IDC_STATIC,18,34,37,8
+    CONTROL         "",IDC_STATIC,"Static",SS_BLACKFRAME | SS_SUNKEN,7,54,
+                    250,1
+    LTEXT           "-",IDC_INPUTPARAMS,32,66,55,8
+    LTEXT           "In:",IDC_STATIC,14,66,12,8
+    CONTROL         "Progress1",IDC_PROGRESS,"msctls_progress32",WS_BORDER,7,
+                    135,250,10
+    GROUPBOX        "Output Format",IDC_STATIC,93,62,164,67
+    CONTROL         "Use RAW output",IDC_USERAW,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,14,103,71,10
+    CONTROL         "Use TNS",IDC_USETNS,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_TABSTOP,14,92,71,10
+    COMBOBOX        IDC_MPEGVERSION,183,82,67,63,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_OBJECTTYPE,183,109,67,59,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "MPEG Verion",IDC_STATIC,183,73,44,8
+    LTEXT           "AAC Object Type",IDC_STATIC,183,100,56,8
+    CONTROL         "Use LFE channel",IDC_USELFE,"Button",BS_AUTOCHECKBOX | 
+                    BS_LEFTTEXT | WS_DISABLED | WS_TABSTOP,14,114,71,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_MAINDIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_MAINDIALOG DLGINIT
+BEGIN
+    IDC_MPEGVERSION, 0x403, 1, 0
+"\000" 
+    0
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

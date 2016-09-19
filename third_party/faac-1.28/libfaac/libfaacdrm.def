@@ -1,0 +1,11 @@
+EXPORTS
+;
+; libfaac exports
+;
+faacEncOpen                      @1
+faacEncGetCurrentConfiguration   @2
+faacEncSetConfiguration          @3
+faacEncEncode                    @4
+faacEncClose                     @5
+faacEncGetDecoderSpecificInfo	 @6
+faacEncGetVersion				 @7

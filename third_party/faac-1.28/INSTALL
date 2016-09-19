@@ -1,0 +1,26 @@
+___________________________________
+General FAAC compiling instructions
+
+1. Make sure you have recent versions of autoconf, automake and libtool installed.
+   For MP4 writing and tagging support, you must enable compiling with internal libmp4v2 (included in /common/mp4v2/).
+2. cd to FAAC source dir
+3. Run:
+	./configure
+	make
+	make install
+
+__________________________________
+MS Windows FAAC build using Cygwin
+
+1. Install Cygwin (http://cygwin.com/) 
+   (make sure to include autoconf, automake and libtool packages)
+2. cd to FAAC source dir (folder)
+
+To install Cygwin binary follow general instructions.
+
+To install Mingw binary:
+1. Run:
+	./bootstrap
+	CC='gcc -mno-cygwin' ./configure
+	make
+2. Copy frontend/faac.exe to destination folder.

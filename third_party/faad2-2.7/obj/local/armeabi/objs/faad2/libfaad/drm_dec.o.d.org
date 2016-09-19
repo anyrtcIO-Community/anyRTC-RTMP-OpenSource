@@ -1,0 +1,119 @@
+C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/obj/local/armeabi/objs/faad2/libfaad/drm_dec.o: \
+ C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../libfaad/drm_dec.c \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/stdlib.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/cdefs.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/cdefs_elf.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/string.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/malloc.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/alloca.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/strings.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/types.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/stdint.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/_types.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/machine/_types.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/posix_types.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/stddef.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/compiler.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/asm/posix_types.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/asm/types.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/types.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/machine/kernel.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/sysmacros.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/memory.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/stdio.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/math.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/limits.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/limits.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/limits.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/machine/internal_types.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/machine/limits.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/syslimits.h \
+ C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../libfaad/common.h \
+ C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../libfaad/../config.h \
+ C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../include/neaacdec.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/stat.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/time.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/time.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/stat.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/endian.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/endian.h \
+ C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/inttypes.h \
+ C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../libfaad/fixed.h
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/stdlib.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/cdefs.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/cdefs_elf.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/string.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/malloc.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/alloca.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/strings.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/types.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/stdint.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/_types.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/machine/_types.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/posix_types.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/stddef.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/compiler.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/asm/posix_types.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/asm/types.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/types.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/machine/kernel.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/sysmacros.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/memory.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/stdio.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/math.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/limits.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/limits.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/limits.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/machine/internal_types.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/machine/limits.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/syslimits.h:
+
+C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../libfaad/common.h:
+
+C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../libfaad/../config.h:
+
+C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../include/neaacdec.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/stat.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/time.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/time.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/linux/stat.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/endian.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/sys/endian.h:
+
+C:/Android/NDK/android-ndk-r8/platforms/android-14/arch-arm/usr/include/inttypes.h:
+
+C:/Home/Workspace/Project/AnyRtc/Namii/LiveFlv/third_party/faad2-2.7/jni/../libfaad/fixed.h:
