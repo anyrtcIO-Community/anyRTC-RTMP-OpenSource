@@ -23,7 +23,7 @@ VS2015</br>
 
 ##支持的系统平台
 Android 4.0及以上</br>
-iOS 6.0及以上</br>
+iOS 8.0及以上</br>
 Windows 7及以上</br>
 
 ##支持的CPU架构
