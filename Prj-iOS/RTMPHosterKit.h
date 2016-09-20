@@ -21,21 +21,12 @@
 #define RTMPHosterKit_h
 #import <UIKit/UIKit.h>
 #import "RTMPHosterDelegate.h"
+#import "RTMPCommon.h"
 
 @interface RTMPHosterKit : NSObject {
     
 }
-/**
- *  RTC Delegate(if you want add Even wheat function，you should set it)
- */
-@property (weak, nonatomic) id<RTMPHosterRtcDelegate> rtc_delegate;
-/**
- *  Initialize the hoster clent
- *
- *  @param delegate RTMPHosterRtmpDelegate
- *
- *  @return hoster object
- */
+
 - (instancetype)initWithDelegate:(id<RTMPHosterRtmpDelegate>)delegate;
 /**
  *  clear host clent (if you leave,you must call this function)
