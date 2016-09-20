@@ -23,7 +23,7 @@ VS2015</br>
 
 ##支持的系统平台
 Android 4.0及以上</br>
-iOS 6.0及以上</br>
+iOS 8.0及以上</br>
 Windows 7及以上</br>
 
 ##支持的CPU架构
@@ -52,6 +52,13 @@ fms, wowza, evostream, red5, crtmpserver, nginx-rtmp-module, srs及其他标准R
 * 支持的音频解码器:AAC
 * OpenGL ES视频渲染
 * 支持主播停止推流后，播放端立即获取到结束状态（RTMP协议下）
+
+##第三方库版本
+libfaac		1.28</br>
+libfaad2	2.7</br>
+ffmpeg		3.0</br>
+libyuv		newest</br>
+openh264	1.6.0</br>
 
 ##商用授权
 本次开源在未授权情况下不可应用于任何的闭源商业项目，具体请参照GNU License中的声明。</br>
