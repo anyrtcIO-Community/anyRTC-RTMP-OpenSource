@@ -1,9 +1,7 @@
 # AnyRTC-RTMP
-
+<img src="http://123.59.68.21/download/anyrtc-default.png" width="313" alt="AnyRTC-RTMP" /> </br>
 本次开源的客户端基于RTMP协议的推流拉流客户端，由我司CTO亲自操刀设计，采用跨平台架构一套代码支持Android、iOS、Windows等平台。</br>
-直播涉及的流程：『采集->编码->传输->解码->播放』本项目统统包含，这不是软文，这是实实在在的商业级实战代码；无论是你新手还是老司机，我们都热烈欢迎您前来筑码。</br>
-
-<img src="http://123.59.68.21/download/anyrtc-default.png" width="313" alt="AnyRTC-RTMP" />
+直播涉及的流程：『采集->编码->传输->解码->播放』本项目统统包含，这不是软文，这是实实在在的商业级实战代码；无论是你新手还是老司机，我们都热烈欢迎您前来筑码。
 
 # 项目特点
 **1，商业级开源代码，高效稳定**</br>
