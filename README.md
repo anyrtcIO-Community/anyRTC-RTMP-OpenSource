@@ -69,6 +69,9 @@ openh264	1.6.0</br>
 直播技术QQ群：554714720</br>
 连麦技术QQ群：580477436</br>
 
+##捐赠
+本项目不接受任何形式的捐赠，您的支持就是最大的动力。</br>
+
 ## License
 AnyRTC-RTMP is available under the GNU license. See the LICENSE file for more info.
 
