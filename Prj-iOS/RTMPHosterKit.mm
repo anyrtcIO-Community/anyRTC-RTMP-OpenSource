@@ -99,7 +99,7 @@ public:
 @end
 
 @implementation RTMPHosterKit
-@synthesize rtc_delegate = _rtc_delegate;
+
 - (instancetype)initWithDelegate:(id<RTMPHosterRtmpDelegate>)delegate
 {
     if (self = [super init]) {

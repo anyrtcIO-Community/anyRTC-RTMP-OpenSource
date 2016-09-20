@@ -7,6 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		78200AB01D8FD704009CA1B3 /* librtc_thirdparty.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B3F091D8C20800011F813 /* librtc_thirdparty.a */; };
+		78200AB21D8FD7C7009CA1B3 /* bitrate_adjuster.cc in Sources */ = {isa = PBXBuildFile; fileRef = 78200AB11D8FD7C7009CA1B3 /* bitrate_adjuster.cc */; };
+		78200AB71D8FD814009CA1B3 /* fileutils.cc in Sources */ = {isa = PBXBuildFile; fileRef = 78200AB31D8FD814009CA1B3 /* fileutils.cc */; };
+		78200AB81D8FD814009CA1B3 /* pathutils.cc in Sources */ = {isa = PBXBuildFile; fileRef = 78200AB51D8FD814009CA1B3 /* pathutils.cc */; };
+		78200ABD1D8FD842009CA1B3 /* unixfilesystem.cc in Sources */ = {isa = PBXBuildFile; fileRef = 78200ABA1D8FD842009CA1B3 /* unixfilesystem.cc */; };
+		78200ABF1D8FD855009CA1B3 /* asyncpacketsocket.cc in Sources */ = {isa = PBXBuildFile; fileRef = 78200ABE1D8FD855009CA1B3 /* asyncpacketsocket.cc */; };
+		78200AC41D8FD9EC009CA1B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78200AC31D8FD9EC009CA1B3 /* Foundation.framework */; };
+		78200AC61D8FDAB8009CA1B3 /* resample.c in Sources */ = {isa = PBXBuildFile; fileRef = 78200AC51D8FDAB8009CA1B3 /* resample.c */; };
+		78200AC71D8FDAD2009CA1B3 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B40861D8C2DF40011F813 /* libbz2.tbd */; };
+		78200AC91D8FDB07009CA1B3 /* stream.cc in Sources */ = {isa = PBXBuildFile; fileRef = 78200AC81D8FDB07009CA1B3 /* stream.cc */; };
+		78200ACB1D8FDB2C009CA1B3 /* resample_48khz.c in Sources */ = {isa = PBXBuildFile; fileRef = 78200ACA1D8FDB2C009CA1B3 /* resample_48khz.c */; };
+		78200ACD1D8FDB53009CA1B3 /* resample_by_2.c in Sources */ = {isa = PBXBuildFile; fileRef = 78200ACC1D8FDB53009CA1B3 /* resample_by_2.c */; };
+		78200ACF1D8FDB9F009CA1B3 /* resample_by_2_internal.c in Sources */ = {isa = PBXBuildFile; fileRef = 78200ACE1D8FDB9F009CA1B3 /* resample_by_2_internal.c */; };
+		78200AD11D8FDBC9009CA1B3 /* iosfilesystem.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78200AD01D8FDBC9009CA1B3 /* iosfilesystem.mm */; };
+		78200AD31D8FDBFD009CA1B3 /* systeminfo.cc in Sources */ = {isa = PBXBuildFile; fileRef = 78200AD21D8FDBFD009CA1B3 /* systeminfo.cc */; };
+		78200AD51D8FDC3D009CA1B3 /* resample_fractional.c in Sources */ = {isa = PBXBuildFile; fileRef = 78200AD41D8FDC3D009CA1B3 /* resample_fractional.c */; };
+		78200AD71D8FDC71009CA1B3 /* urlencode.cc in Sources */ = {isa = PBXBuildFile; fileRef = 78200AD61D8FDC71009CA1B3 /* urlencode.cc */; };
+		78200ADA1D8FDDE8009CA1B3 /* anyrtc.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AD91D8FDDE8009CA1B3 /* anyrtc.png */; };
+		78200ADD1D8FE555009CA1B3 /* PushViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78200ADC1D8FE555009CA1B3 /* PushViewController.m */; };
+		78200ADF1D8FEAD3009CA1B3 /* RTMPHosterKit.mm in Sources */ = {isa = PBXBuildFile; fileRef = 78200ADE1D8FEAD3009CA1B3 /* RTMPHosterKit.mm */; };
+		78200AE21D8FEC30009CA1B3 /* PullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 78200AE11D8FEC30009CA1B3 /* PullViewController.m */; };
+		78200AEB1D8FED12009CA1B3 /* camra_beauty_close@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AE31D8FED12009CA1B3 /* camra_beauty_close@2x.png */; };
+		78200AEC1D8FED12009CA1B3 /* camra_beauty_close@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AE41D8FED12009CA1B3 /* camra_beauty_close@3x.png */; };
+		78200AED1D8FED12009CA1B3 /* camra_beauty@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AE51D8FED12009CA1B3 /* camra_beauty@2x.png */; };
+		78200AEE1D8FED12009CA1B3 /* camra_beauty@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AE61D8FED12009CA1B3 /* camra_beauty@3x.png */; };
+		78200AEF1D8FED12009CA1B3 /* camra_preview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AE71D8FED12009CA1B3 /* camra_preview@2x.png */; };
+		78200AF01D8FED12009CA1B3 /* camra_preview@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AE81D8FED12009CA1B3 /* camra_preview@3x.png */; };
+		78200AF11D8FED12009CA1B3 /* close_preview@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AE91D8FED12009CA1B3 /* close_preview@2x.png */; };
+		78200AF21D8FED12009CA1B3 /* close_preview@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78200AEA1D8FED12009CA1B3 /* close_preview@3x.png */; };
 		B56B378C1D8BF6F30011F813 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B56B378B1D8BF6F30011F813 /* main.m */; };
 		B56B378F1D8BF6F30011F813 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B56B378E1D8BF6F30011F813 /* AppDelegate.m */; };
 		B56B37921D8BF6F30011F813 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B56B37911D8BF6F30011F813 /* ViewController.m */; };
@@ -316,7 +345,6 @@
 		B56B3EFA1D8C111E0011F813 /* GPUImageWhiteBalanceFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B56B3E411D8C111E0011F813 /* GPUImageWhiteBalanceFilter.m */; };
 		B56B3EFB1D8C111E0011F813 /* GPUImageXYDerivativeFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B56B3E431D8C111E0011F813 /* GPUImageXYDerivativeFilter.m */; };
 		B56B3EFC1D8C111E0011F813 /* GPUImageZoomBlurFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = B56B3E451D8C111E0011F813 /* GPUImageZoomBlurFilter.m */; };
-		B56B40471D8C21060011F813 /* librtc_thirdparty.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B3F091D8C20800011F813 /* librtc_thirdparty.a */; };
 		B56B40581D8C237A0011F813 /* RTCLogging.mm in Sources */ = {isa = PBXBuildFile; fileRef = B56B404D1D8C237A0011F813 /* RTCLogging.mm */; };
 		B56B40591D8C237A0011F813 /* RTCUIApplication.mm in Sources */ = {isa = PBXBuildFile; fileRef = B56B404F1D8C237A0011F813 /* RTCUIApplication.mm */; };
 		B56B405A1D8C237A0011F813 /* VideoCapture.mm in Sources */ = {isa = PBXBuildFile; fileRef = B56B40511D8C237A0011F813 /* VideoCapture.mm */; };
@@ -335,7 +363,6 @@
 		B56B40811D8C2DDE0011F813 /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B40801D8C2DDE0011F813 /* GLKit.framework */; };
 		B56B40831D8C2DE60011F813 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B40821D8C2DE60011F813 /* UIKit.framework */; };
 		B56B40851D8C2DEE0011F813 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B40841D8C2DEE0011F813 /* libz.tbd */; };
-		B56B40871D8C2DF40011F813 /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B40861D8C2DF40011F813 /* libbz2.tbd */; };
 		B56B40891D8C2DFC0011F813 /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B40881D8C2DFC0011F813 /* libiconv.tbd */; };
 		B56B408B1D8C2E1C0011F813 /* libswresample.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B56B408A1D8C2E1C0011F813 /* libswresample.a */; };
 		B56B408D1D8C2E710011F813 /* helpers_ios.mm in Sources */ = {isa = PBXBuildFile; fileRef = B56B408C1D8C2E710011F813 /* helpers_ios.mm */; };
@@ -361,6 +388,39 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		78200AB11D8FD7C7009CA1B3 /* bitrate_adjuster.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = bitrate_adjuster.cc; sourceTree = "<group>"; };
+		78200AB31D8FD814009CA1B3 /* fileutils.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = fileutils.cc; sourceTree = "<group>"; };
+		78200AB41D8FD814009CA1B3 /* fileutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = fileutils.h; sourceTree = "<group>"; };
+		78200AB51D8FD814009CA1B3 /* pathutils.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = pathutils.cc; sourceTree = "<group>"; };
+		78200AB61D8FD814009CA1B3 /* pathutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = pathutils.h; sourceTree = "<group>"; };
+		78200ABA1D8FD842009CA1B3 /* unixfilesystem.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = unixfilesystem.cc; sourceTree = "<group>"; };
+		78200ABB1D8FD842009CA1B3 /* unixfilesystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unixfilesystem.h; sourceTree = "<group>"; };
+		78200ABE1D8FD855009CA1B3 /* asyncpacketsocket.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = asyncpacketsocket.cc; sourceTree = "<group>"; };
+		78200AC11D8FD9C9009CA1B3 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		78200AC31D8FD9EC009CA1B3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		78200AC51D8FDAB8009CA1B3 /* resample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resample.c; sourceTree = "<group>"; };
+		78200AC81D8FDB07009CA1B3 /* stream.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = stream.cc; sourceTree = "<group>"; };
+		78200ACA1D8FDB2C009CA1B3 /* resample_48khz.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resample_48khz.c; sourceTree = "<group>"; };
+		78200ACC1D8FDB53009CA1B3 /* resample_by_2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resample_by_2.c; sourceTree = "<group>"; };
+		78200ACE1D8FDB9F009CA1B3 /* resample_by_2_internal.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resample_by_2_internal.c; sourceTree = "<group>"; };
+		78200AD01D8FDBC9009CA1B3 /* iosfilesystem.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = iosfilesystem.mm; sourceTree = "<group>"; };
+		78200AD21D8FDBFD009CA1B3 /* systeminfo.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = systeminfo.cc; sourceTree = "<group>"; };
+		78200AD41D8FDC3D009CA1B3 /* resample_fractional.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = resample_fractional.c; sourceTree = "<group>"; };
+		78200AD61D8FDC71009CA1B3 /* urlencode.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = urlencode.cc; sourceTree = "<group>"; };
+		78200AD91D8FDDE8009CA1B3 /* anyrtc.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = anyrtc.png; sourceTree = "<group>"; };
+		78200ADB1D8FE555009CA1B3 /* PushViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PushViewController.h; sourceTree = "<group>"; };
+		78200ADC1D8FE555009CA1B3 /* PushViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PushViewController.m; sourceTree = "<group>"; };
+		78200ADE1D8FEAD3009CA1B3 /* RTMPHosterKit.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RTMPHosterKit.mm; path = ../RTMPHosterKit.mm; sourceTree = "<group>"; };
+		78200AE01D8FEC30009CA1B3 /* PullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PullViewController.h; path = ../PullViewController.h; sourceTree = "<group>"; };
+		78200AE11D8FEC30009CA1B3 /* PullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PullViewController.m; path = ../PullViewController.m; sourceTree = "<group>"; };
+		78200AE31D8FED12009CA1B3 /* camra_beauty_close@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camra_beauty_close@2x.png"; sourceTree = "<group>"; };
+		78200AE41D8FED12009CA1B3 /* camra_beauty_close@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camra_beauty_close@3x.png"; sourceTree = "<group>"; };
+		78200AE51D8FED12009CA1B3 /* camra_beauty@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camra_beauty@2x.png"; sourceTree = "<group>"; };
+		78200AE61D8FED12009CA1B3 /* camra_beauty@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camra_beauty@3x.png"; sourceTree = "<group>"; };
+		78200AE71D8FED12009CA1B3 /* camra_preview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camra_preview@2x.png"; sourceTree = "<group>"; };
+		78200AE81D8FED12009CA1B3 /* camra_preview@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camra_preview@3x.png"; sourceTree = "<group>"; };
+		78200AE91D8FED12009CA1B3 /* close_preview@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_preview@2x.png"; sourceTree = "<group>"; };
+		78200AEA1D8FED12009CA1B3 /* close_preview@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "close_preview@3x.png"; sourceTree = "<group>"; };
 		B56B37871D8BF6F30011F813 /* AnyRtmp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnyRtmp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56B378B1D8BF6F30011F813 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B56B378D1D8BF6F30011F813 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -394,7 +454,7 @@
 		B56B37B81D8BFB380011F813 /* plybuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plybuffer.h; sourceTree = "<group>"; };
 		B56B37B91D8BFB380011F813 /* plydecoder.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = plydecoder.cc; sourceTree = "<group>"; };
 		B56B37BA1D8BFB380011F813 /* plydecoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = plydecoder.h; sourceTree = "<group>"; };
-		B56B37BB1D8BFB380011F813 /* RTMPCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTMPCommon.h; sourceTree = "<group>"; };
+		B56B37BB1D8BFB380011F813 /* RTMPCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RTMPCommon.h; path = ../../AnyCore/RTMPCommon.h; sourceTree = "<group>"; };
 		B56B37BC1D8BFB380011F813 /* RtmpGuester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtmpGuester.h; sourceTree = "<group>"; };
 		B56B37BD1D8BFB380011F813 /* RtmpGuesterImpl.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RtmpGuesterImpl.cc; sourceTree = "<group>"; };
 		B56B37BE1D8BFB380011F813 /* RtmpGuesterImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RtmpGuesterImpl.h; sourceTree = "<group>"; };
@@ -935,8 +995,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78200AC71D8FDAD2009CA1B3 /* libbz2.tbd in Frameworks */,
+				78200AC41D8FD9EC009CA1B3 /* Foundation.framework in Frameworks */,
+				78200AB01D8FD704009CA1B3 /* librtc_thirdparty.a in Frameworks */,
 				B56B40891D8C2DFC0011F813 /* libiconv.tbd in Frameworks */,
-				B56B40871D8C2DF40011F813 /* libbz2.tbd in Frameworks */,
 				B56B40851D8C2DEE0011F813 /* libz.tbd in Frameworks */,
 				B56B40831D8C2DE60011F813 /* UIKit.framework in Frameworks */,
 				B56B40811D8C2DDE0011F813 /* GLKit.framework in Frameworks */,
@@ -944,7 +1006,6 @@
 				B56B407D1D8C2DD30011F813 /* CoreMedia.framework in Frameworks */,
 				B56B407B1D8C2DCC0011F813 /* AVFoundation.framework in Frameworks */,
 				B56B406A1D8C2AC50011F813 /* VideoToolbox.framework in Frameworks */,
-				B56B40471D8C21060011F813 /* librtc_thirdparty.a in Frameworks */,
 				B56B40731D8C2AE70011F813 /* libavcodec.a in Frameworks */,
 				B56B408B1D8C2E1C0011F813 /* libswresample.a in Frameworks */,
 				B56B40751D8C2AE70011F813 /* libavformat.a in Frameworks */,
@@ -958,9 +1019,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		78200AC01D8FD9C9009CA1B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				78200AC31D8FD9EC009CA1B3 /* Foundation.framework */,
+				78200AC11D8FD9C9009CA1B3 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		78200AD81D8FDDE8009CA1B3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				78200AE31D8FED12009CA1B3 /* camra_beauty_close@2x.png */,
+				78200AE41D8FED12009CA1B3 /* camra_beauty_close@3x.png */,
+				78200AE51D8FED12009CA1B3 /* camra_beauty@2x.png */,
+				78200AE61D8FED12009CA1B3 /* camra_beauty@3x.png */,
+				78200AE71D8FED12009CA1B3 /* camra_preview@2x.png */,
+				78200AE81D8FED12009CA1B3 /* camra_preview@3x.png */,
+				78200AE91D8FED12009CA1B3 /* close_preview@2x.png */,
+				78200AEA1D8FED12009CA1B3 /* close_preview@3x.png */,
+				78200AD91D8FDDE8009CA1B3 /* anyrtc.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		B56B377E1D8BF6F30011F813 = {
 			isa = PBXGroup;
 			children = (
+				78200AD81D8FDDE8009CA1B3 /* Resources */,
 				B56B406B1D8C2ACF0011F813 /* Framework */,
 				B56B404C1D8C237A0011F813 /* RTC */,
 				B56B3F041D8C207F0011F813 /* rtc_thirdparty.xcodeproj */,
@@ -971,6 +1058,7 @@
 				B56B37A21D8BFB380011F813 /* AnyCore */,
 				B56B37891D8BF6F30011F813 /* AnyRtmp */,
 				B56B37881D8BF6F30011F813 /* Products */,
+				78200AC01D8FD9C9009CA1B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -985,15 +1073,21 @@
 		B56B37891D8BF6F30011F813 /* AnyRtmp */ = {
 			isa = PBXGroup;
 			children = (
+				B56B37BB1D8BFB380011F813 /* RTMPCommon.h */,
 				B56B405E1D8C26DB0011F813 /* RTMPGuestDelegate.h */,
 				B56B405F1D8C26DB0011F813 /* RTMPGuestKit.h */,
 				B56B40601D8C26DB0011F813 /* RTMPGuestKit.mm */,
 				B56B40611D8C26DB0011F813 /* RTMPHosterDelegate.h */,
 				B56B40621D8C26DB0011F813 /* RTMPHosterKit.h */,
+				78200ADE1D8FEAD3009CA1B3 /* RTMPHosterKit.mm */,
 				B56B378D1D8BF6F30011F813 /* AppDelegate.h */,
 				B56B378E1D8BF6F30011F813 /* AppDelegate.m */,
 				B56B37901D8BF6F30011F813 /* ViewController.h */,
 				B56B37911D8BF6F30011F813 /* ViewController.m */,
+				78200ADB1D8FE555009CA1B3 /* PushViewController.h */,
+				78200ADC1D8FE555009CA1B3 /* PushViewController.m */,
+				78200AE01D8FEC30009CA1B3 /* PullViewController.h */,
+				78200AE11D8FEC30009CA1B3 /* PullViewController.m */,
 				B56B37931D8BF6F30011F813 /* Main.storyboard */,
 				B56B37961D8BF6F30011F813 /* Assets.xcassets */,
 				B56B37981D8BF6F30011F813 /* LaunchScreen.storyboard */,
@@ -1037,7 +1131,6 @@
 				B56B37B81D8BFB380011F813 /* plybuffer.h */,
 				B56B37B91D8BFB380011F813 /* plydecoder.cc */,
 				B56B37BA1D8BFB380011F813 /* plydecoder.h */,
-				B56B37BB1D8BFB380011F813 /* RTMPCommon.h */,
 				B56B37BC1D8BFB380011F813 /* RtmpGuester.h */,
 				B56B37BD1D8BFB380011F813 /* RtmpGuesterImpl.cc */,
 				B56B37BE1D8BFB380011F813 /* RtmpGuesterImpl.h */,
@@ -1084,6 +1177,17 @@
 		B56B37ED1D8C047B0011F813 /* base */ = {
 			isa = PBXGroup;
 			children = (
+				78200AD61D8FDC71009CA1B3 /* urlencode.cc */,
+				78200AD21D8FDBFD009CA1B3 /* systeminfo.cc */,
+				78200AD01D8FDBC9009CA1B3 /* iosfilesystem.mm */,
+				78200AC81D8FDB07009CA1B3 /* stream.cc */,
+				78200ABE1D8FD855009CA1B3 /* asyncpacketsocket.cc */,
+				78200ABA1D8FD842009CA1B3 /* unixfilesystem.cc */,
+				78200ABB1D8FD842009CA1B3 /* unixfilesystem.h */,
+				78200AB31D8FD814009CA1B3 /* fileutils.cc */,
+				78200AB41D8FD814009CA1B3 /* fileutils.h */,
+				78200AB51D8FD814009CA1B3 /* pathutils.cc */,
+				78200AB61D8FD814009CA1B3 /* pathutils.h */,
 				B56B37F11D8C047B0011F813 /* asyncfile.cc */,
 				B56B37F61D8C047B0011F813 /* asyncinvoker.cc */,
 				B56B37FA1D8C047B0011F813 /* asyncresolverinterface.cc */,
@@ -1158,6 +1262,7 @@
 			children = (
 				B56B39A51D8C047C0011F813 /* h264 */,
 				B56B39BD1D8C047C0011F813 /* libyuv */,
+				78200AB11D8FD7C7009CA1B3 /* bitrate_adjuster.cc */,
 				B56B39A31D8C047C0011F813 /* corevideo_frame_buffer.cc */,
 				B56B39B11D8C047C0011F813 /* i420_buffer_pool.cc */,
 				B56B39BC1D8C047C0011F813 /* incoming_video_stream.cc */,
@@ -1809,6 +1914,11 @@
 		B56B409C1D8C32520011F813 /* signal_processing */ = {
 			isa = PBXGroup;
 			children = (
+				78200AD41D8FDC3D009CA1B3 /* resample_fractional.c */,
+				78200ACE1D8FDB9F009CA1B3 /* resample_by_2_internal.c */,
+				78200ACC1D8FDB53009CA1B3 /* resample_by_2.c */,
+				78200ACA1D8FDB2C009CA1B3 /* resample_48khz.c */,
+				78200AC51D8FDAB8009CA1B3 /* resample.c */,
 				B56B40A61D8C32520011F813 /* cross_correlation.c */,
 				B56B40AB1D8C32520011F813 /* downsample_fast.c */,
 				B56B40BF1D8C32520011F813 /* min_max_operations.c */,
@@ -1849,6 +1959,8 @@
 				TargetAttributes = {
 					B56B37861D8BF6F30011F813 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 3YB54BC6QT;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -1891,8 +2003,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78200AF11D8FED12009CA1B3 /* close_preview@2x.png in Resources */,
+				78200AEF1D8FED12009CA1B3 /* camra_preview@2x.png in Resources */,
+				78200AF01D8FED12009CA1B3 /* camra_preview@3x.png in Resources */,
+				78200AEB1D8FED12009CA1B3 /* camra_beauty_close@2x.png in Resources */,
 				B56B37D91D8BFB380011F813 /* Android.mk in Resources */,
+				78200ADA1D8FDDE8009CA1B3 /* anyrtc.png in Resources */,
+				78200AF21D8FED12009CA1B3 /* close_preview@3x.png in Resources */,
 				B56B379A1D8BF6F30011F813 /* LaunchScreen.storyboard in Resources */,
+				78200AEC1D8FED12009CA1B3 /* camra_beauty_close@3x.png in Resources */,
+				78200AEE1D8FED12009CA1B3 /* camra_beauty@3x.png in Resources */,
+				78200AED1D8FED12009CA1B3 /* camra_beauty@2x.png in Resources */,
 				B56B37971D8BF6F30011F813 /* Assets.xcassets in Resources */,
 				B56B37951D8BF6F30011F813 /* Main.storyboard in Resources */,
 			);
@@ -1913,6 +2034,7 @@
 				B56B3C711D8C047C0011F813 /* RTCAudioSession+Configuration.mm in Sources */,
 				B56B3E8E1D8C111E0011F813 /* GPUImageHarrisCornerDetectionFilter.m in Sources */,
 				B56B3EC91D8C111E0011F813 /* GPUImageRawDataInput.m in Sources */,
+				78200ADF1D8FEAD3009CA1B3 /* RTMPHosterKit.mm in Sources */,
 				B56B3C3F1D8C047C0011F813 /* videosourcebase.cc in Sources */,
 				B56B3C261D8C047C0011F813 /* sps_parser.cc in Sources */,
 				B56B3E531D8C111E0011F813 /* GPUImage3x3TextureSamplingFilter.m in Sources */,
@@ -1925,6 +2047,7 @@
 				B56B3E561D8C111E0011F813 /* GPUImageAlphaBlendFilter.m in Sources */,
 				B56B3B571D8C047C0011F813 /* checks.cc in Sources */,
 				B56B3BD71D8C047C0011F813 /* push_sinc_resampler.cc in Sources */,
+				78200AC61D8FDAB8009CA1B3 /* resample.c in Sources */,
 				B56B3C311D8C047C0011F813 /* video_frame.cc in Sources */,
 				B56B405D1D8C246D0011F813 /* GPUImageVideoCapturer.mm in Sources */,
 				B56B3CCD1D8C047C0011F813 /* timestamp_extrapolator.cc in Sources */,
@@ -1961,6 +2084,7 @@
 				B56B3CC41D8C047C0011F813 /* logging.cc in Sources */,
 				B56B40961D8C2FBD0011F813 /* RTCOpenGLVideoRenderer.mm in Sources */,
 				B56B3E661D8C111E0011F813 /* GPUImageColorConversion.m in Sources */,
+				78200ABF1D8FD855009CA1B3 /* asyncpacketsocket.cc in Sources */,
 				B56B3C8E1D8C047C0011F813 /* h264_video_toolbox_nalu.cc in Sources */,
 				B56B37921D8BF6F30011F813 /* ViewController.m in Sources */,
 				B56B3EE91D8C111E0011F813 /* GPUImageThresholdSketchFilter.m in Sources */,
@@ -1984,6 +2108,7 @@
 				B56B3E741D8C111E0011F813 /* GPUImageDifferenceBlendFilter.m in Sources */,
 				B56B3C741D8C047C0011F813 /* RTCAudioSessionDelegateAdapter.mm in Sources */,
 				B56B40F31D8C32520011F813 /* min_max_operations.c in Sources */,
+				78200ADD1D8FE555009CA1B3 /* PushViewController.m in Sources */,
 				B56B40E01D8C32520011F813 /* cross_correlation.c in Sources */,
 				B56B37D71D8BFB380011F813 /* RtmpGuesterImpl.cc in Sources */,
 				B56B41011D8C32520011F813 /* spl_init.c in Sources */,
@@ -1992,6 +2117,7 @@
 				B56B3C6F1D8C047C0011F813 /* audio_device_not_implemented_ios.mm in Sources */,
 				B56B3CB01D8C047C0011F813 /* atomic32_darwin.cc in Sources */,
 				B56B3E6F1D8C111E0011F813 /* GPUImageContrastFilter.m in Sources */,
+				78200ACD1D8FDB53009CA1B3 /* resample_by_2.c in Sources */,
 				B56B3C3C1D8C047C0011F813 /* videocommon.cc in Sources */,
 				B56B37D21D8BFB380011F813 /* anyrtmpull.cc in Sources */,
 				B56B3E811D8C111E0011F813 /* GPUImageFilterGroup.m in Sources */,
@@ -2021,6 +2147,7 @@
 				B56B3B621D8C047C0011F813 /* event_tracer.cc in Sources */,
 				B56B3CCF1D8C047C0011F813 /* trace_posix.cc in Sources */,
 				B56B3BC81D8C047C0011F813 /* audio_util.cc in Sources */,
+				78200AC91D8FDB07009CA1B3 /* stream.cc in Sources */,
 				B56B3C341D8C047C0011F813 /* config.cc in Sources */,
 				B56B37D51D8BFB380011F813 /* plybuffer.cc in Sources */,
 				B56B3EF91D8C111E0011F813 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
@@ -2028,10 +2155,12 @@
 				B56B3B911D8C047C0011F813 /* platform_thread.cc in Sources */,
 				B56B3ECC1D8C111E0011F813 /* GPUImageRGBDilationFilter.m in Sources */,
 				B56B3B881D8C047C0011F813 /* nethelpers.cc in Sources */,
+				78200ACF1D8FDB9F009CA1B3 /* resample_by_2_internal.c in Sources */,
 				B56B3EBB1D8C111E0011F813 /* GPUImageOutput.m in Sources */,
 				B56B40991D8C30400011F813 /* RTCVideoFrame.mm in Sources */,
 				B56B3EB31D8C111E0011F813 /* GPUImageMovieComposition.m in Sources */,
 				B56B3EA21D8C111E0011F813 /* GPUImageLinearBurnBlendFilter.m in Sources */,
+				78200AB21D8FD7C7009CA1B3 /* bitrate_adjuster.cc in Sources */,
 				B56B3EEF1D8C111E0011F813 /* GPUImageTwoInputFilter.m in Sources */,
 				B56B3E681D8C111E0011F813 /* GPUImageColorInvertFilter.m in Sources */,
 				B56B3EBF1D8C111E0011F813 /* GPUImagePicture+TextureSubimage.m in Sources */,
@@ -2051,6 +2180,7 @@
 				B56B37CC1D8BFB380011F813 /* aacdecode.cc in Sources */,
 				B56B3C671D8C047C0011F813 /* audio_device_buffer.cc in Sources */,
 				B56B3E7B1D8C111E0011F813 /* GPUImageErosionFilter.m in Sources */,
+				78200AE21D8FEC30009CA1B3 /* PullViewController.m in Sources */,
 				B56B3EE51D8C111E0011F813 /* GPUImageTextureOutput.m in Sources */,
 				B56B3B431D8C047C0011F813 /* asyncfile.cc in Sources */,
 				B56B3BD91D8C047C0011F813 /* sinc_resampler.cc in Sources */,
@@ -2077,6 +2207,7 @@
 				B56B3E651D8C111E0011F813 /* GPUImageColorBurnBlendFilter.m in Sources */,
 				B56B3B8F1D8C047C0011F813 /* physicalsocketserver.cc in Sources */,
 				B56B3B4E1D8C047C0011F813 /* base64.cc in Sources */,
+				78200AB71D8FD814009CA1B3 /* fileutils.cc in Sources */,
 				B56B3C8C1D8C047C0011F813 /* h264_video_toolbox_decoder.cc in Sources */,
 				B56B3E631D8C111E0011F813 /* GPUImageClosingFilter.m in Sources */,
 				B56B3ED41D8C111E0011F813 /* GPUImageSharpenFilter.m in Sources */,
@@ -2100,9 +2231,11 @@
 				B56B3EC11D8C111E0011F813 /* GPUImagePinchDistortionFilter.m in Sources */,
 				B56B3E9D1D8C111E0011F813 /* GPUImageKuwaharaRadius3Filter.m in Sources */,
 				B56B3ED01D8C111E0011F813 /* GPUImageSaturationBlendFilter.m in Sources */,
+				78200AB81D8FD814009CA1B3 /* pathutils.cc in Sources */,
 				B56B3C1B1D8C047C0011F813 /* common_types.cc in Sources */,
 				B56B3E831D8C111E0011F813 /* GPUImageFourInputFilter.m in Sources */,
 				B56B3EF41D8C111E0011F813 /* GPUImageVibranceFilter.m in Sources */,
+				78200AD31D8FDBFD009CA1B3 /* systeminfo.cc in Sources */,
 				B56B3E951D8C111E0011F813 /* GPUImageHistogramGenerator.m in Sources */,
 				B56B3B9A1D8C047C0011F813 /* sharedexclusivelock.cc in Sources */,
 				B56B37D11D8BFB380011F813 /* anyrtmpstreamer.cc in Sources */,
@@ -2113,9 +2246,11 @@
 				B56B3E6D1D8C111E0011F813 /* GPUImageColourFASTSamplingOperation.m in Sources */,
 				B56B3C6E1D8C047C0011F813 /* audio_device_ios.mm in Sources */,
 				B56B3E991D8C111E0011F813 /* GPUImageHueFilter.m in Sources */,
+				78200ABD1D8FD842009CA1B3 /* unixfilesystem.cc in Sources */,
 				B56B3E9E1D8C111E0011F813 /* GPUImageLanczosResamplingFilter.m in Sources */,
 				B56B3CC71D8C047C0011F813 /* rw_lock.cc in Sources */,
 				B56B37D81D8BFB380011F813 /* RtmpHosterImpl.cc in Sources */,
+				78200AD71D8FDC71009CA1B3 /* urlencode.cc in Sources */,
 				B56B3E791D8C111E0011F813 /* GPUImageDivideBlendFilter.m in Sources */,
 				B56B40E51D8C32520011F813 /* downsample_fast.c in Sources */,
 				B56B3B471D8C047C0011F813 /* asyncresolverinterface.cc in Sources */,
@@ -2135,6 +2270,7 @@
 				B56B3B521D8C047C0011F813 /* buffer.cc in Sources */,
 				B56B3C721D8C047C0011F813 /* RTCAudioSession.mm in Sources */,
 				B56B3EB71D8C111E0011F813 /* GPUImageNonMaximumSuppressionFilter.m in Sources */,
+				78200AD11D8FDBC9009CA1B3 /* iosfilesystem.mm in Sources */,
 				B56B37CF1D8BFB380011F813 /* anyrtmpcore.cc in Sources */,
 				B56B3EA61D8C111E0011F813 /* GPUImageLowPassFilter.m in Sources */,
 				B56B3B611D8C047C0011F813 /* event.cc in Sources */,
@@ -2162,6 +2298,7 @@
 				B56B3E7C1D8C111E0011F813 /* GPUImageExclusionBlendFilter.m in Sources */,
 				B56B3CC21D8C047C0011F813 /* file_impl.cc in Sources */,
 				B56B3B4A1D8C047C0011F813 /* asyncudpsocket.cc in Sources */,
+				78200AD51D8FDC3D009CA1B3 /* resample_fractional.c in Sources */,
 				B56B3EBD1D8C111E0011F813 /* GPUImageParallelCoordinateLineTransformFilter.m in Sources */,
 				B56B37D31D8BFB380011F813 /* anyrtmpush.cc in Sources */,
 				B56B3B781D8C047C0011F813 /* location.cc in Sources */,
@@ -2188,6 +2325,7 @@
 				B56B405A1D8C237A0011F813 /* VideoCapture.mm in Sources */,
 				B56B3E8B1D8C111E0011F813 /* GPUImageGrayscaleFilter.m in Sources */,
 				B56B3EDB1D8C111E0011F813 /* GPUImageSoftEleganceFilter.m in Sources */,
+				78200ACB1D8FDB2C009CA1B3 /* resample_48khz.c in Sources */,
 				B56B3E901D8C111E0011F813 /* GPUImageHighlightShadowFilter.m in Sources */,
 				B56B3CB51D8C047C0011F813 /* cpu_features.cc in Sources */,
 				B56B3B981D8C047C0011F813 /* scoped_autorelease_pool.mm in Sources */,
@@ -2336,6 +2474,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3YB54BC6QT;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					WEBRTC_POSIX,
@@ -2374,6 +2513,8 @@
 				LIBRARY_SEARCH_PATHS = ../webrtc/modules/video_coding/codecs/h264/lib_ios;
 				PRODUCT_BUNDLE_IDENTIFIER = org.anyrtc.anyrtmp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "d9371124-ec23-4acb-92e6-e23872280f69";
+				PROVISIONING_PROFILE_SPECIFIER = ZJQ_DEV;
 			};
 			name = Debug;
 		};
@@ -2381,6 +2522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					WEBRTC_POSIX,
