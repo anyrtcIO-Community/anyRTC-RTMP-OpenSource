@@ -506,7 +506,9 @@ void AnyRtmpPush::DoSendData()
 		}
 		else if(dataPtr->_type == META_DATA){
             int ret = srs_rtmp_write_packet(rtmp_, SRS_RTMP_TYPE_SCRIPT, dataPtr->_dts, (char*)dataPtr->_data, dataPtr->_dataLen);
-		    srs_human_trace("send metadata failed. ret=%d", ret);
+			if (ret != 0) {
+				srs_human_trace("send metadata failed. ret=%d", ret);
+			}
 		    return;
 		}
 
