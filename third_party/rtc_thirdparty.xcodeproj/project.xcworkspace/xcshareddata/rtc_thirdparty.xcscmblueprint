@@ -1,0 +1,25 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "eb38b23d-98ff-e749-9fdb-e1c7d2003631++6016",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+    "eb38b23d-98ff-e749-9fdb-e1c7d2003631++6016" : {
+
+    }
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "eb38b23d-98ff-e749-9fdb-e1c7d2003631++6016" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "873999C5-F64E-43FF-B881-97E9D685B306",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "eb38b23d-98ff-e749-9fdb-e1c7d2003631++6016" : "RTMPCEngine\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "rtc_thirdparty",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "third_party\/rtc_thirdparty\/rtc_thirdparty.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/192.168.7.202\/svn\/dync",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Subversion",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "eb38b23d-98ff-e749-9fdb-e1c7d2003631++6016"
+    }
+  ]
+}

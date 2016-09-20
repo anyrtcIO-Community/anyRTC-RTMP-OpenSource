@@ -22,7 +22,6 @@
 #include "RTMPGuester.h"
 #include "webrtc/base/thread.h"
 #import "WebRTC/RTCEAGLVideoView.h"
-#import "AudioManager.h"
 #pragma mark - RTMPGuestIOS C++
 class RTMPGuestIOS : public RTMPGuesterEvent
 {
@@ -77,9 +76,8 @@ private:
 };
 
 #pragma mark - RTMPGuestKit
-@interface RTMPGuestKit()<RTCEAGLVideoViewDelegate> {
+@interface RTMPGuestKit() {
     RTMPGuestIOS* rtmpc_guest_;
-    AudioManager   *audioManager;
 }
 @property (nonatomic,weak) UIView *parView;
 @property (nonatomic, strong)  RTCEAGLVideoView *videoShowView;
@@ -95,7 +93,6 @@ private:
         rtc::ThreadManager::Instance()->WrapCurrentThread();
         rtmpc_guest_ = new RTMPGuestIOS(delegate);
         _videoContentMode = VideoShowModeScaleAspectFill;
-        audioManager = [[AudioManager alloc] init];
     }
     return self;
 }
@@ -109,7 +106,6 @@ private:
 }
 - (void)dealloc
 {
-    audioManager = nil;
     delete rtmpc_guest_;
 }
 
@@ -118,8 +114,7 @@ private:
 {
     if (strUrl && render) {
         [UIApplication sharedApplication].idleTimerDisabled = YES;
-        self.videoShowView = [[RTCEAGLVideoView alloc] initWithFrame:CGRectZero];
-        self.videoShowView.delegate = self;
+        self.videoShowView = [[RTCEAGLVideoView alloc] initWithFrame:render.frame];
         [render addSubview:self.videoShowView];
         self.parView = render;
         self.parView.backgroundColor = [UIColor blackColor];
@@ -127,7 +122,6 @@ private:
         return YES;
     }
     return NO;
-    
 }
 - (void)StopRtmpPlay
 {
@@ -135,5 +129,4 @@ private:
     
     rtmpc_guest_->Guest().StopRtmpPlay();
 }
-
 @end
