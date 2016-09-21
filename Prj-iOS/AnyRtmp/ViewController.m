@@ -97,7 +97,7 @@
 - (UILabel*)powerLabel {
     if (!_powerLabel) {
         _powerLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, CGRectGetHeight(self.view.frame)- 40, CGRectGetWidth(self.view.frame), 35)];
-        _powerLabel.text = @"Powered by Shanghai Boyuan(DYNC) Electronic Technology CO...LTD";
+        _powerLabel.text = @"Powered by Shanghai Boyuan(DYNC) Information Technology CO...LTD";
         _powerLabel.numberOfLines = 0;
         _powerLabel.textAlignment = NSTextAlignmentCenter;
         _powerLabel.font = [UIFont systemFontOfSize:12];
