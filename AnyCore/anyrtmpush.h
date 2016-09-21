@@ -22,11 +22,11 @@
 
 enum RTMP_STATUS
 {
-	RS_Init,
-	RS_Handshaked,
-	RS_Connected,
-	RS_Published,
-	RS_Closed
+	RS_STM_Init,
+	RS_STM_Handshaked,
+	RS_STM_Connected,
+	RS_STM_Published,
+	RS_STM_Closed
 };
 
 enum ENC_DATA_TYPE{
