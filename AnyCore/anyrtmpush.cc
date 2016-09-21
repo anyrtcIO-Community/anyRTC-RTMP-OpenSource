@@ -33,7 +33,7 @@ AnyRtmpPush::AnyRtmpPush(AnyRtmpushCallback&callback, const std::string&url)
 , sound_rate_(3)	// 3 = 44 kHz
 , sound_size_(1)	// 1 = 16-bit samples
 , sound_type_(1)	// 0 = Mono sound; 1 = Stereo sound
-, rtmp_status_(RS_Init)
+, rtmp_status_(RS_STM_Init)
 , rtmp_(NULL)
 {
 	str_url_ = url;
@@ -46,7 +46,7 @@ AnyRtmpPush::AnyRtmpPush(AnyRtmpushCallback&callback, const std::string&url)
 AnyRtmpPush::~AnyRtmpPush(void)
 {
 	running_ = false;
-	rtmp_status_ = RS_Closed;
+	rtmp_status_ = RS_STM_Closed;
 	rtc::Thread::SleepMs(100);
 	{
 		rtc::CritScope l(&cs_rtmp_);
@@ -368,33 +368,33 @@ void AnyRtmpPush::Run()
 		if(rtmp_ != NULL)
 		{
 			switch (rtmp_status_) {
-			case RS_Init:
+			case RS_STM_Init:
 			{
 				if (srs_rtmp_handshake(rtmp_) == 0) {
 					srs_human_trace("SRS: simple handshake ok.");
-					rtmp_status_ = RS_Handshaked;
+					rtmp_status_ = RS_STM_Handshaked;
 				}
 				else {
 					CallDisconnect();
 				}
 			}
 				break;
-			case RS_Handshaked:
+			case RS_STM_Handshaked:
 			{
 				if (srs_rtmp_connect_app(rtmp_) == 0) {
 					srs_human_trace("SRS: connect vhost/app ok.");
-					rtmp_status_ = RS_Connected;
+					rtmp_status_ = RS_STM_Connected;
 				}
 				else {
 					CallDisconnect();
 				}
 			}
 				break;
-			case RS_Connected:
+			case RS_STM_Connected:
 			{
 				if (srs_rtmp_publish_stream(rtmp_) == 0) {
 					srs_human_trace("SRS: publish stream ok.");
-					rtmp_status_ = RS_Published;
+					rtmp_status_ = RS_STM_Published;
 					CallConnect();
 				}
 				else {
@@ -402,7 +402,7 @@ void AnyRtmpPush::Run()
 				}
 			}
 				break;
-			case RS_Published:
+			case RS_STM_Published:
 			{
 				DoSendData();
 			}
@@ -439,8 +439,8 @@ void AnyRtmpPush::CallDisconnect()
             srs_rtmp_destroy(rtmp_);
             rtmp_ = NULL;
         }
-        if(rtmp_status_ != RS_Closed) {
-            rtmp_status_ = RS_Init;
+        if(rtmp_status_ != RS_STM_Closed) {
+            rtmp_status_ = RS_STM_Init;
             retrys_ ++;
             if(retrys_ <= MAX_RETRY_TIME)
             {
