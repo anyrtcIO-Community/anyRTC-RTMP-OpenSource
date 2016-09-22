@@ -2,6 +2,8 @@ package org.anyrtc.anyrtmp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.text.SpannableString;
+import android.view.View;
 import android.widget.TextView;
 
 import org.anyrtc.core.AnyRTMP;
@@ -44,10 +46,30 @@ public class HosterActivity extends Activity implements RTMPHosterHelper {
     protected void onDestroy() {
         super.onDestroy();
 
-        if(mHoster != null) {
+        if (mHoster != null) {
             mHoster.StopRtmpStream();
             mHoster.Clear();
             mHoster = null;
+        }
+    }
+
+    /**
+     * the button click event listener
+     *
+     * @param btn
+     */
+    public void OnBtnClicked(View btn) {
+        if (btn.getId() == R.id.btn_close) {
+            if (mHoster != null) {
+                mHoster.StopRtmpStream();
+                mHoster.Clear();
+                mHoster = null;
+            }
+            finish();
+        } else if (btn.getId() == R.id.btn_switch_camera) {
+            if (null != mHoster) {
+                mHoster.SwitchCamera();
+            }
         }
     }
 
@@ -60,7 +82,7 @@ public class HosterActivity extends Activity implements RTMPHosterHelper {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTxtStatus.setText("RTMP Connect OK!");
+                mTxtStatus.setText(R.string.str_rtmp_success);
             }
         });
     }
@@ -70,7 +92,7 @@ public class HosterActivity extends Activity implements RTMPHosterHelper {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTxtStatus.setText(String.format("RTMP Reconnecting(%s)...", times));
+                mTxtStatus.setText(String.format(getString(R.string.str_rtmp_reconnecting), times));
             }
         });
     }
@@ -80,7 +102,7 @@ public class HosterActivity extends Activity implements RTMPHosterHelper {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTxtStatus.setText(String.format("RTMP Delay(%d) network(%d)", delayMs, netBand));
+                mTxtStatus.setText(String.format(getString(R.string.str_rtmp_status), delayMs, netBand));
             }
         });
     }
@@ -90,7 +112,7 @@ public class HosterActivity extends Activity implements RTMPHosterHelper {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTxtStatus.setText("RTMP Connect Failed!");
+                mTxtStatus.setText(R.string.str_rtmp_failed);
             }
         });
     }
@@ -100,7 +122,7 @@ public class HosterActivity extends Activity implements RTMPHosterHelper {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTxtStatus.setText("RTMP");
+                mTxtStatus.setText(R.string.str_rtmp);
             }
         });
     }

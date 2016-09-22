@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void OnBtnClicked(View view) {
         String rtmpUrl = mEditRtmpUrl.getEditableText().toString();
-        if(rtmpUrl.length() == 0) {
+        if (rtmpUrl.length() == 0) {
             return;
         }
         if (view.getId() == R.id.btn_start_live) {
