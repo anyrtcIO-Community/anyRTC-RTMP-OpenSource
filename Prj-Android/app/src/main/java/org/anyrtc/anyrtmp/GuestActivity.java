@@ -2,6 +2,7 @@ package org.anyrtc.anyrtmp;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import org.anyrtc.core.AnyRTMP;
@@ -19,6 +20,7 @@ public class GuestActivity extends Activity implements RTMPGuestHelper {
     private TextView mTxtStatus = null;
     private SurfaceViewRenderer mSurfaceView = null;
     private VideoRenderer mRenderer = null;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,13 +44,28 @@ public class GuestActivity extends Activity implements RTMPGuestHelper {
     protected void onDestroy() {
         super.onDestroy();
 
-        if(mGuest != null) {
+        if (mGuest != null) {
             mGuest.StopRtmpPlay();
             mGuest.Clear();
             mGuest = null;
         }
     }
 
+    /**
+     * the button click event listener
+     *
+     * @param btn
+     */
+    public void OnBtnClicked(View btn) {
+        if (btn.getId() == R.id.btn_close) {
+            if (mGuest != null) {
+                mGuest.StopRtmpPlay();
+                mGuest.Clear();
+                mGuest = null;
+            }
+            finish();
+        }
+    }
 
     /**
      * Implements for RTMPGuestHelper
@@ -58,7 +75,7 @@ public class GuestActivity extends Activity implements RTMPGuestHelper {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTxtStatus.setText("RTMP play OK!");
+                mTxtStatus.setText(R.string.str_rtmp_play_success);
             }
         });
     }
@@ -68,7 +85,7 @@ public class GuestActivity extends Activity implements RTMPGuestHelper {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTxtStatus.setText(String.format("RTMP Cache(%d) network(%d)", cacheTime, curBitrate));
+                mTxtStatus.setText(String.format(getString(R.string.str_rtmp_pull_status), cacheTime, curBitrate));
             }
         });
     }
@@ -87,7 +104,7 @@ public class GuestActivity extends Activity implements RTMPGuestHelper {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mTxtStatus.setText("RTMP");
+                mTxtStatus.setText(R.string.str_rtmp);
             }
         });
     }
