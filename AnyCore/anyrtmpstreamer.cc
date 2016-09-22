@@ -83,6 +83,13 @@ void AnyRtmpStreamerImpl::SetAudioEnable(bool enabled)
 	}
 }
 
+void AnyRtmpStreamerImpl::SetVideoEnable(bool enabled)
+{
+	if (!enabled && av_rtmp_) {
+		av_rtmp_->EnableOnlyAudioMode();
+	}
+}
+
 void AnyRtmpStreamerImpl::SetAutoAdjustBit(bool enabled)
 {
     auto_adjust_bit_ = enabled;

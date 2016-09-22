@@ -66,6 +66,7 @@ public:
 
 	void Close();
 
+	void EnableOnlyAudioMode();
 	void SetAudioParameter(int samplerate/*44100*/, int pcmbitsize/*16*/, int channel/*1*/);
 	void SetVideoParameter(int width, int height, int videodatarate, int framerate);
 
@@ -88,6 +89,7 @@ private:
 	AnyRtmpushCallback&	callback_;
 	bool				running_;
 	bool				need_keyframe_;
+	bool				only_audio_mode_;
 	int					retrys_;
 	std::string			str_url_;
 	uint32_t			stat_time_;
