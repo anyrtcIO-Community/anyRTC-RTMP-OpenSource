@@ -12,6 +12,7 @@ public:
 	static AnyRtmpstreamer* Create(AnyRtmpstreamerEvent&callback);
 
 	virtual void SetAudioEnable(bool enabled) = 0;
+	virtual void SetVideoEnable(bool enabled) = 0;
     virtual void SetAutoAdjustBit(bool enabled) = 0;
 	virtual void SetVideoParameter(int w, int h, int bitrate) = 0;
 	virtual void SetBitrate(int bitrate) = 0;

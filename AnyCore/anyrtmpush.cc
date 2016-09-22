@@ -26,6 +26,7 @@ AnyRtmpPush::AnyRtmpPush(AnyRtmpushCallback&callback, const std::string&url)
 : callback_(callback)
 , running_(false)
 , need_keyframe_(true)
+, only_audio_mode_(false)
 , retrys_(0)
 , stat_time_(0)
 , net_band_(0)
@@ -67,6 +68,11 @@ AnyRtmpPush::~AnyRtmpPush(void)
 		delete[] ptr->_data;
 		delete ptr;
 	}
+}
+
+void AnyRtmpPush::EnableOnlyAudioMode()
+{
+	only_audio_mode_ = true;
 }
 
 void AnyRtmpPush::SetVideoParameter(int width, int height, int videodatarate, int framerate){
@@ -191,7 +197,7 @@ void AnyRtmpPush::SetH264Data(uint8_t* pData, int len, uint32_t ts)
 
 void AnyRtmpPush::SetAacData(uint8_t* pData, int nLen, uint32_t ts)
 {
-	if(need_keyframe_)
+	if(need_keyframe_ && !only_audio_mode_)
 		return;
 	EncData* pdata = new EncData();
 	pdata->_data = new uint8_t[nLen];

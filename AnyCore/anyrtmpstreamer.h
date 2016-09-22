@@ -40,6 +40,7 @@ public:
 	webrtc::AudioSinkInterface* GetAudioSink(){ return a_aac_encoder_; };
 	rtc::VideoSinkInterface<cricket::VideoFrame>* GetVideoSink() {return v_h264_encoder_;};
 	virtual void SetAudioEnable(bool enabled);
+	virtual void SetVideoEnable(bool enabled);
     virtual void SetAutoAdjustBit(bool enabled);
 	virtual void SetVideoParameter(int w, int h, int bitrate);
 	virtual void SetBitrate(int bitrate);

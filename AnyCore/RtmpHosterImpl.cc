@@ -300,6 +300,9 @@ void RtmpHosterImpl::OnMessage(rtc::Message* msg)
 {
 	if (msg->message_id == MSG_START_RTMP) {
 		av_rtmp_streamer_->StartStream(rtmp_url_);
+		if (video_capturer_.get() == NULL) {
+			av_rtmp_streamer_->SetVideoEnable(false);
+		}
 	}
 	else if (msg->message_id == MSG_STOP_RTMP) {
 		av_rtmp_streamer_->StopStream();
