@@ -22,6 +22,7 @@
 #define PLY_MIN_TIME	500		// 0.5s
 #define PLY_MAX_TIME	600000	// 10minute
 #define PLY_RED_TIME	250		// redundancy time
+#define PLY_MAX_DELAY	1000	// 1 second
 #define PLY_MAX_CACHE   16      // 16s
 
 #define PB_TICK	1011
@@ -75,7 +76,6 @@ int PlyBuffer::GetPlayAudio(void* audioSamples)
 		PlyPacket* pkt_front = lst_audio_buffer_.front();
 		ret = pkt_front->_data_len;
 		play_cur_time_ = pkt_front->_dts;
-		//LOG(LS_ERROR) << "Audio ply time: " << play_cur_time_;
 		memcpy(audioSamples, pkt_front->_data, pkt_front->_data_len);
 		lst_audio_buffer_.pop_front();
 		delete pkt_front;
@@ -103,6 +103,14 @@ void PlyBuffer::CachePcmData(const uint8_t*pdata, int len, uint32_t ts)
 	rtc::CritScope cs(&cs_list_audio_);
 	got_audio_ = true;
 	lst_audio_buffer_.push_back(pkt);
+	if (sys_fast_video_time_ == 0) {
+		PlyPacket* pkt_front = lst_audio_buffer_.front();
+		PlyPacket* pkt_back = lst_audio_buffer_.back();
+		if ((pkt_back->_dts - pkt_front->_dts) >= PLY_MAX_DELAY) {
+			sys_fast_video_time_ = rtc::Time();
+			rtmp_fast_video_time_ = ts;
+		}
+	}
 }
 
 void PlyBuffer::OnMessage(rtc::Message* msg)
@@ -120,9 +128,6 @@ int	PlyBuffer::GetCacheTime()
 
 void PlyBuffer::DoDecode()
 {
-	//* 拉流思路
-	//* 1, Init status: 先解码视频帧(秒开), 音频先缓冲(规定时间)后再播放
-	//* 2, Play status: 遇到下一个视频帧，清空所有未播放的视频帧，正常播放，时间轴按照音频的走
 	uint32_t curTime = rtc::Time();
 	if (sys_fast_video_time_ == 0)
 		return;
@@ -130,47 +135,6 @@ void PlyBuffer::DoDecode()
 		PlyPacket* pkt = NULL;
 		uint32_t videoSysGap = curTime - sys_fast_video_time_;
 		uint32_t videoPlyTime = rtmp_fast_video_time_ + videoSysGap;
-#if 0 
-		{//* Get video 
-			rtc::CritScope cs(&cs_list_video_);
-			if (lst_video_buffer_.size() > 0) {
-				pkt = lst_video_buffer_.front();
-				if (pkt->_dts <= videoPlyTime) {
-					lst_video_buffer_.pop_front();
-				}
-				else {
-					pkt = NULL;
-				}
-			}
-		}
-		if (pkt != NULL) {
-			if (!callback_.OnNeedDecodeData(pkt)) {
-				delete pkt;
-			}
-		}
-
-		if (videoSysGap >= PLY_RED_TIME) {
-			//* Start play audio
-			rtc::CritScope cs(&cs_list_audio_);
-			if (lst_audio_buffer_.size() > 0) {
-				PlyPacket* pkt_front = lst_audio_buffer_.front();
-				PlyPacket* pkt_back = lst_audio_buffer_.back();
-				while (lst_audio_buffer_.size() > 0) {
-					if ((pkt_back->_dts - pkt_front->_dts) > PLY_RED_TIME) {
-						lst_audio_buffer_.pop_front();
-						delete pkt_front;
-						pkt_front = lst_audio_buffer_.front();
-					}
-					else {
-						ply_status_ = PS_Normal;
-						play_cur_time_ = pkt_front->_dts;
-						callback_.OnPlay();
-						break;
-					}
-				}
-			}
-		}
-#else
 		if (videoSysGap >= PLY_RED_TIME) {
 			//* Start play a/v
 			rtc::CritScope cs(&cs_list_audio_);
@@ -184,7 +148,7 @@ void PlyBuffer::DoDecode()
 				}
 			}
 			else {
-				if (videoSysGap >= PLY_RED_TIME*4)
+				if (videoSysGap >= PLY_RED_TIME * 4)
 				{
 					rtc::CritScope cs(&cs_list_video_);
 					if (lst_video_buffer_.size() > 0) {
@@ -196,7 +160,6 @@ void PlyBuffer::DoDecode()
 				}
 			}
 		}
-#endif
 	}
 	else if (ply_status_ == PS_Normal) {
 		PlyPacket* pkt_video = NULL;
@@ -246,9 +209,6 @@ void PlyBuffer::DoDecode()
 			rtmp_cache_time_ = rtc::Time() + cache_time_;
 		}
         buf_cache_time_ = media_buf_time;
-//		char buff[256];
-//		sprintf(buff, "Audio buf time:%lu \r\n", media_buf_time);
-//		LOG(LS_ERROR) << buff;
 	}
 	else if (ply_status_ == PS_Cache) {
 		if (rtmp_cache_time_ <= rtc::Time()) {
