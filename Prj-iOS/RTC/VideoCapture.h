@@ -47,8 +47,6 @@ namespace webrtc {
 @property (nullable,nonatomic, weak) id<VideoCaptureDelegate> delegate;
 
 /** The running control start capture or stop capture*/
-//@property (nonatomic, assign) BOOL running;
-
 @property(nonatomic, readonly) BOOL isRunning;
 
 /** The preView will show OpenGL ES view*/

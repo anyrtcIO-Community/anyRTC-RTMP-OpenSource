@@ -118,19 +118,6 @@
 }
 
 #pragma mark -- Setter Getter
-//- (void)setRunning:(BOOL)running{
-//    if(_running == running) return;
-//    _running = running;
-//    
-//    if(!_running){
-//        [UIApplication sharedApplication].idleTimerDisabled = NO;
-//        [_videoCamera stopCameraCapture];
-//    }else{
-//        [UIApplication sharedApplication].idleTimerDisabled = YES;
-//        [_videoCamera startCameraCapture];
-//    }
-//}
-
 - (void)setPreView:(UIView *)preView{
      if(_gpuImageView.superview)
         [_gpuImageView removeFromSuperview];
@@ -210,12 +197,7 @@
     __weak typeof(self) _self = self;
     @autoreleasepool {
         GPUImageFramebuffer *imageFramebuffer = output.framebufferForOutput;
-        
-#if 0
-        if(_capturer != nil) {
-            _capturer->CapturePIXData(imageFramebuffer.pixelBuffer);
-        }
-#else
+		
         size_t width = imageFramebuffer.size.width;
         size_t height = imageFramebuffer.size.height;
         uint32_t size = width * height * 3 / 2;
@@ -232,18 +214,6 @@
         {
             _dst = new uint8_t[size];
         }
-        /*
-        ///< 这里可能会影响性能，以后要尝试修改GPUImage源码 直接获取CVPixelBufferRef 目前是获取的bytes 其实更麻烦了
-        if(imageFramebuffer.size.width == 360){
-            width = 368;///< 必须被16整除
-        }
-        CVPixelBufferRef pixelBuffer = NULL;
-        CVPixelBufferCreateWithBytes(kCFAllocatorDefault, width, height, kCVPixelFormatType_32BGRA, [imageFramebuffer byteBuffer], width * 4, nil, NULL, NULL, &pixelBuffer);
-        if(pixelBuffer && _self.delegate && [_self.delegate respondsToSelector:@selector(captureOutput:pixelBuffer:)]){
-            [_self.delegate captureOutput:_self pixelBuffer:pixelBuffer];
-        }
-        */
-        //NSLog(@"-----processVideo------");
         uint8_t* y_pointer = (uint8_t*)_dst;
         uint8_t* u_pointer = (uint8_t*)y_pointer + width*height;
         uint8_t* v_pointer = (uint8_t*)u_pointer + width*height/4;
@@ -257,7 +227,6 @@
         
         if(_capturer != nil)
             _capturer->CaptureYUVData(_dst, width, height, size);
-#endif
     }
 }
 
