@@ -142,17 +142,6 @@ namespace webrtc {
            [_capturer setVideoEnable:enabled];
     }
     
-    void GPUImageVideoCapturer::CapturePIXData(CVPixelBufferRef pix)
-    {
-        CVBufferRetain(pix);
-        if (_startThread->IsCurrent()) {
-            OnFrameMessage(pix, rtc::TimeNanos());
-        } else {
-            _startThread->Invoke<void>(RTC_FROM_HERE,
-                                       rtc::Bind(&GPUImageVideoCapturer::OnFrameMessage,
-                                                 this, pix, rtc::TimeNanos()));
-        }
-    }
     void GPUImageVideoCapturer::CaptureYUVData(uint8_t *pData, int32_t yPlaneWidth, int32_t yPlaneHeight, int32_t frameSize)
     {
         int64_t currentTime = rtc::TimeNanos();

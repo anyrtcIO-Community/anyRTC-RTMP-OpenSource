@@ -58,9 +58,6 @@ namespace webrtc {
         
         void SetVideoEnable(bool enabled);
         
-        
-        void CapturePIXData(CVPixelBufferRef pix);
-        
         /**
          * Converts the sample buffer into a cricket::CapturedFrame and signals the
          * frame for capture.
