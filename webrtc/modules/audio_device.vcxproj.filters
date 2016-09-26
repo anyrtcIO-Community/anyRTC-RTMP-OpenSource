@@ -1,0 +1,182 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\dummy">
+      <UniqueIdentifier>{EDAC0263-35FB-65E4-11D2-5AD413ACA64A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\dummy">
+      <UniqueIdentifier>{EDAC0263-35FB-65E4-11D2-5AD413ACA64A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\dummy">
+      <UniqueIdentifier>{EDAC0263-35FB-65E4-11D2-5AD413ACA64A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\dummy">
+      <UniqueIdentifier>{EDAC0263-35FB-65E4-11D2-5AD413ACA64A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\dummy">
+      <UniqueIdentifier>{EDAC0263-35FB-65E4-11D2-5AD413ACA64A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\dummy">
+      <UniqueIdentifier>{EDAC0263-35FB-65E4-11D2-5AD413ACA64A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\win">
+      <UniqueIdentifier>{47FC5EC4-15EB-E92F-89D7-AFE51CF838A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\win">
+      <UniqueIdentifier>{47FC5EC4-15EB-E92F-89D7-AFE51CF838A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\win">
+      <UniqueIdentifier>{47FC5EC4-15EB-E92F-89D7-AFE51CF838A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\win">
+      <UniqueIdentifier>{47FC5EC4-15EB-E92F-89D7-AFE51CF838A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\win">
+      <UniqueIdentifier>{47FC5EC4-15EB-E92F-89D7-AFE51CF838A9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device">
+      <UniqueIdentifier>{AE092FA9-C6A1-FB10-E177-2DF0051DD5A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_device\win">
+      <UniqueIdentifier>{47FC5EC4-15EB-E92F-89D7-AFE51CF838A9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="audio_device\include\audio_device.h">
+      <Filter>audio_device\include</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_device\include\audio_device_defines.h">
+      <Filter>audio_device\include</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_device\audio_device_buffer.cc">
+      <Filter>audio_device</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_device\audio_device_buffer.h">
+      <Filter>audio_device</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_device\audio_device_generic.cc">
+      <Filter>audio_device</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_device\audio_device_generic.h">
+      <Filter>audio_device</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_device\audio_device_config.h">
+      <Filter>audio_device</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_device\dummy\audio_device_dummy.cc">
+      <Filter>audio_device\dummy</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_device\dummy\audio_device_dummy.h">
+      <Filter>audio_device\dummy</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_device\dummy\file_audio_device.h">
+      <Filter>audio_device\dummy</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_device\fine_audio_buffer.cc">
+      <Filter>audio_device</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_device\fine_audio_buffer.h">
+      <Filter>audio_device</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_device\dummy\file_audio_device_factory.h">
+      <Filter>audio_device\dummy</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_device\audio_device_impl.cc">
+      <Filter>audio_device</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_device\audio_device_impl.h">
+      <Filter>audio_device</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_device\win\audio_device_core_win.cc">
+      <Filter>audio_device\win</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_device\win\audio_device_core_win.h">
+      <Filter>audio_device\win</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_device\win\audio_device_wave_win.cc">
+      <Filter>audio_device\win</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_device\win\audio_device_wave_win.h">
+      <Filter>audio_device\win</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_device\win\audio_mixer_manager_win.cc">
+      <Filter>audio_device\win</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_device\win\audio_mixer_manager_win.h">
+      <Filter>audio_device\win</Filter>
+    </ClInclude>
+    <None Include="modules.gyp" />
+  </ItemGroup>
+</Project>

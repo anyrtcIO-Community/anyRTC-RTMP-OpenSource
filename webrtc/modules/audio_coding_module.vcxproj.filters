@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\acm2">
+      <UniqueIdentifier>{D0A08EF1-A249-2724-4419-AFAD9A8FE143}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding">
+      <UniqueIdentifier>{4FC456D3-9A0D-A421-757E-1167E51D693D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="audio_coding\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="audio_coding\acm2\acm_common_defs.h">
+      <Filter>audio_coding\acm2</Filter>
+    </ClInclude>
+    <ClCompile Include="audio_coding\acm2\acm_resampler.cc">
+      <Filter>audio_coding\acm2</Filter>
+    </ClCompile>
+    <ClInclude Include="audio_coding\acm2\acm_resampler.h">
+      <Filter>audio_coding\acm2</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_coding\include\audio_coding_module.h">
+      <Filter>audio_coding\include</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_coding\include\audio_coding_module_typedefs.h">
+      <Filter>audio_coding\include</Filter>
+    </ClInclude>
+    <None Include="modules.gyp" />
+  </ItemGroup>
+</Project>

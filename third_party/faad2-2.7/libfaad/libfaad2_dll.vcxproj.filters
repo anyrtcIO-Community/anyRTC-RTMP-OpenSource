@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{b583ff06-ea05-4f89-a8b4-ae52da03aaab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{2b7af929-3f6d-4cd6-a1ad-808595e4a392}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bits.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cfft.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="decoder.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="drc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="drm_dec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="error.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="filtbank.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="hcr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="huffman.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ic_predict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="is.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="lt_predict.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mdct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="mp4.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ms.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="output.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pns.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ps_dec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ps_syntax.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="pulse.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="rvlc.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_dct.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_dec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_e_nf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_fbt.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_hfadj.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_hfgen.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_huff.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_qmf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_syntax.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="sbr_tf_grid.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="specrec.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ssr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ssr_fb.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ssr_ipqf.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="syntax.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="tns.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="analysis.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bits.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cfft.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="common.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="drc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="filtbank.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="codebook\hcb.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="huffman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ic_predict.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="is.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="kbd_win.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="lt_predict.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mdct.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="mp4.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ms.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="output.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pns.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="pulse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="rvlc.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="specrec.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ssr.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="syntax.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tns.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="libfaad2.def" />
+  </ItemGroup>
+</Project>

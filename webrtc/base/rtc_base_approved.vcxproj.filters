@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="_excluded_files">
+      <UniqueIdentifier>{158E591E-B6EA-0C85-8F5A-18EAFA09B4CE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="array_view.h" />
+    <ClInclude Include="atomicops.h" />
+    <ClInclude Include="bind.h" />
+    <ClCompile Include="bitbuffer.cc" />
+    <ClInclude Include="bitbuffer.h" />
+    <ClInclude Include="buffer.h" />
+    <ClCompile Include="bufferqueue.cc" />
+    <ClInclude Include="bufferqueue.h" />
+    <ClCompile Include="bytebuffer.cc" />
+    <ClInclude Include="bytebuffer.h" />
+    <ClInclude Include="byteorder.h" />
+    <ClCompile Include="checks.cc" />
+    <ClInclude Include="checks.h" />
+    <ClInclude Include="constructormagic.h" />
+    <ClCompile Include="copyonwritebuffer.cc" />
+    <ClInclude Include="copyonwritebuffer.h" />
+    <ClCompile Include="criticalsection.cc" />
+    <ClInclude Include="criticalsection.h" />
+    <ClInclude Include="deprecation.h" />
+    <ClCompile Include="event.cc" />
+    <ClInclude Include="event.h" />
+    <ClCompile Include="event_tracer.cc" />
+    <ClInclude Include="event_tracer.h" />
+    <ClCompile Include="exp_filter.cc" />
+    <ClInclude Include="exp_filter.h" />
+    <ClInclude Include="location.h" />
+    <ClCompile Include="location.cc" />
+    <ClCompile Include="md5.cc" />
+    <ClInclude Include="md5.h" />
+    <ClInclude Include="mod_ops.h" />
+    <ClInclude Include="onetimeevent.h" />
+    <ClInclude Include="optional.h" />
+    <ClCompile Include="platform_file.cc" />
+    <ClInclude Include="platform_file.h" />
+    <ClCompile Include="platform_thread.cc" />
+    <ClInclude Include="platform_thread.h" />
+    <ClInclude Include="platform_thread_types.h" />
+    <ClCompile Include="random.cc" />
+    <ClInclude Include="random.h" />
+    <ClCompile Include="rate_statistics.cc" />
+    <ClInclude Include="rate_statistics.h" />
+    <ClCompile Include="ratetracker.cc" />
+    <ClInclude Include="ratetracker.h" />
+    <ClInclude Include="refcount.h" />
+    <ClInclude Include="safe_conversions.h" />
+    <ClInclude Include="safe_conversions_impl.h" />
+    <ClInclude Include="scoped_ref_ptr.h" />
+    <ClCompile Include="stringencode.cc" />
+    <ClInclude Include="stringencode.h" />
+    <ClCompile Include="stringutils.cc" />
+    <ClInclude Include="stringutils.h" />
+    <ClInclude Include="swap_queue.h" />
+    <ClCompile Include="systeminfo.cc" />
+    <ClInclude Include="systeminfo.h" />
+    <ClInclude Include="template_util.h" />
+    <ClInclude Include="thread_annotations.h" />
+    <ClInclude Include="thread_checker.h" />
+    <ClCompile Include="thread_checker_impl.cc" />
+    <ClInclude Include="thread_checker_impl.h" />
+    <ClCompile Include="timestampaligner.cc" />
+    <ClInclude Include="timestampaligner.h" />
+    <ClCompile Include="timeutils.cc" />
+    <ClInclude Include="timeutils.h" />
+    <ClInclude Include="trace_event.h" />
+    <ClCompile Include="logging.cc" />
+    <ClInclude Include="logging.h" />
+    <None Include="base.gyp" />
+    <None Include="logging_mac.mm">
+      <Filter>_excluded_files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

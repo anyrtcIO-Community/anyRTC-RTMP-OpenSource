@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="video_coding\include\video_coding.h">
+      <Filter>video_coding\include</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\include\video_coding_defines.h">
+      <Filter>video_coding\include</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\codec_database.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\codec_timer.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\content_metrics_processing.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\decoding_state.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\encoded_frame.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\fec_tables_xor.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\frame_buffer.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\generic_decoder.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\generic_encoder.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\inter_frame_delay.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\internal_defines.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\jitter_buffer.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\jitter_buffer_common.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\jitter_estimator.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\media_opt_util.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\media_optimization.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\nack_fec_tables.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\packet.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\qm_select_data.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\qm_select.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\receiver.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\rtt_filter.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\session_info.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\timestamp_map.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\timing.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClInclude Include="video_coding\video_coding_impl.h">
+      <Filter>video_coding</Filter>
+    </ClInclude>
+    <ClCompile Include="video_coding\codec_database.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\codec_timer.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\content_metrics_processing.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\decoding_state.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\encoded_frame.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\frame_buffer.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\generic_decoder.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\generic_encoder.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\inter_frame_delay.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\jitter_buffer.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\jitter_estimator.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\media_opt_util.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\media_optimization.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\packet.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\qm_select.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\receiver.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\rtt_filter.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\session_info.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\timestamp_map.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\timing.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\video_coding_impl.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\video_sender.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <ClCompile Include="video_coding\video_receiver.cc">
+      <Filter>video_coding</Filter>
+    </ClCompile>
+    <None Include="modules.gyp"/>
+  </ItemGroup>
+</Project>

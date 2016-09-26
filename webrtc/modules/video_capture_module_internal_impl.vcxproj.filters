@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture">
+      <UniqueIdentifier>{4B7FF314-53CA-0BFA-87CB-AF5356840C7E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_capture\windows">
+      <UniqueIdentifier>{C1450D01-C033-76F3-3763-6DE88AF48A77}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="video_capture\windows\device_info_ds.cc">
+      <Filter>video_capture\windows</Filter>
+    </ClCompile>
+    <ClInclude Include="video_capture\windows\device_info_ds.h">
+      <Filter>video_capture\windows</Filter>
+    </ClInclude>
+    <ClCompile Include="video_capture\windows\device_info_mf.cc">
+      <Filter>video_capture\windows</Filter>
+    </ClCompile>
+    <ClInclude Include="video_capture\windows\device_info_mf.h">
+      <Filter>video_capture\windows</Filter>
+    </ClInclude>
+    <ClCompile Include="video_capture\windows\help_functions_ds.cc">
+      <Filter>video_capture\windows</Filter>
+    </ClCompile>
+    <ClInclude Include="video_capture\windows\help_functions_ds.h">
+      <Filter>video_capture\windows</Filter>
+    </ClInclude>
+    <ClCompile Include="video_capture\windows\sink_filter_ds.cc">
+      <Filter>video_capture\windows</Filter>
+    </ClCompile>
+    <ClInclude Include="video_capture\windows\sink_filter_ds.h">
+      <Filter>video_capture\windows</Filter>
+    </ClInclude>
+    <ClCompile Include="video_capture\windows\video_capture_ds.cc">
+      <Filter>video_capture\windows</Filter>
+    </ClCompile>
+    <ClInclude Include="video_capture\windows\video_capture_ds.h">
+      <Filter>video_capture\windows</Filter>
+    </ClInclude>
+    <ClCompile Include="video_capture\windows\video_capture_factory_windows.cc">
+      <Filter>video_capture\windows</Filter>
+    </ClCompile>
+    <ClCompile Include="video_capture\windows\video_capture_mf.cc">
+      <Filter>video_capture\windows</Filter>
+    </ClCompile>
+    <ClInclude Include="video_capture\windows\video_capture_mf.h">
+      <Filter>video_capture\windows</Filter>
+    </ClInclude>
+    <None Include="modules.gyp"/>
+  </ItemGroup>
+</Project>

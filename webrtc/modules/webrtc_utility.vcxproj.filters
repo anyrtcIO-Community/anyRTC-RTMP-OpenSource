@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include\_excluded_files">
+      <UniqueIdentifier>{158E591E-B6EA-0C85-8F5A-18EAFA09B4CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include\_excluded_files">
+      <UniqueIdentifier>{158E591E-B6EA-0C85-8F5A-18EAFA09B4CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\include\_excluded_files">
+      <UniqueIdentifier>{158E591E-B6EA-0C85-8F5A-18EAFA09B4CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source\_excluded_files">
+      <UniqueIdentifier>{158E591E-B6EA-0C85-8F5A-18EAFA09B4CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source\_excluded_files">
+      <UniqueIdentifier>{158E591E-B6EA-0C85-8F5A-18EAFA09B4CE}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility">
+      <UniqueIdentifier>{46D3A1A1-3410-F9C8-C5F7-6AC884D4AD01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source">
+      <UniqueIdentifier>{8A6F5E6E-316F-22D4-1547-253B04CB32E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="utility\source\_excluded_files">
+      <UniqueIdentifier>{158E591E-B6EA-0C85-8F5A-18EAFA09B4CE}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="utility\include\audio_frame_operations.h">
+      <Filter>utility\include</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\include\file_player.h">
+      <Filter>utility\include</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\include\file_recorder.h">
+      <Filter>utility\include</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\include\process_thread.h">
+      <Filter>utility\include</Filter>
+    </ClInclude>
+    <ClCompile Include="utility\source\audio_frame_operations.cc">
+      <Filter>utility\source</Filter>
+    </ClCompile>
+    <ClCompile Include="utility\source\coder.cc">
+      <Filter>utility\source</Filter>
+    </ClCompile>
+    <ClInclude Include="utility\source\coder.h">
+      <Filter>utility\source</Filter>
+    </ClInclude>
+    <ClCompile Include="utility\source\file_player_impl.cc">
+      <Filter>utility\source</Filter>
+    </ClCompile>
+    <ClInclude Include="utility\source\file_player_impl.h">
+      <Filter>utility\source</Filter>
+    </ClInclude>
+    <ClCompile Include="utility\source\file_recorder_impl.cc">
+      <Filter>utility\source</Filter>
+    </ClCompile>
+    <ClInclude Include="utility\source\file_recorder_impl.h">
+      <Filter>utility\source</Filter>
+    </ClInclude>
+    <ClCompile Include="utility\source\process_thread_impl.cc">
+      <Filter>utility\source</Filter>
+    </ClCompile>
+    <ClInclude Include="utility\source\process_thread_impl.h">
+      <Filter>utility\source</Filter>
+    </ClInclude>
+    <None Include="modules.gyp"/>
+    <ClInclude Include="utility\include\helpers_android.h">
+      <Filter>utility\include\_excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\include\helpers_ios.h">
+      <Filter>utility\include\_excluded_files</Filter>
+    </ClInclude>
+    <ClInclude Include="utility\include\jvm_android.h">
+      <Filter>utility\include\_excluded_files</Filter>
+    </ClInclude>
+    <ClCompile Include="utility\source\helpers_android.cc">
+      <Filter>utility\source\_excluded_files</Filter>
+    </ClCompile>
+    <None Include="utility\source\helpers_ios.mm">
+      <Filter>utility\source\_excluded_files</Filter>
+    </None>
+    <ClCompile Include="utility\source\jvm_android.cc">
+      <Filter>utility\source\_excluded_files</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
