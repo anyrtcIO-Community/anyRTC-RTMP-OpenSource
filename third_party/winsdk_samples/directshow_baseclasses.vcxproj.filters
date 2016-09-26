@@ -1,0 +1,1106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{8CDEE807-BC53-E450-C8B8-4DEBB66742D4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples">
+      <UniqueIdentifier>{C210653A-9BCC-7696-B65C-D6C3E78AD9FB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia">
+      <UniqueIdentifier>{081D38AD-4ECF-1952-890E-B35EFE119AE3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow">
+      <UniqueIdentifier>{D432ABEC-B63D-CD2C-250E-E539BD70E9A0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Samples\multimedia\directshow\baseclasses">
+      <UniqueIdentifier>{87A0277B-AF0A-E4FD-7D88-DA395F34C37E}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\amextra.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\amextra.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\amfilter.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\amfilter.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\amvideo.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\cache.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\combase.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\combase.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\cprop.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\cprop.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\ctlutil.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\ctlutil.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\ddmm.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\ddmm.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\dllentry.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\dllsetup.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\dllsetup.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\fourcc.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\measure.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\msgthrd.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\mtype.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\mtype.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\outputq.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\outputq.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\pstream.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\pstream.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\pullpin.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\pullpin.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\refclock.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\refclock.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\reftime.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\renbase.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\renbase.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\schedule.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\seekpt.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\seekpt.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\source.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\source.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\streams.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\strmctl.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\strmctl.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\sysclock.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\sysclock.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\transfrm.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\transfrm.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\transip.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\transip.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\videoctl.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\videoctl.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\vtrans.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\vtrans.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\winctrl.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\winctrl.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\winutil.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\winutil.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\wxdebug.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\wxdebug.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\wxlist.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\wxlist.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <ClCompile Include="src\Samples\multimedia\directshow\baseclasses\wxutil.cpp">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClCompile>
+    <ClInclude Include="src\Samples\multimedia\directshow\baseclasses\wxutil.h">
+      <Filter>src\Samples\multimedia\directshow\baseclasses</Filter>
+    </ClInclude>
+    <None Include="winsdk_samples.gyp"/>
+  </ItemGroup>
+</Project>
