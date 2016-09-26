@@ -1,0 +1,99 @@
+Windows Software Development Kit Redistributable Code
+=====================================================
+The following list is a list of files available with the Microsoft Windows SDK for Windows 7 and .NET Framework 4 for redistribution under the Windows SDK license.  If the Microsoft software you have licensed is not the Windows SDK, only the files that are installed by the Microsoft software may be redistributed under such license.
+
+
+
+Static LIB files
+================
+Subject to the license terms for the software, the .lib files under the following directories may be distributed unmodified when built as part of your application:
+
+	\Program Files\Microsoft SDKs\Windows\v7.1\lib, 
+	\Program Files\Microsoft SDKs\Windows\v7.1\lib\x64 or 
+	\Program Files\Microsoft SDKs\Windows\v7.1\lib\ia64
+
+
+
+Windows SDK Binaries
+=====================================
+Subject to the license terms for the software, the following files may be distributed 
+unmodified:
+
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\Mage.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\MageUI.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\Resgen.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\IA64\Mage.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\IA64\MageUI.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\x64\Mage.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\x64\MageUI.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\NETFX 4.0 Tools\Mage.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\NETFX 4.0 Tools\MageUI.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\NETFX 4.0 Tools\Resgen.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\NETFX 4.0 Tools\IA64\Mage.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\NETFX 4.0 Tools\IA64\MageUI.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\NETFX 4.0 Tools\X64\Mage.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\bin\NETFX 4.0 Tools\X64\MageUI.exe
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\x86\sas.dll
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\amd64\sas.dll
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\ia64\sas.dll
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Application Verifier\ApplicationVerifier.x86.msi
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Application Verifier\ApplicationVerifier.amd64.msi
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Application Verifier\ApplicationVerifier.ia64.msi
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Debugging Tools for Windows\dbg_x86.msi
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Debugging Tools for Windows\dbg_amd64.msi
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Debugging Tools for Windows\dbg_ia64.msi
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Windows Performance Toolkit\wpt_ia64.msi
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Windows Performance Toolkit\wpt_x64.msi
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\Windows Performance Toolkit\wpt_x86.msi
+
+
+.NET Framework
+=====================================
+
+	.NET Framework 3.5
+	==================
+	Subject to the license terms for the software, the following .EXE files may be redistributed unmodified:
+	dotNetFx35setup.exe
+
+Please note that the file listed above is not included with the software. You can obtain copies of the file from Microsoft Downloads (http://www.microsoft.com/downloads). 
+
+
+	.NET Framework 4
+	==================
+	Subject to the license terms for the software, the following .EXE files may be redistributed unmodified:
+	dotNetFx40_Client_x86_x64.exe
+	dotNetFx40_Full_x86_x64.exe
+	dotNetFx40_Client_x86.exe
+	dotNetFx40_Full_x86.exe
+	dotNetFx40_Full_x86_ia64.exe
+	dotNetFx40_Client_setup.exe
+	dotNetFx40_Full_setup.exe
+
+Please note that the last 7 files listed above are not included with the software. You can obtain copies of those files from http://go.microsoft.com/fwlink/?LinkId=185911.
+
+Please note that the Language Packs listed below are not included with the software. However, you may  redistribute, unmodified, the individual language pack versions of the following files: You may obtain copies of those files from http://go.microsoft.com/fwlink/?LinkId=185911.
+
+	dotNetFx40LP_Full_x86_x64<Culture>.exe
+	dotNetFx40LP_Full_x86_ia64<Culture>.exe
+	dotNetFx40LP_Full_x86<Culture>.exe
+	dotNetFx40LP_Client_x86_x64<Culture>.exe
+	dotNetFx40LP_Client_x86<Culture>.exe
+
+Note: <Culture> represents the specific language identifier.  Language Packs are available for the following (listed here with their associated identifier code):
+
+Arabic (ar), Chinese-Taiwan (zh-cht), Czech (cs), Danish (da), German (de), Greek (el), Finnish (fi), French (fr), Hebrew (he), Hungarian (hu), Italian (it), Japanese (ja), Korean (ko), Dutch-Netherlands (nl), Norwegian (no), Polish (pl), Portuguese-Brazil (pt-BR), Russian (ru), Swedish (sv), Turkish (tr), Chinese (zh-chs), Portuguese-Portugal (pt-PT), Spanish (es)
+
+
+Visual C++ Compiler Redist files
+=====================================
+Subject to the license terms for the software, you may redistribute the files listed below unmodified as a part of your installation package:
+
+	\Program Files\Microsoft SDKs\Windows\v7.1\Redist\VC
+		vcredist_ia64.exe
+		vcredist_x64.exe
+		vcredist_x86.exe
+
+
+
+
+
