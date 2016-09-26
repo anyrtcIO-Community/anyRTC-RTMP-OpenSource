@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libyuv">
+      <UniqueIdentifier>{0E97A143-93C4-73A8-45FF-C908142E1EB9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libyuv\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="libyuv">
+      <UniqueIdentifier>{0E97A143-93C4-73A8-45FF-C908142E1EB9}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="bitrate_adjuster.cc"/>
+    <ClCompile Include="h264\sps_vui_rewriter.cc">
+      <Filter>h264</Filter>
+    </ClCompile>
+    <ClInclude Include="h264\sps_vui_rewriter.h">
+      <Filter>h264</Filter>
+    </ClInclude>
+    <ClCompile Include="h264\h264_common.cc">
+      <Filter>h264</Filter>
+    </ClCompile>
+    <ClInclude Include="h264\h264_common.h">
+      <Filter>h264</Filter>
+    </ClInclude>
+    <ClCompile Include="h264\pps_parser.cc">
+      <Filter>h264</Filter>
+    </ClCompile>
+    <ClInclude Include="h264\pps_parser.h">
+      <Filter>h264</Filter>
+    </ClInclude>
+    <ClCompile Include="h264\sps_parser.cc">
+      <Filter>h264</Filter>
+    </ClCompile>
+    <ClInclude Include="h264\sps_parser.h">
+      <Filter>h264</Filter>
+    </ClInclude>
+    <ClCompile Include="i420_buffer_pool.cc"/>
+    <ClCompile Include="video_frame.cc"/>
+    <ClCompile Include="incoming_video_stream.cc"/>
+    <ClInclude Include="include\bitrate_adjuster.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\frame_callback.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\i420_buffer_pool.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\incoming_video_stream.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\video_frame_buffer.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="libyuv\include\webrtc_libyuv.h">
+      <Filter>libyuv\include</Filter>
+    </ClInclude>
+    <ClCompile Include="libyuv\webrtc_libyuv.cc">
+      <Filter>libyuv</Filter>
+    </ClCompile>
+    <ClCompile Include="video_frame_buffer.cc"/>
+    <ClCompile Include="video_render_frames.cc"/>
+    <ClInclude Include="video_render_frames.h"/>
+    <None Include="common_video.gyp"/>
+  </ItemGroup>
+</Project>

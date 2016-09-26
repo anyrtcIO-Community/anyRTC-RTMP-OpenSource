@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs">
+      <UniqueIdentifier>{DC75C0D7-DB48-A303-557E-D64CDD91FAD5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs\h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs">
+      <UniqueIdentifier>{DC75C0D7-DB48-A303-557E-D64CDD91FAD5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs\h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs\h264\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs">
+      <UniqueIdentifier>{DC75C0D7-DB48-A303-557E-D64CDD91FAD5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs\h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs">
+      <UniqueIdentifier>{DC75C0D7-DB48-A303-557E-D64CDD91FAD5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs\h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs">
+      <UniqueIdentifier>{DC75C0D7-DB48-A303-557E-D64CDD91FAD5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs\h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding">
+      <UniqueIdentifier>{1D88A297-44EE-A521-DC1A-E408035B4BC1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs">
+      <UniqueIdentifier>{DC75C0D7-DB48-A303-557E-D64CDD91FAD5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="video_coding\codecs\h264">
+      <UniqueIdentifier>{89E582A1-FDE1-5746-3BA0-E2ACFA777527}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="video_coding\codecs\h264\h264.cc">
+      <Filter>video_coding\codecs\h264</Filter>
+    </ClCompile>
+    <ClInclude Include="video_coding\codecs\h264\include\h264.h">
+      <Filter>video_coding\codecs\h264\include</Filter>
+    </ClInclude>
+    <ClCompile Include="video_coding\codecs\h264\h264_decoder_impl.cc">
+      <Filter>video_coding\codecs\h264</Filter>
+    </ClCompile>
+    <ClInclude Include="video_coding\codecs\h264\h264_decoder_impl.h">
+      <Filter>video_coding\codecs\h264</Filter>
+    </ClInclude>
+    <ClCompile Include="video_coding\codecs\h264\h264_encoder_impl.cc">
+      <Filter>video_coding\codecs\h264</Filter>
+    </ClCompile>
+    <ClInclude Include="video_coding\codecs\h264\h264_encoder_impl.h">
+      <Filter>video_coding\codecs\h264</Filter>
+    </ClInclude>
+    <None Include="modules.gyp"/>
+  </ItemGroup>
+</Project>

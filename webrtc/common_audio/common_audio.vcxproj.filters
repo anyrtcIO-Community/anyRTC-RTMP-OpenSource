@@ -1,0 +1,380 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler">
+      <UniqueIdentifier>{22710670-3B14-8439-B380-77D8241D5A94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler">
+      <UniqueIdentifier>{22710670-3B14-8439-B380-77D8241D5A94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler">
+      <UniqueIdentifier>{22710670-3B14-8439-B380-77D8241D5A94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler">
+      <UniqueIdentifier>{22710670-3B14-8439-B380-77D8241D5A94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler">
+      <UniqueIdentifier>{22710670-3B14-8439-B380-77D8241D5A94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler">
+      <UniqueIdentifier>{22710670-3B14-8439-B380-77D8241D5A94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler">
+      <UniqueIdentifier>{22710670-3B14-8439-B380-77D8241D5A94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resampler">
+      <UniqueIdentifier>{22710670-3B14-8439-B380-77D8241D5A94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="signal_processing">
+      <UniqueIdentifier>{EA9935C9-9016-26DD-0B04-5EEDE74A3343}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad\include">
+      <UniqueIdentifier>{57CA55B8-BCC5-4000-CE3A-58972F82E9CB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vad">
+      <UniqueIdentifier>{C27688D7-253B-3537-3FAE-7871C2C97330}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="audio_converter.cc" />
+    <ClInclude Include="audio_converter.h" />
+    <ClCompile Include="audio_ring_buffer.cc" />
+    <ClInclude Include="audio_ring_buffer.h" />
+    <ClCompile Include="audio_util.cc" />
+    <ClCompile Include="blocker.cc" />
+    <ClInclude Include="blocker.h" />
+    <ClCompile Include="channel_buffer.cc" />
+    <ClInclude Include="channel_buffer.h" />
+    <ClCompile Include="fft4g.c" />
+    <ClInclude Include="fft4g.h" />
+    <ClCompile Include="fir_filter.cc" />
+    <ClInclude Include="fir_filter.h" />
+    <ClInclude Include="fir_filter_neon.h" />
+    <ClInclude Include="fir_filter_sse.h" />
+    <ClInclude Include="include\audio_util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClCompile Include="lapped_transform.cc" />
+    <ClInclude Include="lapped_transform.h" />
+    <ClInclude Include="resampler\include\push_resampler.h">
+      <Filter>resampler\include</Filter>
+    </ClInclude>
+    <ClInclude Include="resampler\include\resampler.h">
+      <Filter>resampler\include</Filter>
+    </ClInclude>
+    <ClCompile Include="resampler\push_resampler.cc">
+      <Filter>resampler</Filter>
+    </ClCompile>
+    <ClCompile Include="resampler\push_sinc_resampler.cc">
+      <Filter>resampler</Filter>
+    </ClCompile>
+    <ClInclude Include="resampler\push_sinc_resampler.h">
+      <Filter>resampler</Filter>
+    </ClInclude>
+    <ClCompile Include="resampler\resampler.cc">
+      <Filter>resampler</Filter>
+    </ClCompile>
+    <ClCompile Include="resampler\sinc_resampler.cc">
+      <Filter>resampler</Filter>
+    </ClCompile>
+    <ClInclude Include="resampler\sinc_resampler.h">
+      <Filter>resampler</Filter>
+    </ClInclude>
+    <ClCompile Include="ring_buffer.c" />
+    <ClInclude Include="ring_buffer.h" />
+    <ClInclude Include="signal_processing\include\real_fft.h">
+      <Filter>signal_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="signal_processing\include\signal_processing_library.h">
+      <Filter>signal_processing\include</Filter>
+    </ClInclude>
+    <ClInclude Include="signal_processing\include\spl_inl.h">
+      <Filter>signal_processing\include</Filter>
+    </ClInclude>
+    <ClCompile Include="signal_processing\auto_corr_to_refl_coef.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\auto_correlation.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\complex_fft.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClInclude Include="signal_processing\complex_fft_tables.h">
+      <Filter>signal_processing</Filter>
+    </ClInclude>
+    <ClCompile Include="signal_processing\complex_bit_reverse.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\copy_set_operations.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\cross_correlation.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\division_operations.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\dot_product_with_scale.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\downsample_fast.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\energy.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\filter_ar.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\filter_ar_fast_q12.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\filter_ma_fast_q12.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\get_hanning_window.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\get_scaling_square.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\ilbc_specific_functions.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\levinson_durbin.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\lpc_to_refl_coef.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\min_max_operations.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\randomization_functions.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\refl_coef_to_lpc.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\real_fft.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\resample.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\resample_48khz.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\resample_by_2.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\resample_by_2_internal.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClInclude Include="signal_processing\resample_by_2_internal.h">
+      <Filter>signal_processing</Filter>
+    </ClInclude>
+    <ClCompile Include="signal_processing\resample_fractional.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\spl_init.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\spl_inl.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\spl_sqrt.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\spl_sqrt_floor.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\splitting_filter.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\sqrt_of_one_minus_x_squared.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="signal_processing\vector_scaling_operations.c">
+      <Filter>signal_processing</Filter>
+    </ClCompile>
+    <ClCompile Include="sparse_fir_filter.cc" />
+    <ClInclude Include="sparse_fir_filter.h" />
+    <ClCompile Include="wav_header.cc" />
+    <ClInclude Include="wav_header.h" />
+    <ClCompile Include="wav_file.cc" />
+    <ClInclude Include="wav_file.h" />
+    <ClCompile Include="window_generator.cc" />
+    <ClInclude Include="window_generator.h" />
+    <None Include="common_audio.gyp" />
+    <ClCompile Include="real_fourier.cc" />
+    <ClCompile Include="real_fourier_ooura.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="real_fourier.h" />
+    <ClInclude Include="real_fourier_ooura.h" />
+  </ItemGroup>
+</Project>
