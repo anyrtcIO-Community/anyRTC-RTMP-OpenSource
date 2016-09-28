@@ -54,7 +54,7 @@ public:
 
 	//* For AnyRtmpushCallback
 	virtual void OnRtmpConnected();
-	virtual void OnRrmpReconntecting(int times);
+	virtual void OnRtmpReconntecting(int times);
 	virtual void OnRtmpDisconnect();
 	virtual void OnRtmpStatusEvent(int delayMs, int netBand);
 
