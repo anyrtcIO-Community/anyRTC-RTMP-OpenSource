@@ -433,7 +433,6 @@ void AnyRtmpPush::CallConnect()
 		}
 	}
 	callback_.OnRtmpConnected();
-	setMetaData();
 }
 
 void AnyRtmpPush::CallDisconnect()
