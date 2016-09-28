@@ -20799,6 +20799,11 @@ int srs_amf0_read_undefined(SrsStream* stream)
     }
     
     char marker = stream->read_1bytes();
+	//* Add by Eric: for some FMLE Server response RTMP_AMF0_Null
+	if (marker == RTMP_AMF0_Null) {
+		return ret;	
+	}
+	// end add 
     if (marker != RTMP_AMF0_Undefined) {
         ret = ERROR_RTMP_AMF0_DECODE;
         srs_error("amf0 check undefined marker failed. "
