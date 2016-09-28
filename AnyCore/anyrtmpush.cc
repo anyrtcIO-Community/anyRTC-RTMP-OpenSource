@@ -451,7 +451,7 @@ void AnyRtmpPush::CallDisconnect()
             if(retrys_ <= MAX_RETRY_TIME)
             {
                 rtmp_ = srs_rtmp_create(str_url_.c_str());
-                callback_.OnRtmpReconntecting(retrys_);
+                callback_.OnRtmpReconnecting(retrys_);
             } else {
                 callback_.OnRtmpDisconnect();
             }

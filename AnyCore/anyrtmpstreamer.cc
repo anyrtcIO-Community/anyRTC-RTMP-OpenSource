@@ -159,7 +159,7 @@ void AnyRtmpStreamerImpl::OnRtmpConnected()
 	callback_.OnStreamOk();
 }
 
-void AnyRtmpStreamerImpl::OnRtmpReconntecting(int times)
+void AnyRtmpStreamerImpl::OnRtmpReconnecting(int times)
 {
 	StopEncoder();
 	callback_.OnStreamReconnecting(times);
