@@ -53,7 +53,7 @@ public:
 	virtual ~AnyRtmpushCallback(void){};
 
 	virtual void OnRtmpConnected() = 0;
-	virtual void OnRtmpReconntecting(int times) = 0;
+	virtual void OnRtmpReconnecting(int times) = 0;
 	virtual void OnRtmpDisconnect() = 0;
 	virtual void OnRtmpStatusEvent(int delayMs, int netBand) = 0;
 };
