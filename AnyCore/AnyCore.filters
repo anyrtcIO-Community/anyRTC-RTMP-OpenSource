@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="rtmp">
+      <UniqueIdentifier>{ed61ffc6-8e41-4f3b-9171-5dcd35201e66}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="srs_librtmp\srs_librtmp.cpp">
+      <Filter>rtmp</Filter>
+    </ClCompile>
+    <ClCompile Include="avrtmplayer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="aacdecode.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="plybuffer.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="plydecoder.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmpull.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="avcodec.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="rtmpush.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="avrtmpcore.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="aacencode.cc">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AvStreamerWin32.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="srs_librtmp\srs_librtmp.h">
+      <Filter>rtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="avrtmplayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rtmpull.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="plybuffer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="plydecoder.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="pluginaac.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="avrtmplyaer_interface.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="srs_librtmp\srs_kernel_codec.h">
+      <Filter>rtmp</Filter>
+    </ClInclude>
+    <ClInclude Include="avrtmpcore.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="avcodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rtmpush.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AvStreamerWin32.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

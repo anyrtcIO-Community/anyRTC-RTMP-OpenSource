@@ -1,0 +1,193 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2E1012CB-6F96-4444-A4F8-F932F8421D34}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AnyCore</RootNamespace>
+    <ProjectName>AnyCore</ProjectName>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\out\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\out\$(Configuration)\</OutDir>
+    <IntDir>$(OutDir)obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;NOMINMAX;WEBRTC_WIN;_CRT_SECURE_NO_WARNINGS;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;LIV_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>../;./srs_librtmp;../third_party/faac-1.28/include;../third_party/mp4v2/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>ws2_32.lib;winmm.lib;Strmiids.lib;Quartz.lib;dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ModuleDefinitionFile>.\AnyCore.def</ModuleDefinitionFile>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="aacdecode.cc" />
+    <ClCompile Include="aacencode.cc" />
+    <ClCompile Include="avcodec.cc" />
+    <ClCompile Include="anyrtmpcore.cc" />
+    <ClCompile Include="anyrtmplayer.cc" />
+    <ClCompile Include="anyrtmpstreamer.cc" />
+    <ClCompile Include="plybuffer.cc" />
+    <ClCompile Include="plydecoder.cc" />
+    <ClCompile Include="RtmpGuesterImpl.cc" />
+    <ClCompile Include="RtmpHosterImpl.cc" />
+    <ClCompile Include="anyrtmpull.cc" />
+    <ClCompile Include="anyrtmpush.cc" />
+    <ClCompile Include="srs_librtmp\srs_librtmp.cpp" />
+    <ClCompile Include="videofilter.cc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="avcodec.h" />
+    <ClInclude Include="anyrtmpcore.h" />
+    <ClInclude Include="anyrtmplayer.h" />
+    <ClInclude Include="anyrtmplayer_interface.h" />
+    <ClInclude Include="anyrtmpstreamer.h" />
+    <ClInclude Include="anyrtmpstream_interface.h" />
+    <ClInclude Include="pluginaac.h" />
+    <ClInclude Include="plybuffer.h" />
+    <ClInclude Include="plydecoder.h" />
+    <ClInclude Include="RtmpGuester.h" />
+    <ClInclude Include="RtmpGuesterImpl.h" />
+    <ClInclude Include="RtmpHoster.h" />
+    <ClInclude Include="RtmpHosterImpl.h" />
+    <ClInclude Include="anyrtmpull.h" />
+    <ClInclude Include="anyrtmpush.h" />
+    <ClInclude Include="srs_librtmp\srs_kernel_codec.h" />
+    <ClInclude Include="srs_librtmp\srs_librtmp.h" />
+    <ClInclude Include="videofilter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\third_party\faac-1.28\libfaac\libfaac_dll.vcxproj">
+      <Project>{856bb8cf-b944-4d7a-9d59-4945316229aa}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\faad2-2.7\libfaad\libfaad2_dll.vcxproj">
+      <Project>{482da264-ee88-4575-b208-87c4cb80cd08}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\libyuv\libyuv.vcxproj">
+      <Project>{e4505a22-7591-fedf-6b9f-4ff8ab727ff9}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\winsdk_samples\directshow_baseclasses.vcxproj">
+      <Project>{b49de8dd-f78d-f7cf-052d-8f9aed62d088}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoRender\win32_render.vcxproj">
+      <Project>{1ad2b7cf-c61c-43cd-8a27-4c52ef9cc5d3}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\base\rtc_base.vcxproj">
+      <Project>{93f855f4-ee6f-f00d-f4a3-35577b1d5f76}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\base\rtc_base_approved.vcxproj">
+      <Project>{510deddc-ed2f-0a3b-abe1-f7f1e6d75cf8}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\common_audio\common_audio.vcxproj">
+      <Project>{39fe2bb0-c2e7-db9c-d514-19b221f3ca00}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\common_audio\common_audio_sse2.vcxproj">
+      <Project>{b6b37b26-252c-247d-dba3-d03511ac9509}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\common_video\common_video.vcxproj">
+      <Project>{ac613f26-3b4f-2df0-f78c-52b6d0770c2d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\media\rtc_media.vcxproj">
+      <Project>{cc4cc1bb-4534-3322-5d30-6f7b749e7cde}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\modules\audio_coding_module.vcxproj">
+      <Project>{1deac0d1-003d-95f6-6693-ef0f1a5c733a}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\modules\audio_device.vcxproj">
+      <Project>{e7e494c8-f0d0-4376-4006-c691bb4233ef}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\modules\video_capture_module.vcxproj">
+      <Project>{bd794cba-b6ac-1a8f-784e-89f56fda8b8d}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\modules\video_capture_module_internal_impl.vcxproj">
+      <Project>{58c4e66e-f613-82e0-c039-7a453bcac1e4}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\modules\video_coding\utility\video_coding_utility.vcxproj">
+      <Project>{e3cc8540-9e4f-66f9-d430-efdae52dedac}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\modules\webrtc_h264.vcxproj">
+      <Project>{c93cb6a3-741a-2433-10d3-fc2ce462281b}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\system_wrappers\metrics_default.vcxproj">
+      <Project>{5569b280-3a89-5837-bd37-c3a976c6f597}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\system_wrappers\system_wrappers.vcxproj">
+      <Project>{16fe3fd5-aa01-bd2a-2bff-7785ffededec}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\webrtc\webrtc_common.vcxproj">
+      <Project>{4e00d9e2-1f74-8d2e-1878-dcfe215138f5}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
