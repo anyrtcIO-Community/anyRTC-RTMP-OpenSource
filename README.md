@@ -25,7 +25,7 @@
 本公司此次开源移动直播解决方案的根本目的：回馈开源社区，特别是SRS和WebRTC项目，大家也可以看到本次开源项目的框架使用了WebRTC，RTMP协议部分使用的是srs_librtmp；这两个开源项目可以说在流媒体领域给予了大家太多，所以适当的回馈是理所应当。
 
 ##编译环境
-Android Studio、NDK</br>
+Android Studio、NDK(支持Windows、Linux、MacOS等Android开发环境)</br>
 XCode</br>
 VS2015</br>
 
