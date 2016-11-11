@@ -26,7 +26,7 @@
 #endif
 
 static const size_t kMaxDataSizeSamples = 3840;
-static const uint32_t kMaxAacSizeSamples = 1764;
+static const uint32_t kMaxAacSizeSamples = 1920;
 
 namespace webrtc {
 AnyRtmpCore::AnyRtmpCore()
