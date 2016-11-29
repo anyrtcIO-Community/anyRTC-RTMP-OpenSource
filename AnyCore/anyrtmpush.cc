@@ -368,7 +368,7 @@ void AnyRtmpPush::Run()
 	while(running_)
 	{
 		{// ProcessMessages
-			this->ProcessMessages(1);
+			this->ProcessMessages(10);
 		}
 
 		if(rtmp_ != NULL)

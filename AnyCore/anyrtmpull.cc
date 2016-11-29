@@ -86,7 +86,7 @@ void AnyRtmpPull::Run()
 	while (running_)
 	{
 		{// ProcessMessages
-			this->ProcessMessages(1);
+			this->ProcessMessages(10);
 		}
 
 		if (rtmp_ != NULL)
@@ -146,9 +146,7 @@ void AnyRtmpPull::DoReadData()
 	if (srs_rtmp_read_packet(rtmp_, &type, &timestamp, &data, &size) != 0) {
 
 	}
-
 	if (type == SRS_RTMP_TYPE_VIDEO) {
-		//LOG(LS_ERROR) << "Video time: " << timestamp;
 		SrsCodecSample sample;
 		if (srs_codec_->video_avc_demux(data, size, &sample) == ERROR_SUCCESS) {
 			if (srs_codec_->video_codec_id == SrsCodecVideoAVC) {	// Jus support H264
@@ -158,10 +156,8 @@ void AnyRtmpPull::DoReadData()
 				LOG(LS_ERROR) << "Don't support video format!";
 			}
 		}
-
 	}
 	else if (type == SRS_RTMP_TYPE_AUDIO) {
-		//LOG(LS_ERROR) << "Audio time: " << timestamp;
 		SrsCodecSample sample;
 		if (srs_codec_->audio_aac_demux(data, size, &sample) != ERROR_SUCCESS) {
 			if (sample.acodec == SrsCodecAudioMP3 && srs_codec_->audio_mp3_demux(data, size, &sample) != ERROR_SUCCESS) {
