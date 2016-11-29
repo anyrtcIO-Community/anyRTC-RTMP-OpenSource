@@ -106,7 +106,7 @@ void AnyRtmpCore::Run()
 	while (running_)
 	{
 		{// ProcessMessages
-			this->ProcessMessages(1);
+			this->ProcessMessages(10);
 		}
 #if WIN32
 		w32_thread.ProcessMessages(1);
