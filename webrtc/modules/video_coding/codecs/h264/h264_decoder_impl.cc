@@ -136,6 +136,7 @@ int32_t H264DecoderImpl::Decode(const EncodedImage& input_image,
       ssb.iWidth, ssb.iHeight,
       ssb.iStride[0], ssb.iStride[1], ssb.iStride[1],
       kVideoRotation_0);
+    frame.set_timestamp(input_image._timeStamp);
     ret = decoded_image_callback_->Decoded(frame);
   }
 
