@@ -29,7 +29,7 @@
 @property (nonatomic, strong) GPUImageVideoCamera *videoCamera;
 @property (nonatomic, strong) GPUImageView *gpuImageView;
 @property (nonatomic, strong) UIButton *beautifyButton;
-@property(nonatomic, strong) GPUImageCropFilter *cropfilter;
+//@property(nonatomic, strong) GPUImageCropFilter *cropfilter;
 @property(nonatomic, strong) GPUImageOutput<GPUImageInput> *filter;
 @property(nonatomic, strong) GPUImageOutput<GPUImageInput> *emptyFilter;
 @property (nonatomic, assign) BOOL isPreviewing;
@@ -151,7 +151,7 @@
     _beautyFace = beautyFace;
     [_emptyFilter removeAllTargets];
     [_filter removeAllTargets];
-    [_cropfilter removeAllTargets];
+   // [_cropfilter removeAllTargets];
     [_videoCamera removeAllTargets];
     
     if(_beautyFace){
@@ -166,13 +166,14 @@
         [_self processVideo:output];
     }];
     
-    if(self.isClipVideo){///<  裁剪为16:9
-        _cropfilter = [[GPUImageCropFilter alloc] initWithCropRegion:CGRectMake(0.125, 0, 0.75, 1)];
-        [_videoCamera addTarget:_cropfilter];
-        [_cropfilter addTarget:_filter];
-    }else{
-        [_videoCamera addTarget:_filter];
-    }
+//    if(self.isClipVideo){///<  裁剪为16:9
+//        _cropfilter = [[GPUImageCropFilter alloc] initWithCropRegion:CGRectMake(0.125, 0, 0.75, 1)];
+//        [_videoCamera addTarget:_cropfilter];
+//        [_cropfilter addTarget:_filter];
+//    }else{
+//        [_videoCamera addTarget:_filter];
+//    }
+     [_videoCamera addTarget:_filter];
     
     if (beautyFace) {
         [_filter addTarget:_emptyFilter];
@@ -194,7 +195,6 @@
     if (!_isRunning) {
         return;
     }
-    __weak typeof(self) _self = self;
     @autoreleasepool {
         GPUImageFramebuffer *imageFramebuffer = output.framebufferForOutput;
 		
