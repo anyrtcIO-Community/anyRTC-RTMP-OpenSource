@@ -122,7 +122,7 @@ int32_t H264DecoderImpl::Decode(const EncodedImage& input_image,
   uint8_t* nal[3] = {0};
   SBufferInfo sbi = {0};
   sbi.uiInBsTimeStamp = input_image.capture_time_ms_;
-  int result = decoder_->DecodeFrame2(input_image._buffer, input_image._size, nal, &sbi);
+  int result = decoder_->DecodeFrame2(input_image._buffer, (int)input_image._size, nal, &sbi);
   if (result != 0) {
     LOG(LS_ERROR) << "DecodeFrame2 error: " << result;
     ReportError();

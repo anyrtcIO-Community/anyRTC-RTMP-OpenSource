@@ -96,13 +96,16 @@ goto :EOF
   set MinGWPath=C:\MinGW\bin
   set MsysPath=C:\MinGW\msys\1.0\bin
   set GitPath=C:\Program Files (x86)\Git\bin
-  set GasScriptPath=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin
+  set GasScriptPath=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin
 
+  set VC14Path=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC
   set VC12Path=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC
   set VC11Path=C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC
   set VC10Path=C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC
   set VC9Path=C:\Program Files (x86)\Microsoft Visual Studio 9.0\VC
 
+  set VC14ArmLib01=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\store\arm
+  set VC14ArmLib02=C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\lib\arm	
   set VC12ArmLib01=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\store\arm
   set VC12ArmLib02=C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\lib\arm
   set WP8KitLib=C:\Program Files (x86)\Windows Phone Kits\8.1\lib\arm
@@ -111,11 +114,12 @@ goto :EOF
   if exist "%VC10Path%" set VCPATH=%VC10Path%
   if exist "%VC11Path%" set VCPATH=%VC11Path%
   if exist "%VC12Path%" set VCPATH=%VC12Path%
+  if exist "%VC14Path%" set VCPATH=%VC14Path%
 
   if "%vArcType%" =="i386"   set PATH=%MinGWPath%;%MsysPath%;%VCPATH%\bin;%GitPath%;%PATH%
   if "%vArcType%" =="x86_64" set PATH=%MinGWPath%;%MsysPath%;%VCPATH%\bin;%GitPath%;%PATH%
   if "%vArcType%" =="arm"    set PATH=%MinGWPath%;%MsysPath%;%VCPATH%\bin;%GitPath%;%PATH%
-  rem if "%vArcType%" =="arm"    set PATH=C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin;C:\Program Files (x86)\Git\bin;%PATH%
+  rem if "%vArcType%" =="arm"    set PATH=C:\MinGW\bin;C:\MinGW\msys\1.0\bin;C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\bin;C:\Program Files (x86)\Git\bin;%PATH%
 
   if "%vArcType%" =="i386"   call "%VCPATH%\vcvarsall.bat" x86
   if "%vArcType%" =="x86_64" call "%VCPATH%\vcvarsall.bat" x64
