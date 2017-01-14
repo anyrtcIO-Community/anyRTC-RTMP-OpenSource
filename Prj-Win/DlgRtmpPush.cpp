@@ -120,7 +120,7 @@ void DlgRtmpPush::OnLButtonDblClk(UINT nFlags, CPoint point)
 	CDialog::OnLButtonDblClk(nFlags, point);
 }
 
-void DlgRtmpPush::OnTimer(UINT nIDEvent)
+void DlgRtmpPush::OnTimer(UINT_PTR nIDEvent)
 {
 	CDialog::OnTimer(nIDEvent);
 }
