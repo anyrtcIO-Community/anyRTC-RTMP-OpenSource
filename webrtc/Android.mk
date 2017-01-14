@@ -57,7 +57,10 @@ LOCAL_SRC_FILES += \
 		common_audio/signal_processing/vector_scaling_operations.c \
 		common_audio/audio_util.cc \
 		common_audio/ring_buffer.c
-	
+ifeq ($(TARGET_ARCH_ABI),x86)	
+LOCAL_SRC_FILES += common_audio/resampler/sinc_resampler_sse.cc
+endif
+
 LOCAL_SRC_FILES += \
 		common_video/h264/h264_common.cc \
 		common_video/h264/pps_parser.cc \
