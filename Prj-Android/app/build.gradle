@@ -10,41 +10,26 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        externalNativeBuild {
+            ndkBuild {
+                arguments "NDK_APPLICATION_MK:=../jni/Application.mk"
+                abiFilters "armeabi-v7a", "armeabi"
+            }
+        }
     }
+    externalNativeBuild {
+        ndkBuild {
+            path '../jni/toolchain/Android.mk'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    sourceSets { main { jni.srcDirs = [] } }
-
-}
-tasks.withType(JavaCompile) {
-    compileTask -> compileTask.dependsOn ndkBuild
-}
-
-task ndkBuild(type: Exec) {
-    workingDir file('../jni/')
-    commandLine getNdkBuildCmd(), 'NDK_LIBS_OUT=../app/src/main/jniLibs'
-}
-
-task cleanNative(type: Exec){
-    workingDir file('../jni/')
-    commandLine getNdkBuildCmd(), 'clean'
-}
-
-clean.dependsOn cleanNative
-
-def getNdkBuildCmd() {
-    if (System.env.ANDROID_NDK_ROOT != null)
-        return System.env.ANDROID_NDK_ROOT
-    Properties properties = new Properties()
-    properties.load(project.rootProject.file('local.properties').newDataInputStream())
-    def ndkdir = properties.getProperty('ndk.dir', null)
-    if (ndkdir == null)
-        throw new GradleException("NDK location not found. Define location with ndk.dir in the local.properties file or with an ANDROID_NDK_ROOT environment variable.")
-    return ndkdir + "/ndk-build.cmd"
 }
 
 dependencies {
