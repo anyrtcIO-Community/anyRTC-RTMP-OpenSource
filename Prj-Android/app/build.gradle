@@ -10,7 +10,20 @@ android {
         targetSdkVersion 23
         versionCode 1
         versionName "1.0"
+
+        externalNativeBuild {
+            ndkBuild {
+                arguments "NDK_APPLICATION_MK:=../jni/Application.mk"
+                abiFilters "armeabi-v7a", "armeabi"
+            }
+        }
     }
+    externalNativeBuild {
+        ndkBuild {
+            path '../jni/toolchain/Android.mk'
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false

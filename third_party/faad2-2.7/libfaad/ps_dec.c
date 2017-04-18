@@ -30,6 +30,8 @@
 
 #include "common.h"
 
+#include <string.h>
+
 #ifdef PS_DEC
 
 #include <stdlib.h>

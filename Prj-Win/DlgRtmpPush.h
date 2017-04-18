@@ -56,7 +56,7 @@ public:
 	afx_msg BOOL OnEraseBkgnd(CDC* pDC);
 	afx_msg void OnLButtonDblClk(UINT nFlags, CPoint point);
 	afx_msg LRESULT OnMyMessage(WPARAM wParam, LPARAM lParam);
-	virtual void OnTimer(UINT nIDEvent);
+	virtual void OnTimer(UINT_PTR nIDEvent);
 
 	CEdit	m_editUrl;
 	CButton	m_btnRtmp;

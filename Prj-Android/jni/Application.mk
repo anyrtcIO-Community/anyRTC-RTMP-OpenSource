@@ -1,7 +1,6 @@
 APP_BUILD_SCRIPT := $(call my-dir)/toolchain/Android.mk
 APP_MODULES := anyrtmp-jni
-APP_ABI := armeabi armeabi-v7a
-#armeabi armeabi-v7a arm64-v8a
+#APP_ABI := armeabi armeabi-v7a arm64-v8a x86
 
 NDK_PATH := /cygdrive/c/Android/NDK/android-ndk-r10e
 NDK_STL_INC := $(NDK_PATH)/sources/cxx-stl/gnu-libstdc++/4.9/include
