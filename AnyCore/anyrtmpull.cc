@@ -267,13 +267,14 @@ int AnyRtmpPull::GotVideoSample(u_int32_t timestamp, SrsCodecSample *sample)
 		else {
 			video_payload_->append((const char*)fresh_nalu_header, 4);
 		}
-
 		// sample data
 		video_payload_->append(sample_unit->bytes, sample_unit->size);
-
-		callback_.OnRtmpullH264Data((uint8_t*)video_payload_->_data, video_payload_->_data_len, timestamp);
-		video_payload_->reset();
 	}
+	//* Fix for mutil nalu.
+	if (video_payload_->_data_len != 0) {
+		callback_.OnRtmpullH264Data((uint8_t*)video_payload_->_data, video_payload_->_data_len, timestamp);
+	}
+	video_payload_->reset();
 
 	return ret;
 }
