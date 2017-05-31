@@ -78,6 +78,5 @@
     <ClInclude Include="video_coding\codecs\h264\h264_encoder_impl.h">
       <Filter>video_coding\codecs\h264</Filter>
     </ClInclude>
-    <None Include="modules.gyp"/>
   </ItemGroup>
 </Project>

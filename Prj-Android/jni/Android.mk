@@ -35,6 +35,14 @@ LOCAL_SRC_FILES := ./jni_util/classreferenceholder.cc \
 #
 #LOCAL_LDLIBS += -L$(call host-path,$(LOCAL_PATH)/library) -lopenh264   
 LOCAL_LDLIBS := -llog -lz -lOpenSLES
+ifeq ($(TARGET_ARCH_ABI),armeabi)  
+LOCAL_LDLIBS += -L$(call host-path,$(LOCAL_PATH)/library/arm) -lavformat -lavcodec -lavutil
+else ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)  
+LOCAL_LDLIBS += -L$(call host-path,$(LOCAL_PATH)/library/v7) -lavformat -lavcodec -lavutil
+else
+LOCAL_LDLIBS += -L$(call host-path,$(LOCAL_PATH)/library/v64) -lavformat -lavcodec -lavutil
+endif  	
+
 LOCAL_C_INCLUDES += $(NDK_STL_INC) \
 					$(LOCAL_PATH)/../../ \
 					$(LOCAL_PATH)/../../AnyCore \
