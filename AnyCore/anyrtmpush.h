@@ -22,11 +22,11 @@
 
 enum RTMP_STATUS
 {
-	RS_STM_Init,
-	RS_STM_Handshaked,
-	RS_STM_Connected,
-	RS_STM_Published,
-	RS_STM_Closed
+	RS_STM_Init,		// 初始化状态
+	RS_STM_Handshaked,	// 与服务器协商过程中
+	RS_STM_Connected,	// 与服务器连接成功
+	RS_STM_Published,	// 开始推流
+	RS_STM_Closed		// 推流关闭
 };
 
 enum ENC_DATA_TYPE{

@@ -23,11 +23,11 @@
 
 enum RTMPLAYER_STATUS
 {
-	RS_PLY_Init,
-	RS_PLY_Handshaked,
-	RS_PLY_Connected,
-	RS_PLY_Played,
-	RS_PLY_Closed
+	RS_PLY_Init,		// 初始化状态
+	RS_PLY_Handshaked,	// 与服务器协商过程中
+	RS_PLY_Connected,	// 与服务器连接成功
+	RS_PLY_Played,		// 开始播放
+	RS_PLY_Closed		// 播放停止
 };
 
 typedef struct DemuxData
