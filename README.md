@@ -14,6 +14,7 @@
 **8，实用主义，那些什么坑什么优化等概念请搜索相关文章**</br>
 **9，OpenH264软件编码，FFMpeg软件解码，FAAC/FAAD软件编解码，适配不同系统的硬件编解码统统包含**</br>
 **10，支持SRS、Nginx-RTMP等标准RTMP服务；同时支持各大CDN厂商的接入**</br>
+**11，更多协议支持; ???计划支持rtsp播放???**</br>
 ## 项目展示
 ![Chat](https://github.com/AnyRTC/AnyRTC-RTMP/blob/master/Pictures/IMG_0779.png)
 .
