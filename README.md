@@ -25,41 +25,41 @@
 # 为什么开源？
 本公司此次开源移动直播解决方案的根本目的：回馈开源社区，特别是SRS和WebRTC项目，大家也可以看到本次开源项目的框架使用了WebRTC，RTMP协议部分使用的是srs_librtmp；这两个开源项目可以说在流媒体领域给予了大家太多，所以适当的回馈是理所应当。
 
-##编译环境
+##编译环境</br>
 Android Studio、NDK(支持Windows、Linux、MacOS等Android开发环境)</br>
 XCode</br>
 VS2015</br>
 
-##支持的系统平台
+##支持的系统平台</br>
 Android 4.0及以上</br>
 iOS 8.0及以上</br>
 Windows 7及以上</br>
 
-##支持的CPU架构
+##支持的CPU架构</br>
 Android armv7 arm64</br>
 iOS armv7 armv7s arm64</br>
 Windows win32、x64</br>
 
-##第三方库版本
+##第三方库版本</br>
 libfaac		1.28</br>
 libfaad2	2.7</br>
 ffmpeg		3.0</br>
 libyuv		newest</br>
 openh264	1.6.0</br>
 
-##技术交流
+##技术交流</br>
 直播技术QQ群：554714720(即将满员)</br>
 连麦技术QQ群：580477436(即将满员)</br>
 
-##授权声明
+##授权声明</br>
 本次开源在未授权情况下不可应用于任何的闭源商业项目，具体请参照GNU License中的声明。</br>
 咨询QQ:2628840833 </br>
 联系电话:021-65650071</br>
 
-##版权声明
+##版权声明</br>
 若本开源项目涉及到其他软件的版权，请及时联系作者进行修正。</br>
 
-##捐赠
+##捐赠</br>
 本项目不接受任何形式的捐赠，您的支持就是最大的动力。</br>
 
 ## License
