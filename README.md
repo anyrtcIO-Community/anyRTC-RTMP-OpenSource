@@ -64,6 +64,10 @@ openh264	1.6.0</br>
 ##捐赠</br>
 本项目不接受任何形式的捐赠，您的支持就是最大的动力。</br>
 
+##直播新动向之-在线娃娃机</br>
+美女主播的时代逐渐远去，anyRTC把握市场方向推出H5无插件抓娃娃解决方案</br>
+https://www.anyrtc.io/home/wawaji</br>
+
 ## License
 AnyRTC-RTMP is available under the GNU license. See the LICENSE file for more info.
 
