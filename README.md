@@ -68,6 +68,11 @@ openh264	1.6.0</br>
 美女主播的时代逐渐远去，anyRTC把握市场方向推出H5无插件抓娃娃解决方案</br>
 https://www.anyrtc.io/home/wawaji</br>
 
+##冲顶大会用实时直播效果更好哦</br>
+实时直播包含“主播”与“游客”两种模式。</br>
+同时支持Web，Android，iOS三端实时直播。</br>
+https://www.anyrtc.io/demo/rtcp</br>
+
 ## License
 AnyRTC-RTMP is available under the GNU license. See the LICENSE file for more info.
 
