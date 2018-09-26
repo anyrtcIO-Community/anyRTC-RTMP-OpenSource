@@ -20,10 +20,10 @@
 #include "webrtc/base/logging.h"
 
 #define PLY_MIN_TIME	500		// 0.5s
-#define PLY_MAX_TIME	600000	// 10minute
+#define PLY_MAX_TIME	600000		// 10minute
 #define PLY_RED_TIME	250		// redundancy time
-#define PLY_MAX_DELAY	1000	// 1 second
-#define PLY_MAX_CACHE   16      // 16s
+#define PLY_MAX_DELAY	1000		// 1 second
+#define PLY_MAX_CACHE   16      	// 16s
 
 #define PB_TICK	1011
 
