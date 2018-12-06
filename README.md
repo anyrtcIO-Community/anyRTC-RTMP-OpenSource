@@ -51,7 +51,7 @@ openh264	1.6.0</br>
 
 ##技术支持</br>
 anyRTC官方网址：https://www.anyrtc.io</br>
-QQ技术交流群：554714720</br>
+QQ技术交流群：554714720(已满) 2群：698167259</br>
 联系电话:021-65650071-816</br>
 Email:hi@dync.cc</br>
 
