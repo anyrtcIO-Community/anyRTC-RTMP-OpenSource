@@ -27,50 +27,50 @@
 # 为什么开源？
 本公司此次开源移动直播解决方案的根本目的：回馈开源社区，特别是SRS和WebRTC项目，大家也可以看到本次开源项目的框架使用了WebRTC，RTMP协议部分使用的是srs_librtmp；这两个开源项目可以说在流媒体领域给予了大家太多，所以适当的回馈是理所应当。
 
-##编译环境</br>
+## 编译环境</br>
 Android Studio、NDK(支持Windows、Linux、MacOS等Android开发环境)</br>
 XCode</br>
 VS2015</br>
 
-##支持的系统平台</br>
+## 支持的系统平台</br>
 Android 4.0及以上</br>
 iOS 8.0及以上</br>
 Windows 7及以上</br>
 
-##支持的CPU架构</br>
+## 支持的CPU架构</br>
 Android armv7 arm64</br>
 iOS armv7 armv7s arm64</br>
 Windows win32、x64</br>
 
-##第三方库版本</br>
+## 第三方库版本</br>
 libfaac		1.28</br>
 libfaad2	2.7</br>
 ffmpeg		3.0</br>
 libyuv		newest</br>
 openh264	1.6.0</br>
 
-##技术支持</br>
+## 技术支持</br>
 anyRTC官方网址：https://www.anyrtc.io</br>
 QQ技术交流群：554714720(已满) 2群：698167259</br>
 联系电话:021-65650071-816</br>
 Email:hi@dync.cc</br>
 
-##版权声明</br>
-若本开源项目涉及到其他软件的版权，请及时联系作者进行修正。</br>
+## 版权声明
+若本开源项目涉及到其他软件的版权，请及时联系作者进行修正。
 
-##捐赠</br>
-本项目不接受任何形式的捐赠，您的支持就是最大的动力。</br>
+## 捐赠
+本项目不接受任何形式的捐赠，您的支持就是最大的动力。
 
-##直播新动向之-在线娃娃机</br>
-美女主播的时代逐渐远去，anyRTC把握市场方向推出H5无插件抓娃娃解决方案</br>
-https://www.anyrtc.io/home/wawaji</br>
+## 直播新动向之-在线娃娃机
+美女主播的时代逐渐远去，anyRTC把握市场方向推出H5无插件抓娃娃解决方案 
+https://www.anyrtc.io/home/wawaji 
 
-##冲顶大会用实时直播效果更好哦</br>
-实时直播包含“主播”与“游客”两种模式。</br>
-同时支持Web，Android，iOS三端实时直播。</br>
-https://www.anyrtc.io/demo/rtcp</br>
+## 冲顶大会用实时直播效果更好哦
+实时直播包含“主播”与“游客”两种模式。
+同时支持Web，Android，iOS三端实时直播。
+https://www.anyrtc.io/demo/rtcp
 
-##anyRTC开源新动态</br>
+## anyRTC开源新动态
 公司考虑结合自身的技术特点对此开源项目进行升级改造
 
 ## License
