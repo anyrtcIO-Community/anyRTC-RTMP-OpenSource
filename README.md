@@ -5,18 +5,15 @@
 
 # 近期公司战略调整,此开源项目将会更名
 
-# 项目特点
-**1，商业级开源代码，高效稳定**</br>
-**2，超小内存占有率，移动直播针对性极致优化，代码冗余率极低**</br>
-**3，打破平台壁垒，真正的跨平台，一套核心代码支持Android、iOS、Windows等**</br>
-**4，超过200+Android手机、iOS全平台适配，硬件编解码可保证99%的可用性**</br>
-**5，接口极简，推流：2个   拉流：2个**</br>
-**6，底层库C++核心库代码风格采用：Google code style**</br>
-**7，极简内核，无需再去深扒复杂的FFMpeg代码**</br>
-**8，实用主义，那些什么坑什么优化等概念请搜索相关文章**</br>
-**9，OpenH264软件编码，FFMpeg软件解码，FAAC/FAAD软件编解码，适配不同系统的硬件编解码统统包含**</br>
-**10，支持SRS、Nginx-RTMP等标准RTMP服务；同时支持各大CDN厂商的接入**</br>
-**11，更多协议支持; ???计划支持rtsp播放???**</br>
+# <改版2.0进行中...>
+**1，升级Webrtc的基础库**</br>
+**2，替换Rtmp协议栈**</br>
+**3，优化项目结构和接口**</br>
+**4，增加端到端的超低(百毫秒级)时延推拉流**</br>
+**5，增加商业版服务支持**</br>
+**6，统一C++核心库代码风格采用：Google code style**</br>
+**7，减小整体包体积**</br>
+
 ## 项目展示
 ![Chat](https://github.com/AnyRTC/AnyRTC-RTMP/blob/master/Pictures/IMG_0779.png)
 .
@@ -24,13 +21,10 @@
 .
 ![Chat](https://github.com/AnyRTC/AnyRTC-RTMP/blob/master/Pictures/IMG_0778.png)
 
-# 为什么开源？
-本公司此次开源移动直播解决方案的根本目的：回馈开源社区，特别是SRS和WebRTC项目，大家也可以看到本次开源项目的框架使用了WebRTC，RTMP协议部分使用的是srs_librtmp；这两个开源项目可以说在流媒体领域给予了大家太多，所以适当的回馈是理所应当。
-
 ## 编译环境</br>
 Android Studio、NDK(支持Windows、Linux、MacOS等Android开发环境)</br>
 XCode</br>
-VS2015</br>
+VS2015,VS2017</br>
 
 ## 支持的系统平台</br>
 Android 4.0及以上</br>
@@ -60,18 +54,6 @@ Email:hi@dync.cc</br>
 
 ## 捐赠
 本项目不接受任何形式的捐赠，您的支持就是最大的动力。
-
-## 直播新动向之-在线娃娃机
-美女主播的时代逐渐远去，anyRTC把握市场方向推出H5无插件抓娃娃解决方案 
-https://www.anyrtc.io/home/wawaji 
-
-## 冲顶大会用实时直播效果更好哦
-实时直播包含“主播”与“游客”两种模式。
-同时支持Web，Android，iOS三端实时直播。
-https://www.anyrtc.io/demo/rtcp
-
-## anyRTC开源新动态
-公司考虑结合自身的技术特点对此开源项目进行升级改造
 
 ## License
 AnyRTC-RTMP is available under the GNU license. See the LICENSE file for more info.
