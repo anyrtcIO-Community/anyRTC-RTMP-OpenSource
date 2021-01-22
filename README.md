@@ -6,13 +6,11 @@
 # 近期公司战略调整,此开源项目将会更名
 
 # <改版2.0进行中...>
-**1，升级Webrtc的基础库**</br>
-**2，替换Rtmp协议栈**</br>
-**3，优化项目结构和接口**</br>
-**4，增加端到端的超低(百毫秒级)时延推拉流**</br>
-**5，增加商业版服务支持**</br>
-**6，统一C++核心库代码风格采用：Google code style**</br>
-**7，减小整体包体积**</br>
+
+**1，替换Rtmp协议栈**</br>
+**2，优化项目结构和接口**</br>
+**3，统一C++核心库代码风格采用：Google code style**</br>
+**4，减小整体包体积**</br>
 
 ## 项目展示
 ![Chat](https://github.com/AnyRTC/AnyRTC-RTMP/blob/master/Pictures/IMG_0779.png)
