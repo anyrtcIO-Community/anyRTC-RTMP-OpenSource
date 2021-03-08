@@ -1,16 +1,16 @@
 # anyRTC-RTMP-OpenSource
 <img src="http://118.178.143.146/p/4/j7KqCl" width="313" alt="AnyRTC-RTMP" /> </br>
-本次开源的客户端基于RTMP协议的推流拉流客户端，采用跨平台架构设计，一套代码支持Android、iOS、Windows等平台。</br>
+anyRTC-RTMP开源项目即将迎来2.0版本，本项目是开源的客户端，基于RTMP协议的推流拉流，采用跨平台架构设计，一套代码支持Android、iOS、Windows、Mac、Ubuntu等平台。</br>
 直播涉及的流程：『音视频采集->编码->传输->解码->音视频渲染』本项目统统包含，这不是软文，这是实实在在的商业级实战代码；无论是你新手还是老司机，我们都热烈欢迎您前来筑码。
-
-# 近期公司战略调整,此开源项目将会更名
 
 # <改版2.0进行中...>
 
 **1，替换Rtmp协议栈**</br>
-**2，优化项目结构和接口**</br>
+**2，优化项目结构，接口重新设计**</br>
 **3，统一C++核心库代码风格采用：Google code style**</br>
 **4，减小整体包体积**</br>
+
+**5，支持更过平台比如：MacOS，Ubuntu等**</br>
 
 ## 项目展示
 ![Chat](https://github.com/AnyRTC/AnyRTC-RTMP/blob/master/Pictures/IMG_0779.png)
