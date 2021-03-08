@@ -10,7 +10,9 @@ anyRTC-RTMP开源项目即将迎来2.0版本，本项目是开源的客户端，
 **3，统一C++核心库代码风格采用：Google code style**</br>
 **4，减小整体包体积**</br>
 
-**5，支持更过平台比如：MacOS，Ubuntu等**</br>
+**5，新增平台：MacOS，Ubuntu等**</br>
+
+
 
 ## 项目展示
 ![Chat](https://github.com/AnyRTC/AnyRTC-RTMP/blob/master/Pictures/IMG_0779.png)
