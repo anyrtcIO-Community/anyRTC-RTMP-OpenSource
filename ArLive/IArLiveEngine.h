@@ -1,3 +1,21 @@
+/*
+*  Copyright (c) 2021 The AnyRTC project authors. All Rights Reserved.
+*
+*  Please visit https://www.anyrtc.io for detail.
+*
+* The GNU General Public License is a free, copyleft license for
+* software and other kinds of works.
+*
+* The licenses for most software and other practical works are designed
+* to take away your freedom to share and change the works.  By contrast,
+* the GNU General Public License is intended to guarantee your freedom to
+* share and change all versions of a program--to make sure it remains free
+* software for all its users.  We, the Free Software Foundation, use the
+* GNU General Public License for most of our software; it applies also to
+* any other work released this way by its authors.  You can apply it to
+* your programs, too.
+* See the GNU LICENSE file for more info.
+*/
 #ifndef __I_AR_LIVE_ENGINE_H__
 #define __I_AR_LIVE_ENGINE_H__
 #include <stdint.h>
@@ -51,6 +69,34 @@ public:
 	}
 };
 
+class IArBGMEvent
+{
+	IArBGMEvent(void) {};
+	virtual ~IArBGMEvent(void) {};
+
+	/* BGM文件的时长信息
+	参数：
+		duration	int	当前 BGM 总时间（ms）。
+	*/
+	virtual void onBGMInfo(int duration) {};
+
+	/* BGM开始播放
+	*/
+	virtual void onBGMStart() {};
+	/* BGM播放进度
+	参数：
+		progress	int	当前 BGM 已播放时间（ms）。
+		duration	int	当前 BGM 总时间（ms）。
+	*/
+	virtual void onBGMProgress(int progress, int duration) {};
+
+	/* BGM播放停止
+	参数：
+		err	int	0：正常结束；-1：出错结束。
+	*/
+	virtual void onBGMComplete(int err) {};
+};
+
 class IArLiveEngineEvent
 {
 public:
@@ -73,9 +119,8 @@ public:
 	virtual int initialize(IArLiveEngineEvent* pEvent) = 0;
 	/* 释放对象。
 	参数：
-		sync	bool	是否同步销毁。
 	*/
-	virtual void release(bool sync = false) = 0;
+	virtual void release() = 0;
 
 	/* 创建推流对象。
 	参数：
@@ -111,10 +156,11 @@ public:
 		quality	int	画质类型（标清、高清、超高清）。
 		adjustBitrate	boolean	动态码率开关。
 		adjustResolution	boolean	动态切分辨率开关。
+		orientationMode	ORIENTATION_MODE 编码的视频方向
 	返回：
 		0：调用成功		<0: 失败
 	*/
-	virtual int setVideoQuality(int quality, bool adjustBitrate, bool adjustResolution) = 0;
+	virtual int setVideoQuality(int quality, bool adjustBitrate, bool adjustResolution, AR::ORIENTATION_MODE orientationMode) = 0;
 	/* 开始摄像头预览
 	返回：
 		0：调用成功		<0: 失败
@@ -143,6 +189,12 @@ public:
 		0：调用成功		<0: 失败
 	*/
 	virtual int muteLocalVideoStream(bool mute) = 0;
+	/* 视频SEI数据
+	*/
+	virtual int setVideoSei(const char*pSei, int nLen) = 0;
+	/* 自采集视频数据
+	*/
+	virtual int setVideoCustomData() = 0;
 
 	//**************************************************************************\\
 	// Audio Module
@@ -192,10 +244,9 @@ public:
 	/* 设置图像渲染角度。
 	参数：
 		userId	AR::uid_t		视图对象的名称，播放器默认为:"0"，连麦人员为具体人员的UId
-		rotation	int	图像渲染角度，可设置值为：RENDER_ROTATION#RENDER_ROTATION_PORTRAIT、RENDER_ROTATION#RENDER_ROTATION_LANDSCAPE。
+		rotation	ORIENTATION_MODE	图像渲染角度，可设置值为：RENDER_ROTATION#RENDER_ROTATION_PORTRAIT、RENDER_ROTATION#RENDER_ROTATION_LANDSCAPE。
 	*/
-	virtual void setRenderRotation(AR::uid_t uid, RENDER_ROTATION rotation) = 0;
-
+	virtual void setRenderRotation(AR::uid_t uid, AR::ORIENTATION_MODE rotation) = 0;
 	/* 开启硬件加速。
 	参数：
 		enable	boolean	true：启用视频硬解码， false：禁用视频硬解码。
@@ -207,7 +258,7 @@ public:
 		userId	AR::uid_t		视图对象的名称，播放器默认为:"0"，连麦人员为具体人员的UId
 		mute	boolean	true：静音播放；false：不静音播放。
 	*/
-	virtual void muteRemoteAudioStream(AR::uid_t userId, bool mute) = 0;
+	virtual int muteRemoteAudioStream(AR::uid_t userId, bool mute) = 0;
 	/* 设置是否禁播视频。
 	参数：
 		userId	AR::uid_t		视图对象的名称，播放器默认为:"0"，连麦人员为具体人员的UId
@@ -230,8 +281,7 @@ public:
 	参数：
 		volume	int	音量大小，取值范围 0 - 100。
 	*/
-	virtual void adjustSpkrVolume(int volume) = 0;
-
+	virtual int adjustSpkrVolume(int volume) = 0;
 	/* 设置声音播放模式。
 	介绍：
 		播放模式有两种(仅Android和iOS)：
@@ -239,7 +289,10 @@ public:
 		听筒：声音将从听筒播出。
 		扬声器：声音将从扬声器播出。
 	*/
-	virtual void setAudioRoute(int audioRoute) = 0;
+	virtual int setAudioRoute(int audioRoute) = 0;
+
+	virtual int setAudioCustomData() = 0;
+	
 	//**************************************************************************\\
 	// 数据回调接口
 	/* 设置音量大小回调接口。
@@ -265,6 +318,45 @@ public:
 	*/
 	virtual void setAudioRawDataListener(IArAudioRawDataListener* listener) = 0;
 
+#ifdef ANY_RTC_CHAT
+	//**************************************************************************\\
+	//**************************************************************************\\
+	//* For BGM
+	/* 设置推流事件回调
+	参数：
+		pEvent	IArBGMEvent*	回调BGM事件接收对象
+	*/
+	virtual void setArBGMEvent(IArBGMEvent*pEvent) = 0;
+	/*播放背景音乐。
+	功能：
+		会将背景音乐和麦克风采集的声音进行混合并一起推送到云端。
+	返回：
+		true：播放成功；false：播放失败。
+	*/
+	virtual bool playBGM(const char* path, int repeat) = 0;
+	/* 停止播放背景音乐。
+	返回：
+		true：停止播放成功； false：停止播放失败。
+	*/
+	virtual bool stopBGM() = 0;
+	/* 暂停播放背景音乐。
+	返回：
+		true：停止播放成功； false：停止播放失败。
+	*/
+	virtual bool pauseBGM() = 0;
+	/* 继续播放背音乐。
+	返回：
+		true：停止播放成功； false：停止播放失败。
+	*/
+	virtual int resumeBGM() = 0;
+	/*设置混音时背景音乐的音量大小，仅在播放背景音乐混音时使用。
+	参数：
+		nVolume	int	音量大小，100为正常音量，范围是：[0 ~ 400] 之间的整数。
+	返回：
+		0：调用成功		<0: 失败
+	*/
+	virtual int adjustBGMVolume(int nVolume) = 0;
+
 	//**************************************************************************\\
 	//**************************************************************************\\
 	// 屏幕共享接口
@@ -285,6 +377,8 @@ public:
 	virtual int switchChannel(const char* token, const char* channelId) = 0;
 	virtual int leaveChannel() = 0;
 	virtual int renewToken(const char* token) = 0;
+
+#endif
 };
 }
 };

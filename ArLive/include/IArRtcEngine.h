@@ -5270,7 +5270,7 @@ public:
      * ClientRoleOptions options;
      * options.audienceLatencyLevel = AUDIENCE_LATENCY_LEVEL_ULTRA_LOW_LATENCY;
      * options.audienceLatencyLevel = AUDIENCE_LATENCY_LEVEL_LOW_LATENCY;
-     * agoraEngine->setClientRole(role, options);
+     * arEngine->setClientRole(role, options);
      * ```
      *
      * @param role The role of a user in a live interactive streaming. See #CLIENT_ROLE_TYPE.
@@ -6624,16 +6624,16 @@ public:
     virtual int setAudioEffectParameters(AUDIO_EFFECT_PRESET preset, int param1, int param2) = 0;
     /** Sets the log files that the SDK outputs.
      *
-     * By default, the SDK outputs five log files, `agorasdk.log`, `agorasdk_1.log`, `agorasdk_2.log`, `agorasdk_3.log`, `agorasdk_4.log`, each with a default size of 1024 KB.
-     * These log files are encoded in UTF-8. The SDK writes the latest logs in `agorasdk.log`. When `agorasdk.log` is full, the SDK deletes the log file with the earliest
-     * modification time among the other four, renames `agorasdk.log` to the name of the deleted log file, and create a new `agorasdk.log` to record latest logs.
+     * By default, the SDK outputs five log files, `arsdk.log`, `arsdk_1.log`, `arsdk_2.log`, `arsdk_3.log`, `arsdk_4.log`, each with a default size of 1024 KB.
+     * These log files are encoded in UTF-8. The SDK writes the latest logs in `arsdk.log`. When `arsdk.log` is full, the SDK deletes the log file with the earliest
+     * modification time among the other four, renames `arsdk.log` to the name of the deleted log file, and create a new `arsdk.log` to record latest logs.
      *
-     * @note Ensure that you call this method immediately after calling \ref agora::rtc::IRtcEngine::initialize "initialize" , otherwise the output logs may not be complete.
+     * @note Ensure that you call this method immediately after calling \ref ar::rtc::IRtcEngine::initialize "initialize" , otherwise the output logs may not be complete.
      *
      * @see \ref IRtcEngine::setLogFileSize "setLogFileSize"
      * @see \ref IRtcEngine::setLogFilter "setLogFilter"
      *
-     * @param filePath The absolute path of log files. The default file path is `C: \Users\<user_name>\AppData\Local\AR\<process_name>\agorasdk.log`.
+     * @param filePath The absolute path of log files. The default file path is `C: \Users\<user_name>\AppData\Local\AR\<process_name>\arsdk.log`.
      * Ensure that the directory for the log files exists and is writable. You can use this parameter to rename the log files.
      *
      * @return

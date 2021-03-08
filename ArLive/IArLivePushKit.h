@@ -39,33 +39,7 @@ public:
 	};
 };
 
-class IArBGMEvent
-{
-	IArBGMEvent(void) {};
-	virtual ~IArBGMEvent(void) {};
 
-	/* BGM文件的时长信息
-	参数：
-		duration	int	当前 BGM 总时间（ms）。
-	*/
-	virtual void onBGMInfo(int duration) {};
-
-	/* BGM开始播放
-	*/
-	virtual void onBGMStart() {};
-	/* BGM播放进度
-	参数：
-		progress	int	当前 BGM 已播放时间（ms）。
-		duration	int	当前 BGM 总时间（ms）。
-	*/
-	virtual void onBGMProgress(int progress, int duration) {};
-
-	/* BGM播放停止
-	参数：
-		err	int	0：正常结束；-1：出错结束。
-	*/
-	virtual void onBGMComplete(int err) {};
-};
 
 class IArLivePushKit
 {
@@ -93,7 +67,6 @@ public:
 	*/
 	virtual int stopPush() = 0;
 	
-	
 	/* 暂停摄像头或屏幕采集并进入垫片推流状态。
 	功能：
 		暂时停止摄像头或屏幕采集，并使用 ArLivePushConfig.pauseImg 中指定的图片作为替代图像进行推流，也就是所谓的“垫片”。 
@@ -115,43 +88,9 @@ public:
 	*/
 	virtual bool isPushing() = 0;
 
-	
 
-	//* For BGM
-	/* 设置推流事件回调
-	参数：
-		pEvent	IArBGMEvent*	回调BGM事件接收对象
-	*/
-	virtual void setArBGMEvent(IArBGMEvent*pEvent) = 0;
-	/*播放背景音乐。
-	功能：
-		会将背景音乐和麦克风采集的声音进行混合并一起推送到云端。
-	返回：
-		true：播放成功；false：播放失败。
-	*/
-	virtual bool playBGM(const char* path, int repeat) = 0;
-	/* 停止播放背景音乐。
-	返回：
-		true：停止播放成功； false：停止播放失败。
-	*/
-	virtual bool stopBGM() = 0;
-	/* 暂停播放背景音乐。
-	返回：
-		true：停止播放成功； false：停止播放失败。
-	*/
-	virtual bool pauseBGM() = 0;
-	/* 继续播放背音乐。
-	返回：
-		true：停止播放成功； false：停止播放失败。
-	*/
-	virtual int resumeBGM() = 0;
-	/*设置混音时背景音乐的音量大小，仅在播放背景音乐混音时使用。
-	参数：
-		nVolume	int	音量大小，100为正常音量，范围是：[0 ~ 400] 之间的整数。
-	返回：
-		0：调用成功		<0: 失败
-	*/
-	virtual int adjustBGMVolume(int nVolume) = 0;
+
+	
 };
 
 }
