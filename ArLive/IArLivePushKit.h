@@ -43,15 +43,16 @@ public:
 
 class IArLivePushKit
 {
-public:
+protected:
 	IArLivePushKit(void) {};
 	virtual ~IArLivePushKit(void) {};
+
+public:
 	/* 设置推流事件回调
 	参数：
 		pEvent	IArLivePushEvent*	回调推流事件接收对象
 	*/
-	virtual void setArLivePushEvent(IArLivePushEvent*pEvent) {
-	};
+	virtual void setArLivePushEvent(IArLivePushEvent*pEvent) = 0;
 	//**************************************************************************\\
 	// 推流控制
 	/* 开始推流
@@ -87,10 +88,6 @@ public:
 		true：正在推流，false：未推流。
 	*/
 	virtual bool isPushing() = 0;
-
-
-
-	
 };
 
 }

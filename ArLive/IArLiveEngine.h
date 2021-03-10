@@ -153,14 +153,14 @@ public:
 	virtual int setupCameraView(const AR::VideoCanvas& canvas) = 0;
 	/* 设置视频质量
 	参数：
-		quality	int	画质类型（标清、高清、超高清）。
+		vidDimensions	VideoDimensions	视频分辨率。
 		adjustBitrate	boolean	动态码率开关。
 		adjustResolution	boolean	动态切分辨率开关。
 		orientationMode	ORIENTATION_MODE 编码的视频方向
 	返回：
 		0：调用成功		<0: 失败
 	*/
-	virtual int setVideoQuality(int quality, bool adjustBitrate, bool adjustResolution, AR::ORIENTATION_MODE orientationMode) = 0;
+	virtual int setVideoQuality(AR::VideoDimensions vidDimensions, bool adjustBitrate, bool adjustResolution, AR::ORIENTATION_MODE orientationMode) = 0;
 	/* 开始摄像头预览
 	返回：
 		0：调用成功		<0: 失败

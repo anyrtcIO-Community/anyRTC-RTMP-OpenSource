@@ -81,6 +81,11 @@ struct ArLivePlayConfig
 	连麦时，麦克风和播放有回音，所以必须开启回声消除。非连麦情况下，建议不开启。
 	*/
 	bool bEnableAEC;	//设置回声消除。
+
+	/*此参数是播放的ID
+	用于图像渲染标识。
+	*/
+	char* strPlayerId;	
 };
 
 class IArLivePlayListener
@@ -135,10 +140,11 @@ public:
 
 class IArLivePlayKit
 {
-public:
+protected:
 	IArLivePlayKit(void) {};
 	virtual ~IArLivePlayKit(void) {};
 
+public:
 	//### 内核 基础函数
 	/* 设置播放配置项。
 	参数：
