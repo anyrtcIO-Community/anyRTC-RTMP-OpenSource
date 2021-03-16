@@ -37,6 +37,37 @@ public:
 	virtual void onNetStatus(const ArParams& status) {
 		(void)status;
 	};
+
+	/////////////////////////////////////////////////////////////////////////////////
+	//
+	//              屏幕分享回调
+	//
+	/////////////////////////////////////////////////////////////////////////////////
+	/**
+	 * 当屏幕分享开始时，SDK 会通过此回调通知
+	 */
+	virtual void onScreenCaptureStarted() {};
+
+	/**
+	 * 当屏幕分享暂停时，SDK 会通过此回调通知
+	 *
+	 * @param reason 原因，0：用户主动暂停；1：屏幕窗口不可见暂停
+	 */
+	virtual void onScreenCapturePaused(int reason) {};
+
+	/**
+	 * 当屏幕分享恢复时，SDK 会通过此回调通知
+	 *
+	 * @param reason 恢复原因，0：用户主动恢复；1：屏幕窗口恢复可见从而恢复分享
+	 */
+	virtual void onScreenCaptureResumed(int reason) {};
+
+	/**
+	 * 当屏幕分享停止时，SDK 会通过此回调通知
+	 *
+	 * @param reason 停止原因，0：用户主动停止；1：屏幕窗口关闭导致停止
+	 */
+	virtual void onScreenCaptureStoped(int reason) {};
 };
 
 
