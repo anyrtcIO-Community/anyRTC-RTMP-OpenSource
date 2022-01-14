@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".PushActivity">
+
+    <org.webrtc.TextureViewRenderer
+        android:id="@+id/video_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"></org.webrtc.TextureViewRenderer>
+
+    <LinearLayout
+        android:id="@+id/ll_url"
+        android:paddingTop="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_margin="16dp"
+            android:textSize="12sp"
+            android:text="推流地址:"></TextView>
+
+        <TextView
+            android:id="@+id/tv_url"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_margin="16dp"
+            android:textSize="12sp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:drawablePadding="12dp"
+            android:layout_alignParentRight="true"
+            android:drawableRight="@drawable/img_copy"
+            android:text="rtmp:"></TextView>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_below="@+id/ll_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_marginLeft="16dp"
+            android:textSize="12sp"
+            android:text="推流状态:"></TextView>
+
+        <TextView
+            android:id="@+id/tv_state"
+            android:layout_width="wrap_content"
+            android:layout_marginLeft="2dp"
+            android:layout_height="wrap_content"
+            android:textColor="#FFD600"
+            android:textSize="12sp"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="rtmp:"></TextView>
+    </LinearLayout>
+
+
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/iv_exit"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:background="@drawable/shape_white"
+        android:scaleType="center"
+        android:src="@drawable/img_exit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="16dp"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_height="44dp"
+        android:background="@drawable/shape_white"
+        android:layout_margin="16dp">
+        <ImageView
+            android:id="@+id/iv_switch"
+            android:layout_width="wrap_content"
+            android:padding="6dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/img_switch"/>
+        <ImageView
+            android:id="@+id/iv_beauty"
+            android:layout_width="wrap_content"
+            android:padding="6dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/select_beauty"/>
+
+        <ImageView
+            android:id="@+id/iv_audio"
+            android:layout_width="wrap_content"
+            android:padding="6dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/select_audio"/>
+
+        <ImageView
+            android:id="@+id/iv_video"
+            android:layout_width="wrap_content"
+            android:padding="6dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/select_video"/>
+
+        <ImageView
+            android:id="@+id/iv_mirro"
+            android:layout_width="wrap_content"
+            android:padding="6dp"
+            android:layout_height="match_parent"
+            android:scaleType="center"
+            android:src="@drawable/select_mirro"/>
+
+
+
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

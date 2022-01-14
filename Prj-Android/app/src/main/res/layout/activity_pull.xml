@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="io.anyrtc.liveplayer.PullActivity.PlayStatus"></import>
+        <variable
+            name="playStatus"
+            type="PlayStatus" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".PullActivity">
+
+
+        <org.webrtc.TextureViewRenderer
+            android:id="@+id/play_view"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"></org.webrtc.TextureViewRenderer>
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@{`播放状态：`+playStatus.status}"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_margin="24dp"></TextView>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="@{`显示模式：`+playStatus.mode}"
+            android:textSize="14sp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_status"
+            android:layout_margin="24dp"></TextView>
+
+
+        <ImageView
+            android:id="@+id/btn_exit"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:background="@drawable/shape_white"
+            android:scaleType="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:src="@drawable/img_exit"
+            android:layout_alignParentBottom="true"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_margin="16dp"/>
+
+        <ImageView
+            android:id="@+id/iv_snap_result"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_margin="8dp"
+            android:alpha="0"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+        </ImageView>
+
+        <LinearLayout
+            android:layout_width="164dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="44dp"
+            android:background="@drawable/shape_white"
+            android:layout_margin="16dp">
+
+            <TextView
+                android:id="@+id/tv_mode"
+                android:layout_width="0dp"
+                android:textColor="#0241FF"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="match_parent"
+                android:text="切换模式"/>
+
+            <View
+                android:layout_width="0.5dp"
+                android:layout_height="36dp"
+                android:layout_gravity="center_vertical"
+                android:background="#F2F3F5"/>
+
+            <ImageView
+                android:id="@+id/iv_snap"
+                android:layout_width="44dp"
+                android:layout_height="match_parent"
+                android:scaleType="center"
+                android:src="@drawable/img_snap"/>
+
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

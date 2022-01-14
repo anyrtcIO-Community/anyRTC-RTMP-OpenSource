@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_push"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:clickable="true"
+        app:cardCornerRadius="4dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_push"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/img_push"></androidx.appcompat.widget.AppCompatImageView>
+
+            <TextView
+                android:id="@+id/tv_push_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="直播推流"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@+id/tv_push_desc"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/img_push"
+                android:textColor="#1A1A1E">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_push_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:text="@string/push_desc"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_push_title"
+                app:layout_constraintLeft_toRightOf="@+id/img_push"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="#878799">
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_pull"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:clickable="true"
+        app:cardCornerRadius="4dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_pull"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/img_pull"></androidx.appcompat.widget.AppCompatImageView>
+
+            <TextView
+                android:id="@+id/tv_pull_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="直播拉流（播放）"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@+id/tv_pull_desc"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/img_pull"
+                android:textColor="#1A1A1E">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_pull_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:text="@string/pull_desc"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pull_title"
+                app:layout_constraintLeft_toRightOf="@+id/img_pull"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="#878799">
+            </TextView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_live"
+        android:layout_width="match_parent"
+        android:layout_height="88dp"
+        android:clickable="true"
+        app:cardCornerRadius="4dp"
+        android:foreground="?attr/selectableItemBackground"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_live"
+                android:layout_width="56dp"
+                android:layout_height="56dp"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/img_live"></androidx.appcompat.widget.AppCompatImageView>
+
+            <TextView
+                android:id="@+id/tv_live_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="互动连麦"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintVertical_chainStyle="packed"
+                app:layout_constraintBottom_toTopOf="@+id/tv_live_desc"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/img_live"
+                android:textColor="#1A1A1E">
+            </TextView>
+
+            <TextView
+                android:id="@+id/tv_live_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp"
+                android:text="@string/live_desc"
+                android:layout_marginLeft="16dp"
+                app:layout_constraintTop_toBottomOf="@+id/tv_live_title"
+                app:layout_constraintLeft_toRightOf="@+id/img_live"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textColor="#878799">
+            </TextView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:srcCompat="@drawable/img_todo"></androidx.appcompat.widget.AppCompatImageView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+    </Space>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:textColor="#C4C4CE"
+        android:text="Power by anyRTC"
+        android:textSize="12sp"
+        android:gravity="center"
+        android:layout_height="40dp"></TextView>
+
+</LinearLayout>

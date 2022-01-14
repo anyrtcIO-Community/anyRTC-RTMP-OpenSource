@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="io.anyrtc.liveplayer.InputActivity.Config"/>
+        <import type="android.view.View"/>
+        <variable
+            name="config"
+            type="Config" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        tools:context=".InputActivity">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp">
+
+            <ImageView
+                android:id="@+id/img_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:paddingLeft="12dp"
+                android:src="@drawable/img_back" />
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@{config.type == 0 ? `直播推流` : `拉流播放`}"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+
+
+        <EditText
+            android:id="@+id/et_url"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="40dp"
+            android:paddingLeft="12dp"
+            android:textSize="14sp"
+            android:singleLine="true"
+            android:maxLines="2"
+            android:gravity="left|center_vertical"
+            android:hint="@{config.type == 0 ? `请输入推流地址` : `请输入拉流地址`}"
+            android:background="@drawable/shape_edit"/>
+
+        <LinearLayout
+            android:id="@+id/ll_options"
+            android:visibility="@{config.type == 0 ? View.VISIBLE : View.GONE}"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="分辨率"
+                android:textSize="12sp"
+                android:textColor="#1A1A1E"
+                android:textStyle="bold"/>
+
+            <RadioGroup
+                android:id="@+id/rg_resolution"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_a"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:textColor="@color/color_options"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:background="@drawable/select_options"
+                    android:layout_weight="1"
+                    android:text="720P"/>
+
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rb_b"
+                    android:layout_width="0dp"
+                    android:button="@null"
+                    android:text="540P"
+                    android:textColor="@color/color_options"
+                    android:background="@drawable/select_options"
+                    android:gravity="center"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"/>
+
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rb_c"
+                    android:layout_width="0dp"
+                    android:button="@null"
+                    android:text="360P"
+                    android:textColor="@color/color_options"
+                    android:background="@drawable/select_options"
+                    android:gravity="center"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"/>
+            </RadioGroup>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="类型"
+                android:layout_marginTop="20dp"
+                android:textSize="12sp"
+                android:textColor="#1A1A1E"
+                android:textStyle="bold"/>
+
+            <RadioGroup
+                android:id="@+id/rg_type"
+                android:layout_width="match_parent"
+                android:layout_marginTop="12dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rb_camera"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:textColor="@color/color_options"
+                    android:background="@drawable/select_options"
+                    android:layout_weight="1"
+                    android:text="摄像头推流"/>
+
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rb_screen"
+                    android:layout_width="0dp"
+                    android:button="@null"
+                    android:text="屏幕共享"
+                    android:textColor="@color/color_options"
+                    android:background="@drawable/select_options"
+                    android:gravity="center"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"/>
+
+            </RadioGroup>
+
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="40dp"
+            android:textSize="14sp"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:text="@{config.type ==0 ? `开始推流`:`开始播放`}"
+            android:background="@drawable/shape_blue"/>
+
+    </LinearLayout>
+</layout>

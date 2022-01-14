@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">LivePlayer</string>
+    <string name="push_desc">采用 WebRTC 底层架构，支持 RTMP/HLS/ \nHTTP-FLV</string>
+    <string name="pull_desc">低功耗直播播放器，支持软硬解切换，横竖切 \n换，低延迟等</string>
+    <string name="video_desc">支持首屏秒开、清晰度无缝切换、码率自适 \n应等多种特性</string>
+    <string name="live_desc">基于 anyRTC，强力打造直播互动连麦 \n各种互动场景</string>
+</resources>
