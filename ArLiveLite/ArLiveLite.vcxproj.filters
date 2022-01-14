@@ -132,12 +132,6 @@
     <ClInclude Include="SeiMsg.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="player\ARRtmpPlayer.h">
-      <Filter>player</Filter>
-    </ClInclude>
-    <ClInclude Include="player\JitBuffer.h">
-      <Filter>player</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="codec\AvCodec.cc">
@@ -295,12 +289,6 @@
     </ClCompile>
     <ClCompile Include="codec\aacdecode.cc">
       <Filter>codec</Filter>
-    </ClCompile>
-    <ClCompile Include="player\ARRtmpPlayer.cpp">
-      <Filter>player</Filter>
-    </ClCompile>
-    <ClCompile Include="player\JitBuffer.cpp">
-      <Filter>player</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,5 @@
 #include "ArLive2Player.h"
-#include "third_party/libyuv/include/libyuv.h"
+#include "libyuv/include/libyuv.h"
 #include "api/video/video_frame.h"
 #include "rtc_base/bind.h"
 #include "rtc_base/time_utils.h"

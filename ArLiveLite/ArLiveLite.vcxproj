@@ -185,10 +185,8 @@
     <ClInclude Include="PlatformImpl.h" />
     <ClInclude Include="PlayBuffer.h" />
     <ClInclude Include="player\ARPlayer.h" />
-    <ClInclude Include="player\ARRtmpPlayer.h" />
     <ClInclude Include="player\FFBuffer.h" />
     <ClInclude Include="player\ARFFPlayer.h" />
-    <ClInclude Include="player\JitBuffer.h" />
     <ClInclude Include="player\sonic.h" />
     <ClInclude Include="pusher\ARPusher.h" />
     <ClInclude Include="pusher\ARRtmpPusher.h" />
@@ -210,10 +208,8 @@
     <ClCompile Include="MgrRender.cpp" />
     <ClCompile Include="PlatformImpl.cpp" />
     <ClCompile Include="PlayBuffer.cpp" />
-    <ClCompile Include="player\ARRtmpPlayer.cpp" />
     <ClCompile Include="player\FFBuffer.cpp" />
     <ClCompile Include="player\ARFFPlayer.cpp" />
-    <ClCompile Include="player\JitBuffer.cpp" />
     <ClCompile Include="player\sonic.c" />
     <ClCompile Include="pusher\ARRtmpPusher.cpp" />
     <ClCompile Include="RtcTick.cpp" />
@@ -254,9 +250,6 @@
     <ClCompile Include="WinVideoTrackSource.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ARtc2Kit\ArHttp\ArHttp.vcxproj">
-      <Project>{01918910-49e0-4b03-9223-9ae0c81a35e1}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\third_party\faac-1.28\libfaac\libfaac_dll.vcxproj">
       <Project>{856bb8cf-b944-4d7a-9d59-4945316229aa}</Project>
     </ProjectReference>
