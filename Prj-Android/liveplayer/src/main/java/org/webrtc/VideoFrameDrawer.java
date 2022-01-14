@@ -17,6 +17,7 @@ import android.opengl.GLES20;
 import java.nio.ByteBuffer;
 
 import androidx.annotation.Nullable;
+import io.anyrtc.live.util.RgbaBuffer;
 
 /**
  * Helper class to draw VideoFrames. Calls either drawer.drawOes, drawer.drawRgb, or
@@ -141,6 +142,40 @@ public class VideoFrameDrawer {
     }
   }
 
+  private static class RGBAUploader {
+    private int mTextureId;
+    private ByteBuffer mData;
+
+    private RGBAUploader() {
+      this.mTextureId = 0;
+    }
+
+    public int uploadData(ByteBuffer var1, int var2, int var3) {
+      this.mData = var1;
+      if (this.mTextureId == 0) {
+        this.mTextureId = GlUtil.generateTexture(3553);
+      }
+
+      GLES20.glActiveTexture(33984);
+      GLES20.glBindTexture(3553, this.mTextureId);
+      GLES20.glTexImage2D(3553, 0, 6408, var2, var3, 0, 6408, 5121, this.mData);
+      GlUtil.checkNoGLES2Error("glTexImage2D");
+      return this.mTextureId;
+    }
+
+    public int getTextureId() {
+      return this.mTextureId;
+    }
+
+    public void release() {
+      this.mData = null;
+      if (this.mTextureId != 0) {
+        GLES20.glDeleteTextures(1, new int[]{this.mTextureId}, 0);
+        this.mTextureId = 0;
+      }
+
+    }
+  }
   private static int distance(float x0, float y0, float x1, float y1) {
     return (int) Math.round(Math.hypot(x1 - x0, y1 - y0));
   }
@@ -178,9 +213,11 @@ public class VideoFrameDrawer {
   }
 
   private final YuvUploader yuvUploader = new YuvUploader();
+  private final RGBAUploader rgbaUploader = new RGBAUploader();
   // This variable will only be used for checking reference equality and is used for caching I420
   // textures.
   @Nullable private VideoFrame lastI420Frame;
+  @Nullable private VideoFrame lastRgbaFrame;
   private final Matrix renderMatrix = new Matrix();
   private final Matrix renderRotateMatrix = new Matrix();
 
@@ -206,6 +243,7 @@ public class VideoFrameDrawer {
     }
 
     final boolean isTextureFrame = frame.getBuffer() instanceof VideoFrame.TextureBuffer;
+    boolean isRgba = frame.getBuffer() instanceof RgbaBuffer;
     renderMatrix.reset();
     renderMatrix.preTranslate(0.5f, 0.5f);
     if (!isTextureFrame) {
@@ -220,9 +258,20 @@ public class VideoFrameDrawer {
 
     if (isTextureFrame) {
       lastI420Frame = null;
+      this.lastRgbaFrame = null;
       drawTexture(drawer, (VideoFrame.TextureBuffer) frame.getBuffer(), renderMatrix, frame.getRotatedWidth(), frame.getRotatedHeight(), renderWidth,
           renderHeight, viewportX, viewportY, viewportWidth, viewportHeight, blur);
-    } else {
+    } else if (isRgba){
+        if (frame!=lastRgbaFrame){
+          RgbaBuffer rgbaBuffer = (RgbaBuffer) frame.getBuffer();
+          rgbaUploader.uploadData(rgbaBuffer.getBuffer(),rgbaBuffer.getWidth(), rgbaBuffer.getHeight());
+          rgbaBuffer.release();
+        }
+      drawer.drawRgb(rgbaUploader.getTextureId(), frame.getBuffer().getWidth(), frame.getBuffer().getHeight(), frame.getRotatedWidth(), frame.getRotatedHeight(),
+              RendererCommon.convertMatrixFromAndroidGraphicsMatrix(renderMatrix), renderWidth,
+              renderHeight, viewportX, viewportY, viewportWidth, viewportHeight, blur);
+
+    }else {
       // Only upload the I420 data to textures once per frame, if we are called multiple times
       // with the same frame.
       if (frame != lastI420Frame) {
@@ -247,5 +296,7 @@ public class VideoFrameDrawer {
   public void release() {
     yuvUploader.release();
     lastI420Frame = null;
+    this.rgbaUploader.release();
+    this.lastRgbaFrame = null;
   }
 }
