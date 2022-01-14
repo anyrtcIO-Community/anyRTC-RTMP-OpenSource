@@ -1,0 +1,6 @@
+See README and COPYING files for author and copyright information.
+
+kiss_fft.c is modified in order to eliminate static variables.
+
+-- sur.
+

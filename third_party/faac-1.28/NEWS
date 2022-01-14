@@ -1,0 +1,35 @@
+D'oh! ;-)
+
+The most important news in the last weeks probably was moving libmp4v2 from
+FAAD2 to the FAAC folder in the currently available snapshots on
+Audiocoding.com and in the CVS. So FAAC doesn't need an installed FAAD2
+anymore if it is compiled with MP4 writing and tagging support. Yes, FAAC can
+do that on its own now, thanks to Dan and Case...
+
+Volker Fischer adapted FAAC to Digital Radio Mondiale, i.e. it works as an AAC
+LC encoder in his DReaM receiver/transmitter software now. There are still
+things to straighten out like the frame length, but these test transmissions
+can be decoded by the official DRM receiver from FhG/Merlin, too.
+
+There's a new FAAC project summary on Freshmeat.net with many links to existing
+ports and packages as well as other applications using either FAAC or FAAD2:
+http://freshmeat.net/projects/faac/ And Audiocoding.com has been added to the
+Open Directory Project on dmoz.org, too, which serves as a database for many
+important search engines, e.g. Google, Yahoo, AOL and others.
+
+The Winamp and CoolEdit output plugins by Antonio Foranna have been updated
+quite often recently (MP4 tagging and importing tags from input files), and
+he'll probably be an official project member soon. By the way, the currently
+available compiles on RareWares need the external id3lib.dll in your system
+directory, otherwise they won't show up in Winamp's output plugins folder.
+CoolEdit even quits with an error message at the start.
+
+Sad news was that knik quit developing FAAC after bringing it to its current
+competitive state which was proven in the last AAC comparison from 2004 on
+http://www.rjamorim.com/test/aac128v2/results.html So if someone out there
+feels like tuning the only available open source AAC encoder, go ahead...
+
+Hans-Juergen (Oct 17, 2004)
+
+P.S.: See also the updated ChangeLog for all changes since the last
+ChangeLog from Nov 24, 2003.

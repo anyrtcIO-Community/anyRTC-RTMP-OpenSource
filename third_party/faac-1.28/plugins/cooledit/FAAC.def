@@ -1,0 +1,18 @@
+LIBRARY
+
+EXPORTS
+	QueryCoolFilter
+	OpenFilterOutput
+	CloseFilterOutput
+	WriteFilterOutput
+	OpenFilterInput
+	CloseFilterInput
+	ReadFilterInput
+	FilterUnderstandsFormat
+	FilterGetFileSize
+	FilterOptionsString
+	FilterGetOptions
+	GetSuggestedSampleType
+;	DIALOGMsgProc
+;	FilterOptions
+;	FilterSetOptions

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "faac", "faac.vcproj", "{92992E74-AEDE-46DC-AD8C-ADEA876F1A4C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{55C87BFB-9C9C-41E0-B9DC-57F41F679D4B} = {55C87BFB-9C9C-41E0-B9DC-57F41F679D4B}
+		{9CC48C6E-92EB-4814-AD37-97AB3622AB65} = {9CC48C6E-92EB-4814-AD37-97AB3622AB65}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libfaac", "..\libfaac\libfaac.vcproj", "{9CC48C6E-92EB-4814-AD37-97AB3622AB65}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmp4v2_st", "..\common\mp4v2\libmp4v2_st60.vcproj", "{55C87BFB-9C9C-41E0-B9DC-57F41F679D4B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92992E74-AEDE-46DC-AD8C-ADEA876F1A4C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{92992E74-AEDE-46DC-AD8C-ADEA876F1A4C}.Debug|Win32.Build.0 = Debug|Win32
+		{92992E74-AEDE-46DC-AD8C-ADEA876F1A4C}.Release|Win32.ActiveCfg = Release|Win32
+		{92992E74-AEDE-46DC-AD8C-ADEA876F1A4C}.Release|Win32.Build.0 = Release|Win32
+		{9CC48C6E-92EB-4814-AD37-97AB3622AB65}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9CC48C6E-92EB-4814-AD37-97AB3622AB65}.Debug|Win32.Build.0 = Debug|Win32
+		{9CC48C6E-92EB-4814-AD37-97AB3622AB65}.Release|Win32.ActiveCfg = Release|Win32
+		{9CC48C6E-92EB-4814-AD37-97AB3622AB65}.Release|Win32.Build.0 = Release|Win32
+		{55C87BFB-9C9C-41E0-B9DC-57F41F679D4B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{55C87BFB-9C9C-41E0-B9DC-57F41F679D4B}.Debug|Win32.Build.0 = Debug|Win32
+		{55C87BFB-9C9C-41E0-B9DC-57F41F679D4B}.Release|Win32.ActiveCfg = Release|Win32
+		{55C87BFB-9C9C-41E0-B9DC-57F41F679D4B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

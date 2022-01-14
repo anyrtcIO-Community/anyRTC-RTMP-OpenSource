@@ -1,0 +1,28 @@
+Currently maintained by menno (menno@audiocoding.com).
+
+The following list contains the user names of all FAAC developers with their first appearance in the ChangeLog:
+
+1999-12-13  lenox (Tony Lenox)
+1999-12-13  menno
+2000-02-07  oxygene2000/oxygene (?)
+2000-02-22  thebard (wmilas@rarcoa.com)
+2000-07-22  prkoat (?)
+2001-03-18  xfhobbes (?)
+2001-04-27  flyingfox (?)
+2001-09-21  eraser (?)
+2002-08-07  knik (Krzysztof Nikiel)
+2003-08-02  stux (Stuart Espey)
+2003-09-07  ca5e (Janne Hyvärinen)
+2004-03-17  danchr (Dan Christiansen)
+2004-07-04  corrados (Volker Fischer)
+
+Furthermore there are other contributors from the SourceForge mailing list and
+trackers as well as from the web forum or via email whose patches were checked
+in by members of the FAAC project. Among them are Antonio Foranna (Winamp and
+CoolEdit plugins), Bill May, Stephen Shultz (sms00), Jordan Breeding, Brandon
+Forehand, Andrew Voznytsa, Måns Rullgård, RageOMatic and Ivan Dimkovic.
+
+You can find their names and/or aliases in the ChangeLog most of the time.
+Question marks mean that neither the real name nor the email address is known.
+If you think your name should also be in this list or know who some of the
+early developers are, please email me: hans-juergen.bardenhagen@arcor.de

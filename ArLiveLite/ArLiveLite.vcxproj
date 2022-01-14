@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{AB6C052B-60C3-4060-B2D3-526E2CB26BFF}</ProjectGuid>
+    <RootNamespace>ArLive</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v142</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>..\out\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(OutDir)obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>..\out\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(OutDir)obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>..\out\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(OutDir)obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>..\out\$(Configuration)\$(Platform)\</OutDir>
+    <IntDir>$(OutDir)obj\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>NOMINMAX;WEBRTC_WIN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;OS_WINDOWS;ARRTC_EXPORT;ANYRTC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;./include;./pusher;./player;../webrtc_m93_include;../webrtc_m93_include/third_party/abseil-cpp;./rtmp/include;./rtmp/libaio/include;./rtmp/libflv/include;./rtmp/librtmp/aio;./rtmp/librtmp/include;../VideoRender;../third_party;../third_party/faac-1.28/include;../third_party/faad2-2.7/include;../third_party/ffmpeg</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>
+      </LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>ws2_32.lib;winmm.lib;Strmiids.lib;Quartz.lib;dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;crypt32.lib;secur32.lib;Wininet.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;swscale.lib;webrtc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../third_lib/win_x86;../third_lib/ffmpeg_win/x86_lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>NOMINMAX;WEBRTC_WIN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;OS_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;./include;./pusher;./player;../webrtc_m93_include;../webrtc_m93_include/third_party/abseil-cpp;./rtmp/include;./rtmp/libaio/include;./rtmp/libflv/include;./rtmp/librtmp/aio;./rtmp/librtmp/include;../VideoRender;../third_party;../third_party/faac-1.28/include;../third_party/faad2-2.7/include;../third_party/ffmpeg</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>ws2_32.lib;winmm.lib;msimg32.lib;usp10.lib;psapi.lib;shlwapi.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;delayimp.lib;credui.lib;netapi32.lib;crypt32.lib;iphlpapi.lib;secur32.lib;dmoguids.lib;wmcodecdspuuid.lib;amstrmid.lib;msdmo.lib;Strmiids.lib;libcmtd.lib;Wininet.lib;webrtc.lib;avcodec.lib;avfilter.lib;avformat.lib;avutil.lib;swresample.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../third_lib;../third_lib/ffmpeg_win/x64_lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>NOMINMAX;WEBRTC_WIN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;OS_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;./include;./pusher;./player;../webrtc_m93_include;../webrtc_m93_include/third_party/abseil-cpp;./rtmp/include;./rtmp/libaio/include;./rtmp/libflv/include;./rtmp/librtmp/aio;./rtmp/librtmp/include;../VideoRender;../third_party;../third_party/faac-1.28/include;../third_party/faad2-2.7/include;../third_party/ffmpeg</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>
+      </LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;winmm.lib;Strmiids.lib;Quartz.lib;dmoguids.lib;msdmo.lib;wmcodecdspuuid.lib;avcodec.lib;avformat.lib;avutil.lib;swresample.lib;swscale.lib;webrtc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../third_lib/win_x86</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>false</SDLCheck>
+      <ConformanceMode>true</ConformanceMode>
+      <PreprocessorDefinitions>NOMINMAX;WEBRTC_WIN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;OS_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>./;./include;./pusher;./player;../webrtc_m93_include;../webrtc_m93_include/third_party/abseil-cpp;./rtmp/include;./rtmp/libaio/include;./rtmp/libflv/include;./rtmp/librtmp/aio;./rtmp/librtmp/include;../VideoRender;../third_party;../third_party/faac-1.28/include;../third_party/faad2-2.7/include;../third_party/ffmpeg</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>ws2_32.lib;winmm.lib;msimg32.lib;usp10.lib;psapi.lib;shlwapi.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;delayimp.lib;credui.lib;netapi32.lib;crypt32.lib;iphlpapi.lib;secur32.lib;dmoguids.lib;wmcodecdspuuid.lib;amstrmid.lib;msdmo.lib;Strmiids.lib;libcmtd.lib;Wininet.lib;webrtc.lib;avcodec.lib;avfilter.lib;avformat.lib;avutil.lib;swresample.lib;swscale.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>../third_lib;../third_lib/ffmpeg_win/x64_lib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="ArLive2Engine.h" />
+    <ClInclude Include="ArLive2Player.h" />
+    <ClInclude Include="ArLive2Pusher.h" />
+    <ClInclude Include="ArNetClient.h" />
+    <ClInclude Include="ArNetTcpClient.h" />
+    <ClInclude Include="AudDeviceEvent.h" />
+    <ClInclude Include="codec\AvCodec.h" />
+    <ClInclude Include="H264SeiPack.h" />
+    <ClInclude Include="IArLive2Engine.h" />
+    <ClInclude Include="include\ArLiveCode.hpp" />
+    <ClInclude Include="include\ArLiveDef.hpp" />
+    <ClInclude Include="include\IArLivePlayer.hpp" />
+    <ClInclude Include="include\ArLivePlayerObserver.hpp" />
+    <ClInclude Include="include\ArLivePremier.hpp" />
+    <ClInclude Include="include\IArLivePusher.hpp" />
+    <ClInclude Include="include\ArLivePusherObserver.hpp" />
+    <ClInclude Include="include\IArAudioEffectManager.h" />
+    <ClInclude Include="include\IArDeviceManager.h" />
+    <ClInclude Include="INetClient.h" />
+    <ClInclude Include="MgrRender.h" />
+    <ClInclude Include="PlatformImpl.h" />
+    <ClInclude Include="PlayBuffer.h" />
+    <ClInclude Include="player\ARPlayer.h" />
+    <ClInclude Include="player\ARRtmpPlayer.h" />
+    <ClInclude Include="player\FFBuffer.h" />
+    <ClInclude Include="player\ARFFPlayer.h" />
+    <ClInclude Include="player\JitBuffer.h" />
+    <ClInclude Include="player\sonic.h" />
+    <ClInclude Include="pusher\ARPusher.h" />
+    <ClInclude Include="pusher\ARRtmpPusher.h" />
+    <ClInclude Include="RtcTick.h" />
+    <ClInclude Include="SeiMsg.h" />
+    <ClInclude Include="VcmCapturer.h" />
+    <ClInclude Include="WinVideoTrackSource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ArLive2Engine.cpp" />
+    <ClCompile Include="ArLive2Player.cpp" />
+    <ClCompile Include="ArLive2Pusher.cpp" />
+    <ClCompile Include="ArNetClient.cpp" />
+    <ClCompile Include="ArNetTcpClient.cpp" />
+    <ClCompile Include="codec\aacdecode.cc" />
+    <ClCompile Include="codec\aacencode.cc" />
+    <ClCompile Include="codec\AvCodec.cc" />
+    <ClCompile Include="H264SeiPack.cpp" />
+    <ClCompile Include="MgrRender.cpp" />
+    <ClCompile Include="PlatformImpl.cpp" />
+    <ClCompile Include="PlayBuffer.cpp" />
+    <ClCompile Include="player\ARRtmpPlayer.cpp" />
+    <ClCompile Include="player\FFBuffer.cpp" />
+    <ClCompile Include="player\ARFFPlayer.cpp" />
+    <ClCompile Include="player\JitBuffer.cpp" />
+    <ClCompile Include="player\sonic.c" />
+    <ClCompile Include="pusher\ARRtmpPusher.cpp" />
+    <ClCompile Include="RtcTick.cpp" />
+    <ClCompile Include="rtmp\libflv\source\amf0.c" />
+    <ClCompile Include="rtmp\libflv\source\amf3.c" />
+    <ClCompile Include="rtmp\libflv\source\aom-av1.c" />
+    <ClCompile Include="rtmp\libflv\source\flv-demuxer-script.c" />
+    <ClCompile Include="rtmp\libflv\source\flv-demuxer.c" />
+    <ClCompile Include="rtmp\libflv\source\flv-header.c" />
+    <ClCompile Include="rtmp\libflv\source\flv-muxer.c" />
+    <ClCompile Include="rtmp\libflv\source\flv-parser.c" />
+    <ClCompile Include="rtmp\libflv\source\flv-reader.c" />
+    <ClCompile Include="rtmp\libflv\source\flv-writer.c" />
+    <ClCompile Include="rtmp\libflv\source\hevc-annexbtomp4.c" />
+    <ClCompile Include="rtmp\libflv\source\hevc-mp4toannexb.c" />
+    <ClCompile Include="rtmp\libflv\source\mp3-header.c" />
+    <ClCompile Include="rtmp\libflv\source\mpeg4-aac-asc.c" />
+    <ClCompile Include="rtmp\libflv\source\mpeg4-aac.c" />
+    <ClCompile Include="rtmp\libflv\source\mpeg4-annexbtomp4.c" />
+    <ClCompile Include="rtmp\libflv\source\mpeg4-avc.c" />
+    <ClCompile Include="rtmp\libflv\source\mpeg4-hevc.c" />
+    <ClCompile Include="rtmp\libflv\source\mpeg4-mp4toannexb.c" />
+    <ClCompile Include="rtmp\libflv\source\opus-head.c" />
+    <ClCompile Include="rtmp\libflv\source\webm-vpx.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-chunk-header.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-chunk-read.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-chunk-write.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-client.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-control-handler.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-control-message.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-event.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-handler.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-handshake.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-invoke-handler.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-netconnection.c" />
+    <ClCompile Include="rtmp\librtmp\source\rtmp-netstream.c" />
+    <ClCompile Include="VcmCapturer.cpp" />
+    <ClCompile Include="WinVideoTrackSource.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ARtc2Kit\ArHttp\ArHttp.vcxproj">
+      <Project>{01918910-49e0-4b03-9223-9ae0c81a35e1}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\faac-1.28\libfaac\libfaac_dll.vcxproj">
+      <Project>{856bb8cf-b944-4d7a-9d59-4945316229aa}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\third_party\faad2-2.7\libfaad\libfaad2_dll.vcxproj">
+      <Project>{482da264-ee88-4575-b208-87c4cb80cd08}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\VideoRender\win32_render.vcxproj">
+      <Project>{1ad2b7cf-c61c-43cd-8a27-4c52ef9cc5d3}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
