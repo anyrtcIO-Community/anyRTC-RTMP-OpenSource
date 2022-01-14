@@ -70,8 +70,8 @@
 #define PLAY_EVT_VOD_PLAY_PREPARED                  EVT_VOD_PLAY_PREPARED                ///< 点播，视频加载完毕
 #define PLAY_EVT_VOD_LOADING_END                    EVT_VOD_PLAY_LOADING_END             ///< 点播，loading结束
 #define PLAY_EVT_STREAM_SWITCH_SUCC                 EVT_PLAY_LIVE_STREAM_SWITCH_SUCC     ///< 直播，切流成功（切流可以播放不同画面大小的视频）
-#define PLAY_EVT_GET_METADATA                       EVT_PLAY_GET_METADATA                ///< TXLivePlayer 接收到视频流中的 metadata 头信息（一条视频流仅触发一次）
-#define PLAY_EVT_GET_FLVSESSIONKEY                  EVT_PLAY_GET_FLVSESSIONKEY           ///< TXLivePlayer 接收到http响应头中的 flvSessionKey 信息
+#define PLAY_EVT_GET_METADATA                       EVT_PLAY_GET_METADATA                ///< ArLivePlayer 接收到视频流中的 metadata 头信息（一条视频流仅触发一次）
+#define PLAY_EVT_GET_FLVSESSIONKEY                  EVT_PLAY_GET_FLVSESSIONKEY           ///< ArLivePlayer 接收到http响应头中的 flvSessionKey 信息
     
 #define PLAY_ERR_NET_DISCONNECT                     ERR_PLAY_LIVE_STREAM_NET_DISCONNECT  ///< 直播，网络断连且经多次重连抢救无效可以放弃治疗更多重试请自行重启播放
 

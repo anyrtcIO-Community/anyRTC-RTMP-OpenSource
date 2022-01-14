@@ -24,16 +24,16 @@
 #define NET_STATUS_AUDIO_BITRATE         "AUDIO_BITRATE"          ///> 音频码率：即音频编码器每秒生产了多少音频数据，单位：kbps。
 #define NET_STATUS_NET_SPEED             "NET_SPEED"              ///> 传输速度：即每秒钟发送或接收了多少字节的数据。
 
-#define NET_STATUS_VIDEO_CACHE           "VIDEO_CACHE"            ///> TXLivePusher：主播端堆积的视频帧数；TXLivePlayer：播放端缓冲的视频总时长。
-#define NET_STATUS_AUDIO_CACHE           "AUDIO_CACHE"            ///> TXLivePusher：主播端堆积的音频帧数；TXLivePlayer：播放端缓冲的音频总时长。
-#define NET_STATUS_VIDEO_DROP            "VIDEO_DROP"             ///> TXLivePusher：主播端主动丢弃的视频帧数；TXLivePlayer: N/A。
+#define NET_STATUS_VIDEO_CACHE           "VIDEO_CACHE"            ///> ArLivePusher：主播端堆积的视频帧数；ArLivePlayer：播放端缓冲的视频总时长。
+#define NET_STATUS_AUDIO_CACHE           "AUDIO_CACHE"            ///> ArLivePusher：主播端堆积的音频帧数；ArLivePlayer：播放端缓冲的音频总时长。
+#define NET_STATUS_VIDEO_DROP            "VIDEO_DROP"             ///> ArLivePusher：主播端主动丢弃的视频帧数；ArLivePlayer: N/A。
 #define NET_STATUS_AUDIO_DROP            "AUDIO_DROP"             ///> 暂未使用
 
-#define NET_STATUS_V_DEC_CACHE_SIZE      "V_DEC_CACHE_SIZE"       ///> TXLivePlayer：播放端解码器中缓存的视频帧数（Android 端硬解码时存在）。
-#define NET_STATUS_V_SUM_CACHE_SIZE      "V_SUM_CACHE_SIZE"       ///> TXLivePlayer：播放端缓冲的总视频帧数，该数值越大，播放延迟越高。
-#define NET_STATUS_AV_PLAY_INTERVAL      "AV_PLAY_INTERVAL"       ///> TXLivePlayer：音画同步错位时间（播放），单位 ms，此数值越小，音画同步越好。
-#define NET_STATUS_AV_RECV_INTERVAL      "AV_RECV_INTERVAL"       ///> TXLivePlayer：音画同步错位时间（网络），单位 ms，此数值越小，音画同步越好。
-#define NET_STATUS_AUDIO_CACHE_THRESHOLD "AUDIO_CACHE_THRESHOLD"  ///> TXLivePlayer：音频缓冲时长阈值，缓冲超过该阈值后，播放器会开始调控延时。
+#define NET_STATUS_V_DEC_CACHE_SIZE      "V_DEC_CACHE_SIZE"       ///> ArLivePlayer：播放端解码器中缓存的视频帧数（Android 端硬解码时存在）。
+#define NET_STATUS_V_SUM_CACHE_SIZE      "V_SUM_CACHE_SIZE"       ///> ArLivePlayer：播放端缓冲的总视频帧数，该数值越大，播放延迟越高。
+#define NET_STATUS_AV_PLAY_INTERVAL      "AV_PLAY_INTERVAL"       ///> ArLivePlayer：音画同步错位时间（播放），单位 ms，此数值越小，音画同步越好。
+#define NET_STATUS_AV_RECV_INTERVAL      "AV_RECV_INTERVAL"       ///> ArLivePlayer：音画同步错位时间（网络），单位 ms，此数值越小，音画同步越好。
+#define NET_STATUS_AUDIO_CACHE_THRESHOLD "AUDIO_CACHE_THRESHOLD"  ///> ArLivePlayer：音频缓冲时长阈值，缓冲超过该阈值后，播放器会开始调控延时。
 
 #define NET_STATUS_AUDIO_INFO            "AUDIO_INFO"             ///> 音频信息：包括采样率信息和声道数信息
 #define NET_STATUS_NET_JITTER            "NET_JITTER"             ///> 网络抖动：数值越大表示抖动越大，网络越不稳定

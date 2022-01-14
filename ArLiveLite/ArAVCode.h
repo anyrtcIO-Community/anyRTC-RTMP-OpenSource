@@ -404,7 +404,7 @@ typedef enum ArAVEvent
     EVT_PLAY_GET_METADATA                           = 2028,     ///<  视频流MetaData事件
     EVT_MIC_RELEASE_SUCC                            = 2029,     ///<  释放麦克风占用
     EVT_AUDIO_DEVICE_ROUTE_CHANGED                  = 2030,     ///<  音频设备的route发生改变，即当前的输入输出设备发生改变，比如耳机被拔出
-    EVT_PLAY_GET_FLVSESSIONKEY                      = 2031,     ///<  TXLivePlayer 接收到http响应头中的 flvSessionKey 信息
+    EVT_PLAY_GET_FLVSESSIONKEY                      = 2031,     ///<  ArLivePlayer 接收到http响应头中的 flvSessionKey 信息
 
     EVT_ROOM_ENTER                                  = 1018,     ///<  进入房间成功
     EVT_ROOM_EXIT                                   = 1019,     ///<  退出房间
