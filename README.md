@@ -63,7 +63,7 @@ Email:[hi@dync.cc]()
 
 加微信入技术群交流：
 
-<img src="https://teameeting.oss-cn-shanghai.aliyuncs.com/ar/github-source/weixincustomer.png" style="zoom:50%;" />
+<img src="https://teameeting.oss-cn-shanghai.aliyuncs.com/ar/github-source/weixincustomer.png" style="zoom:30%;" />
 
 ### 版权声明
 
