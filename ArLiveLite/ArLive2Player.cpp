@@ -251,9 +251,7 @@ void ArLive2Player::showDebugView(bool isShow)
 void ArLive2Player::OnTick()
 {
 	//play_buffer_.DoTick();
-	if (ar_player_ != NULL) {
-		ar_player_->RunOnce();
-	}
+	
 }
 void ArLive2Player::OnTickUnAttach()
 {
@@ -355,6 +353,9 @@ void ArLive2Player::OnFirstAudioDecoded()
 //* For AudDevSpeakerEvent
 int ArLive2Player::MixAudioData(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels)
 {
+	if (ar_player_ != NULL) {
+		ar_player_->RunOnce();
+	}
 	if (b_audio_paused_ && b_video_paused_) {
 		return 0;
 	}
@@ -479,9 +480,12 @@ void ArLive2Player::OnArPlySeiData(void* player, const char* pData, int nLen, in
 			int nPayloadLen = 0;
 			const char* sei = pData + semiLen + 2;
 			//数据长度
+			int sl = 0;
 			do {
-				nPayloadLen += *sei;
-			} while (*sei++ == 255);
+				sl = (*sei) & 0xff;
+				sei++;
+				nPayloadLen += sl;
+			} while (sl == 255);
 
 			if (observer_ != NULL) {
 				observer_->onReceiveSeiMessage(this, nPayloadType, (uint8_t*)sei, nPayloadLen);

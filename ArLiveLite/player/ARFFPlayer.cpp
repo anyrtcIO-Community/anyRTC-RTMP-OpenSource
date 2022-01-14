@@ -782,7 +782,10 @@ void ARFFPlayer::ParseVideoSei(char* pData, int nLen, int64_t pts)
 			{
 				return;
 			}
-			unsigned int vpkg_len = (ptr[1] << 16) + (int)(ptr[2] << 8) + ptr[3];	//
+			int n1 = (int)(ptr[1] & 0xff) << 16;
+			int n2 = (int)(ptr[2] & 0xff) << 8;
+			int n3 = (int)(ptr[3] & 0xff);
+			unsigned int vpkg_len = n1 + n2 + n3;	//
 
 			// 2. check NAL header including NAL start and type,
 			//    only nal_unit_type = 1 and 5 are selected
