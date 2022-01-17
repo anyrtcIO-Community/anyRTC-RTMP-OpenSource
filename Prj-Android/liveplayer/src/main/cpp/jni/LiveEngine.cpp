@@ -144,8 +144,6 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeRelease(JNIEnv *env, jobject o
         instance->arLiveEngine->release();
     }
     delete instance;
-    //webrtc::JVM::Uninitialize();
-   // webrtcLoaded = false;
 }
 
 
@@ -156,7 +154,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSetRenderView(JNIEnv *env, job
     if (arLivePushKit!= NULL){
         result = arLivePushKit->setRenderView(reinterpret_cast<view_t *>(localSink));
     }
-    return result;
+    return (jint)result;
 }
 
 
@@ -167,7 +165,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStartCamera(JNIEnv *env, jobje
     if (arLivePushKit!= NULL){
         result = arLivePushKit->startCamera(isFront);
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -177,7 +175,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStopCamera(JNIEnv *env, jobjec
     if (arLivePushKit!= NULL){
         result = arLivePushKit->stopCamera();
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -187,7 +185,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSetEncoderMirror(JNIEnv *env, 
     if (arLivePushKit!= NULL){
         result = arLivePushKit->setEncoderMirror(mirror);
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -197,7 +195,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStartMicrophone(JNIEnv *env, j
     if (arLivePushKit!= NULL){
         result = arLivePushKit->startMicrophone();
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -207,7 +205,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStopMicrophone(JNIEnv *env, jo
     if (arLivePushKit!= NULL){
         result = arLivePushKit->stopMicrophone();
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -249,7 +247,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStartVirtualCamera(JNIEnv *env
         result = arLivePushKit->startVirtualCamera(image);
         env->ReleaseByteArrayElements(bitmap, bufferPtr, 0);
     }
-    return result;
+    return (jint)result;
 }
 JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeStopVirtualCamera(JNIEnv *env, jobject thiz, jlong nativePtr) {
@@ -258,7 +256,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStopVirtualCamera(JNIEnv *env,
     if (arLivePushKit!= NULL){
         result = arLivePushKit->stopVirtualCamera();
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -268,7 +266,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativePausePusherAudio(JNIEnv *env, 
     if (arLivePushKit!= NULL){
         result = arLivePushKit->pauseAudio();
     }
-    return result;
+    return (jint)result;
 }
 JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeResumePusherAudio(JNIEnv *env, jobject obj,jlong nativePtr) {
@@ -277,7 +275,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeResumePusherAudio(JNIEnv *env,
     if (arLivePushKit!= NULL){
         result = arLivePushKit->resumeAudio();
     }
-    return result;
+    return (jint)result;
 }
 JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativePausePusherVideo(JNIEnv *env, jobject obj,jlong nativePtr) {
@@ -286,7 +284,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativePausePusherVideo(JNIEnv *env, 
     if (arLivePushKit!= NULL){
         result = arLivePushKit->pauseVideo();
     }
-    return result;
+    return (jint)result;
 }
 JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeResumePusherVideo(JNIEnv *env, jobject obj,jlong nativePtr) {
@@ -295,7 +293,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeResumePusherVideo(JNIEnv *env,
     if (arLivePushKit!= NULL){
         result = arLivePushKit->resumeVideo();
     }
-    return result;
+    return (jint)result;
 }
 
 
@@ -308,6 +306,7 @@ Java_io_anyrtc_live_internal_NativeInstance_switchCamera(JNIEnv *env, jobject ob
 
 JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeSetVideoQuality(JNIEnv *env, jobject obj,jlong nativePtr,jint videoResolution,jint videoResolutionMode,jint videoFps,jint videoBitrate,jint minVideoBitrate) {
+    jint result = -1;
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
     if (arLivePushKit!= NULL){
         AR::ArLiveVideoEncoderParam param = anyrtc::ArLiveVideoEncoderParam(ArLiveVideoResolution640x480);
@@ -316,18 +315,19 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSetVideoQuality(JNIEnv *env, j
         param.videoBitrate = videoBitrate;
         param.videoFps  = videoFps;
         param.minVideoBitrate = minVideoBitrate;
-        arLivePushKit->setVideoQuality(param);
+        result = arLivePushKit->setVideoQuality(param);
     }
-    return 0;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeSetAudioQuality(JNIEnv *env, jobject obj,jlong nativePtr,jint mode) {
+    jint result = -1;
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
     if (arLivePushKit!= NULL){
-        arLivePushKit->setAudioQuality(static_cast<ArLiveAudioQuality>(mode));
+        result = arLivePushKit->setAudioQuality(static_cast<ArLiveAudioQuality>(mode));
     }
-    return 0;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -335,23 +335,25 @@ Java_io_anyrtc_live_internal_NativeInstance_nativePusherEnableVolumeEvaluation(J
                                                                                jobject thiz,jlong nativePtr,
                                                                                jint interval_ms) {
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
+    jint result = -1;
     if (arLivePushKit!= NULL){
-        arLivePushKit->enableVolumeEvaluation(interval_ms);
+        result = arLivePushKit->enableVolumeEvaluation(interval_ms);
     }
-    return 0;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeSendSeiMessage(JNIEnv *env, jobject thiz,jlong nativePtr,
                                                                  jint var1, jbyteArray var2) {
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
+    jint result = -1;
     if (arLivePushKit!= NULL){
         jbyte* bufferPtr=(env)->GetByteArrayElements(var2, NULL);
         jint size = env->GetArrayLength(var2);
-        arLivePushKit->sendSeiMessage(var1, reinterpret_cast<const uint8_t *>(bufferPtr), size);
+        result = arLivePushKit->sendSeiMessage(var1, reinterpret_cast<const uint8_t *>(bufferPtr), size);
         env->ReleaseByteArrayElements(var2, bufferPtr, 0);
     }
-    return (jint)0;
+    return (jint)result;
 
 }
 
@@ -361,10 +363,11 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeEnableCustomVideoCapture(JNIEn
                                                                            jlong nativePtr,
                                                                            jboolean var1) {
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
+    jint result = -1;
     if (arLivePushKit!= NULL){
-        arLivePushKit->enableCustomVideoCapture(var1);
+        result = arLivePushKit->enableCustomVideoCapture(var1);
     }
-    return (jint)0;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -376,6 +379,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSendCustomVideoFrame(JNIEnv *e
                                                                        jobject buffer, jint width,
                                                                        jint height, jint rotation) {
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
+    jint result = -1;
     if (arLivePushKit!= NULL){
         ArLiveVideoFrame *frame = new ArLiveVideoFrame();
         frame->pixelFormat = static_cast<ArLivePixelFormat>(pixel_format);
@@ -385,10 +389,10 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSendCustomVideoFrame(JNIEnv *e
         frame->rotation = static_cast<ArLiveRotation>(rotation);
         jbyte* arrayData=(env)->GetByteArrayElements(data, NULL);
         frame->data = reinterpret_cast<char *>(arLivePushKit);
-        arLivePushKit->sendCustomVideoFrame(frame);
+        result = arLivePushKit->sendCustomVideoFrame(frame);
         env->ReleaseByteArrayElements(data, arrayData, 0);
     }
-    return (jint)0;
+    return (jint)result;
 }
 
 
@@ -397,10 +401,11 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeEnableCustomAudioCapture(JNIEn
                                                                            jobject thiz,jlong nativePtr,
                                                                            jboolean enable) {
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
+    jint result  = -1;
     if (arLivePushKit!= NULL){
-        arLivePushKit->enableCustomAudioCapture(enable);
+        result = arLivePushKit->enableCustomAudioCapture(enable);
     }
-    return (jint)0;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -410,6 +415,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSendCustomAudioFrame(JNIEnv *e
                                                                        jint sample_rate,
                                                                        jbyteArray data) {
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
+    jint result  = -1;
     if (arLivePushKit!= NULL){
         jbyte* bufferPtr=(env)->GetByteArrayElements(data, NULL);
         jint size = env->GetArrayLength(data);
@@ -418,10 +424,10 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSendCustomAudioFrame(JNIEnv *e
         audioFrame->channel = channel;
         audioFrame->sampleRate = sample_rate;
         audioFrame->length = size;
-        arLivePushKit->sendCustomAudioFrame(audioFrame);
+        result = arLivePushKit->sendCustomAudioFrame(audioFrame);
         env->ReleaseByteArrayElements(data, bufferPtr, 0);
     }
-    return (jint)0;
+    return (jint)result;
 }
 
 
@@ -463,7 +469,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStartPlay(JNIEnv *env, jobject
         std::string strUrl = webrtc::JavaToStdString(env, url);
         result = arLivePlayKit->startPlay(strUrl.c_str());
     }
-    return result;
+    return (jint)result;
 }
 
 
@@ -475,7 +481,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStopPlay(JNIEnv *env, jobject 
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->stopPlay();
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -486,7 +492,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeIsPlaying(JNIEnv *env, jobject
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->isPlaying();
     }
-    return result;
+    return (jint)result;
 }
 JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeSetRenderRotation(JNIEnv *env, jobject thiz,jlong nativeHandle,jint rotation
@@ -496,7 +502,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSetRenderRotation(JNIEnv *env,
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->setRenderRotation(static_cast<ArLiveRotation>(rotation));
     }
-    return result;
+    return (jint)result;
 }
 
 
@@ -508,7 +514,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativePauseAudio(JNIEnv *env, jobjec
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->pauseAudio();
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -519,7 +525,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeResumeAudio(JNIEnv *env, jobje
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->resumeAudio();
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -530,7 +536,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeResumeVideo(JNIEnv *env, jobje
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->resumeVideo();
     }
-    return result;
+    return (jint)result;
 }
 
 
@@ -543,7 +549,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativePauseVideo(JNIEnv *env, jobjec
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->pauseVideo();
     }
-    return result;
+    return (jint)result;
 }
 
 
@@ -555,7 +561,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSetPlayoutVolume(JNIEnv *env, 
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->setPlayoutVolume(vom);
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -566,7 +572,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSetCacheParams(JNIEnv *env, jo
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->setCacheParams(minTime,maxTime);
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -577,7 +583,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeEnableVolumeEvaluation(JNIEnv 
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->enableVolumeEvaluation(intervalMs);
     }
-    return result;
+    return (jint)result;
 }
 
 
@@ -589,7 +595,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeEnableCustomRendering(JNIEnv *
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->enableCustomRendering(enable,(ArLivePixelFormat)format,(ArLiveBufferType)type);
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT jint JNICALL
@@ -600,7 +606,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeEnableReceiveSeiMessage(JNIEnv
     if (arLivePlayKit != NULL){
         result = arLivePlayKit->enableReceiveSeiMessage(enable,payloadType);
     }
-    return result;
+    return (jint)result;
 }
 
 JNIEXPORT void JNICALL
@@ -656,10 +662,11 @@ JNIEXPORT jint JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeSetPlayerView(JNIEnv *env, jobject obj,jlong nativeHandle,jobject videoSink) {
 
     IArLivePlayer* arLivePlayKit = reinterpret_cast<IArLivePlayer *>(nativeHandle);
+    jint result = -1;
     if (arLivePlayKit!= NULL){
-        arLivePlayKit->setRenderView(reinterpret_cast<view_t *>(videoSink));
+        result = arLivePlayKit->setRenderView(reinterpret_cast<view_t *>(videoSink));
     }
-    return 0;
+    return (jint)result;
 }
 
 }

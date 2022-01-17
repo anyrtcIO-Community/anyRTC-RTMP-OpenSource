@@ -65,7 +65,6 @@ public:
 
 public:
     rtc::scoped_refptr<webrtc::JavaVideoTrackSourceInterface> videoSource;
-    void *ptrCapture;
     std::unique_ptr<arlive::VideoCameraCapturer> _capturer;
     int captureWidth;
     int captureheight;

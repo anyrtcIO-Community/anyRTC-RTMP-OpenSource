@@ -287,12 +287,20 @@ public class ArLivePlayerImpl extends ArLivePlayer {
 
         @Override
         public void onError(int code, String msg, String extraInfo) {
-
+            applicationHandler.post(() -> {
+                if (arLivePlayEvent!=null){
+                    arLivePlayEvent.onError(arLivePlayer,code,msg,null);
+                }
+            });
         }
 
         @Override
         public void onWarning(int code, String msg, String extraInfo) {
-
+            applicationHandler.post(() -> {
+                if (arLivePlayEvent!=null){
+                    arLivePlayEvent.onWarning(arLivePlayer,code,msg,null);
+                }
+            });
         }
 
         @Override

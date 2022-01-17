@@ -23,7 +23,6 @@ AndroidDeviceManager&  AndroidDeviceManager::Inst(){
 
 AndroidDeviceManager::AndroidDeviceManager(void):
         videoSource(NULL),
-        ptrCapture(NULL),
         isScreenCapture(false),
         _platformContext(NULL)
 {

@@ -206,10 +206,7 @@ public class ArLivePusherImpl extends ArLivePusher {
 
     @Override
     public int setRenderRotation(ArLiveDef.ArLiveRotation var1) {
-        if (renderView!=null){
-
-        }
-        return 0;
+        return nativeInstance.nativeSetRenderRotation(nativeId,var1.ordinal());
     }
 
     @Override
@@ -371,14 +368,12 @@ public class ArLivePusherImpl extends ArLivePusher {
 
     @Override
     public int setAudioQuality(ArLiveDef.ArLiveAudioQuality var1) {
-        nativeInstance.nativeSetAudioQuality(nativeId,var1.ordinal());
-        return 0;
+        return nativeInstance.nativeSetAudioQuality(nativeId,var1.ordinal());
     }
 
     @Override
     public int setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam var1) {
-        nativeInstance.nativeSetVideoQuality(nativeId,var1.videoResolution.ordinal(),var1.videoResolutionMode.ordinal(),var1.videoFps,var1.videoBitrate,var1.minVideoBitrate);
-        return 0;
+        return nativeInstance.nativeSetVideoQuality(nativeId,var1.videoResolution.ordinal(),var1.videoResolutionMode.ordinal(),var1.videoFps,var1.videoBitrate,var1.minVideoBitrate);
     }
 
     @Override
@@ -414,7 +409,7 @@ public class ArLivePusherImpl extends ArLivePusher {
 
     @Override
     public int enableVolumeEvaluation(int var1) {
-        return 0;
+        return nativeInstance.nativeEnableVolumeEvaluation(nativeId,var1);
     }
 
     @Override
@@ -424,17 +419,17 @@ public class ArLivePusherImpl extends ArLivePusher {
 
     @Override
     public int enableCustomVideoCapture(boolean var1) {
-        return 0;
+        return nativeInstance.nativeEnableCustomVideoCapture(nativeId,var1);
     }
 
     @Override
     public int sendCustomVideoFrame(ArLiveDef.ArLiveVideoFrame var1) {
-        return 0;
+        return nativeInstance.nativeSendCustomVideoFrame(nativeId,var1.pixelFormat.ordinal(),var1.bufferType.ordinal(),var1.data,var1.buffer,var1.width,var1.height,var1.rotation);
     }
 
     @Override
     public int enableCustomAudioCapture(boolean var1) {
-        return 0;
+        return nativeInstance.nativeEnableCustomAudioCapture(nativeId,var1);
     }
 
     @Override
@@ -447,25 +442,6 @@ public class ArLivePusherImpl extends ArLivePusher {
         return nativeInstance.nativeSendSeiMessage(nativeId,var1,var2);
     }
 
-//    @Override
-//    public void showDebugView(boolean var1) {
-//
-//    }
-//
-//    @Override
-//    public int setProperty(String var1, Object var2) {
-//        return 0;
-//    }
-//
-//    @Override
-//    public int setMixTranscodingConfig(ArLiveDef.ArLiveTranscodingConfig var1) {
-//        return 0;
-//    }
-
-//    @Override
-//    public void release() {
-//        nativeInstance.nativeReleasePusher();
-//    }
 
      boolean attach(NativeInstance nativeInstance){
         this.nativeInstance = nativeInstance;
