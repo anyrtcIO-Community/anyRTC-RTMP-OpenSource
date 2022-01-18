@@ -390,7 +390,7 @@ void V_H264Encoder::NewVideoEncoder()
 {
 	std::string strCodecName = "H264";
 	webrtc::SdpVideoFormat sdpParam(strCodecName);
-	sdpParam.parameters[cricket::kH264FmtpPacketizationMode] = "1";	//@Eric - ���µ�̫֡��?
+	sdpParam.parameters[cricket::kH264FmtpPacketizationMode] = "1";	//@Eric - 导致单帧太大?
 
 	std::unique_ptr<VideoEncoder> extern_encoder = NULL;
 	if (video_encoder_factory_ != NULL)
@@ -521,7 +521,7 @@ void V_H264Decoder::SetVideoData(bool bKeyFrame, const char* pData, int nLen)
 	has_video_ = true;
 	VidData* vidData = NULL;
 	rtc::CritScope l(&cs_lst_vid_data_);
-	if (bKeyFrame) {//�ؼ�֡����ն���
+	if (bKeyFrame) {//关键帧则清空队列
 		while (lst_vid_data_.size() > 0) {
 			VidData* tpData = lst_vid_data_.front();
 			lst_vid_data_.pop_front();
