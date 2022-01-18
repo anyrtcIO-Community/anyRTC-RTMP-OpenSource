@@ -16,7 +16,7 @@
 * your programs, too.
 * See the GNU LICENSE file for more info.
 */
-#include "avcodec.h"
+#include "Avcodec.h"
 #include "libyuv/include/libyuv.h"
 #include "rtc_base/bind.h"
 #include "rtc_base/time_utils.h"
@@ -390,7 +390,7 @@ void V_H264Encoder::NewVideoEncoder()
 {
 	std::string strCodecName = "H264";
 	webrtc::SdpVideoFormat sdpParam(strCodecName);
-	sdpParam.parameters[cricket::kH264FmtpPacketizationMode] = "1";	//@Eric - µ¼ÖÂµ¥Ö¡Ì«´ó?
+	sdpParam.parameters[cricket::kH264FmtpPacketizationMode] = "1";	//@Eric - ï¿½ï¿½ï¿½Âµï¿½Ö¡Ì«ï¿½ï¿½?
 
 	std::unique_ptr<VideoEncoder> extern_encoder = NULL;
 	if (video_encoder_factory_ != NULL)
@@ -521,7 +521,7 @@ void V_H264Decoder::SetVideoData(bool bKeyFrame, const char* pData, int nLen)
 	has_video_ = true;
 	VidData* vidData = NULL;
 	rtc::CritScope l(&cs_lst_vid_data_);
-	if (bKeyFrame) {//¹Ø¼üÖ¡ÔòÇå¿Õ¶ÓÁÐ
+	if (bKeyFrame) {//ï¿½Ø¼ï¿½Ö¡ï¿½ï¿½ï¿½ï¿½Õ¶ï¿½ï¿½ï¿½
 		while (lst_vid_data_.size() > 0) {
 			VidData* tpData = lst_vid_data_.front();
 			lst_vid_data_.pop_front();
