@@ -167,7 +167,9 @@ private:
 	int64_t						n_stat_timer_ms_;
 	AR::ArLivePusherStatistics		pusher_statistics_;
 private:
+	webrtc::Mutex cs_aac_encoder_;
 	webrtc::A_AACEncoder*		aac_encoder_;
+	webrtc::Mutex cs_h264_encoder_;
 	webrtc::V_H264Encoder*		h264_encoder_;
 	webrtc::VideoEncoderFactory*exVideo_encoder_factory;
 

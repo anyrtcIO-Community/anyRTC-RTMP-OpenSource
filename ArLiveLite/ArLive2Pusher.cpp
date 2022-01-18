@@ -37,9 +37,17 @@ ArLive2Pusher::ArLive2Pusher(ArLive2Engine*pEngine, const std::string& strPushId
 	str_local_push_id_ = strPushId;
 
 	video_source_ = createPlatformVideoSouce();
+
+	if (video_source_ != NULL) {
+		rtc::VideoSinkWants wants;
+		video_source_->AddOrUpdateSink(this, wants);
+	}
 }
 ArLive2Pusher::~ArLive2Pusher(void)
 {
+	if (video_source_ != NULL) {
+		video_source_->RemoveSink(this);
+	}
 	video_source_ = nullptr;
 }
 
@@ -66,6 +74,7 @@ int32_t ArLive2Pusher::setRenderMirror(ArLiveMirrorType mirrorType)
 }
 int32_t ArLive2Pusher::setEncoderMirror(bool mirror) 
 {
+	webrtc::MutexLock l(&cs_h264_encoder_);
 	if (h264_encoder_ != NULL) {
 		h264_encoder_->SetMirror(mirror);
 	}
@@ -340,8 +349,11 @@ int ArLive2Pusher::startPush(const char* strPushUrl)
 				nHeight = nn;
 			}
 			initVideoWithParameters(0, nWidth, nHeight, nFps, nBitrate);
-			if (h264_encoder_ != NULL) {
-				h264_encoder_->RequestKeyFrame();
+			{
+				webrtc::MutexLock l(&cs_h264_encoder_);
+				if (h264_encoder_ != NULL) {
+					h264_encoder_->RequestKeyFrame();
+				}
 			}
 		}
 
@@ -674,6 +686,7 @@ void ArLive2Pusher::OnTick()
 		if (n_last_keyframe_time_ != 0 && n_last_keyframe_time_ + 250 <= rtc::TimeUTCMillis()) {
 			n_last_keyframe_time_ = 0;
 
+			webrtc::MutexLock l(&cs_h264_encoder_);
 			if (h264_encoder_ != NULL) {
 				h264_encoder_->RequestKeyFrame();
 			}
@@ -697,6 +710,7 @@ void ArLive2Pusher::OnTickUnAttach()
 //* For ArLivePushSinkInterface
 void ArLive2Pusher::initAudioWithParameters(int nType, int sampleRate, int numChannels, int audBitrate)
 {
+	webrtc::MutexLock l(&cs_aac_encoder_);
 	if (aac_encoder_ == NULL) {
 		aac_encoder_ = new webrtc::A_AACEncoder(*this);
 		aac_encoder_->Init(sampleRate, numChannels, audBitrate);
@@ -704,6 +718,7 @@ void ArLive2Pusher::initAudioWithParameters(int nType, int sampleRate, int numCh
 }
 void ArLive2Pusher::deinitAudio()
 {
+	webrtc::MutexLock l(&cs_aac_encoder_);
 	if (aac_encoder_ != NULL) {
 		aac_encoder_->DeInit();
 		delete aac_encoder_;
@@ -712,10 +727,8 @@ void ArLive2Pusher::deinitAudio()
 }
 void ArLive2Pusher::initVideoWithParameters(int nType, int videoWidth, int videoHeight, int videoFps, int videoBitrate)
 {
+	webrtc::MutexLock l(&cs_h264_encoder_);
 	if (h264_encoder_ != NULL) {
-		if (video_source_ != NULL) {
-			video_source_->RemoveSink(this);
-		}
 		h264_encoder_->DestoryVideoEncoder();
 		delete h264_encoder_;
 		h264_encoder_ = NULL;
@@ -730,17 +743,12 @@ void ArLive2Pusher::initVideoWithParameters(int nType, int videoWidth, int video
 	}
 #endif
 	h264_encoder_->CreateVideoEncoder();
-	if (video_source_ != NULL) {
-		rtc::VideoSinkWants wants;
-		video_source_->AddOrUpdateSink(this, wants);
-	}
+	
 }
 void ArLive2Pusher::deinitVideo()
 {
+	webrtc::MutexLock l(&cs_h264_encoder_);
 	if (h264_encoder_ != NULL) {
-		if (video_source_ != NULL) {
-			video_source_->RemoveSink(this);
-		}
 		h264_encoder_->DestoryVideoEncoder();
 		delete h264_encoder_;
 		h264_encoder_ = NULL;
@@ -764,11 +772,13 @@ void ArLive2Pusher::RecordedDataIsAvailable(const void* audioSamples, const size
 			const void* ptr = (char*)audioSamples + nAudUsed*nChannels*sizeof(short);
 			if (b_audio_paused_) {
 				char muteAudData[1920] = { 0 };
+				webrtc::MutexLock l(&cs_aac_encoder_);
 				if (aac_encoder_ != NULL) {
 					aac_encoder_->Encode(muteAudData, nSamples, nBytesPerSample, nChannels, samplesPerSec, totalDelayMS);
 				}
 			}
 			else {
+				webrtc::MutexLock l(&cs_aac_encoder_);
 				if (aac_encoder_ != NULL) {
 					aac_encoder_->Encode(ptr, nSamples, nBytesPerSample, nChannels, samplesPerSec, totalDelayMS);
 				}
@@ -799,6 +809,7 @@ void ArLive2Pusher::OnFrame(const webrtc::VideoFrame& frame)
 
 	if (b_live_pushed_) {
 		if (!b_video_paused_ && b_client_connected_) {
+			webrtc::MutexLock l(&cs_h264_encoder_);
 			if (h264_encoder_ != NULL) {
 				h264_encoder_->Encode(frame);
 			}
