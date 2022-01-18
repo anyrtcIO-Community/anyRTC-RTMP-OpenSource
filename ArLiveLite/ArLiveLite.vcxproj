@@ -92,7 +92,7 @@
       <SDLCheck>false</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <PreprocessorDefinitions>NOMINMAX;WEBRTC_WIN;_CRT_SECURE_NO_WARNINGS;_WINSOCK_DEPRECATED_NO_WARNINGS;WEBRTC_INCLUDE_INTERNAL_AUDIO_DEVICE;OS_WINDOWS;ARRTC_EXPORT;ANYRTC_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>./;./include;./pusher;./player;../webrtc_m93_include;../webrtc_m93_include/third_party/abseil-cpp;./rtmp/include;./rtmp/libaio/include;./rtmp/libflv/include;./rtmp/librtmp/aio;./rtmp/librtmp/include;../VideoRender;../third_party;../third_party/faac-1.28/include;../third_party/faad2-2.7/include;../third_party/ffmpeg</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>./;./include;./include/webrtc;./include/webrtc/third_party/abseil-cpp;./pusher;./player;./rtmp/include;./rtmp/libaio/include;./rtmp/libflv/include;./rtmp/librtmp/aio;./rtmp/librtmp/include;../VideoRender;../third_party;../third_party/faac-1.28/include;../third_party/faad2-2.7/include;../third_party/ffmpeg</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <LanguageStandard>
       </LanguageStandard>
