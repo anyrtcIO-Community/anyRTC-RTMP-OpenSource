@@ -33,6 +33,18 @@
 #include "pluginaac.h"
 
 namespace webrtc {
+	enum VideoScaleMode {
+
+		/// 图像铺满屏幕，超出显示视窗的视频部分将被裁剪，画面显示可能不完整
+		VideoScaleModeFill,
+
+		/// 图像长边填满屏幕，短边区域会被填充黑色，画面的内容完整
+		VideoScaleModeFit,
+
+		/// 图像长边填满屏幕，根据设置的比例进行缩放，画面的内容完整
+		VideoScaleModeAuto,
+
+	};
 
 class AVCodecCallback
 {
@@ -75,6 +87,7 @@ public:
 	void SetExVideoEncoderFactory(webrtc::VideoEncoderFactory* video_encoder_factory = NULL);
 	void SetParameter(int width, int height, int fps, int bitrate);
 	void SetMirror(bool bMirror);
+	void SetVideoScaleMode(VideoScaleMode eMode);
 	void UpdateBitrate(int bitrate);
 	void CreateVideoEncoder();
 	void DestoryVideoEncoder();
@@ -98,6 +111,7 @@ private:
 	bool		running_;
 	bool		need_keyframe_;
 	bool		b_mirror_;
+	VideoScaleMode	e_scale_mode_;
 	int64_t		n_next_keyframe_time_;
 	AVCodecCallback& callback_;
 	VideoCodec		h264_;

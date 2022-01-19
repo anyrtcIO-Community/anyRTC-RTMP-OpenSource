@@ -141,6 +141,69 @@ void ScaleToReqYuvCrop(const webrtc::I420BufferInterface* i420_src, const uint8_
 	libyuv::I420Scale(buf0_y + offsetW, i420_src->StrideY(), buf0_u + offsetW / 2, i420_src->StrideU(),
 		buf0_v + offsetW / 2, i420_src->StrideV(), nScaleWidth, nScaleHeight, (uint8_t*)yPtr, stride, (uint8_t*)uPtr, stride / 2, (uint8_t*)vPtr, stride / 2, ww, hh, libyuv::kFilterBilinear);
 }
+void ScaleToReqYuvFit(const webrtc::I420BufferInterface* i420_src, const uint8_t* yPtr, const uint8_t* uPtr, const uint8_t* vPtr, int ww, int hh, int stride)
+{
+	int nSrcWidth = i420_src->width();
+	int nSrcHeight = i420_src->height();
+	int nNeedWidth = ww;
+	int nNeedHeight = hh;
+
+	uint8_t* y = (uint8_t*)yPtr;
+	uint8_t* u = (uint8_t*)uPtr;
+	uint8_t* v = (uint8_t*)vPtr;
+
+	float yuvF = (float)i420_src->width() / (float)i420_src->height();
+	float realF = (float)nNeedWidth / (float)nNeedHeight;
+	int nScaleWidth = nNeedWidth;
+	int nScaleHeight = (int)((float)nScaleWidth / yuvF);
+	if (nScaleHeight > nNeedHeight) {
+		nScaleHeight = nNeedHeight;
+		nScaleWidth = (int)((float)nNeedHeight * yuvF);
+	}
+	if (nScaleWidth % YUV_B_SIZE != 0) {
+		nScaleWidth += (YUV_B_SIZE - nScaleWidth % YUV_B_SIZE);
+		if (nScaleWidth > nNeedWidth) {
+			nScaleWidth = nNeedWidth;
+		}
+	}
+	if (nScaleHeight % YUV_B_SIZE != 0) {
+		nScaleHeight += (YUV_B_SIZE - nScaleHeight % YUV_B_SIZE);
+		if (nScaleHeight > nNeedHeight) {
+			nScaleHeight = nNeedHeight;
+		}
+	}
+
+	int offsetW = (nNeedWidth - nScaleWidth) / 2;
+	int offsetH = (nNeedHeight - nScaleHeight) / 2;
+
+	uint8_t* buf0_y = y + (stride * offsetH);
+	uint8_t* buf0_u = u + (stride * offsetH) / 4;
+	uint8_t* buf0_v = v + (stride * offsetH) / 4;
+
+	libyuv::I420Scale(i420_src->DataY(), i420_src->StrideY(), i420_src->DataU(), i420_src->StrideU(),
+		i420_src->DataV(), i420_src->StrideV(), i420_src->width(), i420_src->height(),
+		buf0_y + offsetW, stride, buf0_u + offsetW / 2, stride / 2,
+		buf0_v + offsetW / 2, stride / 2, nScaleWidth, nScaleHeight,
+		libyuv::kFilterBilinear);
+}
+void ScaleToReqYuv(const webrtc::I420BufferInterface* i420_src, const uint8_t* yPtr, const uint8_t* uPtr, const uint8_t* vPtr, int ww, int hh, int stride)
+{
+	uint8_t* y = (uint8_t*)yPtr;
+	uint8_t* u = (uint8_t*)uPtr;
+	uint8_t* v = (uint8_t*)vPtr;
+
+	int offsetW = 0;
+	int offsetH = 0;
+	uint8_t* buf0_y = y + (stride * offsetH);
+	uint8_t* buf0_u = u + (stride * offsetH) / 4;
+	uint8_t* buf0_v = v + (stride * offsetH) / 4;
+
+	libyuv::I420Scale(i420_src->DataY(), i420_src->StrideY(), i420_src->DataU(), i420_src->StrideU(),
+		i420_src->DataV(), i420_src->StrideV(), i420_src->width(), i420_src->height(),
+		buf0_y + offsetW, stride, buf0_u + offsetW / 2, stride / 2,
+		buf0_v + offsetW / 2, stride / 2, ww, hh,
+		libyuv::kFilterBilinear);
+}
 
 V_H264Encoder::V_H264Encoder(AVCodecCallback&callback)
 : callback_(callback)
@@ -148,6 +211,7 @@ V_H264Encoder::V_H264Encoder(AVCodecCallback&callback)
 , need_keyframe_(true)
 , running_(false)
 , b_mirror_(false)
+, e_scale_mode_(VideoScaleModeAuto)
 , n_next_keyframe_time_(0)
 , render_buffers_(new VideoRenderFrames(0))
 , video_encoder_factory_(NULL)
@@ -183,6 +247,10 @@ void V_H264Encoder::SetParameter(int width, int height, int fps, int bitrate)
 void V_H264Encoder::SetMirror(bool bMirror)
 {
 	b_mirror_ = bMirror;
+}
+void V_H264Encoder::SetVideoScaleMode(VideoScaleMode eMode)
+{
+	e_scale_mode_ = eMode;
 }
 
 void V_H264Encoder::UpdateBitrate(int bitrate)
@@ -269,9 +337,42 @@ void V_H264Encoder::Encode(const webrtc::VideoFrame& frame)
 }
 void V_H264Encoder::AddToFrameList(webrtc::VideoFrame& frame)
 {
-	if (b_mirror_ || h264_.width != frame.width() || h264_.height != frame.height()) {
+	int reqWidth = h264_.width;
+	int reqHeight = h264_.height;
+	if (e_scale_mode_ == VideoScaleModeAuto) {
+		int nSrcWidth = h264_.width;
+		int nSrcHeight = h264_.height;
+		int nNeedWidth = frame.width();
+		int nNeedHeight = frame.height();
+		float yuvF = (float)nSrcWidth / (float)nSrcHeight;
+		float realF = (float)nNeedWidth / (float)nNeedHeight;
+		int nScaleWidth = nSrcWidth;
+		int nScaleHeight = (int)((float)nScaleWidth / realF);
+		if (nScaleHeight > nSrcHeight) {
+			nScaleHeight = nSrcHeight;
+			nScaleWidth = (int)((float)nSrcHeight * realF);
+		}
+		if (nScaleWidth % 4 != 0) {
+			nScaleWidth += (4 - nScaleWidth % 4);
+			if (nScaleWidth > nSrcWidth) {
+				nScaleWidth = nSrcWidth;
+			}
+		}
+		if (nScaleHeight % 4 != 0) {
+			nScaleHeight += (4 - nScaleHeight % 4);
+			if (nScaleHeight > nSrcHeight) {
+				nScaleHeight = nSrcHeight;
+			}
+		}
+
+		reqWidth = nScaleWidth;
+		reqHeight = nScaleHeight;
+	}
+
+	if (b_mirror_ || reqWidth != frame.width() || reqHeight != frame.height()) {
 		rtc::scoped_refptr<webrtc::I420Buffer> video_buffer_ = I420Buffer::Create(
-			h264_.width, abs(h264_.height), h264_.width, h264_.width / 2, h264_.width / 2);
+			reqWidth, reqHeight, reqWidth, reqWidth / 2, reqWidth / 2);
+		webrtc::I420Buffer::SetBlack(video_buffer_);
 		if (b_mirror_) {
 			int mirror_w_ = frame.width();
 			int mirror_h_ = frame.height();
@@ -288,10 +389,26 @@ void V_H264Encoder::AddToFrameList(webrtc::VideoFrame& frame)
 				(uint8_t*)video_mirror_buffer_->DataY(), video_mirror_buffer_->StrideY(), (uint8_t*)video_mirror_buffer_->DataU(), video_mirror_buffer_->StrideU(),
 				(uint8_t*)video_mirror_buffer_->DataV(), video_mirror_buffer_->StrideV(), video_mirror_buffer_->width(), video_mirror_buffer_->height());
 
-			ScaleToReqYuvCrop(video_mirror_buffer_, video_buffer_->DataY(), video_buffer_->DataU(), video_buffer_->DataV(), video_buffer_->width(), video_buffer_->height(), video_buffer_->StrideY());
+			if (e_scale_mode_ == VideoScaleModeFill) {
+				ScaleToReqYuvCrop(video_mirror_buffer_, video_buffer_->DataY(), video_buffer_->DataU(), video_buffer_->DataV(), video_buffer_->width(), video_buffer_->height(), video_buffer_->StrideY());
+			}
+			else if (e_scale_mode_ == VideoScaleModeFit) {
+				ScaleToReqYuvFit(video_mirror_buffer_, video_buffer_->DataY(), video_buffer_->DataU(), video_buffer_->DataV(), video_buffer_->width(), video_buffer_->height(), video_buffer_->StrideY());
+			}
+			else if (e_scale_mode_ == VideoScaleModeAuto) {
+				ScaleToReqYuv(video_mirror_buffer_, video_buffer_->DataY(), video_buffer_->DataU(), video_buffer_->DataV(), video_buffer_->width(), video_buffer_->height(), video_buffer_->StrideY());
+			}
 		}
 		else {
-			ScaleToReqYuvCrop(frame.video_frame_buffer()->GetI420(), video_buffer_->DataY(), video_buffer_->DataU(), video_buffer_->DataV(), video_buffer_->width(), video_buffer_->height(), video_buffer_->StrideY());
+			if (e_scale_mode_ == VideoScaleModeFill) {
+				ScaleToReqYuvCrop(frame.video_frame_buffer()->GetI420(), video_buffer_->DataY(), video_buffer_->DataU(), video_buffer_->DataV(), video_buffer_->width(), video_buffer_->height(), video_buffer_->StrideY());
+			}
+			else if (e_scale_mode_ == VideoScaleModeFit) {
+				ScaleToReqYuvFit(frame.video_frame_buffer()->GetI420(), video_buffer_->DataY(), video_buffer_->DataU(), video_buffer_->DataV(), video_buffer_->width(), video_buffer_->height(), video_buffer_->StrideY());
+			}
+			else if (e_scale_mode_ == VideoScaleModeAuto) {
+				ScaleToReqYuv(frame.video_frame_buffer()->GetI420(), video_buffer_->DataY(), video_buffer_->DataU(), video_buffer_->DataV(), video_buffer_->width(), video_buffer_->height(), video_buffer_->StrideY());
+			}
 		}
 
 		rtc::CritScope cs(&buffer_critsect_);
@@ -314,9 +431,9 @@ void V_H264Encoder::Run()
 		absl::optional<webrtc::VideoFrame> frame_to_render;
 		uint32_t wait_time = 0;
 		{
-		  rtc::CritScope cs(&buffer_critsect_);
-		  frame_to_render = render_buffers_->FrameToRender();
-		  wait_time = render_buffers_->TimeToNextFrameRelease();
+			rtc::CritScope cs(&buffer_critsect_);
+			frame_to_render = render_buffers_->FrameToRender();
+			wait_time = render_buffers_->TimeToNextFrameRelease();
 		}
 
 		if (frame_to_render) {
@@ -351,6 +468,14 @@ void V_H264Encoder::Run()
 				{
 					//printf("Encode ret :%d", ret);
 				}
+				
+#ifdef WEBRTC_IOS
+				//* 临时解决iOS内存泄露问题
+				if (frame_to_render->video_frame_buffer()->type() != VideoFrameBuffer::Type::kNative)
+				{
+					frame_to_render->video_frame_buffer()->Release();
+				}
+#endif
 			}
 		}
 

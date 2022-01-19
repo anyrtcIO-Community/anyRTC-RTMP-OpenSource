@@ -339,7 +339,7 @@ bool ARFFPlayer::ReadThreadProcess()
 							FFBuffer::RecvVideoData(packet, pts, pts, av_rescale_q(packet->duration, vstream_timebase_, TIMEBASE_MS));
 						}
 					}
-					else {
+					else if (packet->stream_index == n_audio_stream_idx_) {
 						int64_t pts = 0;
 						n_net_aud_band_ += packet->size;
 						if (packet->dts != 0) {

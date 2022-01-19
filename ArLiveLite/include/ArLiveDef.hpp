@@ -259,6 +259,22 @@ enum ArLiveVideoResolutionMode {
 };
 
 /**
+ * @brief 视频编码填充模式。
+ */
+enum ArLiveVideoScaleMode {
+    
+    /// 图像铺满屏幕，超出显示视窗的视频部分将被裁剪，画面显示可能不完整
+    ArLiveVideoScaleModeFill,
+
+    /// 图像长边填满屏幕，短边区域会被填充黑色，画面的内容完整
+    ArLiveVideoScaleModeFit,
+
+    /// 图像长边填满屏幕，根据设置的比例进行缩放，画面的内容完整
+    ArLiveVideoScaleModeAuto,
+
+};
+
+/**
  * 视频编码参数。
  *
  * 该设置决定远端用户看到的画面质量。
@@ -291,6 +307,10 @@ struct V2_API ArLiveVideoEncoderParam {
     /// - 如果您将 videoBitrate 和 minVideoBitrate 设置为同一个值，等价于关闭 SDK 对视频码率的自适应调节能力。
     uint32_t minVideoBitrate;
 
+    ///【字段含义】视频编码时，采集图像与设置的编码大小不一致时，采用什么策略进行缩放裁剪
+    ///【推荐取值】ArLiveVideoScaleModeAuto可以保证图像的完整性，但是大小会与设置的略有不同
+    ArLiveVideoScaleMode videoScaleMode;
+
     ArLiveVideoEncoderParam(ArLiveVideoResolution resolution)
         : videoResolution(resolution)
 #if defined(WEBRTC_WIN) | defined(WEBRTC_MAC)
@@ -301,6 +321,7 @@ struct V2_API ArLiveVideoEncoderParam {
         , videoFps(15)
         , videoBitrate(900)
         , minVideoBitrate(500)
+        , videoScaleMode(ArLiveVideoScaleModeAuto)
          {};
 };
 
@@ -364,7 +385,10 @@ enum ArLivePixelFormat {
     ArLivePixelFormatI420,
 
     /// BGRA8888
-    ArLivePixelFormatBGRA32
+    ArLivePixelFormatBGRA32,
+
+    /// YUV420P NV12
+    ArLivePixelFormatNV12,
 
 };
 
@@ -407,10 +431,13 @@ struct ArLiveVideoFrame {
     /// 【字段含义】视频高度
     int32_t height;
 
+    /// 【字段含义】视频Stride
+    int32_t stride;
+
     /// 【字段含义】视频帧的顺时针旋转角度
     ArLiveRotation rotation;
 
-    ArLiveVideoFrame() : pixelFormat(ArLivePixelFormatUnknown), bufferType(ArLiveBufferTypeUnknown), data(nullptr), length(0), width(0), height(0), rotation(ArLiveRotation0) {
+    ArLiveVideoFrame() : pixelFormat(ArLivePixelFormatUnknown), bufferType(ArLiveBufferTypeUnknown), data(nullptr), length(0), width(0), height(0), stride(0), rotation(ArLiveRotation0) {
     }
 };
 /// @}
