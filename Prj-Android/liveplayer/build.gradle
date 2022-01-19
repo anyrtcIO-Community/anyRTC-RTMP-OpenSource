@@ -10,21 +10,20 @@ android {
         targetSdk 31
         versionCode 1
         versionName "1.0"
-
+        consumerProguardFiles "consumer-rules.pro"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         externalNativeBuild {
             cmake {
                 abiFilters 'arm64-v8a','armeabi-v7a'
                 cppFlags '-std=c++14 -DANDROID -fno-rtti'
-                arguments = ['-DANDROID_TOOLCHAIN=clang','-DANDROID_STL=c++_shared']
+                arguments = ['-DANDROID_TOOLCHAIN=clang','-DANDROID_STL=c++_shared','-DCMAKE_BUILD_TYPE=Release']
             }
         }
     }
 
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            minifyEnabled true
         }
         debug {
             minifyEnabled false
@@ -42,6 +41,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     ndkVersion '20.0.5594570'
+
 }
 
 dependencies {

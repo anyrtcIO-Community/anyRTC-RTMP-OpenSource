@@ -305,7 +305,7 @@ Java_io_anyrtc_live_internal_NativeInstance_switchCamera(JNIEnv *env, jobject ob
 
 
 JNIEXPORT jint JNICALL
-Java_io_anyrtc_live_internal_NativeInstance_nativeSetVideoQuality(JNIEnv *env, jobject obj,jlong nativePtr,jint videoResolution,jint videoResolutionMode,jint videoFps,jint videoBitrate,jint minVideoBitrate) {
+Java_io_anyrtc_live_internal_NativeInstance_nativeSetVideoQuality(JNIEnv *env, jobject obj,jlong nativePtr,jint videoResolution,jint videoResolutionMode,jint videoFps,jint videoBitrate,jint minVideoBitrate,jint scaleMode) {
     jint result = -1;
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
     if (arLivePushKit!= NULL){
@@ -315,6 +315,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSetVideoQuality(JNIEnv *env, j
         param.videoBitrate = videoBitrate;
         param.videoFps  = videoFps;
         param.minVideoBitrate = minVideoBitrate;
+        param.videoScaleMode= static_cast<ArLiveVideoScaleMode>(scaleMode);
         result = arLivePushKit->setVideoQuality(param);
     }
     return (jint)result;

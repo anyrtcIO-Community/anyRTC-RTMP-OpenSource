@@ -373,7 +373,7 @@ public class ArLivePusherImpl extends ArLivePusher {
 
     @Override
     public int setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam var1) {
-        return nativeInstance.nativeSetVideoQuality(nativeId,var1.videoResolution.ordinal(),var1.videoResolutionMode.ordinal(),var1.videoFps,var1.videoBitrate,var1.minVideoBitrate);
+        return nativeInstance.nativeSetVideoQuality(nativeId,var1.videoResolution.ordinal(),var1.videoResolutionMode.ordinal(),var1.videoFps,var1.videoBitrate,var1.minVideoBitrate,var1.videoScaleMode.ordinal());
     }
 
     @Override

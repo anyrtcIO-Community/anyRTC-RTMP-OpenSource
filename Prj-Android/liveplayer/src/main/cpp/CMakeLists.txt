@@ -5,7 +5,6 @@
 cmake_minimum_required(VERSION 3.10.2)
 project("anyLive")
 enable_language(ASM)
-#set(CMAKE_CXX_FLAGS "-std=c++14 -DANDROID -fno-rtti")
 set(CMAKE_ASM_COMPILER ${CMAKE_C_COMPILER})
 set(STATIC_LIB_DIR ${CMAKE_SOURCE_DIR}/lib/)
 set(ROOT_DIR ./../../../../../)

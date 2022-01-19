@@ -306,7 +306,8 @@ public class ArLiveDef {
 
     public static enum ArLiveFillMode {
         ArLiveFillModeFill,
-        ArLiveFillModeFit;
+        ArLiveFillModeFit,
+        ArLiveVideoScaleModeAuto;
 
         private ArLiveFillMode() {
         }
@@ -327,6 +328,7 @@ public class ArLiveDef {
         public int videoFps;
         public int videoBitrate;
         public int minVideoBitrate;
+        public ArLiveDef.ArLiveFillMode videoScaleMode;
 
         public ArLiveVideoEncoderParam(ArLiveDef.ArLiveVideoResolution videoResolution) {
             this.videoResolution = videoResolution;
@@ -335,6 +337,7 @@ public class ArLiveDef {
             ArLiveUtils.ArBitrate bitrateByResolution = ArLiveUtils.getBitrateByResolution(videoResolution);
             this.videoBitrate = bitrateByResolution.bitrate;
             this.minVideoBitrate = bitrateByResolution.minBitrate;
+            this.videoScaleMode = ArLiveFillMode.ArLiveVideoScaleModeAuto;
         }
 
         public String toString() {
@@ -367,6 +370,7 @@ public class ArLiveDef {
         private ArLiveVideoResolution() {
         }
     }
+
 
     public static enum ArLiveMode {
         ArLiveMode_RTMP,

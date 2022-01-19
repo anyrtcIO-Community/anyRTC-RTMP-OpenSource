@@ -113,7 +113,7 @@ public class NativeInstance {
 
     protected native int nativeIsPushing(long nativePtr);
 
-    protected native int nativeSetVideoQuality(long nativePtr, int videoResolution, int videoResolutionMode,int fps,int bitrate,int minBitrate);
+    protected native int nativeSetVideoQuality(long nativePtr, int videoResolution, int videoResolutionMode,int fps,int bitrate,int minBitrate,int scaleMode);
 
     protected native int nativeSetAudioQuality(long nativePtr,int mode);
 

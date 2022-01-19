@@ -1,0 +1,2 @@
+-keep class io.anyrtc.** {*;}
+-keep class org.webrtc.** {*;}
