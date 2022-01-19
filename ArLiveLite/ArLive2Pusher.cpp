@@ -91,7 +91,7 @@ int32_t ArLive2Pusher::startCamera(bool frontCamera)
 
 	if (platform_video_cap_ == NULL) {
 #if (defined(WEBRTC_ANDROID))
-		platform_video_cap_.reset(new PtVideoCap(video_source_, video_dimensions_.width, video_dimensions_.height, 25, frontCamera? 0 : 1));
+		platform_video_cap_.reset(new PtVideoCap(video_source_, video_dimensions_.width, video_dimensions_.height, video_dimensions_.fps, frontCamera? 0 : 1));
 		platform_video_cap_->bIsScreen = false;
 #else
         platform_video_cap_.reset(new PtVideoCap(video_source_, video_dimensions_.width, video_dimensions_.height, video_dimensions_.fps, frontCamera ? 2 : 1));
@@ -326,7 +326,7 @@ int ArLive2Pusher::startPush(const char* strPushUrl)
 		ar_pusher_->setVideoEnable(!b_video_paused_);
 		ar_pusher_->startTask(strPushUrl);
 
-		{//* ÉèÖÃÒôÊÓÆµ
+		{//* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æµ
 			switch (audio_quality_) {
 			case ArLiveAudioQualitySpeech: {
 				initAudioWithParameters(0, 16000, 1, 16);
@@ -499,7 +499,7 @@ int32_t ArLive2Pusher::snapshot()
 	if (!main_thread_->IsCurrent()) {
 		return main_thread_->Invoke<int>(RTC_FROM_HERE, rtc::Bind(&ArLive2Pusher::snapshot, this));
 	}
-	if (!b_live_pushed_) {//ÒÑ¾­Í£Ö¹ÍÆÁ÷£¬²»ÔÊÐíµ÷ÓÃ½ØÍ¼²Ù×÷
+	if (!b_live_pushed_) {//ï¿½Ñ¾ï¿½Í£Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã½ï¿½Í¼ï¿½ï¿½ï¿½ï¿½
 		return ArLIVE_ERROR_REFUSED;
 	}
 	b_snap_shot_ = true;
@@ -531,7 +531,7 @@ int32_t ArLive2Pusher::enableCustomVideoCapture(bool enable)
 		return ArLIVE_ERROR_REFUSED;
 	}
 	b_enable_custom_video_capture_ = enable;
-	if (enable) {// ´ò¿ª×Ô¶¨ÒåÊÓÆµ²É¼¯£¬ÔòÒª¹Ø±ÕÄ¬ÈÏµÄÊÓÆµ²É¼¯
+	if (enable) {// ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ø±ï¿½Ä¬ï¿½Ïµï¿½ï¿½ï¿½Æµï¿½É¼ï¿½
 		stopCamera();
 	}
 	return ArLIVE_OK;
@@ -589,7 +589,7 @@ int ArLive2Pusher::enableCustomAudioCapture(bool enable)
 		return ArLIVE_ERROR_REFUSED;
 	}
 	b_enable_custom_audio_capture_ = enable;
-	if (enable) {// ´ò¿ª×Ô¶¨ÒåÒôÆµ²É¼¯£¬ÔòÒª¹Ø±ÕÄ¬ÈÏµÄÒôÆµ²É¼¯
+	if (enable) {// ï¿½ï¿½ï¿½Ô¶ï¿½ï¿½ï¿½ï¿½ï¿½Æµï¿½É¼ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½Ø±ï¿½Ä¬ï¿½Ïµï¿½ï¿½ï¿½Æµï¿½É¼ï¿½
 		stopMicrophone();
 	}
 	return ArLIVE_OK;
