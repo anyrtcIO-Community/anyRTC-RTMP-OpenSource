@@ -544,26 +544,19 @@ int32_t ArLive2Pusher::sendCustomVideoFrame(ArLiveVideoFrame* videoFrame)
 	if (videoFrame->pixelFormat == ArLivePixelFormatI420 || videoFrame->pixelFormat == ArLivePixelFormatBGRA32 || videoFrame->pixelFormat == ArLivePixelFormatNV12) {
 		rtc::scoped_refptr<webrtc::I420Buffer> i420Buffer = webrtc::I420Buffer::Create(
 			videoFrame->width, videoFrame->height, videoFrame->width, videoFrame->width / 2, videoFrame->width / 2);
-		if (videoFrame->stride == 0) {
-			if (videoFrame->pixelFormat == ArLivePixelFormatBGRA32) {
-				videoFrame->stride = videoFrame->width * 4;
-			}
-			else {
-				videoFrame->stride = videoFrame->width;
-			}
-		}
+
 		if (videoFrame->pixelFormat == ArLivePixelFormatI420) {
-			libyuv::I420Copy((uint8_t*)(videoFrame->data), videoFrame->stride, (uint8_t*)(videoFrame->data+(videoFrame->stride *videoFrame->height)), videoFrame->stride /2, (uint8_t*)(videoFrame->data + (videoFrame->stride * videoFrame->height)*5/4), videoFrame->stride /2,
+			libyuv::I420Copy((uint8_t*)(videoFrame->data), videoFrame->width, (uint8_t*)(videoFrame->data+(videoFrame->width*videoFrame->height)), videoFrame->width/2, (uint8_t*)(videoFrame->data + (videoFrame->width * videoFrame->height)*5/4), videoFrame->width/2,
 				(uint8_t*)i420Buffer->DataY(), i420Buffer->StrideY(), (uint8_t*)i420Buffer->DataU(), i420Buffer->StrideU(),
 				(uint8_t*)i420Buffer->DataV(), i420Buffer->StrideV(), i420Buffer->width(), i420Buffer->height());
 		}
 		else if (videoFrame->pixelFormat == ArLivePixelFormatBGRA32) {
-			libyuv::ABGRToI420((uint8_t*)(videoFrame->data), videoFrame->stride,
+			libyuv::ABGRToI420((uint8_t*)(videoFrame->data), videoFrame->width * 4,
 				(uint8_t*)i420Buffer->DataY(), i420Buffer->StrideY(), (uint8_t*)i420Buffer->DataU(), i420Buffer->StrideU(),
 				(uint8_t*)i420Buffer->DataV(), i420Buffer->StrideV(), i420Buffer->width(), i420Buffer->height());
 		}
 		else if (videoFrame->pixelFormat == ArLivePixelFormatNV12) {
-			libyuv::NV12ToI420((uint8_t*)(videoFrame->data), videoFrame->stride, (uint8_t*)(videoFrame->data + (videoFrame->stride * videoFrame->height)), videoFrame->stride,
+			libyuv::NV12ToI420((uint8_t*)(videoFrame->data), videoFrame->width, (uint8_t*)(videoFrame->data + (videoFrame->width * videoFrame->height)), videoFrame->width / 2,
 				(uint8_t*)i420Buffer->DataY(), i420Buffer->StrideY(), (uint8_t*)i420Buffer->DataU(), i420Buffer->StrideU(),
 				(uint8_t*)i420Buffer->DataV(), i420Buffer->StrideV(), i420Buffer->width(), i420Buffer->height());
 		}
@@ -749,7 +742,6 @@ void ArLive2Pusher::initVideoWithParameters(int nType, int videoWidth, int video
 	pusher_statistics_.height = videoHeight;
 	h264_encoder_ = new webrtc::V_H264Encoder(*this);
 	h264_encoder_->SetParameter(videoWidth, videoHeight, videoFps, videoBitrate);
-	h264_encoder_->SetVideoScaleMode((webrtc::VideoScaleMode)video_quality_.videoScaleMode);
 #if TARGET_PLATFORM_PHONE
 	if (exVideo_encoder_factory != NULL) {
 		h264_encoder_->SetExVideoEncoderFactory(exVideo_encoder_factory);
