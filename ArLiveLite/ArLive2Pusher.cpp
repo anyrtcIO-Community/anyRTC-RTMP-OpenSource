@@ -541,7 +541,7 @@ int32_t ArLive2Pusher::sendCustomVideoFrame(ArLiveVideoFrame* videoFrame)
 	if (!b_enable_custom_video_capture_) {
 		return ArLIVE_ERROR_REFUSED;
 	}
-	if (videoFrame->pixelFormat == ArLivePixelFormatI420 || videoFrame->pixelFormat == ArLiveImageTypeBGRA32) {
+	if (videoFrame->pixelFormat == ArLivePixelFormatI420 || videoFrame->pixelFormat == ArLivePixelFormatBGRA32 || videoFrame->pixelFormat == ArLivePixelFormatNV12) {
 		rtc::scoped_refptr<webrtc::I420Buffer> i420Buffer = webrtc::I420Buffer::Create(
 			videoFrame->width, videoFrame->height, videoFrame->width, videoFrame->width / 2, videoFrame->width / 2);
 
@@ -550,10 +550,15 @@ int32_t ArLive2Pusher::sendCustomVideoFrame(ArLiveVideoFrame* videoFrame)
 				(uint8_t*)i420Buffer->DataY(), i420Buffer->StrideY(), (uint8_t*)i420Buffer->DataU(), i420Buffer->StrideU(),
 				(uint8_t*)i420Buffer->DataV(), i420Buffer->StrideV(), i420Buffer->width(), i420Buffer->height());
 		}
-		else if (videoFrame->pixelFormat == ArLiveImageTypeBGRA32) {
+		else if (videoFrame->pixelFormat == ArLivePixelFormatBGRA32) {
 			libyuv::ABGRToI420((uint8_t*)(videoFrame->data), videoFrame->width * 4,
-				(uint8_t*)video_virtual_camera_->DataY(), video_virtual_camera_->StrideY(), (uint8_t*)video_virtual_camera_->DataU(), video_virtual_camera_->StrideU(),
-				(uint8_t*)video_virtual_camera_->DataV(), video_virtual_camera_->StrideV(), video_virtual_camera_->width(), video_virtual_camera_->height());
+				(uint8_t*)i420Buffer->DataY(), i420Buffer->StrideY(), (uint8_t*)i420Buffer->DataU(), i420Buffer->StrideU(),
+				(uint8_t*)i420Buffer->DataV(), i420Buffer->StrideV(), i420Buffer->width(), i420Buffer->height());
+		}
+		else if (videoFrame->pixelFormat == ArLivePixelFormatNV12) {
+			libyuv::NV12ToI420((uint8_t*)(videoFrame->data), videoFrame->width, (uint8_t*)(videoFrame->data + (videoFrame->width * videoFrame->height)), videoFrame->width / 2,
+				(uint8_t*)i420Buffer->DataY(), i420Buffer->StrideY(), (uint8_t*)i420Buffer->DataU(), i420Buffer->StrideU(),
+				(uint8_t*)i420Buffer->DataV(), i420Buffer->StrideV(), i420Buffer->width(), i420Buffer->height());
 		}
 
 		webrtc::VideoFrame video_frame(i420Buffer, 0, rtc::TimeMillis(), webrtc::kVideoRotation_0);

@@ -364,7 +364,10 @@ enum ArLivePixelFormat {
     ArLivePixelFormatI420,
 
     /// BGRA8888
-    ArLivePixelFormatBGRA32
+    ArLivePixelFormatBGRA32,
+
+    /// YUV420P NV12
+    ArLivePixelFormatNV12,
 
 };
 
