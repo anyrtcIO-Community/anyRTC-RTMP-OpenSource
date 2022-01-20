@@ -3,12 +3,18 @@ package io.anyrtc.liveplayer
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.SeekBar
 import android.widget.Toast
+import coil.ImageLoader
+import coil.decode.GifDecoder
+import coil.decode.ImageDecoderDecoder
+import coil.load
 import io.anyrtc.live.*
 import io.anyrtc.live.ArLiveDef.ArLiveVideoResolution
 import io.anyrtc.liveplayer.databinding.ActivityPushBinding
@@ -50,9 +56,16 @@ class PushActivity : BaseActivity() {
             pusher.startCamera(true)
         }else{
             binding.ivBeauty.visibility = View.GONE
-            player.setRenderView(binding.videoView)
-            player.setRenderFillMode(ArLiveDef.ArLiveFillMode.ArLiveFillModeFit)
-            player.startPlay("http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8")
+            val imageLoader = ImageLoader.Builder(this)
+                .componentRegistry {
+                    if (SDK_INT >= 28) {
+                        add(ImageDecoderDecoder(this@PushActivity))
+                    } else {
+                        add(GifDecoder())
+                    }
+                }
+                .build()
+            binding.ivGif.load("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F60ed9921abb8a968651aae697626dc816624cc4770c32-uwUmhP_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645166781&t=ff39058ea3e782746361d8b2bea68511",imageLoader)
             pusher.startScreenCapture()
         }
         pusher.startPush(pushUrl)
@@ -129,6 +142,16 @@ class PushActivity : BaseActivity() {
             })
 
         }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            pusher.stopPush()
+            ArLiveEngine.release()
+            finish()
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
     }
 
 

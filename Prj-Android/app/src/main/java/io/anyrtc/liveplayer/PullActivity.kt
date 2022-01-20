@@ -147,8 +147,6 @@ class PullActivity : AppCompatActivity() {
             }
         })
         player.startPlay(url)
-
-
         binding.run {
             binding.btnExit.setOnClickListener {
                 player.stopPlay()
