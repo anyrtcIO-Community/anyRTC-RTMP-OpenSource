@@ -40,14 +40,25 @@ class PushActivity : BaseActivity() {
         pushUrl = intent.getStringExtra("url").toString()
         when(resolution){
             0->{
-                pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution1280x720))
+                pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution1280x720).apply {
+                    if (pushType!=0){
+                        videoBitrate = 2500
+                    }
+                })
             }
             1->{
-                pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution960x540))
+                pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution960x540).apply {
+                    if (pushType!=0){
+                        videoBitrate = 2500
+                    }
+                })
             }
             2->{
-                pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution640x360))
-
+                pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution640x360).apply {
+                    if (pushType!=0){
+                        videoBitrate = 2500
+                    }
+                })
             }
         }
         if (pushType == 0){
