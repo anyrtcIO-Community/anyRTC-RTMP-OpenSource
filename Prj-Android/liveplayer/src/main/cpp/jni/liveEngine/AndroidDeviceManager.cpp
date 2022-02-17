@@ -75,6 +75,24 @@ webrtc::ScopedJavaLocalRef<jobject> factory_object(env, env->NewObject(factory_c
 return webrtc::JavaToNativeVideoEncoderFactory(env, factory_object.obj());
 }
 
+std::unique_ptr<webrtc::VideoDecoderFactory> AndroidDeviceManager::makeVideoDecoderFactory() {
+    JNIEnv *env = webrtc::AttachCurrentThreadIfNeeded();
+    AndroidContext *context = (AndroidContext *) _platformContext.get();
+    jmethodID methodId = env->GetMethodID(context->getJavaCapturerClass(),
+                                          "getSharedEGLContext",
+                                          "()Lorg/webrtc/EglBase$Context;");
+    jobject eglContext = env->CallObjectMethod(context->getJavaCapturer(), methodId);
+
+    webrtc::ScopedJavaLocalRef<jclass> factory_class = webrtc::GetClass(env,
+                                                                        "org/webrtc/DefaultVideoDecoderFactory");
+    jmethodID factory_constructor = env->GetMethodID(factory_class.obj(), "<init>",
+                                                     "(Lorg/webrtc/EglBase$Context;)V");
+    webrtc::ScopedJavaLocalRef<jobject> factory_object(env, env->NewObject(factory_class.obj(),
+                                                                           factory_constructor,
+                                                                           eglContext));
+    return webrtc::JavaToNativeVideoDecoderFactory(env, factory_object.obj());
+}
+
 
 void  AndroidDeviceManager::setPlatformContext(std::shared_ptr<arlive::PlatformContext> context){
     _platformContext = context;
@@ -211,6 +229,13 @@ int AndroidDeviceManager::setToneLevel(float level){
     jmethodID methodId = env->GetMethodID(context->getJavaCapturerClass(), "setToneLevel", "(F)V");
     env->CallVoidMethod(context->getJavaCapturer(), methodId, (jfloat) level);
     return anyrtc::ArLiveCode::ArLIVE_OK;
+}
+
+void AndroidDeviceManager::recoverCamera(){
+    JNIEnv *env = webrtc::AttachCurrentThreadIfNeeded();
+    auto context = (AndroidContext *) _platformContext.get();
+    jmethodID methodId = env->GetMethodID(context->getJavaCapturerClass(), "recoverCamera", "()V");
+    env->CallVoidMethod(context->getJavaCapturer(), methodId);
 }
 
 

@@ -10,11 +10,14 @@
 
 package org.webrtc;
 
+import android.annotation.SuppressLint;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.hardware.Camera;
 import android.os.Handler;
+import android.os.HandlerThread;
 import android.os.SystemClock;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -55,6 +58,8 @@ class Camera1Session implements CameraSession {
   private boolean mIsAutoFaceFocusEnabled = false;
   private boolean isFaceDetectionStarted = false;
   private boolean faceDetectEnabled = false;
+  
+
 
   // TODO(titovartem) make correct fix during webrtc:9175
   @SuppressWarnings("ByteBufferBackingArray")
@@ -217,6 +222,10 @@ class Camera1Session implements CameraSession {
         } else {
           events.onCameraError(Camera1Session.this, errorMessage);
         }
+        if (error == 2 || error == 100 || error == 1) {
+          recoverCamera();
+        }
+
       }
     });
 
@@ -665,4 +674,6 @@ class Camera1Session implements CameraSession {
       throw new IllegalStateException("Wrong thread");
     }
   }
+
+  private native void recoverCamera();
 }

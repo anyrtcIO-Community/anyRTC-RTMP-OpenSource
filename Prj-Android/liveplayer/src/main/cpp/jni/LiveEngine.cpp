@@ -812,3 +812,9 @@ Java_io_anyrtc_live_internal_NativeInstance_setCameraFocusPosition(JNIEnv *env, 
 
 
 
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_org_webrtc_Camera1Session_recoverCamera(JNIEnv *env, jobject thiz) {
+    AndroidDeviceManager::Inst().recoverCamera();
+}

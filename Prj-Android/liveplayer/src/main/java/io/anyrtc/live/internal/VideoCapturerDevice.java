@@ -1,5 +1,6 @@
 package io.anyrtc.live.internal;
 
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Point;
@@ -19,11 +20,15 @@ import org.webrtc.CameraVideoCapturer;
 import org.webrtc.CapturerObserver;
 import org.webrtc.ContextUtils;
 import org.webrtc.EglBase;
+import org.webrtc.Logging;
 import org.webrtc.ScreenCapturerAndroid;
 import org.webrtc.SurfaceTextureHelper;
+import org.webrtc.ThreadUtils;
 import org.webrtc.VideoCapturer;
 import org.webrtc.effector.RTCVideoEffector;
 import org.webrtc.effector.filter.GPUImageBeautyFilter;
+
+import java.util.List;
 
 import io.anyrtc.live.AndroidUtilities;
 import io.anyrtc.live.ArScreenService;
@@ -51,6 +56,9 @@ public class VideoCapturerDevice  {
     private CapturerObserver nativeCapturerObserver;
     private RTCVideoEffector videoEffector;
     private  GPUImageBeautyFilter filter;
+
+    // by liuxiaozhong 相机被杀后恢复
+    private static final long CAMERA_OPEN_REQUEST_INTERVAL = 2000L;
 
     public VideoCapturerDevice(boolean isScreenShare) {
         if (Build.VERSION.SDK_INT < 18) {
@@ -195,6 +203,7 @@ public class VideoCapturerDevice  {
 
                         @Override
                         public void onCameraDisconnected() {
+
                         }
 
                         @Override
@@ -300,6 +309,19 @@ public class VideoCapturerDevice  {
         if (filter!=null){
             filter.setToneLevel(level);
         }
+    }
+
+    private void recoverCamera(){
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(isForeground()){
+                    onStateChanged(nativePtr,Instance.VIDEO_STATE_ACTIVE);
+                }else {
+                    handler.postDelayed(this,CAMERA_OPEN_REQUEST_INTERVAL);
+                }
+            }
+        },CAMERA_OPEN_REQUEST_INTERVAL);
     }
 
 
@@ -413,6 +435,23 @@ public class VideoCapturerDevice  {
             ((CameraVideoCapturer) videoCapturer).changeCaptureFormat(width,height,fps);
         }
     }
+    private boolean isForeground() {
+            ActivityManager activityManager = (ActivityManager) ContextUtils.getApplicationContext().getSystemService("activity");
+            List<ActivityManager.RunningAppProcessInfo> processes = activityManager.getRunningAppProcesses();
+            if (processes == null) {
+                Logging.e("CAMERA1", "List of RunningAppProcessInfo is null");
+                return false;
+            }
 
+            for (int i = 0; i < processes.size(); ++i) {
+                ActivityManager.RunningAppProcessInfo processInfo = (ActivityManager.RunningAppProcessInfo) processes.get(i);
+                if (processInfo == null) {
+                    Logging.e("CAMERA1", "ActivityManager.RunningAppProcessInfo is null");
+                } else if (processInfo.processName.equals(ContextUtils.getApplicationContext().getPackageName()) && processInfo.importance == 100) {
+                    return true;
+                }
+            }
+        return false;
+    }
 
 }

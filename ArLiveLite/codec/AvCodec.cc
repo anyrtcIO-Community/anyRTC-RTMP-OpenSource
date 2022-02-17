@@ -38,7 +38,7 @@ A_AACEncoder::A_AACEncoder(AVCodecCallback&callback)
 
 A_AACEncoder::~A_AACEncoder(void)
 {
-    
+
     if (NULL != encoder_)
 	{
 		/*Close FAAC engine*/
@@ -66,7 +66,7 @@ void A_AACEncoder::DeInit()
 	}
 }
 
-int A_AACEncoder::Encode(const void* audioSamples, const size_t nSamples, const size_t nBytesPerSample, 
+int A_AACEncoder::Encode(const void* audioSamples, const size_t nSamples, const size_t nBytesPerSample,
 		const size_t nChannels, const uint32_t samplesPerSec, const uint32_t totalDelayMS)
 {
 	int status = 0;
@@ -74,7 +74,7 @@ int A_AACEncoder::Encode(const void* audioSamples, const size_t nSamples, const 
 	{
 		int16_t temp_output[kMaxDataSizeSamples];
 		if (audio_record_sample_hz_ != samplesPerSec || audio_record_channels_ != nChannels) {
-			
+
 			int samples_per_channel_int = resampler_record_.Resample10Msec((int16_t*)audioSamples, samplesPerSec * nChannels,
 				audio_record_sample_hz_ * audio_record_channels_, 1, kMaxDataSizeSamples, temp_output);
 		}
@@ -417,7 +417,9 @@ void V_H264Encoder::AddToFrameList(webrtc::VideoFrame& frame)
 	}
 	else {
 		rtc::CritScope cs(&buffer_critsect_);
-		render_buffers_->AddFrame(std::move(frame));
+		webrtc::VideoFrame copy_frame(frame);
+		copy_frame.set_timestamp_us(rtc::TimeMicros());
+		render_buffers_->AddFrame(std::move(copy_frame));
 	}
 }
 
@@ -460,7 +462,7 @@ void V_H264Encoder::Run()
 				need_keyframe_ = false;
 				next_frame_types[0] = webrtc::VideoFrameType::kVideoFrameKey;
 			}
-			
+
 			if(encoder_)
 			{
 				int ret = encoder_->Encode(*frame_to_render, &next_frame_types);
@@ -468,7 +470,7 @@ void V_H264Encoder::Run()
 				{
 					//printf("Encode ret :%d", ret);
 				}
-				
+
 #ifdef WEBRTC_IOS
 				//* 临时解决iOS内存泄露问题
 				if (frame_to_render->video_frame_buffer()->type() != VideoFrameBuffer::Type::kNative)
