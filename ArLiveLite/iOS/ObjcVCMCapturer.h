@@ -8,7 +8,7 @@
 #ifndef __IOS_RENDERER_H__
 #define __IOS_RENDERER_H__
 
-#include "webrtc/modules/video_capture/video_capture.h"
+#include "modules/video_capture/video_capture.h"
 #include "api/video/video_frame.h"
 #include "MgrRender.h"
 #include "api/media_stream_interface.h"

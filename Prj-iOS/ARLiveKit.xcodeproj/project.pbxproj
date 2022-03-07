@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		63228B6F2726AC4300AC6257 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63216F32272050C3009A8D0A /* WebRTC.framework */; };
-		63228B702726AC4300AC6257 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63216F32272050C3009A8D0A /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63380C9626FC2E97004134ED /* libbz2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63380C9126FC2E5A004134ED /* libbz2.tbd */; };
 		63380C9926FC2EAF004134ED /* libiconv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63380C9526FC2E8F004134ED /* libiconv.tbd */; };
 		63380C9C26FC2EC9004134ED /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 63380C9B26FC2EC3004134ED /* libz.tbd */; };
@@ -67,6 +65,8 @@
 		63B4ECCB278ED7F40095C2EB /* IArVidCodec.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B4ECC5278ED7F30095C2EB /* IArVidCodec.h */; };
 		63B4ECCC278ED7F40095C2EB /* ArLive2Pusher.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B4ECC6278ED7F30095C2EB /* ArLive2Pusher.h */; };
 		63B4ECCD278ED7F40095C2EB /* ArLive2Player.h in Headers */ = {isa = PBXBuildFile; fileRef = 63B4ECC7278ED7F40095C2EB /* ArLive2Player.h */; };
+		63B95C8A27CF5E8800112D81 /* WebRTC.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63216F32272050C3009A8D0A /* WebRTC.framework */; };
+		63B95C8B27CF5E8800112D81 /* WebRTC.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63216F32272050C3009A8D0A /* WebRTC.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		63E6A22326FC80AC009BC628 /* ARLivePusher.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E6A22126FC80AC009BC628 /* ARLivePusher.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		63E6A22426FC80AC009BC628 /* ARLivePusher.mm in Sources */ = {isa = PBXBuildFile; fileRef = 63E6A22226FC80AC009BC628 /* ARLivePusher.mm */; };
 		63E6A22926FC80DC009BC628 /* ARLivePlayer.h in Headers */ = {isa = PBXBuildFile; fileRef = 63E6A22726FC80DC009BC628 /* ARLivePlayer.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -78,13 +78,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		63228B712726AC4400AC6257 /* Embed Frameworks */ = {
+		63B95C8C27CF5E8800112D81 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				63228B702726AC4300AC6257 /* WebRTC.framework in Embed Frameworks */,
+				63B95C8B27CF5E8800112D81 /* WebRTC.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,10 +176,10 @@
 				6384D79026F73F4100B2DF00 /* Security.framework in Frameworks */,
 				6384D79626F73F5C00B2DF00 /* VideoToolbox.framework in Frameworks */,
 				6384D7A526F73FF700B2DF00 /* libavfilter.a in Frameworks */,
-				63228B6F2726AC4300AC6257 /* WebRTC.framework in Frameworks */,
 				6384D77A26F73EC300B2DF00 /* AVFoundation.framework in Frameworks */,
 				63848D2026F5DC6000B2DF00 /* libARLiveLibrary.a in Frameworks */,
 				6350E951278D77F300E959DA /* ReplayKit.framework in Frameworks */,
+				63B95C8A27CF5E8800112D81 /* WebRTC.framework in Frameworks */,
 				6384D78826F73F0B00B2DF00 /* GLKit.framework in Frameworks */,
 				6384D77E26F73ED700B2DF00 /* CoreFoundation.framework in Frameworks */,
 				6384D7A726F73FF700B2DF00 /* libavutil.a in Frameworks */,
@@ -389,7 +389,7 @@
 				63848D0B26F5DB6700B2DF00 /* Sources */,
 				63848D0C26F5DB6700B2DF00 /* Frameworks */,
 				63848D0D26F5DB6700B2DF00 /* Resources */,
-				63228B712726AC4400AC6257 /* Embed Frameworks */,
+				63B95C8C27CF5E8800112D81 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -582,6 +582,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
@@ -607,9 +608,9 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					../,
-					../webrtc_m93_include,
-					../webrtc_m93_include/sdk/objc,
-					../webrtc_m93_include/sdk/objc/base,
+					../ArLiveLite/include/webrtc,
+					../ArLiveLite/include/webrtc/sdk/objc,
+					../ArLiveLite/include/webrtc/sdk/objc/base,
 					../third_party,
 					../third_party/ffmpeg,
 					../third_party/libyuv/include,
@@ -618,7 +619,7 @@
 					../ArLiveLite,
 					../third_party/openh264,
 					../VideoRender,
-					"../webrtc_m93_include/third_party/abseil-cpp",
+					"../ArLiveLite/include/webrtc/third_party/abseil-cpp",
 				);
 				INFOPLIST_FILE = ARLiveKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -632,6 +633,7 @@
 					../third_lib/ffmpeg_ios,
 					"$(PROJECT_DIR)",
 				);
+				MACH_O_TYPE = mh_dylib;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
@@ -650,6 +652,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 5543CP4MRT;
@@ -675,9 +678,9 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					../,
-					../webrtc_m93_include,
-					../webrtc_m93_include/sdk/objc,
-					../webrtc_m93_include/sdk/objc/base,
+					../ArLiveLite/include/webrtc,
+					../ArLiveLite/include/webrtc/sdk/objc,
+					../ArLiveLite/include/webrtc/sdk/objc/base,
 					../third_party,
 					../third_party/ffmpeg,
 					../third_party/libyuv/include,
@@ -686,7 +689,7 @@
 					../ArLiveLite,
 					../third_party/openh264,
 					../VideoRender,
-					"../webrtc_m93_include/third_party/abseil-cpp",
+					"../ArLiveLite/include/webrtc/third_party/abseil-cpp",
 				);
 				INFOPLIST_FILE = ARLiveKit/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -700,6 +703,7 @@
 					../third_lib/ffmpeg_ios,
 					"$(PROJECT_DIR)",
 				);
+				MACH_O_TYPE = mh_dylib;
 				OTHER_CFLAGS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.anyrtc.ARLiveKit;

@@ -8,7 +8,7 @@
 #import "ARLivePusher.h"
 #include "IArLive2Engine.h"
 #include "IArLivePusher.hpp"
-#import "webrtc/sdk/objc/components/renderer/metal/RTCMTLVideoView.h"
+#import "sdk/objc/components/renderer/metal/RTCMTLVideoView.h"
 #import "ARLiveMacros.h"
 #include "ArLiveDef.hpp"
 #import "ARImageHelper.h"
@@ -333,7 +333,7 @@ extern void* GetLiveEngine();
 
 - (int)stopScreenCapture {
     /// 关闭屏幕采集
-    return -1;
+    return 0;
 }
 
 - (int)setEncoderMirror:(BOOL)mirror {
@@ -417,6 +417,7 @@ extern void* GetLiveEngine();
         encoderParam.videoFps = param.videoFps;
         encoderParam.videoBitrate = param.videoBitrate;
         encoderParam.minVideoBitrate = param.minVideoBitrate;
+        encoderParam.videoScaleMode = AR::ArLiveVideoScaleMode(int(param.videoScaleMode));
         _livePusher->setVideoQuality(encoderParam);
     }
     return -1;
@@ -462,19 +463,47 @@ extern void* GetLiveEngine();
 - (int)enableCustomAudioCapture:(BOOL)enable {
     /// 开启/关闭自定义音频采集
     if (_livePusher) {
-        
+        return _livePusher->enableCustomAudioCapture(enable);
     }
     return -1;
 }
 
 - (int)sendCustomVideoFrame:(ARLiveVideoFrame *)videoFrame {
     /// 在自定义视频采集模式下，将采集的视频数据发送到SDK
-    
+    if (_livePusher) {
+        AR::ArLiveVideoFrame liveVideoFrame;
+        liveVideoFrame.width = (int32_t)videoFrame.width;
+        liveVideoFrame.height = (int32_t)videoFrame.height;
+        liveVideoFrame.stride = (int32_t)videoFrame.stride;
+        liveVideoFrame.pixelFormat = AR::ArLivePixelFormatNV12;
+        liveVideoFrame.rotation = AR::ArLiveRotation(int(videoFrame.rotation));
+        liveVideoFrame.length = (int)(videoFrame.width * videoFrame.height * 3 >> 1);
+        
+        CVPixelBufferRef pixelBuffer = videoFrame.pixelBuffer;
+        CVPixelBufferLockBaseAddress(pixelBuffer, 0);
+        
+        if (CVPixelBufferIsPlanar(pixelBuffer)) {
+            int basePlane = 0;
+            liveVideoFrame.data = (char *)CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, basePlane);
+        } else {
+            liveVideoFrame.data = (char *)CVPixelBufferGetBaseAddress(pixelBuffer);
+        }
+        CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
+        return _livePusher->sendCustomVideoFrame(&liveVideoFrame);
+    }
     return -1;
 }
 
 - (int)sendCustomAudioFrame:(ARLiveAudioFrame *)audioFrame {
     /// 在自定义音频采集模式下，将采集的音频数据发送到SDK
+    if (_livePusher) {
+        AR::ArLiveAudioFrame liveAudioFrame;
+        liveAudioFrame.data = (char *)audioFrame.data;
+        liveAudioFrame.sampleRate = audioFrame.sampleRate;
+        liveAudioFrame.channel = audioFrame.channel;
+        liveAudioFrame.length = (audioFrame.sampleRate/100)* audioFrame.channel * sizeof(int16_t);
+        return _livePusher->sendCustomAudioFrame(&liveAudioFrame);
+    }
     return -1;
 }
 

@@ -1,0 +1,746 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		630C1F1827915E0D007D147D /* ARLiveExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630C1F1727915E0D007D147D /* ARLiveExtension.swift */; };
+		6315AE82276C2D3800AB1497 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6315AE81276C2D3800AB1497 /* Logger.swift */; };
+		634426722796935900B9FA64 /* ARUploader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634426712796935900B9FA64 /* ARUploader.swift */; };
+		634426772797E1B500B9FA64 /* libios_resampler.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 634426752797E1B500B9FA64 /* libios_resampler.a */; };
+		634426802797E3D500B9FA64 /* ARAudioTube.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6344267F2797E3D500B9FA64 /* ARAudioTube.mm */; };
+		634426822797E55B00B9FA64 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 634426812797E55B00B9FA64 /* Accelerate.framework */; };
+		634426842798020800B9FA64 /* ArScreenShareController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634426832798020800B9FA64 /* ArScreenShareController.swift */; };
+		6350E941278D75DD00E959DA /* ReplayKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6350E940278D75DD00E959DA /* ReplayKit.framework */; };
+		6350E944278D75DD00E959DA /* SampleHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6350E943278D75DD00E959DA /* SampleHandler.swift */; };
+		6350E948278D75DD00E959DA /* ARLive-ScreenShare-Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 6350E93F278D75DD00E959DA /* ARLive-ScreenShare-Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		636DAA6A273A167300D99669 /* ARMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAA69273A167300D99669 /* ARMainViewController.swift */; };
+		636DAA6C273A19FC00D99669 /* ARExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAA6B273A19FC00D99669 /* ARExtension.swift */; };
+		636DAA7E273A4D8B00D99669 /* ArLiveJoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAA7D273A4D8B00D99669 /* ArLiveJoinVC.swift */; };
+		636DAA80273A4DA200D99669 /* ArPlayerJoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAA7F273A4DA200D99669 /* ArPlayerJoinVC.swift */; };
+		636DAA82273A4E4A00D99669 /* ArLiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAA81273A4E4A00D99669 /* ArLiveViewController.swift */; };
+		636DAA84273A4E5900D99669 /* ArPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAA83273A4E5900D99669 /* ArPlayerViewController.swift */; };
+		636DAB962744FF2D00D99669 /* ARBaseNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 636DAB952744FF2D00D99669 /* ARBaseNavigationController.swift */; };
+		6378A1AD27CE19670024270B /* ARLiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E6A21C26FC7F08009BC628 /* ARLiveKit.framework */; };
+		6378A1AE27CE19670024270B /* ARLiveKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63E6A21C26FC7F08009BC628 /* ARLiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63B95C8D27CF695400112D81 /* ARLiveKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 63E6A21C26FC7F08009BC628 /* ARLiveKit.framework */; };
+		63B95C8E27CF695400112D81 /* ARLiveKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 63E6A21C26FC7F08009BC628 /* ARLiveKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		63CEE35427B644A50062454E /* SKEnemyNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEE34F27B644A50062454E /* SKEnemyNode.swift */; };
+		63CEE35527B644A50062454E /* LoseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEE35027B644A50062454E /* LoseScene.swift */; };
+		63CEE35727B644A50062454E /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEE35227B644A50062454E /* GameScene.swift */; };
+		63CEE36B27B644CB0062454E /* shoot.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 63CEE35B27B644CB0062454E /* shoot.mp3 */; };
+		63CEE37327B644CB0062454E /* monster_bullet@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CEE36327B644CB0062454E /* monster_bullet@2x.png */; };
+		63CEE37527B644CB0062454E /* bgm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 63CEE36527B644CB0062454E /* bgm.mp3 */; };
+		63CEE37727B644CB0062454E /* gameover.caf in Resources */ = {isa = PBXBuildFile; fileRef = 63CEE36727B644CB0062454E /* gameover.caf */; };
+		63CEE37927B644CB0062454E /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CEE36927B644CB0062454E /* bg.png */; };
+		63CEE37B27B64DD10062454E /* TextureAtlasManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63CEE37A27B64DD10062454E /* TextureAtlasManager.swift */; };
+		63CEE37D27B64DEF0062454E /* gameArts-hd@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 63CEE37C27B64DEF0062454E /* gameArts-hd@2x.png */; };
+		63CEE37F27B64E380062454E /* gameArts-hd.plist in Resources */ = {isa = PBXBuildFile; fileRef = 63CEE37E27B64E380062454E /* gameArts-hd.plist */; };
+		63E6A20526FC7E1F009BC628 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E6A20426FC7E1F009BC628 /* AppDelegate.swift */; };
+		63E6A20C26FC7E1F009BC628 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E6A20A26FC7E1F009BC628 /* Main.storyboard */; };
+		63E6A20E26FC7E29009BC628 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 63E6A20D26FC7E29009BC628 /* Assets.xcassets */; };
+		63E6A21126FC7E29009BC628 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 63E6A20F26FC7E29009BC628 /* LaunchScreen.storyboard */; };
+		63E7E88F2795548E000E2B67 /* ARToast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E7E88E2795548E000E2B67 /* ARToast.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6350E946278D75DD00E959DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 63E6A1F926FC7E1F009BC628 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6350E93E278D75DD00E959DA;
+			remoteInfo = "ARLive-ScreenShare-Extension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		6350E949278D75DD00E959DA /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6350E948278D75DD00E959DA /* ARLive-ScreenShare-Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6378A1AF27CE19680024270B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6378A1AE27CE19670024270B /* ARLiveKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63B95C8F27CF695400112D81 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				63B95C8E27CF695400112D81 /* ARLiveKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		630C1F1727915E0D007D147D /* ARLiveExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARLiveExtension.swift; sourceTree = "<group>"; };
+		6315AE81276C2D3800AB1497 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		634426712796935900B9FA64 /* ARUploader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARUploader.swift; sourceTree = "<group>"; };
+		634426752797E1B500B9FA64 /* libios_resampler.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libios_resampler.a; sourceTree = "<group>"; };
+		634426762797E1B500B9FA64 /* external_resampler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = external_resampler.h; sourceTree = "<group>"; };
+		634426782797E1C000B9FA64 /* ARLive-ScreenShare-Extension-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ARLive-ScreenShare-Extension-Bridging-Header.h"; sourceTree = "<group>"; };
+		6344267C2797E22400B9FA64 /* ARAudioTube.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ARAudioTube.h; sourceTree = "<group>"; };
+		6344267F2797E3D500B9FA64 /* ARAudioTube.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ARAudioTube.mm; sourceTree = "<group>"; };
+		634426812797E55B00B9FA64 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		634426832798020800B9FA64 /* ArScreenShareController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArScreenShareController.swift; sourceTree = "<group>"; };
+		6350E93F278D75DD00E959DA /* ARLive-ScreenShare-Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "ARLive-ScreenShare-Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6350E940278D75DD00E959DA /* ReplayKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReplayKit.framework; path = System/Library/Frameworks/ReplayKit.framework; sourceTree = SDKROOT; };
+		6350E943278D75DD00E959DA /* SampleHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleHandler.swift; sourceTree = "<group>"; };
+		6350E945278D75DD00E959DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		636DAA69273A167300D99669 /* ARMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARMainViewController.swift; sourceTree = "<group>"; };
+		636DAA6B273A19FC00D99669 /* ARExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARExtension.swift; sourceTree = "<group>"; };
+		636DAA7D273A4D8B00D99669 /* ArLiveJoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArLiveJoinVC.swift; sourceTree = "<group>"; };
+		636DAA7F273A4DA200D99669 /* ArPlayerJoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArPlayerJoinVC.swift; sourceTree = "<group>"; };
+		636DAA81273A4E4A00D99669 /* ArLiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArLiveViewController.swift; sourceTree = "<group>"; };
+		636DAA83273A4E5900D99669 /* ArPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArPlayerViewController.swift; sourceTree = "<group>"; };
+		636DAB952744FF2D00D99669 /* ARBaseNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBaseNavigationController.swift; sourceTree = "<group>"; };
+		63CEE34F27B644A50062454E /* SKEnemyNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKEnemyNode.swift; sourceTree = "<group>"; };
+		63CEE35027B644A50062454E /* LoseScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoseScene.swift; sourceTree = "<group>"; };
+		63CEE35227B644A50062454E /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		63CEE35B27B644CB0062454E /* shoot.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shoot.mp3; sourceTree = "<group>"; };
+		63CEE36327B644CB0062454E /* monster_bullet@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "monster_bullet@2x.png"; sourceTree = "<group>"; };
+		63CEE36527B644CB0062454E /* bgm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bgm.mp3; sourceTree = "<group>"; };
+		63CEE36727B644CB0062454E /* gameover.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = gameover.caf; sourceTree = "<group>"; };
+		63CEE36927B644CB0062454E /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg.png; sourceTree = "<group>"; };
+		63CEE37A27B64DD10062454E /* TextureAtlasManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextureAtlasManager.swift; sourceTree = "<group>"; };
+		63CEE37C27B64DEF0062454E /* gameArts-hd@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "gameArts-hd@2x.png"; sourceTree = "<group>"; };
+		63CEE37E27B64E380062454E /* gameArts-hd.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "gameArts-hd.plist"; sourceTree = "<group>"; };
+		63D5617E27CDEF0F00DC1685 /* AR-Live-Tutorial.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "AR-Live-Tutorial.entitlements"; sourceTree = "<group>"; };
+		63D5617F27CDEF1B00DC1685 /* ARLive-ScreenShare-Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "ARLive-ScreenShare-Extension.entitlements"; sourceTree = "<group>"; };
+		63E6A20126FC7E1F009BC628 /* AR-Live-Tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR-Live-Tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E6A20426FC7E1F009BC628 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		63E6A20B26FC7E1F009BC628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		63E6A20D26FC7E29009BC628 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		63E6A21026FC7E29009BC628 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		63E6A21226FC7E29009BC628 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63E6A21C26FC7F08009BC628 /* ARLiveKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ARLiveKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		63E7E88E2795548E000E2B67 /* ARToast.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARToast.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6350E93C278D75DD00E959DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				634426822797E55B00B9FA64 /* Accelerate.framework in Frameworks */,
+				6350E941278D75DD00E959DA /* ReplayKit.framework in Frameworks */,
+				6378A1AD27CE19670024270B /* ARLiveKit.framework in Frameworks */,
+				634426772797E1B500B9FA64 /* libios_resampler.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E6A1FE26FC7E1F009BC628 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63B95C8D27CF695400112D81 /* ARLiveKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6350E942278D75DD00E959DA /* ARLive-ScreenShare-Extension */ = {
+			isa = PBXGroup;
+			children = (
+				63D5617F27CDEF1B00DC1685 /* ARLive-ScreenShare-Extension.entitlements */,
+				634426782797E1C000B9FA64 /* ARLive-ScreenShare-Extension-Bridging-Header.h */,
+				63CEE38027B64EC40062454E /* CustomCapture */,
+				6350E945278D75DD00E959DA /* Info.plist */,
+				634426752797E1B500B9FA64 /* libios_resampler.a */,
+				6350E943278D75DD00E959DA /* SampleHandler.swift */,
+			);
+			path = "ARLive-ScreenShare-Extension";
+			sourceTree = "<group>";
+		};
+		636DAB702742A6C700D99669 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				63CEE34E27B644A50062454E /* GameScene */,
+				636DAA6B273A19FC00D99669 /* ARExtension.swift */,
+				630C1F1727915E0D007D147D /* ARLiveExtension.swift */,
+				63E7E88E2795548E000E2B67 /* ARToast.swift */,
+				6315AE81276C2D3800AB1497 /* Logger.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		636DAB712742A6D200D99669 /* VideoLive */ = {
+			isa = PBXGroup;
+			children = (
+				636DAA7D273A4D8B00D99669 /* ArLiveJoinVC.swift */,
+				636DAA81273A4E4A00D99669 /* ArLiveViewController.swift */,
+				634426832798020800B9FA64 /* ArScreenShareController.swift */,
+			);
+			path = VideoLive;
+			sourceTree = "<group>";
+		};
+		636DAB722742A6E300D99669 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				636DAA7F273A4DA200D99669 /* ArPlayerJoinVC.swift */,
+				636DAA83273A4E5900D99669 /* ArPlayerViewController.swift */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
+		636DAB732742A71B00D99669 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				63E6A20426FC7E1F009BC628 /* AppDelegate.swift */,
+				636DAB952744FF2D00D99669 /* ARBaseNavigationController.swift */,
+				636DAA69273A167300D99669 /* ARMainViewController.swift */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		63CEE34E27B644A50062454E /* GameScene */ = {
+			isa = PBXGroup;
+			children = (
+				63CEE35227B644A50062454E /* GameScene.swift */,
+				63CEE35027B644A50062454E /* LoseScene.swift */,
+				63CEE34F27B644A50062454E /* SKEnemyNode.swift */,
+				63CEE37A27B64DD10062454E /* TextureAtlasManager.swift */,
+				63CEE35927B644CB0062454E /* Sources */,
+			);
+			path = GameScene;
+			sourceTree = "<group>";
+		};
+		63CEE35927B644CB0062454E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				63CEE36727B644CB0062454E /* gameover.caf */,
+				63CEE36527B644CB0062454E /* bgm.mp3 */,
+				63CEE35B27B644CB0062454E /* shoot.mp3 */,
+				63CEE37E27B64E380062454E /* gameArts-hd.plist */,
+				63CEE36927B644CB0062454E /* bg.png */,
+				63CEE37C27B64DEF0062454E /* gameArts-hd@2x.png */,
+				63CEE36327B644CB0062454E /* monster_bullet@2x.png */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		63CEE38027B64EC40062454E /* CustomCapture */ = {
+			isa = PBXGroup;
+			children = (
+				6344267C2797E22400B9FA64 /* ARAudioTube.h */,
+				6344267F2797E3D500B9FA64 /* ARAudioTube.mm */,
+				634426762797E1B500B9FA64 /* external_resampler.h */,
+				634426712796935900B9FA64 /* ARUploader.swift */,
+			);
+			path = CustomCapture;
+			sourceTree = "<group>";
+		};
+		63E6A1F826FC7E1F009BC628 = {
+			isa = PBXGroup;
+			children = (
+				63E6A20326FC7E1F009BC628 /* AR-Live-Tutorial */,
+				6350E942278D75DD00E959DA /* ARLive-ScreenShare-Extension */,
+				63E6A20226FC7E1F009BC628 /* Products */,
+				63E6A21B26FC7F08009BC628 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		63E6A20226FC7E1F009BC628 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				63E6A20126FC7E1F009BC628 /* AR-Live-Tutorial.app */,
+				6350E93F278D75DD00E959DA /* ARLive-ScreenShare-Extension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63E6A20326FC7E1F009BC628 /* AR-Live-Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				63D5617E27CDEF0F00DC1685 /* AR-Live-Tutorial.entitlements */,
+				63E6A20D26FC7E29009BC628 /* Assets.xcassets */,
+				636DAB732742A71B00D99669 /* Base */,
+				636DAB702742A6C700D99669 /* Common */,
+				63E6A21226FC7E29009BC628 /* Info.plist */,
+				63E6A20F26FC7E29009BC628 /* LaunchScreen.storyboard */,
+				63E6A20A26FC7E1F009BC628 /* Main.storyboard */,
+				636DAB712742A6D200D99669 /* VideoLive */,
+				636DAB722742A6E300D99669 /* VideoPlayer */,
+			);
+			path = "AR-Live-Tutorial";
+			sourceTree = "<group>";
+		};
+		63E6A21B26FC7F08009BC628 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				634426812797E55B00B9FA64 /* Accelerate.framework */,
+				63E6A21C26FC7F08009BC628 /* ARLiveKit.framework */,
+				6350E940278D75DD00E959DA /* ReplayKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6350E93E278D75DD00E959DA /* ARLive-ScreenShare-Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6350E94C278D75DD00E959DA /* Build configuration list for PBXNativeTarget "ARLive-ScreenShare-Extension" */;
+			buildPhases = (
+				6350E93B278D75DD00E959DA /* Sources */,
+				6350E93C278D75DD00E959DA /* Frameworks */,
+				6350E93D278D75DD00E959DA /* Resources */,
+				6378A1AF27CE19680024270B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "ARLive-ScreenShare-Extension";
+			productName = "ARLive-ScreenShare-Extension";
+			productReference = 6350E93F278D75DD00E959DA /* ARLive-ScreenShare-Extension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		63E6A20026FC7E1F009BC628 /* AR-Live-Tutorial */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 63E6A21526FC7E29009BC628 /* Build configuration list for PBXNativeTarget "AR-Live-Tutorial" */;
+			buildPhases = (
+				63E6A1FD26FC7E1F009BC628 /* Sources */,
+				63E6A1FE26FC7E1F009BC628 /* Frameworks */,
+				63E6A1FF26FC7E1F009BC628 /* Resources */,
+				6350E949278D75DD00E959DA /* Embed App Extensions */,
+				63B95C8F27CF695400112D81 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6350E947278D75DD00E959DA /* PBXTargetDependency */,
+			);
+			name = "AR-Live-Tutorial";
+			productName = "AR-Live-Tutorial";
+			productReference = 63E6A20126FC7E1F009BC628 /* AR-Live-Tutorial.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		63E6A1F926FC7E1F009BC628 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1310;
+				LastUpgradeCheck = 1240;
+				TargetAttributes = {
+					6350E93E278D75DD00E959DA = {
+						CreatedOnToolsVersion = 13.1;
+						LastSwiftMigration = 1310;
+					};
+					63E6A20026FC7E1F009BC628 = {
+						CreatedOnToolsVersion = 12.4;
+					};
+				};
+			};
+			buildConfigurationList = 63E6A1FC26FC7E1F009BC628 /* Build configuration list for PBXProject "AR-Live-Tutorial" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 63E6A1F826FC7E1F009BC628;
+			productRefGroup = 63E6A20226FC7E1F009BC628 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				63E6A20026FC7E1F009BC628 /* AR-Live-Tutorial */,
+				6350E93E278D75DD00E959DA /* ARLive-ScreenShare-Extension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6350E93D278D75DD00E959DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E6A1FF26FC7E1F009BC628 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63CEE37F27B64E380062454E /* gameArts-hd.plist in Resources */,
+				63CEE37727B644CB0062454E /* gameover.caf in Resources */,
+				63E6A21126FC7E29009BC628 /* LaunchScreen.storyboard in Resources */,
+				63E6A20E26FC7E29009BC628 /* Assets.xcassets in Resources */,
+				63CEE37D27B64DEF0062454E /* gameArts-hd@2x.png in Resources */,
+				63E6A20C26FC7E1F009BC628 /* Main.storyboard in Resources */,
+				63CEE36B27B644CB0062454E /* shoot.mp3 in Resources */,
+				63CEE37927B644CB0062454E /* bg.png in Resources */,
+				63CEE37327B644CB0062454E /* monster_bullet@2x.png in Resources */,
+				63CEE37527B644CB0062454E /* bgm.mp3 in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6350E93B278D75DD00E959DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				634426722796935900B9FA64 /* ARUploader.swift in Sources */,
+				6350E944278D75DD00E959DA /* SampleHandler.swift in Sources */,
+				634426802797E3D500B9FA64 /* ARAudioTube.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		63E6A1FD26FC7E1F009BC628 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				636DAA84273A4E5900D99669 /* ArPlayerViewController.swift in Sources */,
+				634426842798020800B9FA64 /* ArScreenShareController.swift in Sources */,
+				63CEE37B27B64DD10062454E /* TextureAtlasManager.swift in Sources */,
+				636DAA80273A4DA200D99669 /* ArPlayerJoinVC.swift in Sources */,
+				630C1F1827915E0D007D147D /* ARLiveExtension.swift in Sources */,
+				63CEE35427B644A50062454E /* SKEnemyNode.swift in Sources */,
+				636DAA6A273A167300D99669 /* ARMainViewController.swift in Sources */,
+				6315AE82276C2D3800AB1497 /* Logger.swift in Sources */,
+				636DAB962744FF2D00D99669 /* ARBaseNavigationController.swift in Sources */,
+				636DAA7E273A4D8B00D99669 /* ArLiveJoinVC.swift in Sources */,
+				636DAA6C273A19FC00D99669 /* ARExtension.swift in Sources */,
+				63CEE35727B644A50062454E /* GameScene.swift in Sources */,
+				63E7E88F2795548E000E2B67 /* ARToast.swift in Sources */,
+				63E6A20526FC7E1F009BC628 /* AppDelegate.swift in Sources */,
+				63CEE35527B644A50062454E /* LoseScene.swift in Sources */,
+				636DAA82273A4E4A00D99669 /* ArLiveViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6350E947278D75DD00E959DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6350E93E278D75DD00E959DA /* ARLive-ScreenShare-Extension */;
+			targetProxy = 6350E946278D75DD00E959DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		63E6A20A26FC7E1F009BC628 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63E6A20B26FC7E1F009BC628 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		63E6A20F26FC7E29009BC628 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				63E6A21026FC7E29009BC628 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6350E94A278D75DD00E959DA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "ARLive-ScreenShare-Extension/ARLive-ScreenShare-Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ARLive-ScreenShare-Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ARLive-ScreenShare-Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ARLive-ScreenShare-Extension",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc.ScreenShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ARLive-ScreenShare-Extension/ARLive-ScreenShare-Extension-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		6350E94B278D75DD00E959DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "ARLive-ScreenShare-Extension/ARLive-ScreenShare-Extension.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "ARLive-ScreenShare-Extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "ARLive-ScreenShare-Extension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ARLive-ScreenShare-Extension",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc.ScreenShare;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ARLive-ScreenShare-Extension/ARLive-ScreenShare-Extension-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		63E6A21326FC7E29009BC628 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		63E6A21426FC7E29009BC628 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		63E6A21626FC7E29009BC628 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "AR-Live-Tutorial/AR-Live-Tutorial.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "AR-Live-Tutorial/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		63E6A21726FC7E29009BC628 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "AR-Live-Tutorial/AR-Live-Tutorial.entitlements";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
+				ENABLE_BITCODE = NO;
+				INFOPLIST_FILE = "AR-Live-Tutorial/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.2.4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.dync.rtmpc;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6350E94C278D75DD00E959DA /* Build configuration list for PBXNativeTarget "ARLive-ScreenShare-Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6350E94A278D75DD00E959DA /* Debug */,
+				6350E94B278D75DD00E959DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63E6A1FC26FC7E1F009BC628 /* Build configuration list for PBXProject "AR-Live-Tutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E6A21326FC7E29009BC628 /* Debug */,
+				63E6A21426FC7E29009BC628 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		63E6A21526FC7E29009BC628 /* Build configuration list for PBXNativeTarget "AR-Live-Tutorial" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				63E6A21626FC7E29009BC628 /* Debug */,
+				63E6A21726FC7E29009BC628 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 63E6A1F926FC7E1F009BC628 /* Project object */;
+}

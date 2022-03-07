@@ -350,5 +350,21 @@ typedef NS_ENUM(NSInteger, ARLiveVideoResolutionMode) {
 
 };
 
+/**
+ * @brief 视频编码填充模式。
+ */
+typedef NS_ENUM(NSInteger, ARLiveVideoScaleMode) {
+    
+    /// 图像铺满屏幕，超出显示视窗的视频部分将被裁剪，画面显示可能不完整
+    ARLiveVideoScaleModeFill,
+
+    /// 图像长边填满屏幕，短边区域会被填充黑色，画面的内容完整
+    ARLiveVideoScaleModeFit,
+
+    /// 图像长边填满屏幕，根据设置的比例进行缩放，画面的内容完整
+    ARLiveVideoScaleModeAuto
+};
+
+
 
 #endif /* ARLiveEnumerates_h */

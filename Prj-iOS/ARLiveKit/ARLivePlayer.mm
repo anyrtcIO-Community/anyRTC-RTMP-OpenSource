@@ -8,7 +8,7 @@
 #import "ARLivePlayer.h"
 #import "ARLiveMacros.h"
 #include "IArLive2Engine.h"
-#import "webrtc/sdk/objc/components/renderer/metal/RTCMTLVideoView.h"
+#import "sdk/objc/components/renderer/metal/RTCMTLVideoView.h"
 #include <unordered_set>
 #import "ARImageHelper.h"
 
@@ -210,10 +210,6 @@ extern void* GetLiveEngine();
         }
     }
     return self;
-}
-
-- (void)dealloc {
-    NSLog(@"dealloc");
 }
 
 - (void)releaseLivePlayer {

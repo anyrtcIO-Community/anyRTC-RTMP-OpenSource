@@ -60,8 +60,6 @@
 		6339F2AE27868A72009C2348 /* ObjcNetWorkManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6339F2A927868A72009C2348 /* ObjcNetWorkManager.mm */; };
 		6339F2AF27868A72009C2348 /* ObjcVCMCapturer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6339F2AB27868A72009C2348 /* ObjcVCMCapturer.mm */; };
 		6339F2B127868AB9009C2348 /* IosRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6339F2B027868AB9009C2348 /* IosRenderer.mm */; };
-		6350E924278BD50E00E959DA /* ArLive2Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6350E922278BD50E00E959DA /* ArLive2Engine.cpp */; };
-		6350E925278BD50E00E959DA /* PlatformImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6350E923278BD50E00E959DA /* PlatformImpl.cpp */; };
 		6350E93A278D5F6200E959DA /* H264SeiPack.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6350E939278D5F6200E959DA /* H264SeiPack.cpp */; };
 		6384B30826F6212700B2DF00 /* compare_mmi.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6384B2D626F6212700B2DF00 /* compare_mmi.cc */; };
 		6384B30926F6212700B2DF00 /* rotate_common.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6384B2D726F6212700B2DF00 /* rotate_common.cc */; };
@@ -123,8 +121,9 @@
 		6384B43226F6235900B2DF00 /* kiss_fftr.c in Sources */ = {isa = PBXBuildFile; fileRef = 6384B37326F6235700B2DF00 /* kiss_fftr.c */; };
 		6384B43326F6235900B2DF00 /* frame.c in Sources */ = {isa = PBXBuildFile; fileRef = 6384B37D26F6235700B2DF00 /* frame.c */; };
 		6384B43426F6235900B2DF00 /* backpred.c in Sources */ = {isa = PBXBuildFile; fileRef = 6384B38026F6235700B2DF00 /* backpred.c */; };
-		63B4ECDF278FD7C40095C2EB /* JitBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 63B4ECDD278FD7C30095C2EB /* JitBuffer.cpp */; };
 		63E6AA8B2704066C009BC628 /* video_renderer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 63E6AA7F2704066C009BC628 /* video_renderer.cc */; };
+		8A275DF127D5B0A800444565 /* ArLive2Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A275DF027D5B0A800444565 /* ArLive2Engine.cpp */; };
+		8A275DF327D5B0C300444565 /* PlatformImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A275DF227D5B0C300444565 /* PlatformImpl.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -271,8 +270,6 @@
 		6339F2AB27868A72009C2348 /* ObjcVCMCapturer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ObjcVCMCapturer.mm; sourceTree = "<group>"; };
 		6339F2AC27868A72009C2348 /* ObjcNetWorkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObjcNetWorkManager.h; sourceTree = "<group>"; };
 		6339F2B027868AB9009C2348 /* IosRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = IosRenderer.mm; sourceTree = "<group>"; };
-		6350E922278BD50E00E959DA /* ArLive2Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArLive2Engine.cpp; sourceTree = "<group>"; };
-		6350E923278BD50E00E959DA /* PlatformImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlatformImpl.cpp; sourceTree = "<group>"; };
 		6350E92D278C255300E959DA /* ARCustomVideoFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCustomVideoFilter.h; sourceTree = "<group>"; };
 		6350E938278D5F6200E959DA /* H264SeiPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = H264SeiPack.h; sourceTree = "<group>"; };
 		6350E939278D5F6200E959DA /* H264SeiPack.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = H264SeiPack.cpp; sourceTree = "<group>"; };
@@ -378,11 +375,12 @@
 		6384B38126F6235700B2DF00 /* coder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = coder.h; sourceTree = "<group>"; };
 		6384B38426F6235700B2DF00 /* filtbank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = filtbank.h; sourceTree = "<group>"; };
 		6384B38526F6235700B2DF00 /* tns.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tns.h; sourceTree = "<group>"; };
-		63B4ECDD278FD7C30095C2EB /* JitBuffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = JitBuffer.cpp; sourceTree = "<group>"; };
-		63B4ECDE278FD7C30095C2EB /* JitBuffer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JitBuffer.h; sourceTree = "<group>"; };
 		63E6A9E72701F0E5009BC628 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.1.sdk/usr/lib/libc++.tbd"; sourceTree = DEVELOPER_DIR; };
 		63E6AA7D2704066C009BC628 /* video_renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = video_renderer.h; sourceTree = "<group>"; };
 		63E6AA7F2704066C009BC628 /* video_renderer.cc */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = video_renderer.cc; sourceTree = "<group>"; };
+		63E6AA92270408F1009BC628 /* RTCVideoRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoRender.h; sourceTree = "<group>"; };
+		8A275DF027D5B0A800444565 /* ArLive2Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArLive2Engine.cpp; sourceTree = "<group>"; };
+		8A275DF227D5B0C300444565 /* PlatformImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlatformImpl.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -401,8 +399,8 @@
 			children = (
 				6339F1D0278685AA009C2348 /* ArAVCode.h */,
 				6339F25A278685AA009C2348 /* ARDef.h */,
+				8A275DF027D5B0A800444565 /* ArLive2Engine.cpp */,
 				6339F258278685AA009C2348 /* ArLive2Engine.h */,
-				6350E922278BD50E00E959DA /* ArLive2Engine.cpp */,
 				6339F202278685AA009C2348 /* ArLive2Player.cpp */,
 				6339F208278685AA009C2348 /* ArLive2Player.h */,
 				6339F261278685AA009C2348 /* ArLive2Pusher.cpp */,
@@ -424,8 +422,8 @@
 				6339F2A627868A72009C2348 /* iOS */,
 				6339F1CE278685AA009C2348 /* MgrRender.cpp */,
 				6339F26D278685AA009C2348 /* MgrRender.h */,
+				8A275DF227D5B0C300444565 /* PlatformImpl.cpp */,
 				6339F1CD278685AA009C2348 /* PlatformImpl.h */,
-				6350E923278BD50E00E959DA /* PlatformImpl.cpp */,
 				6339F1FE278685AA009C2348 /* PlayBuffer.cpp */,
 				6339F25E278685AA009C2348 /* PlayBuffer.h */,
 				6339F264278685AA009C2348 /* player */,
@@ -610,8 +608,6 @@
 		6339F264278685AA009C2348 /* player */ = {
 			isa = PBXGroup;
 			children = (
-				63B4ECDD278FD7C30095C2EB /* JitBuffer.cpp */,
-				63B4ECDE278FD7C30095C2EB /* JitBuffer.h */,
 				6339F266278685AA009C2348 /* ARFFPlayer.cpp */,
 				6339F267278685AA009C2348 /* ARFFPlayer.h */,
 				6339F269278685AA009C2348 /* ARPlayer.h */,
@@ -834,6 +830,7 @@
 		63E6AA7C2704066C009BC628 /* VideoRender */ = {
 			isa = PBXGroup;
 			children = (
+				63E6AA92270408F1009BC628 /* RTCVideoRender.h */,
 				63E6AA7D2704066C009BC628 /* video_renderer.h */,
 				63E6AA7F2704066C009BC628 /* video_renderer.cc */,
 			);
@@ -902,6 +899,7 @@
 				6384B30B26F6212700B2DF00 /* rotate.cc in Sources */,
 				6339F29F278685AA009C2348 /* hevc-mp4toannexb.c in Sources */,
 				6339F28E278685AA009C2348 /* flv-writer.c in Sources */,
+				8A275DF327D5B0C300444565 /* PlatformImpl.cpp in Sources */,
 				6339F27E278685AA009C2348 /* rtmp-netconnection.c in Sources */,
 				6339F26F278685AA009C2348 /* ArNetTcpClient.cpp in Sources */,
 				6384B31426F6212700B2DF00 /* rotate_neon64.cc in Sources */,
@@ -910,7 +908,6 @@
 				6384B33426F6212700B2DF00 /* row_gcc.cc in Sources */,
 				6384B43126F6235900B2DF00 /* kiss_fft.c in Sources */,
 				6384B43426F6235900B2DF00 /* backpred.c in Sources */,
-				63B4ECDF278FD7C40095C2EB /* JitBuffer.cpp in Sources */,
 				6339F29B278685AA009C2348 /* flv-parser.c in Sources */,
 				6384B30A26F6212700B2DF00 /* rotate_any.cc in Sources */,
 				6384B42B26F6235900B2DF00 /* aacquant.c in Sources */,
@@ -926,7 +923,6 @@
 				6384B33626F6212700B2DF00 /* compare_gcc.cc in Sources */,
 				6339F272278685AA009C2348 /* AvCodec.cc in Sources */,
 				6339F281278685AA009C2348 /* rtmp-event.c in Sources */,
-				6350E924278BD50E00E959DA /* ArLive2Engine.cpp in Sources */,
 				6384B42926F6235900B2DF00 /* util.c in Sources */,
 				6384B42826F6235900B2DF00 /* psychkni.c in Sources */,
 				6339F2A3278685AA009C2348 /* ARFFPlayer.cpp in Sources */,
@@ -938,6 +934,7 @@
 				6339F277278685AA009C2348 /* PlayBuffer.cpp in Sources */,
 				6384B31C26F6212700B2DF00 /* convert_argb.cc in Sources */,
 				6339F29D278685AA009C2348 /* mpeg4-avc.c in Sources */,
+				8A275DF127D5B0A800444565 /* ArLive2Engine.cpp in Sources */,
 				6384B33726F6212700B2DF00 /* compare_neon64.cc in Sources */,
 				6384B31326F6212700B2DF00 /* row_neon.cc in Sources */,
 				6384B32B26F6212700B2DF00 /* mjpeg_validate.cc in Sources */,
@@ -990,7 +987,6 @@
 				63E6AA8B2704066C009BC628 /* video_renderer.cc in Sources */,
 				6384B31926F6212700B2DF00 /* compare_msa.cc in Sources */,
 				6384B32526F6212700B2DF00 /* scale_uv.cc in Sources */,
-				6350E925278BD50E00E959DA /* PlatformImpl.cpp in Sources */,
 				6339F283278685AA009C2348 /* rtmp-handler.c in Sources */,
 				6384B32726F6212700B2DF00 /* compare_neon.cc in Sources */,
 				6384B30926F6212700B2DF00 /* rotate_common.cc in Sources */,
@@ -1158,9 +1154,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					../,
-					../webrtc_m93_include,
-					../webrtc_m93_include/sdk/objc,
-					../webrtc_m93_include/sdk/objc/base,
 					../third_party,
 					../third_party/libyuv/include,
 					"../third_party/faac-1.28/",
@@ -1172,12 +1165,13 @@
 					../ArLiveLite/rtmp/libaio/include,
 					../ArLiveLite,
 					../third_party/ffmpeg,
-					../third_party/openh264,
-					../third_party/openh264/src/codec/processing/src,
 					../VideoRender,
-					"../webrtc_m93_include/third_party/abseil-cpp",
+					../ArLiveLite/include/webrtc,
+					../ArLiveLite/include/webrtc/sdk/objc,
+					../ArLiveLite/include/webrtc/sdk/objc/base,
+					"../ArLiveLite/include/webrtc/third_party/abseil-cpp",
 				);
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/WebRTC.framework\"";
+				LIBRARY_SEARCH_PATHS = "";
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1210,9 +1204,6 @@
 				);
 				HEADER_SEARCH_PATHS = (
 					../,
-					../webrtc_m93_include,
-					../webrtc_m93_include/sdk/objc,
-					../webrtc_m93_include/sdk/objc/base,
 					../third_party,
 					../third_party/libyuv/include,
 					"../third_party/faac-1.28/",
@@ -1224,12 +1215,13 @@
 					../ArLiveLite/rtmp/libaio/include,
 					../ArLiveLite,
 					../third_party/ffmpeg,
-					../third_party/openh264,
-					../third_party/openh264/src/codec/processing/src,
 					../VideoRender,
-					"../webrtc_m93_include/third_party/abseil-cpp",
+					../ArLiveLite/include/webrtc,
+					../ArLiveLite/include/webrtc/sdk/objc,
+					../ArLiveLite/include/webrtc/sdk/objc/base,
+					"../ArLiveLite/include/webrtc/third_party/abseil-cpp",
 				);
-				LIBRARY_SEARCH_PATHS = "\"$(SRCROOT)/WebRTC.framework\"";
+				LIBRARY_SEARCH_PATHS = "";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

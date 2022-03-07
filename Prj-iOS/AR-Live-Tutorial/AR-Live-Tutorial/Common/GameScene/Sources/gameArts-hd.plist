@@ -1,0 +1,795 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>frames</key>
+	<dict>
+		<key>background_2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 0}, {640, 1136}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -0}</string>
+			<key>spriteSize</key>
+			<string>{640, 1136}</string>
+			<key>spriteSourceSize</key>
+			<string>{640, 1136}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{0, 0}, {640, 1136}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>bomb.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{1, 3}, {82, 70}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -0}</string>
+			<key>spriteSize</key>
+			<string>{82, 70}</string>
+			<key>spriteSourceSize</key>
+			<string>{84, 76}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{951, 1727}, {70, 82}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>bullet1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 0}, {12, 28}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -0}</string>
+			<key>spriteSize</key>
+			<string>{12, 28}</string>
+			<key>spriteSourceSize</key>
+			<string>{12, 28}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{1009, 0}, {12, 28}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>bullet2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 0}, {96, 28}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -0}</string>
+			<key>spriteSize</key>
+			<string>{96, 28}</string>
+			<key>spriteSourceSize</key>
+			<string>{96, 28}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{981, 0}, {28, 96}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy1_blowup_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{4, 12}, {68, 50}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -3}</string>
+			<key>spriteSize</key>
+			<string>{68, 50}</string>
+			<key>spriteSourceSize</key>
+			<string>{76, 68}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{102, 1622}, {68, 50}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>enemy1_blowup_2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{4, 6}, {68, 62}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -3}</string>
+			<key>spriteSize</key>
+			<string>{68, 62}</string>
+			<key>spriteSourceSize</key>
+			<string>{76, 68}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{218, 1546}, {68, 62}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>enemy1_blowup_3.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 0}, {76, 68}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -0}</string>
+			<key>spriteSize</key>
+			<string>{76, 68}</string>
+			<key>spriteSourceSize</key>
+			<string>{76, 68}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{951, 1809}, {68, 76}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy1_blowup_4.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{9, 0}, {60, 64}}</string>
+			<key>spriteOffset</key>
+			<string>{1, 2}</string>
+			<key>spriteSize</key>
+			<string>{60, 64}</string>
+			<key>spriteSourceSize</key>
+			<string>{76, 68}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{286, 1596}, {64, 60}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy1_fly_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{4, 5}, {68, 50}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -2}</string>
+			<key>spriteSize</key>
+			<string>{68, 50}</string>
+			<key>spriteSourceSize</key>
+			<string>{76, 56}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{218, 1608}, {68, 50}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>enemy2_blowup_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 2}, {220, 341}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 1}</string>
+			<key>spriteSize</key>
+			<string>{220, 341}</string>
+			<key>spriteSourceSize</key>
+			<string>{220, 347}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{640, 221}, {341, 220}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy2_blowup_2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 2}, {220, 341}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 1}</string>
+			<key>spriteSize</key>
+			<string>{220, 341}</string>
+			<key>spriteSourceSize</key>
+			<string>{220, 347}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{640, 881}, {341, 220}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy2_blowup_3.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 2}, {220, 341}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 1}</string>
+			<key>spriteSize</key>
+			<string>{220, 341}</string>
+			<key>spriteSourceSize</key>
+			<string>{220, 347}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{640, 661}, {341, 220}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy2_blowup_4.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 2}, {220, 341}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 1}</string>
+			<key>spriteSize</key>
+			<string>{220, 341}</string>
+			<key>spriteSourceSize</key>
+			<string>{220, 347}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{640, 441}, {341, 220}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy2_blowup_5.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 2}, {221, 341}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 1}</string>
+			<key>spriteSize</key>
+			<string>{221, 341}</string>
+			<key>spriteSourceSize</key>
+			<string>{221, 347}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{640, 0}, {341, 221}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy2_blowup_6.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{5, 17}, {191, 269}}</string>
+			<key>spriteOffset</key>
+			<string>{-10, 22}</string>
+			<key>spriteSize</key>
+			<string>{191, 269}</string>
+			<key>spriteSourceSize</key>
+			<string>{221, 347}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{0, 1355}, {269, 191}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy2_blowup_7.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{5, 15}, {191, 269}}</string>
+			<key>spriteOffset</key>
+			<string>{-10, 24}</string>
+			<key>spriteSize</key>
+			<string>{191, 269}</string>
+			<key>spriteSourceSize</key>
+			<string>{221, 347}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{599, 1320}, {269, 191}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy2_fly_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{3, 3}, {219, 328}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 5}</string>
+			<key>spriteSize</key>
+			<string>{219, 328}</string>
+			<key>spriteSourceSize</key>
+			<string>{225, 344}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{332, 1136}, {219, 328}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>enemy2_fly_2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{3, 3}, {219, 332}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 3}</string>
+			<key>spriteSize</key>
+			<string>{219, 332}</string>
+			<key>spriteSourceSize</key>
+			<string>{225, 344}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{0, 1136}, {332, 219}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy2_hit_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{3, 3}, {219, 340}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -1}</string>
+			<key>spriteSize</key>
+			<string>{219, 340}</string>
+			<key>spriteSourceSize</key>
+			<string>{225, 344}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{640, 1101}, {340, 219}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy3_blowup_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 4}, {92, 120}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -2}</string>
+			<key>spriteSize</key>
+			<string>{92, 120}</string>
+			<key>spriteSourceSize</key>
+			<string>{92, 124}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{737, 1603}, {120, 92}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy3_blowup_2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 4}, {92, 120}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -2}</string>
+			<key>spriteSize</key>
+			<string>{92, 120}</string>
+			<key>spriteSourceSize</key>
+			<string>{92, 124}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{737, 1511}, {120, 92}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy3_blowup_3.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 2}, {92, 122}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -1}</string>
+			<key>spriteSize</key>
+			<string>{92, 122}</string>
+			<key>spriteSourceSize</key>
+			<string>{92, 124}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{481, 1588}, {92, 122}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>enemy3_blowup_4.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 20}, {92, 102}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -9}</string>
+			<key>spriteSize</key>
+			<string>{92, 102}</string>
+			<key>spriteSourceSize</key>
+			<string>{92, 124}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{849, 1727}, {102, 92}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy3_fly_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 5}, {92, 116}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 3}</string>
+			<key>spriteSize</key>
+			<string>{92, 116}</string>
+			<key>spriteSourceSize</key>
+			<string>{92, 132}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{733, 1695}, {116, 92}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy3_hit_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 5}, {92, 124}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -1}</string>
+			<key>spriteSize</key>
+			<string>{92, 124}</string>
+			<key>spriteSourceSize</key>
+			<string>{92, 132}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{481, 1464}, {92, 124}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>enemy3_hit_2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 5}, {92, 116}}</string>
+			<key>spriteOffset</key>
+			<string>{0, 3}</string>
+			<key>spriteSize</key>
+			<string>{92, 116}</string>
+			<key>spriteSourceSize</key>
+			<string>{92, 132}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{733, 1695}, {116, 92}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy4_fly_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 2}, {79, 137}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -0}</string>
+			<key>spriteSize</key>
+			<string>{79, 137}</string>
+			<key>spriteSourceSize</key>
+			<string>{79, 141}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{857, 1648}, {137, 79}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>enemy5_fly_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 0}, {76, 116}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -0}</string>
+			<key>spriteSize</key>
+			<string>{76, 116}</string>
+			<key>spriteSourceSize</key>
+			<string>{76, 116}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{102, 1546}, {116, 76}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>game_pause.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{12, 2}, {56, 58}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -1}</string>
+			<key>spriteSize</key>
+			<string>{56, 58}</string>
+			<key>spriteSourceSize</key>
+			<string>{80, 60}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{0, 1634}, {58, 56}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>game_pause_hl.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{12, 2}, {56, 58}}</string>
+			<key>spriteOffset</key>
+			<string>{0, -1}</string>
+			<key>spriteSize</key>
+			<string>{56, 58}</string>
+			<key>spriteSourceSize</key>
+			<string>{80, 60}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{350, 1596}, {58, 56}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>hero_blowup_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{3, 4}, {132, 164}}</string>
+			<key>spriteOffset</key>
+			<string>{1, -2}</string>
+			<key>spriteSize</key>
+			<string>{132, 164}</string>
+			<key>spriteSourceSize</key>
+			<string>{136, 168}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{317, 1464}, {164, 132}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>hero_blowup_2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{3, 4}, {132, 164}}</string>
+			<key>spriteOffset</key>
+			<string>{1, -2}</string>
+			<key>spriteSize</key>
+			<string>{132, 164}</string>
+			<key>spriteSourceSize</key>
+			<string>{136, 168}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{573, 1511}, {164, 132}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>hero_blowup_3.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{3, 4}, {132, 164}}</string>
+			<key>spriteOffset</key>
+			<string>{1, -2}</string>
+			<key>spriteSize</key>
+			<string>{132, 164}</string>
+			<key>spriteSourceSize</key>
+			<string>{136, 168}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{868, 1320}, {132, 164}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>hero_blowup_4.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{25, 27}, {88, 102}}</string>
+			<key>spriteOffset</key>
+			<string>{1, 6}</string>
+			<key>spriteSize</key>
+			<string>{88, 102}</string>
+			<key>spriteSourceSize</key>
+			<string>{136, 168}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{0, 1546}, {102, 88}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>hero_fly_1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{3, 3}, {132, 164}}</string>
+			<key>spriteOffset</key>
+			<string>{1, -1}</string>
+			<key>spriteSize</key>
+			<string>{132, 164}</string>
+			<key>spriteSourceSize</key>
+			<string>{136, 168}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{868, 1484}, {132, 164}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>hero_fly_2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{3, 3}, {132, 160}}</string>
+			<key>spriteOffset</key>
+			<string>{1, 1}</string>
+			<key>spriteSize</key>
+			<string>{132, 160}</string>
+			<key>spriteSourceSize</key>
+			<string>{136, 168}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{573, 1643}, {160, 132}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>loading0.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{15, 29}, {2, 2}}</string>
+			<key>spriteOffset</key>
+			<string>{-108, -5}</string>
+			<key>spriteSize</key>
+			<string>{2, 2}</string>
+			<key>spriteSourceSize</key>
+			<string>{248, 50}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{1021, 0}, {2, 2}}</string>
+			<key>textureRotated</key>
+			<false/>
+		</dict>
+		<key>loading1.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{0, 0}, {62, 48}}</string>
+			<key>spriteOffset</key>
+			<string>{-93, 1}</string>
+			<key>spriteSize</key>
+			<string>{62, 48}</string>
+			<key>spriteSourceSize</key>
+			<string>{248, 50}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{551, 1368}, {48, 62}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>loading2.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{7, 0}, {142, 48}}</string>
+			<key>spriteOffset</key>
+			<string>{-46, 1}</string>
+			<key>spriteSize</key>
+			<string>{142, 48}</string>
+			<key>spriteSourceSize</key>
+			<string>{248, 50}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{269, 1355}, {48, 142}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+		<key>loading3.png</key>
+		<dict>
+			<key>aliases</key>
+			<array/>
+			<key>spriteColorRect</key>
+			<string>{{14, 0}, {232, 48}}</string>
+			<key>spriteOffset</key>
+			<string>{6, 1}</string>
+			<key>spriteSize</key>
+			<string>{232, 48}</string>
+			<key>spriteSourceSize</key>
+			<string>{248, 50}</string>
+			<key>spriteTrimmed</key>
+			<true/>
+			<key>textureRect</key>
+			<string>{{551, 1136}, {48, 232}}</string>
+			<key>textureRotated</key>
+			<true/>
+		</dict>
+	</dict>
+	<key>metadata</key>
+	<dict>
+		<key>format</key>
+		<integer>3</integer>
+		<key>name</key>
+		<string>gameArts</string>
+		<key>size</key>
+		<string>{1024, 2048}</string>
+		<key>target</key>
+		<dict>
+			<key>coordinatesFileExtension</key>
+			<string>.plist</string>
+			<key>coordinatesFileName</key>
+			<string>gameArts-hd</string>
+			<key>name</key>
+			<string>default</string>
+			<key>premultipliedAlpha</key>
+			<false/>
+			<key>textureFileExtension</key>
+			<string>.png</string>
+			<key>textureFileName</key>
+			<string>gameArts-hd</string>
+		</dict>
+		<key>version</key>
+		<string>1.6.0</string>
+	</dict>
+</dict>
+</plist>

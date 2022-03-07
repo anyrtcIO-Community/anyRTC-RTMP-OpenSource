@@ -447,12 +447,17 @@ void V_H264Encoder::Run()
 				{
 					encoder_->Release();
 					encoder_ = NULL;
+                    video_encode_buffer_ = NULL;
 				}
 			}
 			if(encoder_ == NULL)
 			{
 				NewVideoEncoder();
 			}
+            if (video_encode_buffer_ == NULL) {
+                video_encode_buffer_ = I420Buffer::Create(
+                    h264_.width, abs(h264_.height), h264_.width, h264_.width/2, h264_.width/2);
+            }
 			if (n_next_keyframe_time_ <= rtc::TimeUTCMillis()) {
 				n_next_keyframe_time_ = rtc::TimeUTCMillis() + 3000;
 				need_keyframe_ = true;
@@ -465,7 +470,16 @@ void V_H264Encoder::Run()
 
 			if(encoder_)
 			{
-				int ret = encoder_->Encode(*frame_to_render, &next_frame_types);
+                //int ret = encoder_->Encode(*frame_to_render, &next_frame_types);
+                                rtc::scoped_refptr<webrtc::I420BufferInterface> yuv420 = frame_to_render->video_frame_buffer()->ToI420();
+                                libyuv::I420Copy(yuv420->DataY(), yuv420->StrideY(), yuv420->DataU(), yuv420->StrideU(), yuv420->DataV(), yuv420->StrideV(),
+                                    (uint8_t*)video_encode_buffer_->DataY(), video_encode_buffer_->StrideY(), (uint8_t*)video_encode_buffer_->DataU(), video_encode_buffer_->StrideU(),
+                                    (uint8_t*)video_encode_buffer_->DataV(), video_encode_buffer_->StrideV(), video_encode_buffer_->width(), video_encode_buffer_->height());
+                                webrtc::VideoFrame videoFrame(video_encode_buffer_, webrtc::VideoRotation::kVideoRotation_0, frame_to_render->timestamp_us());
+                                videoFrame.set_ntp_time_ms(frame_to_render->ntp_time_ms());
+                                videoFrame.set_timestamp(frame_to_render->timestamp());
+                                int ret = encoder_->Encode(videoFrame, &next_frame_types);
+
 				if(ret != 0)
 				{
 					//printf("Encode ret :%d", ret);
@@ -475,7 +489,7 @@ void V_H264Encoder::Run()
 				//* 临时解决iOS内存泄露问题
 				if (frame_to_render->video_frame_buffer()->type() != VideoFrameBuffer::Type::kNative)
 				{
-					frame_to_render->video_frame_buffer()->Release();
+					//frame_to_render->video_frame_buffer()->Release();
 				}
 #endif
 			}
