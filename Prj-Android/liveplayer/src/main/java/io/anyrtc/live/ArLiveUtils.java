@@ -53,6 +53,7 @@ public class ArLiveUtils {
             case ArLiveVideoResolution1920x1080:
                 bitrate = 2500;
                 minBitrate = 3000;
+                break;
         }
 
         return new ArBitrate(bitrate, minBitrate);

@@ -46,6 +46,12 @@ public abstract class ArLivePlayer {
      */
     public abstract int setRenderRotation(ArLiveDef.ArLiveRotation rotation);
 
+
+    /**
+     * 设置画面的填充模式。
+     * @param var1
+     * @return
+     */
     public abstract int setRenderFillMode(ArLiveDef.ArLiveFillMode var1);
 
 

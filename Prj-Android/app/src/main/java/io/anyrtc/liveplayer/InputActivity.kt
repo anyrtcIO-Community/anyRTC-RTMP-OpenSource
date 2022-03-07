@@ -44,6 +44,7 @@ class InputActivity : BaseActivity(),RadioGroup.OnCheckedChangeListener,View.OnC
             btnStart.setOnClickListener(this@InputActivity)
             rgType.setOnCheckedChangeListener(this@InputActivity)
             rgResolution.setOnCheckedChangeListener(this@InputActivity)
+            imgBack.setOnClickListener { finish() }
 
         }
 
@@ -63,6 +64,9 @@ class InputActivity : BaseActivity(),RadioGroup.OnCheckedChangeListener,View.OnC
             }
             R.id.rb_c->{
                 this@InputActivity.resolution=2
+            }
+            R.id.rb_aa->{
+                this@InputActivity.resolution=3
             }
             R.id.rb_camera-> {
                 this@InputActivity.pushType = 0

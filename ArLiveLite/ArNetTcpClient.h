@@ -19,6 +19,7 @@
 #ifndef __AR_NET_TCP_CLIENT_H__
 #define __AR_NET_TCP_CLIENT_H__
 #include "ArNetClient.h"
+#include "rtc_base/buffer.h"
 
 class ArNetTcpClient :
     public ArNetClient
@@ -38,10 +39,18 @@ protected:
     bool ConnectControlSocket();
     void OnConnect(rtc::AsyncSocket* socket);
     void OnRead(rtc::AsyncSocket* socket);
+    void OnWrite(rtc::AsyncSocket* socket);
     void OnClose(rtc::AsyncSocket* socket, int err);
 
 private:
+    int FlushOutBuffer();
+    void ClearOutBuffer() { outbuf_.Clear(); }
+
+private:
     std::unique_ptr<rtc::AsyncSocket> control_socket_;
+
+    rtc::Buffer				outbuf_;
+    size_t max_outsize_;
 };
 
 #endif  // __AR_NET_TCP_CLIENT_H__
