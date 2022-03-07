@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:AR-Live-Tutorial/AR-Live-Tutorial.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "container:ARLiveKit.xcodeproj">
    </FileRef>
    <FileRef

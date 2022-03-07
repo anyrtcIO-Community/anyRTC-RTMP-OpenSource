@@ -122,6 +122,8 @@ private:
 
 private:
 	rtc::scoped_refptr<webrtc::I420Buffer> video_mirror_buffer_;
+    rtc::scoped_refptr<webrtc::I420Buffer>  video_encode_buffer_;
+
 };
 
 

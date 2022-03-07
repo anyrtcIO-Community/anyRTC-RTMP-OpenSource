@@ -50,24 +50,13 @@ extern void* GetLiveEngine() {
     ARLiveKitHandle *_liveEngineHandle;
 }
 
-- (instancetype)init {
+- (instancetype)initWithDelegate:(id<ARLiveEngineDelegate>)delegate {
     if (self = [super init]) {
         if (liveEngine == NULL) {
             liveEngine = anyrtc::createArLive2Engine();
-        }
-    }
-    return self;
-}
-
-- (instancetype)initWithDelegate:(id<ARLiveEngineDelegate>)delegate {
-    if (self = [super init]) {
-        delete _liveEngineHandle;
-        if (delegate) {
-            _liveEngineHandle = new ARLiveKitHandle(delegate, self);
-            if (liveEngine == NULL) {
-                liveEngine = anyrtc::createArLive2Engine();
-            }
-            liveEngine->initialize(_liveEngineHandle);
+            liveEngine->initialize(nil);
+        } else {
+            return nil;
         }
     }
     return self;

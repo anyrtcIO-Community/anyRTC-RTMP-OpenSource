@@ -16,6 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ARLiveEngineKit : NSObject
 
+- (instancetype)init UNAVAILABLE_ATTRIBUTE;
+
 /**
  * 初始化 ARLiveEngineKit 对象。
  *

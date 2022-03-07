@@ -102,6 +102,11 @@ int ARRtmpPusher::startTask(const char* strUrl)
 	str_rtmp_url_ = strUrl;
 	std::string schema, host, app, port, stream;
 	rtmp_discovery_tc_url(str_rtmp_url_, schema, host, app, port, stream);
+    
+    if (strlen(host.c_str()) == 0) {
+        callback_->onError(AR::ArLIVE_ERROR_INVALID_PARAMETER, NULL, NULL);
+        return 0;
+    }
 	if (ar_net_client_ == NULL) {
 		ar_net_client_ = createArNetTcpClient();
 		ar_net_client_->setCallback(this);
