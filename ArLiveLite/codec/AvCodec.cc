@@ -314,7 +314,9 @@ void V_H264Encoder::Encode(const webrtc::VideoFrame& frame)
 		return;
 
 	if (frame.video_frame_buffer()->GetI420() != NULL && frame.rotation() == webrtc::kVideoRotation_0) {
-		AddToFrameList(*((webrtc::VideoFrame*)(&frame)));
+		webrtc::VideoFrame copy_frame(frame);
+		copy_frame.set_timestamp_us(rtc::TimeMicros());
+		AddToFrameList(copy_frame);
 	}
 	else {
 		/* Apply pending rotation. */
@@ -332,6 +334,7 @@ void V_H264Encoder::Encode(const webrtc::VideoFrame& frame)
 		}
 
 		rotated_frame.set_rotation(webrtc::kVideoRotation_0);
+		rotated_frame.set_timestamp_us(rtc::TimeMicros());
 		AddToFrameList(rotated_frame);
 	}
 }
@@ -417,9 +420,7 @@ void V_H264Encoder::AddToFrameList(webrtc::VideoFrame& frame)
 	}
 	else {
 		rtc::CritScope cs(&buffer_critsect_);
-		webrtc::VideoFrame copy_frame(frame);
-		copy_frame.set_timestamp_us(rtc::TimeMicros());
-		render_buffers_->AddFrame(std::move(copy_frame));
+		render_buffers_->AddFrame(std::move(frame));
 	}
 }
 
@@ -447,17 +448,17 @@ void V_H264Encoder::Run()
 				{
 					encoder_->Release();
 					encoder_ = NULL;
-                    video_encode_buffer_ = NULL;
 				}
+				video_encode_buffer_ = NULL;
 			}
 			if(encoder_ == NULL)
 			{
 				NewVideoEncoder();
 			}
-            if (video_encode_buffer_ == NULL) {
-                video_encode_buffer_ = I420Buffer::Create(
-                    h264_.width, abs(h264_.height), h264_.width, h264_.width/2, h264_.width/2);
-            }
+			if (video_encode_buffer_ == NULL) {
+				video_encode_buffer_ = I420Buffer::Create(
+					h264_.width, abs(h264_.height), h264_.width, h264_.width/2, h264_.width/2);
+			}
 			if (n_next_keyframe_time_ <= rtc::TimeUTCMillis()) {
 				n_next_keyframe_time_ = rtc::TimeUTCMillis() + 3000;
 				need_keyframe_ = true;
@@ -467,31 +468,25 @@ void V_H264Encoder::Run()
 				need_keyframe_ = false;
 				next_frame_types[0] = webrtc::VideoFrameType::kVideoFrameKey;
 			}
-
+			
 			if(encoder_)
 			{
-                //int ret = encoder_->Encode(*frame_to_render, &next_frame_types);
-                                rtc::scoped_refptr<webrtc::I420BufferInterface> yuv420 = frame_to_render->video_frame_buffer()->ToI420();
-                                libyuv::I420Copy(yuv420->DataY(), yuv420->StrideY(), yuv420->DataU(), yuv420->StrideU(), yuv420->DataV(), yuv420->StrideV(),
-                                    (uint8_t*)video_encode_buffer_->DataY(), video_encode_buffer_->StrideY(), (uint8_t*)video_encode_buffer_->DataU(), video_encode_buffer_->StrideU(),
-                                    (uint8_t*)video_encode_buffer_->DataV(), video_encode_buffer_->StrideV(), video_encode_buffer_->width(), video_encode_buffer_->height());
-                                webrtc::VideoFrame videoFrame(video_encode_buffer_, webrtc::VideoRotation::kVideoRotation_0, frame_to_render->timestamp_us());
-                                videoFrame.set_ntp_time_ms(frame_to_render->ntp_time_ms());
-                                videoFrame.set_timestamp(frame_to_render->timestamp());
-                                int ret = encoder_->Encode(videoFrame, &next_frame_types);
-
-				if(ret != 0)
+#ifdef WEBRTC_IOS
+				rtc::scoped_refptr<webrtc::I420BufferInterface> yuv420 = frame_to_render->video_frame_buffer()->ToI420();
+				libyuv::I420Copy(yuv420->DataY(), yuv420->StrideY(), yuv420->DataU(), yuv420->StrideU(), yuv420->DataV(), yuv420->StrideV(),
+					(uint8_t*)video_encode_buffer_->DataY(), video_encode_buffer_->StrideY(), (uint8_t*)video_encode_buffer_->DataU(), video_encode_buffer_->StrideU(),
+					(uint8_t*)video_encode_buffer_->DataV(), video_encode_buffer_->StrideV(), video_encode_buffer_->width(), video_encode_buffer_->height());
+				webrtc::VideoFrame videoFrame(video_encode_buffer_, webrtc::VideoRotation::kVideoRotation_0, frame_to_render->timestamp_us());
+				videoFrame.set_ntp_time_ms(frame_to_render->ntp_time_ms());
+				videoFrame.set_timestamp(frame_to_render->timestamp());
+				int ret = encoder_->Encode(videoFrame, &next_frame_types);
+#else 
+				int ret = encoder_->Encode(*frame_to_render, &next_frame_types);
+#endif
+				if (ret != 0)
 				{
 					//printf("Encode ret :%d", ret);
 				}
-
-#ifdef WEBRTC_IOS
-				//* 临时解决iOS内存泄露问题
-				if (frame_to_render->video_frame_buffer()->type() != VideoFrameBuffer::Type::kNative)
-				{
-					//frame_to_render->video_frame_buffer()->Release();
-				}
-#endif
 			}
 		}
 
