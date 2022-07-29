@@ -541,7 +541,7 @@ int32_t ArLive2Pusher::sendCustomVideoFrame(ArLiveVideoFrame* videoFrame)
 	if (!b_enable_custom_video_capture_) {
 		return ArLIVE_ERROR_REFUSED;
 	}
-	if (videoFrame->pixelFormat == ArLivePixelFormatI420 || videoFrame->pixelFormat == ArLivePixelFormatBGRA32 || videoFrame->pixelFormat == ArLivePixelFormatNV12) {
+	if (videoFrame->pixelFormat == ArLivePixelFormatI420 || videoFrame->pixelFormat == ArLivePixelFormatBGRA32 || videoFrame->pixelFormat == ArLivePixelFormatNV12||videoFrame->pixelFormat == ArLivePixelFormatNV21) {
 		rtc::scoped_refptr<webrtc::I420Buffer> i420Buffer = webrtc::I420Buffer::Create(
 			videoFrame->width, videoFrame->height, videoFrame->width, videoFrame->width / 2, videoFrame->width / 2);
 		if (videoFrame->stride == 0) {
@@ -567,8 +567,24 @@ int32_t ArLive2Pusher::sendCustomVideoFrame(ArLiveVideoFrame* videoFrame)
 				(uint8_t*)i420Buffer->DataY(), i420Buffer->StrideY(), (uint8_t*)i420Buffer->DataU(), i420Buffer->StrideU(),
 				(uint8_t*)i420Buffer->DataV(), i420Buffer->StrideV(), i420Buffer->width(), i420Buffer->height());
 		}
+		else if (videoFrame->pixelFormat == ArLivePixelFormatNV21) {
+			int ww = videoFrame->width;
+			int hh = videoFrame->height;
+			uint8_t *dataY = (uint8_t *) (videoFrame->data);
+			uint8_t *dataUV = dataY + ww * hh;
+			libyuv::NV21ToI420(dataY, ww, dataUV, ww,
+							   (uint8_t *) i420Buffer->DataY(),
+							   i420Buffer->StrideY(),
+							   (uint8_t *) i420Buffer->DataU(),
+							   i420Buffer->StrideU(),
+							   (uint8_t *) i420Buffer->DataV(),
+							   i420Buffer->StrideV(),
+							   i420Buffer->width(), i420Buffer->height());
 
-		webrtc::VideoFrame video_frame(i420Buffer, 0, rtc::TimeMillis(), webrtc::kVideoRotation_0);
+		}
+
+		webrtc::VideoFrame video_frame(i420Buffer, 0, rtc::TimeMillis(),
+									   static_cast<webrtc::VideoRotation>(videoFrame->rotation));
 		OnFrame(video_frame);
 	}
 
