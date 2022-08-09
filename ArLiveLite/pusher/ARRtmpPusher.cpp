@@ -102,6 +102,11 @@ int ARRtmpPusher::startTask(const char* strUrl)
 	str_rtmp_url_ = strUrl;
 	std::string schema, host, app, port, stream;
 	rtmp_discovery_tc_url(str_rtmp_url_, schema, host, app, port, stream);
+    
+    if (strlen(host.c_str()) == 0) {
+        callback_->onError(AR::ArLIVE_ERROR_INVALID_PARAMETER, NULL, NULL);
+        return 0;
+    }
 	if (ar_net_client_ == NULL) {
 		ar_net_client_ = createArNetTcpClient();
 		ar_net_client_->setCallback(this);
@@ -336,8 +341,18 @@ void ARRtmpPusher::on_flv_muxer_data(int type, const void* data, size_t bytes, u
 int ARRtmpPusher::do_rtmp_client_send(const void* header, size_t len, const void* payload, size_t bytes)
 {
 	if (ar_net_client_ != NULL) {
-		ar_net_client_->sendData((char*)header, len);
-		ar_net_client_->sendData((char*)payload, (int)bytes);
+		if (bytes > 0) {
+			char* pData = new char[len + bytes];
+			memcpy(pData, header, len);
+			memcpy(pData + len, payload, bytes);
+			ar_net_client_->sendData((char*)pData, len + bytes);
+			delete[] pData;
+		}
+		else {
+			ar_net_client_->sendData((char*)header, len);
+		}
+		//ar_net_client_->sendData((char*)header, len);
+		//ar_net_client_->sendData((char*)payload, (int)bytes);
 	}
 	return len + bytes;
 }

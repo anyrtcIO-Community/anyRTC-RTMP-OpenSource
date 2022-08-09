@@ -288,7 +288,9 @@ public class ArLiveDef {
     public static enum ArLivePixelFormat {
         ArLivePixelFormatUnknown,
         ArLivePixelFormatI420,
-        ArLivePixelFormatTexture2D;
+        ArLivePixelFormatBGRA32,
+        ArLivePixelFormatNV12,
+        ArLivePixelFormatNV21;
 
         private ArLivePixelFormat() {
         }

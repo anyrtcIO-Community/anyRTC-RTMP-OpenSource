@@ -202,9 +202,9 @@ public class ArLivePlayerImpl extends ArLivePlayer {
 
      void detach(){
          synchronized (mPlayerLock){
+             nativeId = 0;
              nativeInstance.nativeStopPlay(nativeId);
              nativeInstance.nativePlayKitRelease(nativeId);
-             nativeId = 0;
              isStartPlay = false;
              if (renderView!=null){
                  if (renderView instanceof TextureViewRenderer){

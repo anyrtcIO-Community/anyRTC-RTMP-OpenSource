@@ -8,7 +8,6 @@
 #include "ObjcVCMCapturer.h"
 #import "sdk/objc/components/capturer/RTCCameraVideoCapturer.h"
 #import "sdk/objc/native/src/objc_frame_buffer.h"
-#import "sdk/objc/components/video_frame_buffer/RTCCVPixelBuffer.h"
 #import "rtc_base/time_utils.h"
 #include "WinVideoTrackSource.h"
 

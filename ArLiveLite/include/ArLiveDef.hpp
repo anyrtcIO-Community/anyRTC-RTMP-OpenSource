@@ -390,6 +390,8 @@ enum ArLivePixelFormat {
     /// YUV420P NV12
     ArLivePixelFormatNV12,
 
+    ArLivePixelFormatNV21,
+
 };
 
 /**

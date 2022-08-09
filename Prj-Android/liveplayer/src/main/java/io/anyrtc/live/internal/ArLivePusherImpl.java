@@ -213,7 +213,6 @@ public class ArLivePusherImpl extends ArLivePusher {
     public int startCamera(boolean isFrontFaceCamera) {
         deviceManager.setCameraIndex(isFrontFaceCamera);
         nativeInstance.nativeStartCamera(nativeId,isFrontFaceCamera);
-        setRenderMirror(curMirrorType);
         isStartCamera = true;
         return 0;
     }
@@ -245,7 +244,7 @@ public class ArLivePusherImpl extends ArLivePusher {
     protected void setSwitchCamera(boolean switching, boolean isFrontFace){
         deviceManager.setSwitchingCamera(switching,isFrontFace);
         if (!switching) {
-            if (isFrontFace) {
+            if (isFrontFace&&curMirrorType== ArLiveDef.ArLiveMirrorType.ArLiveMirrorTypeAuto) {
                 if (renderView != null) {
                     if (renderView instanceof TextureViewRenderer) {
                         ((TextureViewRenderer) renderView).setMirror(curMirrorType!= ArLiveDef.ArLiveMirrorType.ArLiveMirrorTypeDisable);
@@ -255,12 +254,14 @@ public class ArLivePusherImpl extends ArLivePusher {
                     }
                 }
             } else {
-                if (renderView != null) {
-                    if (renderView instanceof TextureViewRenderer) {
-                        ((TextureViewRenderer) renderView).setMirror(false);
-                    }
-                    if (renderView instanceof SurfaceViewRenderer) {
-                        ((SurfaceViewRenderer) renderView).setMirror(false);
+                if (curMirrorType== ArLiveDef.ArLiveMirrorType.ArLiveMirrorTypeAuto) {
+                    if (renderView != null) {
+                        if (renderView instanceof TextureViewRenderer) {
+                            ((TextureViewRenderer) renderView).setMirror(false);
+                        }
+                        if (renderView instanceof SurfaceViewRenderer) {
+                            ((SurfaceViewRenderer) renderView).setMirror(false);
+                        }
                     }
                 }
             }

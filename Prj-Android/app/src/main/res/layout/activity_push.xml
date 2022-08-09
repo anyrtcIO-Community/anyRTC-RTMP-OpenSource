@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
+
     tools:context=".PushActivity">
 
     <org.webrtc.TextureViewRenderer
@@ -13,6 +14,13 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"></org.webrtc.TextureViewRenderer>
 
+    <ImageView
+        android:id="@+id/iv_gif"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="fitCenter">
+    </ImageView>
     <LinearLayout
         android:id="@+id/ll_url"
         android:paddingTop="24dp"

@@ -11,6 +11,7 @@
 #include "webrtc/sdk/android/src/jni/jvm.h"
 #include "sdk/android/native_api/video/video_source.h"
 #include "api/video_codecs/video_encoder_factory.h"
+#include "api/video_codecs/video_decoder_factory.h"
 #include "PlatformContext.h"
 #include "VideoCameraCapturer.h"
 #include "sdk/android/native_api/jni/class_loader.h"
@@ -36,6 +37,7 @@ public:
     createVideoCapture(size_t width, size_t height, size_t fps, size_t capture_device_index);
 
     std::unique_ptr<webrtc::VideoEncoderFactory> makeVideoEncoderFactory();
+    std::unique_ptr<webrtc::VideoDecoderFactory> makeVideoDecoderFactory();
 
     jint switchCamera(bool isFront);
     jboolean isFrontCamera();
@@ -46,6 +48,7 @@ public:
     jint enableCameraAutoFocus(bool enabled);
     jint setCameraFocusPosition(float x, float y);
     jboolean enableCameraTorch(bool enabled);
+    void recoverCamera();
 
     bool startCapture();
 

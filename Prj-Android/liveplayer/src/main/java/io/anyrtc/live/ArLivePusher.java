@@ -118,8 +118,18 @@ public abstract class ArLivePusher{
      */
     public abstract int stopScreenCapture();
 
+    /**
+     * 开启图片推流
+     * startVirtualCamera、startCamera 和 startScreenCapture，仅有一个能上行，三者为覆盖关系。例如先调用 startCamera，后调用 startVirtualCamera。此时表现为暂停摄像头推流，开启图片推流。
+     * @param var1 图片
+     * @return
+     */
     public abstract int startVirtualCamera(Bitmap var1);
 
+    /**
+     * 关闭图片推流。
+     * @return
+     */
     public abstract int stopVirtualCamera();
 
     /**

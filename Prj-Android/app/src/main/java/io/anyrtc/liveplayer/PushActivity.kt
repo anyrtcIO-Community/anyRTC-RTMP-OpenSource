@@ -3,12 +3,18 @@ package io.anyrtc.liveplayer
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
+import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
 import android.util.Log
+import android.view.KeyEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.SeekBar
 import android.widget.Toast
+import coil.ImageLoader
+import coil.decode.GifDecoder
+import coil.decode.ImageDecoderDecoder
+import coil.load
 import io.anyrtc.live.*
 import io.anyrtc.live.ArLiveDef.ArLiveVideoResolution
 import io.anyrtc.liveplayer.databinding.ActivityPushBinding
@@ -22,7 +28,6 @@ class PushActivity : BaseActivity() {
     private val binding by lazy { ActivityPushBinding.inflate(layoutInflater) }
     private val liveEngine by lazy { ArLiveEngine.create(this)}
     private val pusher by lazy { liveEngine.createArLivePusher() }
-    private val player by lazy { liveEngine.createArLivePlayer() }
     private var pushUrl = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,7 +38,7 @@ class PushActivity : BaseActivity() {
         val resolution = intent.getIntExtra("resolution",0)
         pushUrl = intent.getStringExtra("url").toString()
         when(resolution){
-            0->{
+            0-> {
                 pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution1280x720))
             }
             1->{
@@ -41,22 +46,30 @@ class PushActivity : BaseActivity() {
             }
             2->{
                 pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution640x360))
-
+            }
+            3->{
+                pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution1920x1080))
             }
         }
         if (pushType == 0){
             pusher.setRenderView(binding.videoView)
-            pusher.setRenderMirror(ArLiveDef.ArLiveMirrorType.ArLiveMirrorTypeAuto)
             pusher.startCamera(true)
         }else{
             binding.ivBeauty.visibility = View.GONE
-            player.setRenderView(binding.videoView)
-            player.setRenderFillMode(ArLiveDef.ArLiveFillMode.ArLiveFillModeFit)
-            player.startPlay("http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8")
+            val imageLoader = ImageLoader.Builder(this)
+                .componentRegistry {
+                    if (SDK_INT >= 28) {
+                        add(ImageDecoderDecoder(this@PushActivity))
+                    } else {
+                        add(GifDecoder())
+                    }
+                }
+                .build()
+            binding.ivGif.load("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F60ed9921abb8a968651aae697626dc816624cc4770c32-uwUmhP_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645166781&t=ff39058ea3e782746361d8b2bea68511",imageLoader)
             pusher.startScreenCapture()
         }
+        pusher.startMicrophone()
         pusher.startPush(pushUrl)
-
         initView()
 
     }
@@ -101,6 +114,7 @@ class PushActivity : BaseActivity() {
 
             ivMirro.setOnClickListener {
                 ivMirro.isSelected = !ivMirro.isSelected
+                pusher.setRenderMirror(if (ivMirro.isSelected)ArLiveDef.ArLiveMirrorType.ArLiveMirrorTypeEnable else ArLiveDef.ArLiveMirrorType.ArLiveMirrorTypeDisable)
                 pusher.setEncoderMirror(ivMirro.isSelected)
             }
 
@@ -129,6 +143,16 @@ class PushActivity : BaseActivity() {
             })
 
         }
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK){
+            pusher.stopPush()
+            ArLiveEngine.release()
+            finish()
+            return true
+        }
+        return super.onKeyDown(keyCode, event)
     }
 
 

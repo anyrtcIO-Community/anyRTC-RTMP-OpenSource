@@ -148,6 +148,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// - 如果您将 videoBitrate 和 minVideoBitrate 设置为同一个值，等价于关闭 SDK 对视频码率的自适应调节能力。
 @property(nonatomic, assign) int minVideoBitrate;
 
+///【字段含义】视频编码时，采集图像与设置的编码大小不一致时，采用什么策略进行缩放裁剪
+///【推荐取值】ArLiveVideoScaleModeAuto可以保证图像的完整性，但是大小会与设置的略有不同
+@property(nonatomic, assign) ARLiveVideoScaleMode videoScaleMode;
+
 - (instancetype _Nonnull)initWith:(ARLiveVideoResolution)resolution;
 
 @end
@@ -213,6 +217,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 【字段含义】视频纹理ID
 @property(nonatomic, assign) GLuint textureId;
 
+/// 【字段含义】视频rowSize
+@property(nonatomic, assign) NSUInteger stride;
+
 @end
 
 /**
@@ -221,7 +228,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ARLiveAudioFrame : NSObject
 
 /// 【字段含义】音频数据
-@property(nonatomic, strong, nullable) NSData *data;
+@property(nonatomic, nonnull) void *data;
 
 /// 【字段含义】采样率
 @property(nonatomic, assign) int sampleRate;

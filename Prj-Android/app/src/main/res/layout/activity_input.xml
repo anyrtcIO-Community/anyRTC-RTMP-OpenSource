@@ -79,6 +79,19 @@
                 android:layout_marginTop="12dp"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/rb_aa"
+                    android:layout_width="0dp"
+                    android:layout_height="44dp"
+                    android:textColor="@color/color_options"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:background="@drawable/select_options"
+                    android:layout_weight="1"
+                    android:text="1080P"/>
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"/>
 
                 <RadioButton
                     android:id="@+id/rb_a"

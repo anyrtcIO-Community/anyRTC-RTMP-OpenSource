@@ -35,6 +35,7 @@ INetClient* createArNetTcpClient()
 }
 
 ArNetTcpClient::ArNetTcpClient()
+	: max_outsize_(2 * 1024 * 1024)
 {
 
 }
@@ -72,8 +73,15 @@ void ArNetTcpClient::doRunOnce()
 }
 void ArNetTcpClient::doSendData(const char* pData, int nLen)
 {
-	if (control_socket_ != NULL) {
-		control_socket_->Send(pData, nLen);
+	int res = control_socket_->Send(pData, nLen);
+	if (res <= 0 || res > nLen) {
+		//Error
+		outbuf_.AppendData((const uint8_t*)pData, nLen);
+		return;
+	}
+	// We claim to have sent the whole thing, even if we only sent partial
+	if (res != nLen) {
+		outbuf_.AppendData((const uint8_t*)pData + res, nLen - res);
 	}
 }
 
@@ -85,6 +93,7 @@ void ArNetTcpClient::InitSocketSignals()
 	control_socket_->SignalConnectEvent.connect(this,
 		&ArNetTcpClient::OnConnect);
 	control_socket_->SignalReadEvent.connect(this, &ArNetTcpClient::OnRead);
+	control_socket_->SignalWriteEvent.connect(this, &ArNetTcpClient::OnWrite);
 }
 bool ArNetTcpClient::ConnectControlSocket()
 {
@@ -113,8 +122,15 @@ void ArNetTcpClient::OnRead(rtc::AsyncSocket* socket)
 	} while (true);
 }
 
-void ArNetTcpClient::OnClose(rtc::AsyncSocket* socket, int err)
+void ArNetTcpClient::OnWrite(rtc::AsyncSocket* socket)
 {
+	if (outbuf_.size() > 0) {
+		FlushOutBuffer();
+	}
+}
+
+void ArNetTcpClient::OnClose(rtc::AsyncSocket* socket, int err)
+{ 
 	RTC_LOG(INFO) << __FUNCTION__;
 
 	if (state_ == CONNECTED) {
@@ -123,4 +139,24 @@ void ArNetTcpClient::OnClose(rtc::AsyncSocket* socket, int err)
 	else {
 		callback_->OnArClientConnectFailure();
 	}
+}
+
+int ArNetTcpClient::FlushOutBuffer() {
+	int res = 0;
+	if (control_socket_.get() != NULL) {
+		res = control_socket_->Send(outbuf_.data(), outbuf_.size());
+	}
+	if (res <= 0) {
+		return res;
+	}
+	if (static_cast<size_t>(res) > outbuf_.size()) {
+		RTC_NOTREACHED();
+		return -1;
+	}
+	size_t new_size = outbuf_.size() - res;
+	if (new_size > 0) {
+		memmove(outbuf_.data(), outbuf_.data() + res, new_size);
+	}
+	outbuf_.SetSize(new_size);
+	return res;
 }

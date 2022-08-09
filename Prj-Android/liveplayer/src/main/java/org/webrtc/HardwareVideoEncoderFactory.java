@@ -10,6 +10,10 @@
 
 package org.webrtc;
 
+import static android.media.MediaCodecInfo.CodecCapabilities.COLOR_FormatSurface;
+import static android.media.MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420Planar;
+import static android.media.MediaCodecInfo.CodecCapabilities.COLOR_FormatYUV420SemiPlanar;
+import static android.media.MediaCodecInfo.CodecCapabilities.COLOR_QCOM_FormatYUV420SemiPlanar;
 import static org.webrtc.MediaCodecUtils.EXYNOS_PREFIX;
 import static org.webrtc.MediaCodecUtils.INTEL_PREFIX;
 import static org.webrtc.MediaCodecUtils.QCOM_PREFIX;
@@ -20,7 +24,9 @@ import android.os.Build;
 import androidx.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 /** Factory for android hardware video encoders. */
 @SuppressWarnings("deprecation") // API 16 requires the use of deprecated methods.
@@ -35,13 +41,20 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
   // List of devices with poor H.264 encoder quality.
   // HW H.264 encoder on below devices has poor bitrate control - actual
   // bitrates deviates a lot from the target value.
-  private static final List<String> H264_HW_EXCEPTION_MODELS =
-      Arrays.asList("SAMSUNG-SGH-I337", "Nexus 7", "Nexus 4");
+  private static final String[] supportedH264HwCodecPrefixes = new String[]{"OMX.qcom.", "OMX.Exynos.", "OMX.MTK.", "OMX.IMG.TOPAZ.", "OMX.hisi.", "OMX.k3.", "OMX.amlogic.", "OMX.rk.", "OMX.MS."};
+  private static final String[] H264_HW_EXCEPTION_MODELS = new String[]{"SAMSUNG-SGH-I337", "Nexus 7", "Nexus 4", "P6-C00", "HM 2A", "XT105", "XT109", "XT1060"};
+
+  private static final int COLOR_QCOM_FORMATYUV420PackedSemiPlanar32m = 0x7FA30C04;
 
   @Nullable private final EglBase14.Context sharedContext;
   private final boolean enableIntelVp8Encoder;
   private final boolean enableH264HighProfile;
   @Nullable private final Predicate<MediaCodecInfo> codecAllowedPredicate;
+  private static Set<String> hwEncoderDisabledTypes = new HashSet();
+  private static String codecOmxName = "";
+  private static int mH264SupportProfileHigh = 0;
+
+  private static final int[] supportedColorList = new int[]{COLOR_FormatYUV420Planar, COLOR_FormatYUV420SemiPlanar, COLOR_QCOM_FormatYUV420SemiPlanar, COLOR_QCOM_FORMATYUV420PackedSemiPlanar32m};
 
   /**
    * Creates a HardwareVideoEncoderFactory that supports surface texture encoding.
@@ -227,16 +240,163 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
   }
 
   private boolean isHardwareSupportedInCurrentSdkH264(MediaCodecInfo info) {
-    // First, H264 hardware might perform poorly on this model.
-    if (H264_HW_EXCEPTION_MODELS.contains(Build.MODEL)) {
+    try {
+      return !hwEncoderDisabledTypes.contains("video/avc") && findHwEncoder("video/avc", supportedH264HwCodecPrefixes, supportedColorList) != null;
+    } catch (Exception var1) {
+      Logging.e(TAG, "isH264HwSupported failed!");
       return false;
     }
-    String name = info.getName();
-    // QCOM H264 encoder is supported in KITKAT or later.
-    return (name.startsWith(QCOM_PREFIX) && Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-        // Exynos H264 encoder is supported in LOLLIPOP or later.
-        || (name.startsWith(EXYNOS_PREFIX)
-               && Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP);
+  }
+
+  private static EncoderProperties findHwEncoder(String mime, String[] supportedHwCodecPrefixes, int[] colorList) {
+    try {
+      return do_findHwEncoder(mime, supportedHwCodecPrefixes, colorList);
+    } catch (Exception var4) {
+      return null;
+    }
+  }
+
+  private static EncoderProperties do_findHwEncoder(String mime, String[] supportedHwCodecPrefixes, int[] colorList) {
+    if (Build.VERSION.SDK_INT < 19) {
+      return null;
+    } else {
+      boolean var3 = colorList[0] == COLOR_FormatSurface;
+      Logging.d(TAG, "Model: " + Build.MODEL + ", hardware: " + Build.HARDWARE);
+      List var4;
+      if (mime.equals("video/avc")) {
+        var4 = Arrays.asList(H264_HW_EXCEPTION_MODELS);
+        if (var4.contains(Build.MODEL)) {
+          Logging.w(TAG, "Model: " + Build.MODEL + " has black listed H.264 encoder.");
+          return null;
+        }
+
+        if (Build.HARDWARE.equalsIgnoreCase("kirin970") && !var3) {
+          return null;
+        }
+      }
+
+      for(int var18 = 0; var18 < MediaCodecList.getCodecCount(); ++var18) {
+        MediaCodecInfo var5 = MediaCodecList.getCodecInfoAt(var18);
+        if (var5.isEncoder()) {
+          String var6 = null;
+          String[] var7 = var5.getSupportedTypes();
+          int var8 = var7.length;
+
+          int var9;
+          for(var9 = 0; var9 < var8; ++var9) {
+            String var10 = var7[var9];
+            if (var10.equals(mime)) {
+              var6 = var5.getName();
+              break;
+            }
+          }
+
+          if (var6 != null) {
+            if (!checkMinSDKVersion(var6, var3)) {
+              Logging.e(TAG, "Check min sdk version failed, " + var6);
+            } else {
+              Logging.d(TAG, "Found candidate encoder " + var6);
+              if (var6.startsWith("OMX.") || var3) {
+                codecOmxName = var6;
+                MediaCodecInfo.CodecCapabilities var19 = var5.getCapabilitiesForType(mime);
+                if (mime.equals("video/avc")) {
+                  MediaCodecInfo.CodecProfileLevel[] var20 = var19.profileLevels;
+                  var9 = var20.length;
+
+                  for(int var23 = 0; var23 < var9; ++var23) {
+                    MediaCodecInfo.CodecProfileLevel var11 = var20[var23];
+                    if (var11.profile == 8) {
+                      mH264SupportProfileHigh = 1;
+                    }
+                  }
+                }
+
+                if (var6.startsWith("OMX.amlogic.")) {
+                  if (var3) {
+                    return new EncoderProperties(var6, COLOR_FormatSurface, true);
+                  }
+
+                  return new EncoderProperties(var6, 19, true);
+                }
+
+                boolean var21 = false;
+                String var22 = "   Color:";
+                int[] var24 = var19.colorFormats;
+                int var25 = var24.length;
+
+                int var12;
+                int var13;
+                for(var12 = 0; var12 < var25; ++var12) {
+                  var13 = var24[var12];
+                  if (21 == var13) {
+                    var21 = true;
+                  }
+
+                  var22 = var22 + " 0x" + Integer.toHexString(var13) + ", ";
+                }
+
+                Logging.d(TAG, var22);
+                var24 = colorList;
+                var25 = colorList.length;
+
+                for(var12 = 0; var12 < var25; ++var12) {
+                  var13 = var24[var12];
+                  int[] var14 = var19.colorFormats;
+                  int var15 = var14.length;
+
+                  for(int var16 = 0; var16 < var15; ++var16) {
+                    int var17 = var14[var16];
+                    if (var17 == var13) {
+                      if (var17 != 19 || !var21 || !var6.startsWith("OMX.IMG.TOPAZ.") && !var6.startsWith("OMX.hisi.") && !var6.startsWith("OMX.k3.")) {
+                        Logging.d(TAG, "Found target encoder for mime " + mime + " : " + var6 + ". Color: 0x" + Integer.toHexString(var17));
+                        return new EncoderProperties(var6, var17, true);
+                      }
+
+                      Logging.d(TAG, "TOPAZ,force use COLOR_FormatYUV420SemiPlanar");
+                      Logging.d(TAG, "Found target encoder for mime " + mime + " : " + var6 + ". Color: 0x" + Integer.toHexString(21));
+                      return new EncoderProperties(var6, 21, true);
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+
+      return null;
+    }
+  }
+
+  private static boolean checkMinSDKVersion(String chipName, boolean isTexture) {
+    if (isTexture) {
+      return Build.VERSION.SDK_INT >= 19;
+    } else if (chipName.startsWith("OMX.qcom.")) {
+      return Build.VERSION.SDK_INT >= 19;
+    } else if (chipName.startsWith("OMX.MTK.")) {
+      return Build.VERSION.SDK_INT >= 21;
+    } else if (chipName.startsWith("OMX.Exynos.")) {
+      return Build.VERSION.SDK_INT >= 21;
+    } else if (chipName.startsWith("OMX.IMG.TOPAZ.")) {
+      return Build.VERSION.SDK_INT >= 21;
+    } else if (chipName.startsWith("OMX.k3.")) {
+      return Build.VERSION.SDK_INT >= 21;
+    } else {
+      return Build.VERSION.SDK_INT >= 21;
+    }
+  }
+
+
+  private static class EncoderProperties {
+    public final String codecName;
+    public final int colorFormat;
+    public final boolean supportedList;
+
+    public EncoderProperties(String codecName, int colorFormat, boolean supportedList) {
+      this.codecName = codecName;
+      this.colorFormat = colorFormat;
+      this.supportedList = supportedList;
+    }
   }
 
   private boolean isMediaCodecAllowed(MediaCodecInfo info) {
@@ -244,6 +404,11 @@ public class HardwareVideoEncoderFactory implements VideoEncoderFactory {
       return true;
     }
     return codecAllowedPredicate.test(info);
+  }
+
+  public static void disableH264HwCodec() {
+    Logging.w(TAG, "H.264 encoding is disabled by application.");
+    hwEncoderDisabledTypes.add("video/avc");
   }
 
   private int getKeyFrameIntervalSec(VideoCodecMimeType type) {

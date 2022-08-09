@@ -6,7 +6,7 @@
 //
 
 #import "ARLiveObjects.h"
-#import "webrtc/sdk/objc/components/renderer/metal/RTCMTLVideoView.h"
+#import "components/renderer/metal/RTCMTLVideoView.h"
 
 @implementation ARLiveVideoCanvas {
     CGSize _videoSize;
@@ -176,6 +176,7 @@
         self.videoFps = 15;
         self.videoBitrate = 900;
         self.minVideoBitrate = 500;
+        self.videoScaleMode = ARLiveVideoScaleModeAuto;
     }
     return self;
 }

@@ -42,8 +42,6 @@ void initWebRTC(JNIEnv *env) {
 struct InstanceHolder {
     std::shared_ptr<PlatformContext> _platformContext;
     IArLive2Engine *arLiveEngine;
-    
-
 };
 
 jlong getInstanceHolderId(JNIEnv *env, jobject obj) {
@@ -389,7 +387,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSendCustomVideoFrame(JNIEnv *e
         frame->height = height;
         frame->rotation = static_cast<ArLiveRotation>(rotation);
         jbyte* arrayData=(env)->GetByteArrayElements(data, NULL);
-        frame->data = reinterpret_cast<char *>(arLivePushKit);
+        frame->data = reinterpret_cast<char *>(arrayData);
         result = arLivePushKit->sendCustomVideoFrame(frame);
         env->ReleaseByteArrayElements(data, arrayData, 0);
     }
@@ -812,3 +810,9 @@ Java_io_anyrtc_live_internal_NativeInstance_setCameraFocusPosition(JNIEnv *env, 
 
 
 
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_org_webrtc_Camera1Session_recoverCamera(JNIEnv *env, jobject thiz) {
+    AndroidDeviceManager::Inst().recoverCamera();
+}

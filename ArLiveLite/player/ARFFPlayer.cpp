@@ -230,7 +230,16 @@ void ARFFPlayer::Run()
 			else {
 				if (!b_open_stream_success_) {
 					CloseFFDecode();
-					callback_.OnArPlyClose(this, -1);	// 无法打开源
+					n_reconnect_time_ = 0;
+					if (user_set_.b_repeat_ || user_set_.n_repeat_count_ > 0) {
+						if (user_set_.n_repeat_count_ > 0) {
+							user_set_.n_repeat_count_--;
+						}
+						n_reconnect_time_ = rtc::Time32();
+					}
+					if (n_reconnect_time_ == 0) {
+						callback_.OnArPlyClose(this, -1);	// 无法打开源
+					}
 				}
 			}
 		}
@@ -325,10 +334,20 @@ bool ARFFPlayer::ReadThreadProcess()
 
 						}
 						if (packet->dts != 0) {
-							pts = av_rescale_q(packet->dts, vstream_timebase_, TIMEBASE_MS);
+							if (packet->dts == AV_NOPTS_VALUE) {
+								pts = 0;
+							}
+							else {
+								pts = av_rescale_q(packet->dts, vstream_timebase_, TIMEBASE_MS);
+							}
 						}
 						else {
-							pts = av_rescale_q(packet->pts, vstream_timebase_, TIMEBASE_MS);
+							if (packet->pts == AV_NOPTS_VALUE) {
+								pts = 0;
+							}
+							else {
+								pts = av_rescale_q(packet->pts, vstream_timebase_, TIMEBASE_MS);
+							}
 						}
 						if (b_no_buffer_) {
 							OnBufferDecodeVideoData(packet);
@@ -343,10 +362,20 @@ bool ARFFPlayer::ReadThreadProcess()
 						int64_t pts = 0;
 						n_net_aud_band_ += packet->size;
 						if (packet->dts != 0) {
-							pts = av_rescale_q(packet->dts, astream_timebase_, TIMEBASE_MS);
+							if (packet->dts == AV_NOPTS_VALUE) {
+								pts = 0;
+							}
+							else {
+								pts = av_rescale_q(packet->dts, astream_timebase_, TIMEBASE_MS);
+							}
 						}
 						else {
-							pts = av_rescale_q(packet->pts, astream_timebase_, TIMEBASE_MS);
+							if (packet->pts == AV_NOPTS_VALUE) {
+								pts = 0;
+							}
+							else {
+								pts = av_rescale_q(packet->pts, astream_timebase_, TIMEBASE_MS);
+							}
 						}
 						if (b_no_buffer_) {
 							OnBufferDecodeAudioData(packet);
@@ -879,7 +908,6 @@ void ARFFPlayer::OpenFFDecode()
 			}
 			n_total_track_ = total;
 		}
-
 		if (open_codec_context(&n_video_stream_idx_, &video_dec_ctx_, fmt_ctx_, AVMEDIA_TYPE_VIDEO) >= 0) {
 			video_stream_ = fmt_ctx_->streams[n_video_stream_idx_];
 			vstream_timebase_ = fmt_ctx_->streams[n_video_stream_idx_]->time_base;
