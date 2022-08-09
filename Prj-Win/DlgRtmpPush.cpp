@@ -21,8 +21,7 @@
 
 // DlgRtmpPush ¶Ô»°¿ò
 
-#define PUSH_URL "webrtc://push.tencent.teameeting.cn/live/123?txSecret=2646df0bbadb9e23a6bc818bdfa4035d&txTime=63AFD8D7"
-//#define PUSH_URL  "rtmp://push.ali.teameeting.cn/anyrtc/1234567890"
+#define PUSH_URL ""
 
 IMPLEMENT_DYNAMIC(DlgRtmpPush, CDialog)
 

@@ -20,13 +20,7 @@
 #include "DlgRtmpPull.h"
 // DlgRtmpPull ¶Ô»°¿ò
 
-//#define PULL_URL "webrtc://5664.liveplay.myqcloud.com/live/5664_harchar1?txSecret=f22a813b284137ed10d3259a7b5c224b&txTime=6403f7bb"
-//#define PULL_URL "http://hls.weathertv.cn/tslslive/qCFIfHB/hls/live_sd.m3u8"
-//#define PULL_URL "C:\\app\\nginx-1.21.0\\html\\vod\\a\\1.mp4"
-//#define PULL_URL "http://v.xiaohongshu.com/53b0fcdec36e7315b5f69975dde55fedd046e918_r?sign=ee9d55b0cf254278ec141339dfe846a9&t=618a9b00"
-//#define PULL_URL "C:\\Work\\zjl.mp3"
-#define PULL_URL "rtmp://pull.ali.teameeting.cn/anyrtc/123456789?auth_key=1641799472-0-0-3f9129ef4c594100883bdbc5c51d9213"
-//#define PULL_URL "rtmp://zhibo.hkstv.tv/livestream/mutfysrq"
+#define PULL_URL "rtmp://zhibo.hkstv.tv/livestream/mutfysrq"
 
 IMPLEMENT_DYNAMIC(DlgRtmpPull, CDialog)
 
@@ -149,6 +143,7 @@ void DlgRtmpPull::OnLButtonDblClk(UINT nFlags, CPoint point)
 	}
 	gTest = !gTest;
 #endif
+#if 0
 	static int gCount = 0;
 	switch (gCount) {
 	case 0: {
@@ -171,6 +166,7 @@ void DlgRtmpPull::OnLButtonDblClk(UINT nFlags, CPoint point)
 	if (gCount >= 5) {
 		gCount = 0;
 	}
+#endif
 }
 
 void DlgRtmpPull::OnBnClickedBtnPull()
