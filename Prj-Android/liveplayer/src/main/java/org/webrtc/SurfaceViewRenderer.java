@@ -154,6 +154,10 @@ public class SurfaceViewRenderer extends SurfaceView
     eglRenderer.setMirror(mirror);
   }
 
+  public void setRenderRotation(final int rotation){
+    eglRenderer.setRotation(rotation);
+  }
+
   /**
    * Set how the video will fill the allowed layout area.
    */

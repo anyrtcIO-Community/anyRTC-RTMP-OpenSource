@@ -206,7 +206,40 @@ public class ArLivePusherImpl extends ArLivePusher {
 
     @Override
     public int setRenderRotation(ArLiveDef.ArLiveRotation var1) {
-        return nativeInstance.nativeSetRenderRotation(nativeId,var1.ordinal());
+        if (renderView!=null){
+            if (renderView instanceof TextureViewRenderer){
+                switch (var1){
+                    case ArLiveRotation0:
+                        ((TextureViewRenderer) renderView).setRenderRotation(0);
+                        break;
+                    case ArLiveRotation90:
+                        ((TextureViewRenderer) renderView).setRenderRotation(90);
+                        break;
+                    case ArLiveRotation180:
+                        ((TextureViewRenderer) renderView).setRenderRotation(180);
+                        break;
+                    case ArLiveRotation270:
+                        ((TextureViewRenderer) renderView).setRenderRotation(270);
+                        break;
+                }
+            }else if (renderView instanceof SurfaceViewRenderer){
+                switch (var1){
+                    case ArLiveRotation0:
+                        ((SurfaceViewRenderer) renderView).setRenderRotation(0);
+                        break;
+                    case ArLiveRotation90:
+                        ((SurfaceViewRenderer) renderView).setRenderRotation(90);
+                        break;
+                    case ArLiveRotation180:
+                        ((SurfaceViewRenderer) renderView).setRenderRotation(180);
+                        break;
+                    case ArLiveRotation270:
+                        ((SurfaceViewRenderer) renderView).setRenderRotation(270);
+                        break;
+                }
+            }
+        }
+        return 0;
     }
 
     @Override
