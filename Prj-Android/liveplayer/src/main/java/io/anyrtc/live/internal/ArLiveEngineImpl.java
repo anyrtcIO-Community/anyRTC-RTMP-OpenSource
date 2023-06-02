@@ -1,15 +1,28 @@
 package io.anyrtc.live.internal;
 
+import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.Application;
 import android.content.Context;
+import android.os.Bundle;
 import android.os.Handler;
+import android.util.Log;
 
 
 import org.webrtc.ContextUtils;
+import org.webrtc.Logging;
+import org.webrtc.ThreadUtils;
 import org.webrtc.voiceengine.WebRtcAudioManager;
 
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.CountDownLatch;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import io.anyrtc.live.ArLiveEngine;
 import io.anyrtc.live.ArLivePlayer;
 import io.anyrtc.live.ArLivePusher;
@@ -22,6 +35,7 @@ public class ArLiveEngineImpl extends ArLiveEngine {
     private NativeInstance nativeInstance;
     protected List<ArLivePlayerImpl> playerList = new ArrayList<>();
     protected List<ArLivePusherImpl> pusherList = new ArrayList<>();
+    private ProcessLifecycleOwner  mProcessLifecycleOwner = null;
 
     private ArLivePusherImpl pusher;
     protected ArDeviceManagerImpl deviceManager;
@@ -32,6 +46,13 @@ public class ArLiveEngineImpl extends ArLiveEngine {
         WebRtcAudioManager.setBlacklistDeviceForOpenSLESUsage(true);
         nativeInstance = new NativeInstance();
         deviceManager = new ArDeviceManagerImpl(nativeInstance,context);
+        try{
+            mProcessLifecycleOwner = new ProcessLifecycleOwner(isAppInForeground(),this);
+            Application app = (Application)context.getApplicationContext();
+            app.registerActivityLifecycleCallbacks(this.mProcessLifecycleOwner);
+        }catch (Exception e){
+            Logging.e("ArLivePusherImpl", "Unable to registerActivityLifecycleCallbacks, ", e);
+        }
 
     }
 
@@ -85,13 +106,48 @@ public class ArLiveEngineImpl extends ArLiveEngine {
         }
         deviceManager.release();
         playerList.clear();
+        try {
+            if (this.mProcessLifecycleOwner != null) {
+                Application app = (Application)context.getApplicationContext();
+                app.unregisterActivityLifecycleCallbacks(this.mProcessLifecycleOwner);
+                this.mProcessLifecycleOwner = null;
+            }
+        } catch (Exception var3) {
+            Logging.e("ArLiveEngineImpl", "unregister ProcessLifecycleOwner failed ", var3);
+        }
         nativeInstance.nativeRelease();
         NativeLoader.unInit();
     }
 
 
+    private  boolean isAppInForeground() {
+        final ActivityManager.RunningAppProcessInfo appProcessInfo = new ActivityManager.RunningAppProcessInfo();
+        final CountDownLatch countLatch = new CountDownLatch(1);
+        Runnable processInfoTask = new Runnable() {
+            public void run() {
+                try {
+                    ActivityManager.getMyMemoryState(appProcessInfo);
+                } catch (Exception var2) {
+                    Log.e("ArLiveEngineImpl", "get App InForeground state failed.", var2);
+                }
+
+                countLatch.countDown();
+            }
+        };
+        (new Thread(processInfoTask)).start();
+        if (!ThreadUtils.awaitUninterruptibly(countLatch, 100L)) {
+            Log.e("ArLiveEngineImpl", "get App InForeground state timeout.");
+            return true;
+        } else {
+            return appProcessInfo.importance == 100 || appProcessInfo.importance == 200;
+        }
+    }
 
 
+    void onForegroundChanged(boolean foreground) {
+        Log.d("ArLiveEngineImpl", "onForegroundChanged() " + foreground);
+        nativeInstance.nativeSetAppInBackground(!foreground);
+    }
 
 
 

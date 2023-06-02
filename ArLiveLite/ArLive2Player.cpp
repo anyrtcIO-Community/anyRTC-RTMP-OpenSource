@@ -3,13 +3,7 @@
 #include "api/video/video_frame.h"
 #include "rtc_base/bind.h"
 #include "rtc_base/time_utils.h"
-#include "android/log.h"
 
-#define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, "ff_ffplay", __VA_ARGS__)
-#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "ff_ffplay", __VA_ARGS__)
-#define LOGI(...) __android_log_print(ANDROID_LOG_INFO, "ff_ffplay", __VA_ARGS__)
-#define LOGW(...) __android_log_print(ANDROID_LOG_WARN, "ff_ffplay", __VA_ARGS__)
-#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, "ff_ffplay", __VA_ARGS__)
 
 static const size_t kMaxDataSizeSamples = 3840;
 

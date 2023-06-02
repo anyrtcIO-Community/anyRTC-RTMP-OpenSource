@@ -206,6 +206,18 @@ void ArLive2Engine::releaseArLivePlayer(AR::IArLivePlayer* player)
 	}
 }
 
+void ArLive2Engine::setAppInBackground(bool bBackground)
+{
+	rtc::CritScope l(&cs_arlive2_player_);
+	MapArLive2Player::iterator itpr = map_arlive2_player_.begin();
+	while (itpr != map_arlive2_player_.end()) {
+		ArLive2Player* arLivePlayer = (ArLive2Player*)itpr->second;
+		arLivePlayer->SetAppInBackground(bBackground);
+		itpr++;
+	}
+
+}
+
 
 int32_t ArLive2Engine::setVideoRenderView(AR::uid_t renderId, const AR::VideoCanvas& canvas)
 {

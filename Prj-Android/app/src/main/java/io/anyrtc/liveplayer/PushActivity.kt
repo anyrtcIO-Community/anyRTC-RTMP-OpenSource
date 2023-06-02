@@ -5,30 +5,25 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.os.Build.VERSION.SDK_INT
 import android.os.Bundle
-import android.util.Log
 import android.view.KeyEvent
 import android.view.View
-import android.widget.AdapterView
-import android.widget.SeekBar
 import android.widget.Toast
 import coil.ImageLoader
 import coil.decode.GifDecoder
 import coil.decode.ImageDecoderDecoder
 import coil.load
-import io.anyrtc.live.*
+import io.anyrtc.live.ArLiveDef
 import io.anyrtc.live.ArLiveDef.ArLiveVideoResolution
+import io.anyrtc.live.ArLiveEngine
+import io.anyrtc.live.ArLivePusherObserver
 import io.anyrtc.liveplayer.databinding.ActivityPushBinding
-import kotlinx.coroutines.MainScope
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
-import java.math.BigDecimal
-import java.text.DecimalFormat
 
 class PushActivity : BaseActivity() {
     private val binding by lazy { ActivityPushBinding.inflate(layoutInflater) }
     private val liveEngine by lazy { ArLiveEngine.create(this)}
     private val pusher by lazy { liveEngine.createArLivePusher() }
     private var pushUrl = ""
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,6 +46,7 @@ class PushActivity : BaseActivity() {
                 pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution1920x1080))
             }
         }
+        pusher.startMicrophone()
         if (pushType == 0){
             pusher.setRenderView(binding.videoView)
             pusher.startCamera(true)
@@ -68,7 +64,6 @@ class PushActivity : BaseActivity() {
             binding.ivGif.load("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F60ed9921abb8a968651aae697626dc816624cc4770c32-uwUmhP_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645166781&t=ff39058ea3e782746361d8b2bea68511",imageLoader)
             pusher.startScreenCapture()
         }
-        pusher.startMicrophone()
         pusher.startPush(pushUrl)
         initView()
 

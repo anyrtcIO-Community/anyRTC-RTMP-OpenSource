@@ -25,7 +25,6 @@ namespace anyrtc {
             m_jJavaObj = NULL;
         }
     }
-
     void LivePushEvent::onError(int32_t code, const char* msg, void* extraInfo){
         JNIEnv *jni = webrtc::AttachCurrentThreadIfNeeded();
         if (m_jJavaObj != NULL) {

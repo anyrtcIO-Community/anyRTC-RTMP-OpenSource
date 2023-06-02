@@ -73,6 +73,7 @@ public:
 	int DoAudRender(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels, bool bAudioPaused);
 	int DoRender(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels, bool bAudioPaused, bool bVideoPaused);
 	void DoClear();
+	void SetAppInBackground(bool bBackground);
 
 	bool NeedMoreAudioPlyData();
 	bool NeedMoreVideoPlyData();
@@ -88,8 +89,9 @@ public:
 private:
 	bool	b_video_decoded_;
 	bool	b_audio_decoded_;
+	bool	b_app_in_background_;		// app æ˜¯å¦è¿›å…¥åå°
 
-	//* ÏÔÊ¾»º´æ
+	//* æ˜¾ç¤ºç¼“å­˜
 	rtc::RecursiveCriticalSection	cs_audio_play_;
 	std::list<PcmData*>		lst_audio_play_;
 	rtc::RecursiveCriticalSection	cs_video_play_;

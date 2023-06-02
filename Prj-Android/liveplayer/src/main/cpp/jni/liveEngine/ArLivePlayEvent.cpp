@@ -111,7 +111,7 @@ void LivePlayEvent::onRenderVideoFrame(IArLivePlayer* player, const ArLiveVideoF
             jmethodID j_callJavaMId = jni->GetMethodID(m_jClass, "onRenderVideoFrame",
                                                                "(II[BLjava/nio/ByteBuffer;III)V");
                 jbyteArray dataArray = jni->NewByteArray(videoFrame->length);
-               jobject _buf = jni->NewDirectByteBuffer(videoFrame->data, videoFrame->length);
+                jobject _buf = jni->NewDirectByteBuffer(videoFrame->data, videoFrame->length);
                 jni->SetByteArrayRegion(dataArray, 0, videoFrame->length,
                                         reinterpret_cast<const jbyte *>(videoFrame->data));
 
@@ -130,7 +130,7 @@ void LivePlayEvent::onReceiveSeiMessage(IArLivePlayer* player, int payloadType, 
 
         JNIEnv *jni = webrtc::AttachCurrentThreadIfNeeded();
         {
-
+//
             jmethodID j_callJavaMId = jni->GetMethodID(m_jClass, "onReceiveSeiMessage",
                                                        "(I[B)V");
             jbyteArray dataArray = jni->NewByteArray(dataSize);

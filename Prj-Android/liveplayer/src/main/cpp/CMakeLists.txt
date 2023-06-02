@@ -8,7 +8,8 @@ enable_language(ASM)
 set(CMAKE_ASM_COMPILER ${CMAKE_C_COMPILER})
 set(STATIC_LIB_DIR ${CMAKE_SOURCE_DIR}/lib/)
 set(ROOT_DIR ./../../../../../)
-set(ARLIVE_DIR ./../../../../../ArLiveLite)
+set(ARLIVE_DIR ./../../../../../ArLiveLite)#publish
+#set(ARLIVE_DIR ./ArLiveLite)#debug
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--gc-sections -Wl,--exclude-libs,
 ${STATIC_LIB_DIR}/ffmpeg/${ANDROID_ABI}/libswscale.so,
 ${STATIC_LIB_DIR}/ffmpeg/${ANDROID_ABI}/libavformat.so,
@@ -41,7 +42,6 @@ set_target_properties(swscale PROPERTIES IMPORTED_LOCATION ${STATIC_LIB_DIR}/ffm
 
 add_library(postproc SHARED IMPORTED)
 set_target_properties(postproc PROPERTIES IMPORTED_LOCATION ${STATIC_LIB_DIR}/ffmpeg/${ANDROID_ABI}/libpostproc.so)
-
 
 add_library(webrtc STATIC IMPORTED)
 set_target_properties(webrtc PROPERTIES IMPORTED_LOCATION ${STATIC_LIB_DIR}/webrtc/${ANDROID_ABI}/libwebrtc.a)

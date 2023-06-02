@@ -30,6 +30,8 @@ public class NativeInstance {
 
     protected native long makeNativeInstance(NativeInstance instance);
 
+    protected native int nativeSetAppInBackground(boolean isBackground);
+
     protected native void nativeRelease();
 
 
@@ -76,6 +78,8 @@ public class NativeInstance {
     protected native void nativeSetPushObserver(NativePushObserver observer, long nativePtr);
 
     protected native int nativeSetRenderView(long nativePtr, VideoSink localSink);
+
+    protected native int nativeSetPushRenderRotation(long nativePtr,int rotation);
 
     protected native int nativeStartCamera(long nativePtr, boolean isFront);
 

@@ -56,6 +56,8 @@ public:
 
 	virtual void releaseArLivePlayer(AR::IArLivePlayer* player);
 
+	virtual void setAppInBackground(bool bBackground);
+
 public:
 	int32_t setVideoRenderView(AR::uid_t renderId, const AR::VideoCanvas& canvas);
 

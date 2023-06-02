@@ -96,6 +96,7 @@ PlayBuffer::PlayBuffer(void)
 	, aud_data_mix_(NULL)
 	, b_video_decoded_(false)
 	, b_audio_decoded_(false)
+	, b_app_in_background_(false)
 {
 	aud_data_resamp_ = new char[kMaxDataSizeSamples];
 	memset(aud_data_resamp_, 0, kMaxDataSizeSamples);
@@ -123,7 +124,7 @@ int PlayBuffer::DoVidRender(bool bVideoPaused)
 
 	if (vidPkt != NULL) {
 		//RTC_LOG(LS_INFO) << "DoRender video pts: " << vidPkt->pts_ << " plytime: " << play_pts_time_;
-		if (!bVideoPaused) {
+		if (!bVideoPaused && !b_app_in_background_) {
 			OnBufferVideoRender(vidPkt, vidPkt->pts_);
 		}
 		delete vidPkt;
@@ -178,7 +179,7 @@ int PlayBuffer::DoAudRender(bool mix, void* audioSamples, uint32_t samplesPerSec
 		audPkt = NULL;
 	}
 	else {
-		RTC_LOG(LS_INFO) << "* No audio data time: " << rtc::Time32();
+		RTC_LOG(LS_INFO) << "* No audio data time: " << rtc::Time32(); 
 	}
 
 	return ret;
@@ -242,7 +243,7 @@ int PlayBuffer::DoRender(bool mix, void* audioSamples, uint32_t samplesPerSec, i
 
 	if (vidPkt != NULL) {
 		//RTC_LOG(LS_INFO) << "DoRender video pts: " << vidPkt->pts_ << " plytime: " << play_pts_time_;
-		if (!bVideoPaused) {
+		if (!bVideoPaused && !b_app_in_background_) {
 			OnBufferVideoRender(vidPkt, vidPkt->pts_);
 		}
 		delete vidPkt;
@@ -274,13 +275,18 @@ void PlayBuffer::DoClear()
 	}
 }
 
+void PlayBuffer::SetAppInBackground(bool bBackground)
+{
+	b_app_in_background_ = bBackground;
+}
+
 bool PlayBuffer::NeedMoreAudioPlyData()
 {
 	rtc::CritScope cs(&cs_audio_play_);
 #ifdef WEBRTC_ANDROID
-	const int kMaxAudioPlaySize = 10;
+	const int kMaxAudioPlaySize = 15;
 #else
-	const int kMaxAudioPlaySize = 3;
+	const int kMaxAudioPlaySize = 5;
 #endif
 	return lst_audio_play_.size() <= kMaxAudioPlaySize;
 }
@@ -288,7 +294,7 @@ bool PlayBuffer::NeedMoreAudioPlyData()
 bool PlayBuffer::NeedMoreVideoPlyData()
 {
 	rtc::CritScope cs(&cs_video_play_);
-	if (lst_video_play_.size() > 1)
+	if (lst_video_play_.size() > 2)
 	{
 		return false;
 	}

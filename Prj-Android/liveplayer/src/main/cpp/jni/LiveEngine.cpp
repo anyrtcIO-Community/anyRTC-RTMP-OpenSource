@@ -69,6 +69,19 @@ Java_io_anyrtc_live_internal_NativeInstance_makeNativeInstance(JNIEnv *env, jobj
     return reinterpret_cast<jlong>(holder);
 }
 
+JNIEXPORT jint JNICALL
+Java_io_anyrtc_live_internal_NativeInstance_nativeSetAppInBackground(JNIEnv *env, jobject obj,
+                                                                     jboolean background) {
+    InstanceHolder *instance = getInstanceHolder(env, obj);
+    if (instance->arLiveEngine == nullptr) {
+        return (jint) -1;
+    }
+    instance->arLiveEngine->setAppInBackground(background);
+    return (jint) 0;
+}
+
+
+
 
 JNIEXPORT jlong JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeCreatePushKit(JNIEnv *env, jobject obj) {
@@ -151,6 +164,17 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSetRenderView(JNIEnv *env, job
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
     if (arLivePushKit!= NULL){
         result = arLivePushKit->setRenderView(reinterpret_cast<view_t *>(localSink));
+    }
+    return (jint)result;
+}
+
+JNIEXPORT jint JNICALL
+Java_io_anyrtc_live_internal_NativeInstance_nativeSetPushRenderRotation(JNIEnv *env, jobject thiz,jlong nativeHandle,jint rotation
+) {
+    jint result = -1;
+    IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativeHandle);
+    if (arLivePushKit != NULL){
+        result = arLivePushKit->setRenderRotation(static_cast<ArLiveRotation>(rotation));
     }
     return (jint)result;
 }

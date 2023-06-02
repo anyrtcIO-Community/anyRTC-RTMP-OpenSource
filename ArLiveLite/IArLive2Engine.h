@@ -115,6 +115,9 @@ public:
 	virtual void releaseArLivePlayer(AR::IArLivePlayer* player) = 0;
 	/// @}
 
+
+	virtual void setAppInBackground(bool bBackground) = 0;
+
 public:
 	
 };
