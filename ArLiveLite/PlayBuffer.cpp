@@ -2,7 +2,6 @@
 #include "rtc_base/logging.h"
 #include "rtc_base/time_utils.h"
 
-
 static const size_t kMaxDataSizeSamples = 3840;
 #define MAX_INT 32767
 #define MIN_INT -32767
@@ -338,6 +337,7 @@ void PlayBuffer::PlayVideoData(VideoData* videoData)
 		lst_video_play_.push_back(videoData);
 	}
 
+#if 0
 	//@Eric - 跳帧处理 - 防止缓存太多：内存报警，渲染延时增大
 	while (lst_video_play_.size() > 1) {
 		int64_t timeGap = lst_video_play_.back()->pts_ - lst_video_play_.front()->pts_;
@@ -350,6 +350,7 @@ void PlayBuffer::PlayVideoData(VideoData* videoData)
 
 		OnBufferVideoDropped();
 	}
+#endif
 }
 void PlayBuffer::PlayAudioData(PcmData*pcmData)
 {
@@ -358,16 +359,35 @@ void PlayBuffer::PlayAudioData(PcmData*pcmData)
 		b_audio_decoded_ = true;
 		OnFirstAudioDecoded();
 	}
-	rtc::CritScope cs(&cs_audio_play_);
-	//@Eric - 跳帧处理 - 防止缓存太多：延时增大
-	while (lst_audio_play_.size() > (kMaxAudioPlaySize<<1)) {
-		PcmData* pkt = lst_audio_play_.front();
-		lst_audio_play_.pop_front();
-		delete pkt;
 
-		OnBufferAudioDropped();
+	int64_t dropPts = -1;
+	{
+		rtc::CritScope cs(&cs_audio_play_);
+		//@Eric - 跳帧处理 - 防止缓存太多：延时增大
+		while (lst_audio_play_.size() > (kMaxAudioPlaySize << 1)) {
+			PcmData* pkt = lst_audio_play_.front();
+			dropPts = pkt->pts_;
+			lst_audio_play_.pop_front();
+			delete pkt;
+
+			OnBufferAudioDropped();
+		}
+		lst_audio_play_.push_back(pcmData);
 	}
-	lst_audio_play_.push_back(pcmData);
+
+	if (dropPts != -1) {
+		//@Eric - 跳帧处理 - 防止缓存太多：内存报警，渲染延时增大
+		while (lst_video_play_.size() > 1) {
+			if (lst_video_play_.front()->pts_ > dropPts) {
+				break;
+			}
+			VideoData* pkt = lst_video_play_.front();
+			lst_video_play_.pop_front();
+			delete pkt;
+
+			OnBufferVideoDropped();
+		}
+	}
 
 	//RTC_LOG(LS_INFO) << "PlayAudioData list size: " << lst_audio_play_.size();
 }
