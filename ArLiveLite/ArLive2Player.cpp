@@ -304,8 +304,6 @@ void ArLive2Player::showDebugView(bool isShow)
 //* For RtcTick
 void ArLive2Player::OnTick()
 {
-
-	LOGD("time %ld",rtc::TimeMillis());
 	//play_buffer_.DoTick();
 	if (ar_player_ != NULL) {
 		ar_player_->RunOnce();

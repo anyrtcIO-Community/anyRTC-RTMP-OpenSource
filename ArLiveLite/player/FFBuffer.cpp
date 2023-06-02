@@ -433,7 +433,7 @@ void FFBuffer::RecvAudioData(AVPacket* pkt, int64_t dts, int64_t pts, int64_t du
 	gDts = dts;
 #endif
 	//RTC_LOG(LS_INFO) << "RecvAudioData duration: " << duration;
-	//RTC_LOG(LS_INFO) << "RecvAudioData dts: " << dts << " pts: " << pts  << " curTime: " <<rtc::Time32();
+	//RTC_LOG(LS_INFO) << "RecvAudioData dts: " << dts << " pts: " << pts << " duration: " << duration << " curTime: " << rtc::Time32();
 	RecvPacket* recvPkt = new RecvPacket();
 	recvPkt->pkt_ = pkt;
 	recvPkt->dts_ = dts;

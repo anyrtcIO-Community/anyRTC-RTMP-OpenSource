@@ -13,6 +13,10 @@ static const AVRational TIMEBASE_MS = { 1, 1000 };
 #define fftime_to_milliseconds(ts) (av_rescale(ts, 1000, AV_TIME_BASE))
 #define milliseconds_to_fftime(ms) (av_rescale(ms, AV_TIME_BASE, 1000))
 
+
+
+
+
 int16_t WebRtcSpl_MaxAbsValueW16_I(const int16_t* vector, size_t length) {
 	size_t i = 0;
 	int absolute = 0, maximum = 0;
@@ -617,6 +621,20 @@ void ARFFPlayer::OnBufferDecodeAudioData(AVPacket* aud_packet)
 			if (ret >= 0) {
 				int64_t pts = 0;
 				if (frameFinished) {
+					//@Eric - 20230602 - 实际解码出来的音频采样率与StreamInfo中的不一样，需要重新创建SwrContext
+					if (avframe_->sample_rate != n_sample_hz_ || avframe_->channels != n_channels_) {
+						n_sample_hz_ = avframe_->sample_rate;
+						n_channels_ = avframe_->channels;
+						int channel_layout = av_get_default_channel_layout(n_channels_);//设置声道布局
+						if (audio_convert_ctx_ != NULL) {
+							swr_free(&audio_convert_ctx_);
+							audio_convert_ctx_ = NULL;
+						}
+						audio_convert_ctx_ = swr_alloc();
+						audio_convert_ctx_ = swr_alloc_set_opts(audio_convert_ctx_, av_get_default_channel_layout(n_out_channels_), AV_SAMPLE_FMT_S16, n_out_sample_hz_,
+							channel_layout, audio_dec_ctx_->sample_fmt, n_sample_hz_, 0, NULL);//配置源音频参数和目标音频参数 
+						swr_init(audio_convert_ctx_);
+					}
 					int out_channels = n_out_channels_;// av_get_channel_layout_nb_channels(audio_dec_ctx_->channel_layout);
 					int need_size = (n_out_sample_hz_* out_channels * sizeof(int16_t)) / 100;
 					//avframe_->pts = av_rescale_q(av_frame_get_best_effort_timestamp(avframe_), astream_timebase_, TIMEBASE_MS);

@@ -2,6 +2,7 @@
 #include "rtc_base/logging.h"
 #include "rtc_base/time_utils.h"
 
+
 static const size_t kMaxDataSizeSamples = 3840;
 #define MAX_INT 32767
 #define MIN_INT -32767
@@ -177,7 +178,7 @@ int PlayBuffer::DoAudRender(bool mix, void* audioSamples, uint32_t samplesPerSec
 		audPkt = NULL;
 	}
 	else {
-		RTC_LOG(LS_INFO) << "* No audio data time: " << rtc::Time32(); 
+		RTC_LOG(LS_INFO) << "* No audio data time: " << rtc::Time32();
 	}
 
 	return ret;
@@ -276,11 +277,14 @@ void PlayBuffer::DoClear()
 bool PlayBuffer::NeedMoreAudioPlyData()
 {
 	rtc::CritScope cs(&cs_audio_play_);
-	if (lst_audio_play_.size() > 3) {
-		return false;
-	}
-	return true;
+#ifdef WEBRTC_ANDROID
+	const int kMaxAudioPlaySize = 10;
+#else
+	const int kMaxAudioPlaySize = 3;
+#endif
+	return lst_audio_play_.size() <= kMaxAudioPlaySize;
 }
+
 bool PlayBuffer::NeedMoreVideoPlyData()
 {
 	rtc::CritScope cs(&cs_video_play_);

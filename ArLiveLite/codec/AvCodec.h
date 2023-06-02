@@ -55,7 +55,7 @@ public:
 	virtual void OnEncodeDataCallback(bool audio, bool bKeyFrame, const uint8_t *p, uint32_t length, uint32_t ts) = 0;
 };
 
-class A_AACEncoder
+class A_AACEncoder 
 {
 public:
 	A_AACEncoder(AVCodecCallback&callback);
@@ -64,7 +64,7 @@ public:
 	bool Init(int sample_rate, int num_channels, int bitrate);
 	void DeInit();
 
-	int Encode(const void* audioSamples, const size_t nSamples, const size_t nBytesPerSample,
+	int Encode(const void* audioSamples, const size_t nSamples, const size_t nBytesPerSample, 
 		const size_t nChannels, const uint32_t samplesPerSec, const uint32_t totalDelayMS);
 
 
@@ -122,8 +122,8 @@ private:
 
 private:
 	rtc::scoped_refptr<webrtc::I420Buffer> video_mirror_buffer_;
+    
     rtc::scoped_refptr<webrtc::I420Buffer>  video_encode_buffer_;
-
 };
 
 
