@@ -284,7 +284,7 @@ void FFBuffer::DoTick()
 bool  FFBuffer::DoDecodeAudio()
 {
 	rtc::CritScope l(&cs_audio_decode_);
-	if (lst_audio_decode_.size() > 0) {
+	while (lst_audio_decode_.size() > 0) {
 		RecvPacket* audPkt = lst_audio_decode_.front();
 		lst_audio_decode_.pop_front();
 
@@ -299,7 +299,7 @@ bool  FFBuffer::DoDecodeAudio()
 bool  FFBuffer::DoDecodeVideo()
 {
 	rtc::CritScope l(&cs_video_decode_);
-	if (lst_video_decode_.size() > 0) {
+	while (lst_video_decode_.size() > 0) {
 		RecvPacket* vidPkt = lst_video_decode_.front();
 		lst_video_decode_.pop_front();
 		OnBufferDecodeVideoData(vidPkt->pkt_);

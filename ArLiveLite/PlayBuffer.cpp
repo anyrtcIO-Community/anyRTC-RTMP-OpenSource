@@ -90,6 +90,12 @@ static int MixAudio(int iChannelNum, short* sourceData1, short* sourceData2, flo
 	return 1;
 }
 
+#ifdef WEBRTC_ANDROID
+//android 的某些机型，音频播放的线程实时性不高，所以一次性需要更多的数据
+const int kMaxAudioPlaySize = 10;
+#else
+const int kMaxAudioPlaySize = 5;
+#endif
 
 PlayBuffer::PlayBuffer(void)
 	: aud_data_resamp_(NULL)
@@ -283,11 +289,7 @@ void PlayBuffer::SetAppInBackground(bool bBackground)
 bool PlayBuffer::NeedMoreAudioPlyData()
 {
 	rtc::CritScope cs(&cs_audio_play_);
-#ifdef WEBRTC_ANDROID
-	const int kMaxAudioPlaySize = 15;
-#else
-	const int kMaxAudioPlaySize = 5;
-#endif
+
 	return lst_audio_play_.size() <= kMaxAudioPlaySize;
 }
 
@@ -346,6 +348,14 @@ void PlayBuffer::PlayAudioData(PcmData*pcmData)
 		OnFirstAudioDecoded();
 	}
 	rtc::CritScope cs(&cs_audio_play_);
+	//@Eric - 跳帧处理 - 防止缓存太多：延时增大
+	while (lst_audio_play_.size() > (kMaxAudioPlaySize<<1)) {
+		PcmData* pkt = lst_audio_play_.front();
+		lst_audio_play_.pop_front();
+		delete pkt;
+
+		OnBufferAudioDropped();
+	}
 	lst_audio_play_.push_back(pcmData);
 
 	//RTC_LOG(LS_INFO) << "PlayAudioData list size: " << lst_audio_play_.size();

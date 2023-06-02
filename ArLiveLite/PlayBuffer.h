@@ -83,6 +83,7 @@ public:
 public:
 	virtual void OnBufferVideoRender(VideoData *videoData, int64_t pts) {};
 	virtual void OnBufferVideoDropped() {};
+	virtual void OnBufferAudioDropped() {};
 	virtual void OnFirstVideoDecoded() {};
 	virtual void OnFirstAudioDecoded() {};
 
