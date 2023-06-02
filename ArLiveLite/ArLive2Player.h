@@ -29,12 +29,16 @@ public:
 
 	//* For AR::IArLivePlayer
 	virtual void setObserver(AR::ArLivePlayerObserver* observer);
+	virtual void setLiveOem(AR::ArLiveOem oem);
 	virtual int32_t setRenderView(void* view);
 	virtual int32_t setRenderRotation(AR::ArLiveRotation rotation);
 	virtual int32_t setRenderFillMode(AR::ArLiveFillMode mode);
 	virtual int32_t startPlay(const char* url);
 	virtual int32_t stopPlay();
 	virtual int32_t isPlaying();
+	virtual int32_t seekTo(int seekTimeS);
+	virtual int32_t setSpeed(float speed);
+	virtual int32_t rePlay();
 	virtual int32_t pauseAudio();
 	virtual int32_t resumeAudio();
 	virtual int32_t pauseVideo();

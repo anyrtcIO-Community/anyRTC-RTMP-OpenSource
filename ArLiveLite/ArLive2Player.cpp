@@ -3,6 +3,13 @@
 #include "api/video/video_frame.h"
 #include "rtc_base/bind.h"
 #include "rtc_base/time_utils.h"
+#include "android/log.h"
+
+#define LOGV(...) __android_log_print(ANDROID_LOG_VERBOSE, "ff_ffplay", __VA_ARGS__)
+#define LOGD(...) __android_log_print(ANDROID_LOG_DEBUG, "ff_ffplay", __VA_ARGS__)
+#define LOGI(...) __android_log_print(ANDROID_LOG_INFO, "ff_ffplay", __VA_ARGS__)
+#define LOGW(...) __android_log_print(ANDROID_LOG_WARN, "ff_ffplay", __VA_ARGS__)
+#define LOGE(...) __android_log_print(ANDROID_LOG_ERROR, "ff_ffplay", __VA_ARGS__)
 
 static const size_t kMaxDataSizeSamples = 3840;
 
@@ -25,15 +32,22 @@ ArLive2Player::ArLive2Player(ArLive2Engine*pEngine, const std::string& strPlayId
 	, frameRotation(AR::ArLiveRotation0)
 {
 	str_local_play_id_ = strPlayId;
-
+	ar_engine_->RegisteRtcTick(this, this);
 }
 ArLive2Player::~ArLive2Player(void)
 {
+	ar_engine_->UnRegisteRtcTick(this);
 	if (ar_player_ != NULL) {
 		ar_engine_->DetachAudSpeaker(this);
 		ar_player_->StopTask();
 		delete ar_player_;
 		ar_player_ = NULL;
+	}
+	{
+		AR::VideoCanvas vidCanvas;
+		vidCanvas.view = NULL;
+		vidCanvas.uid = str_local_play_id_.c_str();
+		ar_engine_->setVideoRenderView(str_local_play_id_.c_str(), vidCanvas);
 	}
 
 	delete[] p_rgba_data_;
@@ -43,6 +57,9 @@ ArLive2Player::~ArLive2Player(void)
 void ArLive2Player::setObserver(AR::ArLivePlayerObserver* observer)
 {
 	observer_ = observer;
+}
+void ArLive2Player::setLiveOem(AR::ArLiveOem oem)
+{
 }
 int32_t ArLive2Player::setRenderView(void* view)
 {
@@ -108,6 +125,43 @@ int32_t ArLive2Player::stopPlay()
 int32_t ArLive2Player::isPlaying()
 {
 	return !b_audio_paused_ || !b_video_paused_;
+}
+int32_t ArLive2Player::seekTo(int seekTimeS)
+{
+	if (!main_thread_->IsCurrent()) {
+		return main_thread_->Invoke<int>(RTC_FROM_HERE, rtc::Bind(&ArLive2Player::seekTo, this, seekTimeS));
+	}
+	if (ar_player_ == NULL) {
+		return AR::ArLIVE_ERROR_REFUSED;
+	}
+	ar_player_->SeekTo(seekTimeS);
+	return AR::ArLIVE_OK;
+}
+
+int32_t ArLive2Player::setSpeed(float speed)
+{
+	if (!main_thread_->IsCurrent()) {
+		return main_thread_->Invoke<int>(RTC_FROM_HERE, rtc::Bind(&ArLive2Player::setSpeed, this, speed));
+	}
+	if (ar_player_ == NULL) {
+		return AR::ArLIVE_ERROR_REFUSED;
+	}
+	if (speed != 0.5 && speed != 0.75 && speed != 1.0 && speed != 1.25 && speed != 1.5 && speed != 1.75 && speed != 2.0 && speed != 3.0) {
+		return AR::ArLIVE_ERROR_INVALID_PARAMETER;
+	}
+	ar_player_->SetSpeed(speed);
+	return AR::ArLIVE_OK;
+}
+int32_t ArLive2Player::rePlay()
+{
+	if (!main_thread_->IsCurrent()) {
+		return main_thread_->Invoke<int>(RTC_FROM_HERE, rtc::Bind(&ArLive2Player::rePlay, this));
+	}
+	if (ar_player_ == NULL) {
+		return AR::ArLIVE_ERROR_REFUSED;
+	}
+	ar_player_->RePlay();
+	return AR::ArLIVE_OK;
 }
 int32_t ArLive2Player::pauseAudio()
 {
@@ -250,8 +304,13 @@ void ArLive2Player::showDebugView(bool isShow)
 //* For RtcTick
 void ArLive2Player::OnTick()
 {
+
+	LOGD("time %ld",rtc::TimeMillis());
 	//play_buffer_.DoTick();
-	
+	if (ar_player_ != NULL) {
+		ar_player_->RunOnce();
+	}
+	PlayBuffer::DoVidRender(b_video_paused_);
 }
 void ArLive2Player::OnTickUnAttach()
 {
@@ -353,13 +412,10 @@ void ArLive2Player::OnFirstAudioDecoded()
 //* For AudDevSpeakerEvent
 int ArLive2Player::MixAudioData(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels)
 {
-	if (ar_player_ != NULL) {
-		ar_player_->RunOnce();
-	}
 	if (b_audio_paused_ && b_video_paused_) {
 		return 0;
 	}
-	return PlayBuffer::DoRender(mix, audioSamples, samplesPerSec, nChannels, b_audio_paused_, b_video_paused_);
+	return PlayBuffer::DoAudRender(mix, audioSamples, samplesPerSec, nChannels, b_audio_paused_);
 }
 
 //* For ARPlayerEvent

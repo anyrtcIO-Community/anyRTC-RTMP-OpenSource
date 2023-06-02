@@ -341,18 +341,8 @@ void ARRtmpPusher::on_flv_muxer_data(int type, const void* data, size_t bytes, u
 int ARRtmpPusher::do_rtmp_client_send(const void* header, size_t len, const void* payload, size_t bytes)
 {
 	if (ar_net_client_ != NULL) {
-		if (bytes > 0) {
-			char* pData = new char[len + bytes];
-			memcpy(pData, header, len);
-			memcpy(pData + len, payload, bytes);
-			ar_net_client_->sendData((char*)pData, len + bytes);
-			delete[] pData;
-		}
-		else {
-			ar_net_client_->sendData((char*)header, len);
-		}
-		//ar_net_client_->sendData((char*)header, len);
-		//ar_net_client_->sendData((char*)payload, (int)bytes);
+		ar_net_client_->sendData((char*)header, len);
+		ar_net_client_->sendData((char*)payload, (int)bytes);
 	}
 	return len + bytes;
 }

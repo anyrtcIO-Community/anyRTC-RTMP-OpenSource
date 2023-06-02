@@ -43,10 +43,6 @@ protected:
     void OnClose(rtc::AsyncSocket* socket, int err);
 
 private:
-    int FlushOutBuffer();
-    void ClearOutBuffer() { outbuf_.Clear(); }
-
-private:
     std::unique_ptr<rtc::AsyncSocket> control_socket_;
 
     rtc::Buffer				outbuf_;

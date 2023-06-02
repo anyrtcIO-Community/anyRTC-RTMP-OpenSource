@@ -65,7 +65,7 @@ static int open_codec_context(int *stream_idx,
 {
 	int ret, stream_index;
 	AVStream *st;
-	AVCodec *dec = NULL;
+	const AVCodec *dec = NULL;
 	AVDictionary *opts = NULL;
 
 	ret = av_find_best_stream(fmt_ctx, type, -1, -1, NULL, 0);
@@ -140,7 +140,10 @@ ARFFPlayer::ARFFPlayer(ARPlayerEvent&callback)
 	, b_use_tcp_(false)
 	, b_no_buffer_(false)
 	, b_re_play_(false)
+	, b_notify_closed_(false)
+	, b_decode_video_(true)
 	, n_reconnect_time_(0)
+	, n_last_recv_data_time_(0)
 	, n_stat_time_(0)
 	, n_net_aud_band_(0)
 	, n_net_vid_band_(0)
@@ -158,7 +161,8 @@ ARFFPlayer::ARFFPlayer(ARPlayerEvent&callback)
 	, n_channels_(0)
 	, p_audio_sample_(NULL)
 	, n_audio_size_(0)
-	, n_out_sample_hz_(0)
+	, n_out_sample_hz_(48000)
+	, n_out_channels_(2)
 	, p_aud_sonic_(NULL)
 {
 	p_audio_sample_ = new char[SAMPLE_SIZE];
@@ -201,7 +205,7 @@ void ARFFPlayer::Run()
 		}
 		if (fmt_ctx_ == NULL) {
 			if (n_reconnect_time_ != 0 && n_reconnect_time_ <= rtc::Time32()) {
-				n_reconnect_time_ = rtc::Time32() + 1500;
+				n_reconnect_time_ = rtc::Time32() +  15000;	//@Eric - 1500 => 15000
 			}
 			else {
 				rtc::Thread::SleepMs(1);
@@ -239,6 +243,7 @@ void ARFFPlayer::Run()
 					}
 					if (n_reconnect_time_ == 0) {
 						callback_.OnArPlyClose(this, -1);	// 无法打开源
+						b_notify_closed_ = true;
 					}
 				}
 			}
@@ -267,7 +272,9 @@ void ARFFPlayer::Run()
 	}
 
 	CloseFFDecode();
-	callback_.OnArPlyClose(this, b_open_stream_success_?0:-1);
+	if (!b_notify_closed_) {
+		callback_.OnArPlyClose(this, b_open_stream_success_ ? 0 : -1);
+	}
 }
 
 bool ARFFPlayer::ReadThreadProcess()
@@ -291,6 +298,10 @@ bool ARFFPlayer::ReadThreadProcess()
 			n_seek_to_ = 0;
 		}
 	}
+	if (n_last_recv_data_time_ != 0 && (n_last_recv_data_time_ + 5000) < rtc::Time32()) {
+		n_last_recv_data_time_ = 0;	
+		b_got_eof_ = true;	// 长时间收不到数据，模拟GetEof错误
+	}
 	if (b_got_eof_)
 	{
 		if (FFBuffer::BufferIsEmpty()) {
@@ -304,7 +315,8 @@ bool ARFFPlayer::ReadThreadProcess()
 				n_reconnect_time_ = rtc::Time32();
 			}
 			if (n_reconnect_time_ == 0) {
-				callback_.OnArPlyClose(this, 0);
+				callback_.OnArPlyClose(this, 1);
+				b_notify_closed_ = true;
 			}
 		}
 		else if (!FFBuffer::IsPlaying()) {
@@ -326,7 +338,9 @@ bool ARFFPlayer::ReadThreadProcess()
 				//n_conn_pkt_time_ = rtc::Time32() + 15000;
 				n_conn_pkt_time_ = 0;	// 读取数据的时候不设置超时，比如m3u8会一直等待，否认会造成播放卡顿
 				/* read frames from the file */
-				if ((ret = av_read_frame(fmt_ctx_, packet)) >= 0) {
+				ret = av_read_frame(fmt_ctx_, packet);
+				if (ret >= 0) {
+					n_last_recv_data_time_ = rtc::Time32();
 					if (packet->stream_index == n_video_stream_idx_) {
 						int64_t pts = 0;
 						n_net_vid_band_ += packet->size;
@@ -462,6 +476,11 @@ void ARFFPlayer::StopTask()
 	}
 }
 
+void ARFFPlayer::SetOutputAudioParam(int nSampleHz, int nChannels)
+{
+	n_out_sample_hz_ = nSampleHz;
+	n_out_channels_ = nChannels;
+}
 void ARFFPlayer::SetAudioEnable(bool bAudioEnable)
 {
 	user_set_.b_audio_enabled_ = bAudioEnable;
@@ -598,7 +617,7 @@ void ARFFPlayer::OnBufferDecodeAudioData(AVPacket* aud_packet)
 			if (ret >= 0) {
 				int64_t pts = 0;
 				if (frameFinished) {
-					int out_channels = av_get_channel_layout_nb_channels(audio_dec_ctx_->channel_layout);
+					int out_channels = n_out_channels_;// av_get_channel_layout_nb_channels(audio_dec_ctx_->channel_layout);
 					int need_size = (n_out_sample_hz_* out_channels * sizeof(int16_t)) / 100;
 					//avframe_->pts = av_rescale_q(av_frame_get_best_effort_timestamp(avframe_), astream_timebase_, TIMEBASE_MS);
 					avframe_->pts = av_rescale_q(avframe_->best_effort_timestamp, astream_timebase_, TIMEBASE_MS);
@@ -864,8 +883,18 @@ void ARFFPlayer::OpenFFDecode()
 			else {
 				av_dict_set(&options, "rtsp_transport", "udp", 0);
 			}
-			av_dict_set(&options, "timeout", NULL, 0);
+			//av_dict_set(&options, "timeout", NULL, 0);
+			av_dict_set(&options, "stimeout", "3000000", 0);//设置超时3秒
 		}
+
+		if (str_play_url_.find("http://") != std::string::npos || str_play_url_.find("https://") != std::string::npos) {
+			// av_read_frame返回-5： https://blog.csdn.net/qq_42956179/article/details/124453345
+			//av_dict_set(&options, "stimeout", std::to_string(1000000).c_str(), 0);
+			av_dict_set(&options, "timeout", "3000000", 0);//设置超时3秒
+			av_dict_set_int(&options, "multiple_requests", 1, 0);
+			av_dict_set_int(&options, "read_ahead_limit", INT_MAX, 0);
+		}
+
 		if ((ret = avformat_open_input(&fmt_ctx_, str_play_url_.c_str(), NULL, &options)) < 0) {
 			char strErr[1024];
 			av_strerror(ret, strErr, 1024);
@@ -908,8 +937,9 @@ void ARFFPlayer::OpenFFDecode()
 			}
 			n_total_track_ = total;
 		}
+
 		if (open_codec_context(&n_video_stream_idx_, &video_dec_ctx_, fmt_ctx_, AVMEDIA_TYPE_VIDEO) >= 0) {
-			video_stream_ = fmt_ctx_->streams[n_video_stream_idx_];
+			//video_stream_ = fmt_ctx_->streams[n_video_stream_idx_];
 			vstream_timebase_ = fmt_ctx_->streams[n_video_stream_idx_]->time_base;
 		}
         else {
@@ -917,12 +947,11 @@ void ARFFPlayer::OpenFFDecode()
         }
 
 		if (open_codec_context(&n_audio_stream_idx_, &audio_dec_ctx_, fmt_ctx_, AVMEDIA_TYPE_AUDIO) >= 0) {
-			audio_stream_ = fmt_ctx_->streams[n_audio_stream_idx_];
+			//audio_stream_ = fmt_ctx_->streams[n_audio_stream_idx_];
 			astream_timebase_ = fmt_ctx_->streams[n_audio_stream_idx_]->time_base;
 
 			n_sample_hz_ = audio_dec_ctx_->sample_rate;
 			n_channels_ = audio_dec_ctx_->channels;
-			n_out_sample_hz_ = 48000;// n_sample_hz_
 			/*if (audio_dec_ctx_->channel_layout == 0) {
 				audio_dec_ctx_->channel_layout = AV_CH_LAYOUT_MONO;
 			}*/
@@ -935,11 +964,13 @@ void ARFFPlayer::OpenFFDecode()
 			}
 			//Swr  
 			audio_convert_ctx_ = swr_alloc();
-			audio_convert_ctx_ = swr_alloc_set_opts(audio_convert_ctx_, audio_dec_ctx_->channel_layout, AV_SAMPLE_FMT_S16, n_out_sample_hz_,
+			//audio_convert_ctx_ = swr_alloc_set_opts(audio_convert_ctx_, audio_dec_ctx_->channel_layout, AV_SAMPLE_FMT_S16, n_out_sample_hz_,
+			//	audio_dec_ctx_->channel_layout, audio_dec_ctx_->sample_fmt, audio_dec_ctx_->sample_rate, 0, NULL);//配置源音频参数和目标音频参数 
+			audio_convert_ctx_ = swr_alloc_set_opts(audio_convert_ctx_, av_get_default_channel_layout(n_out_channels_), AV_SAMPLE_FMT_S16, n_out_sample_hz_,
 				audio_dec_ctx_->channel_layout, audio_dec_ctx_->sample_fmt, audio_dec_ctx_->sample_rate, 0, NULL);//配置源音频参数和目标音频参数 
 			swr_init(audio_convert_ctx_);
 			int frame_size = (audio_dec_ctx_->frame_size == 0 ? 4096 : audio_dec_ctx_->frame_size) * 8;
-			n_resmap_size_ = av_samples_get_buffer_size(NULL, av_get_channel_layout_nb_channels(audio_dec_ctx_->channel_layout), frame_size, AV_SAMPLE_FMT_S16, 1);//计算转换后数据大小  
+			n_resmap_size_ = av_samples_get_buffer_size(NULL, av_get_channel_layout_nb_channels(audio_dec_ctx_->channel_layout), frame_size, audio_dec_ctx_->sample_fmt/*AV_SAMPLE_FMT_S16*/, 1);//计算转换后数据大小  
 			p_resamp_buffer_ = (uint8_t *)av_malloc(n_resmap_size_);//申请输出缓冲区  
 		}
         else {
@@ -960,6 +991,7 @@ void ARFFPlayer::CloseFFDecode()
 {
 	FFBuffer::DoClear();
 	n_reconnect_time_ = 0;
+	n_last_recv_data_time_ = 0;
 
 	webrtc::MutexLock l(&cs_ff_ctx_);
 	if (video_dec_ctx_ != NULL) {

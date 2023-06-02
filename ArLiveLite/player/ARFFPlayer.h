@@ -56,6 +56,7 @@ public:
 	virtual void RunOnce();
 	virtual void Play();
 	virtual void Pause();
+	virtual void SetOutputAudioParam(int nSampleHz, int nChannels);
 	virtual void SetAudioEnable(bool bAudioEnable);
 	virtual void SetVideoEnable(bool bVideoEnable);
 	virtual void SetRepeat(bool bEnable);
@@ -102,7 +103,10 @@ private:
 	bool b_use_tcp_;				// 是否强制使用TCP-常用于RTSP的流播放
 	bool b_no_buffer_;				// 是否无缓冲播放-有些视频源的时间戳非标准，可以使用此方法
 	bool b_re_play_;				// 是否重新播放
+	bool b_notify_closed_;
+	bool b_decode_video_;
 	uint32_t	n_reconnect_time_;	// 下次重连时间
+	uint32_t	n_last_recv_data_time_;	//最近一次收到数据的时间
 	uint32_t	n_stat_time_;		// 统计的定时器
 	uint32_t	n_net_aud_band_;	// 音频流量
 	uint32_t	n_net_vid_band_;	// 视频流量
@@ -131,6 +135,7 @@ private:
 	char*			p_audio_sample_;
 	int				n_audio_size_;
 	int				n_out_sample_hz_;
+	int				n_out_channels_;
 
 	sonicStream		p_aud_sonic_;
 

@@ -59,6 +59,10 @@ void ArLive2Pusher::setObserver(ArLivePusherObserver* observer)
 {
 	event_live_push_ = observer;
 }
+void ArLive2Pusher::setLiveOem(ArLiveOem oem)
+{
+
+}
 int32_t ArLive2Pusher::setRenderView(void* view)
 {
 	VideoCanvas vidCanvas;

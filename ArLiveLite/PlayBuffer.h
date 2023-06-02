@@ -69,6 +69,8 @@ public:
 	PlayBuffer(void);
 	virtual ~PlayBuffer(void);
 
+	int DoVidRender(bool bVideoPaused);
+	int DoAudRender(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels, bool bAudioPaused);
 	int DoRender(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels, bool bAudioPaused, bool bVideoPaused);
 	void DoClear();
 
@@ -79,6 +81,7 @@ public:
 
 public:
 	virtual void OnBufferVideoRender(VideoData *videoData, int64_t pts) {};
+	virtual void OnBufferVideoDropped() {};
 	virtual void OnFirstVideoDecoded() {};
 	virtual void OnFirstAudioDecoded() {};
 

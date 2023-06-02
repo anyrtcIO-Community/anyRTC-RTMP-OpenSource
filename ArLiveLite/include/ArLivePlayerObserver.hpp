@@ -117,6 +117,15 @@ class ArLivePlayerObserver {
      * @param dataSize 数据大小
      */
     virtual void onReceiveSeiMessage(IArLivePlayer* player, int payloadType, const uint8_t* data, uint32_t dataSize){};
+
+    /**
+     * 收到第一帧音频渲染回调 
+     */
+    virtual void onFirstAudioFrameRender(IArLivePlayer* player, int64_t nTimeUsed, const char* extraInfo) {};
+    /**
+     * 收到第一帧视频渲染回调
+     */
+    virtual void onFirstVideoFrameRender(IArLivePlayer* player, int64_t nTimeUsed, const char* extraInfo) {};
 };
 
 }  // namespace anyrtc

@@ -57,12 +57,73 @@ namespace anyrtc {
 enum ArLiveMode {
 	ArLiveModeNotSupported = 0,
 
-	// 支持RTMP协议
-	ArLiveModeRTMP,
+	// 支持推流Rtmp协议
+	ArLiveModePushRtmp,
+    // 支持推流Rtsp协议
+    ArLiveModePushRtsp,
+    // 支持推流协议: WebRTC
+    ArLiveModePushWebRTC,
+    // 支持Gb2821视频推流
+    ArLiveModePushGb28181,
 
-    /// 支持协议: WebRTC
-    ArLiveModeWebRTC,
+    // 支持拉流Rtmp协议
+    ArLiveModePlayRtmp = 10,
+    // 支持拉流Rtsp协议
+    ArLiveModePlayRtsp,
+    // 支持拉流WebRtc协议
+    ArLiveModePlayWebRtc,
+    // 支持拉流Flv-http协议
+    ArLiveModePlayFlvHttp,
+    // 支持拉流Flv-WebSocket协议
+    ArLiveModePlayFlvWs,
 
+    // 支持推拉流WebRtc点对点音视频通话
+    ArLiveModeP2pWebrtc = 100,
+    
+};
+/// @}
+
+/**
+ * @brief 支持的厂家
+ */
+enum ArLiveOem {
+    ArLiveOemUnknow = 0,
+    //*开源服务商
+    // 支持SRS
+    ArLiveOemSrs,
+    // 支持ZLMedia
+    ArLiveOemZLMedia,
+    // 支持Nginx
+    ArLiveOemNginx,
+
+    //*商业平台
+    // 支持AnyRtc
+    ArLiveOemAnyRtc = 10,
+    // 支持阿里云AliYun
+    ArLiveOemAliYun,
+    // 支持腾讯云Tecent
+    ArLiveOemTecent,
+    // 支持华为云HuaWei
+    ArLiveOemHuaWei,
+    // 支持七牛云QiNiu
+    ArLiveOemQiNiu,
+    // 支持Aws
+    ArLiveOemAws,
+
+    ArLiveOemMax,
+};
+/// @}
+
+/**
+ * @brief 支持的协议
+ */
+enum ArLiveProtocol {
+    //Tcp - 默认模式
+    ArLiveProtocolTcp = 0,
+    //Udp - WebRtc一般都是Udp传输
+    ArLiveProtocolUdp,
+    //Srt - 仅支持rtmp推拉流
+    ArLiveProtocolSrt,
 };
 /// @}
 
@@ -196,6 +257,18 @@ struct VideoCanvas
 	{
 	
 	}
+};
+
+/**
+ * @brief 视频编码器类型。
+ */
+enum ArLiveVideCodec {
+    /// H264编码
+    ArLiveVideCodecH264,
+    /// H265编码
+    ArLiveVideCodecH265,
+    /// Jpeg编码
+    ArLiveVideCodecMJpeg
 };
 
 /**
@@ -390,7 +463,7 @@ enum ArLivePixelFormat {
     /// YUV420P NV12
     ArLivePixelFormatNV12,
 
-    ArLivePixelFormatNV21,
+    ArLivePixelFormatNV21
 
 };
 
@@ -578,7 +651,39 @@ struct ArLivePlayerStatistics {
     QUALITY_TYPE pullQuality;
 
     ArLivePlayerStatistics() : appCpu(0), systemCpu(0), width(0), height(0), fps(0), audioBitrate(0), videoBitrate(0), pullQuality(QUALITY_UNKNOWN) {
+        videoFrameRate = 0;
+        audioFrameRate = 0;
+        rtt = 0;
+        dropRate = 0;
+        totalBytes = 0;
+        totalFrozenTime = 0;
+        frozenRate = 0;
+        totalActiveTime = 0;
+        videoRenderFrameRate = 0;
+        videoDroppedFrameRate = 0;
     }
+
+    //@Eric - 20230511 - 增加统计
+    /// 【字段含义】视频帧率
+    int32_t videoFrameRate;
+    /// 【字段含义】音频帧率
+    int32_t audioFrameRate;
+    /// 【字段含义】rtt时延
+    int32_t rtt;
+    /// 【字段含义】丢包率
+    int32_t dropRate;
+    /// 【字段含义】当前周期总传输的字节数
+    int32_t totalBytes;
+    /// 【字段含义】卡顿的总时长
+    int totalFrozenTime;
+    /// 【字段含义】卡顿率
+    int frozenRate;
+    /// 【字段含义】播放总时长
+    int totalActiveTime;
+    /// 【字段含义】实际的视频渲染帧率
+    int videoRenderFrameRate;
+    /// 【字段含义】实际的视频丢帧率
+    int videoDroppedFrameRate;
 };
 
 /// @}

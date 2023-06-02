@@ -64,6 +64,7 @@ ArLive2Engine::ArLive2Engine(void)
 	, n_timer_10ms_(0)
 	, n_timer_100ms_(0)
 {
+	
 }
 ArLive2Engine::~ArLive2Engine(void)
 {

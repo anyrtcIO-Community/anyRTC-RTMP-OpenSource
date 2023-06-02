@@ -34,6 +34,16 @@ class IArLivePlayer {
     virtual void setObserver(ArLivePlayerObserver* observer) = 0;
 
     /**
+    * 设置厂家类型Oem。
+    *
+    * 由于各个厂家的标准不统一，比如webrtc的whip方案，
+    * 需要针对不同厂家用针对性的方案去实现
+    *
+    * @param observer oem的厂家枚举，更多信息请查看 {@link ArLiveOem}
+    */
+    virtual void setLiveOem(ArLiveOem oem) = 0;
+
+    /**
      * 设置播放器的视频渲染 View。 该控件负责显示视频内容。
      *
      * @param view 播放器渲染 View
@@ -93,6 +103,32 @@ class IArLivePlayer {
      *         - 0: 已经停止播放
      */
     virtual int32_t isPlaying() = 0;
+
+    /**
+     * 播放进度，单位秒。仅适用于点播，直播或WebRTC等实时流不会生效。
+     *
+     * @return 返回值 {@link ArLiveCode}
+     *         - ArLIVE_OK: 成功
+     */
+    virtual int32_t seekTo(int seekTimeS) = 0;
+
+
+    /**
+     * 倍速播放。0.5   0.75  1.0  1.25  1.5 1.75 2.0 3.0
+     * 仅适用于点播，直播或WebRTC等实时流不会生效。
+     *
+     * @return 返回值 {@link ArLiveCode}
+     *         - ArLIVE_OK: 成功
+     */
+    virtual int32_t setSpeed(float speed) = 0;
+
+    /**
+     * 重新开始播放。一般用于点播场景
+     *
+     * @return 返回值 {@link ArLiveCode}
+     *         - ArLIVE_OK: 成功
+     */
+    virtual int32_t rePlay() = 0;
 
     /**
      * 暂停播放器的音频流。

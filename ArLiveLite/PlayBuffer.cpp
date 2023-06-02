@@ -109,6 +109,80 @@ PlayBuffer::~PlayBuffer(void)
 	DoClear();
 }
 
+int PlayBuffer::DoVidRender(bool bVideoPaused)
+{
+	VideoData* vidPkt = NULL;
+	{
+		rtc::CritScope cs(&cs_video_play_);
+		if (lst_video_play_.size() > 0) {
+			vidPkt = lst_video_play_.front();
+			lst_video_play_.pop_front();
+		}
+	}
+
+	if (vidPkt != NULL) {
+		//RTC_LOG(LS_INFO) << "DoRender video pts: " << vidPkt->pts_ << " plytime: " << play_pts_time_;
+		if (!bVideoPaused) {
+			OnBufferVideoRender(vidPkt, vidPkt->pts_);
+		}
+		delete vidPkt;
+		vidPkt = NULL;
+	}
+
+	return 0;
+}
+int PlayBuffer::DoAudRender(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels, bool bAudioPaused)
+{
+	int ret = 0;
+	PcmData* audPkt = NULL;
+	
+	{//*
+		rtc::CritScope cs(&cs_audio_play_);
+		//RTC_LOG(LS_INFO) << "Audio list size: " << lst_audio_play_.size();
+		if (lst_audio_play_.size() > 0) {
+			audPkt = lst_audio_play_.front();
+			lst_audio_play_.pop_front();
+		}
+
+	}
+	
+	if (audPkt != NULL) {
+		if (!bAudioPaused) {
+			ret = 1;
+			int a_frame_size = samplesPerSec * nChannels * sizeof(int16_t) / 100;
+
+			if (samplesPerSec != audPkt->sample_hz_ || audPkt->channels_ != nChannels) {
+				resampler_.Resample10Msec((int16_t*)audPkt->pdata_, audPkt->sample_hz_ * audPkt->channels_,
+					samplesPerSec * nChannels, 1, kMaxDataSizeSamples, (int16_t*)aud_data_resamp_);
+			}
+			else {
+				memcpy(aud_data_resamp_, audPkt->pdata_, a_frame_size);
+			}
+			if (!mix) {
+				memcpy(audioSamples, aud_data_resamp_, a_frame_size);
+			}
+			else {
+				float voice_gain = 1.0;
+				float musice_gain = 1.0;
+				short* pMusicUnit = (short*)aud_data_resamp_;
+				short* pMicUnit = (short*)audioSamples;
+				short* pOutputPcm = (short*)aud_data_mix_;
+				for (int iIndex = 0; iIndex < audPkt->len_; iIndex = iIndex + nChannels) {
+					MixAudio(nChannels, &pMusicUnit[iIndex], &pMicUnit[iIndex], musice_gain, voice_gain, &pOutputPcm[iIndex]);
+				}
+				memcpy(audioSamples, pOutputPcm, a_frame_size);
+			}
+		}
+		delete audPkt;
+		audPkt = NULL;
+	}
+	else {
+		RTC_LOG(LS_INFO) << "* No audio data time: " << rtc::Time32(); 
+	}
+
+	return ret;
+}
+
 int PlayBuffer::DoRender(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels, bool bAudioPaused, bool bVideoPaused)
 {
 	int ret = 0;
@@ -243,6 +317,14 @@ void PlayBuffer::PlayVideoData(VideoData *videoData)
 		}
 	}
 	else {
+		//@Eric - 跳帧处理 - 防止缓存太多：内存报警，渲染延时增大
+		while (lst_video_play_.size() > 3) {
+			VideoData* pkt = lst_video_play_.front();
+			lst_video_play_.pop_front();
+			delete pkt;
+
+			OnBufferVideoDropped();
+		}
 		lst_video_play_.push_back(videoData);
 	}
 }

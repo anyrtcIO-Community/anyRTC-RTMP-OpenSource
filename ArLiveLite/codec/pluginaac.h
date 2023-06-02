@@ -24,7 +24,7 @@
 // the AAC Encoder handler.
 typedef void* aac_enc_t;
 // @AnyRTC Interface
-PLUGIN_AAC_API aac_enc_t aac_encoder_open(char ucAudioChannel, int u32AudioSamplerate, int u32PCMBitSize, int audBitrate, bool ats);
+PLUGIN_AAC_API aac_enc_t aac_encoder_open(char ucAudioChannel, int u32AudioSamplerate, int u32PCMBitSize, int audBitrate, bool mp4);
 PLUGIN_AAC_API void aac_encoder_close(void*pHandle);
 PLUGIN_AAC_API int aac_encoder_encode_frame(void*pHandle, unsigned char* inbuf, unsigned int inlen, unsigned char* outbuf, unsigned int* outlen);
 

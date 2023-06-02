@@ -18,6 +18,7 @@ public:
 
 	//* For IArLivePushKit
 	virtual void setObserver(ArLivePusherObserver* observer);
+	virtual void setLiveOem(anyrtc::ArLiveOem oem);
     virtual int32_t setRenderView(void* view);
     virtual int32_t setRenderMirror(AR::ArLiveMirrorType mirrorType);
     virtual int32_t setEncoderMirror(bool mirror);

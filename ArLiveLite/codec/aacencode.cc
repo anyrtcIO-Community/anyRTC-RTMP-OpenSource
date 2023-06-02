@@ -48,7 +48,7 @@ typedef struct tagAacENC
 
 }AacENC, *PAacENC;
 
-void*aac_encoder_open(char ucAudioChannel, int u32AudioSamplerate, int u32PCMBitSize, int audBitrate, bool ats)
+void*aac_encoder_open(char ucAudioChannel, int u32AudioSamplerate, int u32PCMBitSize, int audBitrate, bool mp4)
 {
 	unsigned int objectType = LOW;
 	unsigned int mpegVersion = MPEG4;// mp4 ? MPEG4 : MPEG2;
@@ -72,7 +72,7 @@ void*aac_encoder_open(char ucAudioChannel, int u32AudioSamplerate, int u32PCMBit
 	pConfiguration->inputFormat = FAAC_INPUT_16BIT;
 
 	/*0 - raw; 1 - ADTS*/
-	pConfiguration->outputFormat = ats ?1:0;
+	pConfiguration->outputFormat = mp4 ?0:1;
 	pConfiguration->useTns = DEFAULT_TNS;
 	pConfiguration->aacObjectType = objectType;
 	pConfiguration->mpegVersion = mpegVersion;

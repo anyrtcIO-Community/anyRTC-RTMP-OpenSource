@@ -38,6 +38,16 @@ class IArLivePusher {
     virtual void setObserver(ArLivePusherObserver* observer) = 0;
 
     /**
+     * 设置厂家类型Oem。
+     *
+     * 由于各个厂家的标准不统一，比如webrtc的whip方案，
+     * 需要针对不同厂家用针对性的方案去实现
+     *
+     * @param observer oem的厂家枚举，更多信息请查看 {@link ArLiveOem}
+     */
+    virtual void setLiveOem(ArLiveOem oem) = 0;
+
+    /**
      * 设置本地摄像头预览 View。
      *
      * 本地摄像头采集到的画面，经过美颜、脸形调整、滤镜等多种效果叠加之后，最终会显示到传入的 View 上。

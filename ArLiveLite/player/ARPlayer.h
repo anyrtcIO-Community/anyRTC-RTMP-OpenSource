@@ -132,4 +132,6 @@ protected:
 
 ARP_API ARPlayer* ARP_CALL createARPlayer(ARPlayerEvent&callback);
 
+ARP_API ARPlayer* ARP_CALL createRtmpPlayer(ARPlayerEvent& callback);
+
 #endif	// __ARP_PLAYER_H__
