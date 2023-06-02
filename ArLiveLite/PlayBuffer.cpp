@@ -92,10 +92,12 @@ static int MixAudio(int iChannelNum, short* sourceData1, short* sourceData2, flo
 
 #ifdef WEBRTC_ANDROID
 //android 的某些机型，音频播放的线程实时性不高，所以一次性需要更多的数据
-const int kMaxAudioPlaySize = 10;
+const int kMaxAudioPlaySize = 15;
 #else
 const int kMaxAudioPlaySize = 5;
 #endif
+const int kMaxVedeoPlaySize = 3;
+
 
 PlayBuffer::PlayBuffer(void)
 	: aud_data_resamp_(NULL)
@@ -289,20 +291,15 @@ void PlayBuffer::SetAppInBackground(bool bBackground)
 bool PlayBuffer::NeedMoreAudioPlyData()
 {
 	rtc::CritScope cs(&cs_audio_play_);
-
 	return lst_audio_play_.size() <= kMaxAudioPlaySize;
 }
 
 bool PlayBuffer::NeedMoreVideoPlyData()
 {
 	rtc::CritScope cs(&cs_video_play_);
-	if (lst_video_play_.size() > 2)
-	{
-		return false;
-	}
-	return true;
+	return lst_video_play_.size() <= kMaxVedeoPlaySize;
 }
-void PlayBuffer::PlayVideoData(VideoData *videoData)
+void PlayBuffer::PlayVideoData(VideoData* videoData)
 {
 	//RTC_LOG(LS_INFO) << "PlayVideoData pts: " << videoData->pts_;
 	if (!b_video_decoded_) {
@@ -310,7 +307,7 @@ void PlayBuffer::PlayVideoData(VideoData *videoData)
 		OnFirstVideoDecoded();
 	}
 	rtc::CritScope cs(&cs_video_play_);
-	if (lst_video_play_.size() > 0 && false) {
+	if (lst_video_play_.size() > 0) {
 		if (lst_video_play_.front()->pts_ >= videoData->pts_) {
 			lst_video_play_.push_front(videoData);
 		}
@@ -329,15 +326,29 @@ void PlayBuffer::PlayVideoData(VideoData *videoData)
 		}
 	}
 	else {
-		//@Eric - 跳帧处理 - 防止缓存太多：内存报警，渲染延时增大
-		while (lst_video_play_.size() > 3) {
+#if 0
+		while (lst_video_play_.size() > (kMaxVedeoPlaySize << 1)) {
 			VideoData* pkt = lst_video_play_.front();
 			lst_video_play_.pop_front();
 			delete pkt;
 
 			OnBufferVideoDropped();
 		}
+#endif
 		lst_video_play_.push_back(videoData);
+	}
+
+	//@Eric - 跳帧处理 - 防止缓存太多：内存报警，渲染延时增大
+	while (lst_video_play_.size() > 1) {
+		int64_t timeGap = lst_video_play_.back()->pts_ - lst_video_play_.front()->pts_;
+		if (timeGap < (kMaxAudioPlaySize << 1) * 10) {
+			break;
+		}
+		VideoData* pkt = lst_video_play_.front();
+		lst_video_play_.pop_front();
+		delete pkt;
+
+		OnBufferVideoDropped();
 	}
 }
 void PlayBuffer::PlayAudioData(PcmData*pcmData)
