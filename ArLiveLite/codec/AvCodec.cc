@@ -53,7 +53,7 @@ bool A_AACEncoder::Init(int sample_rate, int num_channels, int bitrate)
 		return false;
 	audio_record_sample_hz_ = sample_rate;
 	audio_record_channels_ = num_channels;
-	encoder_ = aac_encoder_open(num_channels, sample_rate, sizeof(short)*8, bitrate, true);
+	encoder_ = aac_encoder_open(num_channels, sample_rate, sizeof(short)*8, bitrate, false);
 	return true;
 }
 
