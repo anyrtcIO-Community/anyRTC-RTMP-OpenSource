@@ -128,7 +128,7 @@ public class NativeInstance {
 
     protected native int nativeEnableCustomVideoCapture(long nativePtr,boolean enable);
 
-    protected native int nativeSendCustomVideoFrame(long nativePtr, int pixelFormat, int bufferType, byte[] data, ByteBuffer buffer,int width,int height,int rotation);
+    protected native int nativeSendCustomVideoFrame(long nativePtr, int pixelFormat, int bufferType, byte[] data, ByteBuffer buffer,int width,int height,int rotation,int stride);
 
     protected native int nativeEnableCustomAudioCapture(long nativePtr,boolean enable);
 

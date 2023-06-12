@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "io.anyrtc.liveplayer"
-        minSdk 19
+        minSdk 21
         targetSdk 31
         versionCode 1
         versionName "1.0"
@@ -60,5 +60,6 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     implementation("io.coil-kt:coil-gif:1.4.0")
     implementation("io.coil-kt:coil:1.4.0")
+    implementation 'com.github.LxzBUG:ScreenShare:1.1.6'
 
 }

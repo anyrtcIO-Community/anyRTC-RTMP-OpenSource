@@ -17,19 +17,24 @@ import io.anyrtc.live.ArLiveDef.ArLiveVideoResolution
 import io.anyrtc.live.ArLiveEngine
 import io.anyrtc.live.ArLivePusherObserver
 import io.anyrtc.liveplayer.databinding.ActivityPushBinding
+import org.loka.screensharekit.EncodeBuilder
+import org.loka.screensharekit.ScreenShareKit
+import org.loka.screensharekit.callback.AudioCallBack
+import org.loka.screensharekit.callback.RGBACallBack
+import org.loka.screensharekit.callback.StartCaptureCallback
 
 class PushActivity : BaseActivity() {
     private val binding by lazy { ActivityPushBinding.inflate(layoutInflater) }
     private val liveEngine by lazy { ArLiveEngine.create(this)}
     private val pusher by lazy { liveEngine.createArLivePusher() }
     private var pushUrl = ""
-
+    private var pushType = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         immersive(darkMode = false)
-        val pushType = intent.getIntExtra("pushType",0);
+        pushType = intent.getIntExtra("pushType",0);
         val resolution = intent.getIntExtra("resolution",0)
         pushUrl = intent.getStringExtra("url").toString()
         when(resolution){
@@ -46,11 +51,13 @@ class PushActivity : BaseActivity() {
                 pusher.setVideoQuality(ArLiveDef.ArLiveVideoEncoderParam(ArLiveVideoResolution.ArLiveVideoResolution1920x1080))
             }
         }
-        pusher.startMicrophone()
+
         if (pushType == 0){
             pusher.setRenderView(binding.videoView)
             pusher.startCamera(true)
-        }else{
+            pusher.startMicrophone()
+            pusher.startPush(pushUrl)
+        }else if (pushType == 1){
             binding.ivBeauty.visibility = View.GONE
             val imageLoader = ImageLoader.Builder(this)
                 .componentRegistry {
@@ -63,8 +70,51 @@ class PushActivity : BaseActivity() {
                 .build()
             binding.ivGif.load("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F60ed9921abb8a968651aae697626dc816624cc4770c32-uwUmhP_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645166781&t=ff39058ea3e782746361d8b2bea68511",imageLoader)
             pusher.startScreenCapture()
+            pusher.startPush(pushUrl)
+        }else{//自定义音视频采集
+            pusher.enableCustomAudioCapture(true)
+            pusher.enableCustomVideoCapture(true)
+            ScreenShareKit.init(this).config(screenDataType = EncodeBuilder.SCREEN_DATA_TYPE.RGBA, audioCapture = true)
+                .onRGBA(object :RGBACallBack{
+                    override fun onRGBA(
+                        rgba: ByteArray,
+                        width: Int,
+                        height: Int,
+                        stride: Int,
+                        rotation: Int,
+                        rotationChanged: Boolean
+                    ) {
+                        pusher.sendCustomVideoFrame(ArLiveDef.ArLiveVideoFrame().apply {
+                            pixelFormat = ArLiveDef.ArLivePixelFormat.ArLivePixelFormatBGRA32
+                            bufferType = ArLiveDef.ArLiveBufferType.ArLiveBufferTypeByteArray
+                            data = rgba
+                            this.width = width
+                            this.height = height
+                            this.rotation = rotation
+                            this.stride = stride*4
+                        })
+                    }
+
+                })
+                .onAudio(object :AudioCallBack{
+                    override fun onAudio(buffer: ByteArray?, ts: Long) {
+                        pusher.sendCustomAudioFrame(ArLiveDef.ArLiveAudioFrame().apply {
+                            data = buffer
+                            sampleRate = 16000
+                            channel = 2
+                        })
+                    }
+
+                })
+                .onStart(object :StartCaptureCallback{
+                    override fun onStart() {
+                        pusher.startPush(pushUrl)
+                    }
+
+                })
+                .start()
+
         }
-        pusher.startPush(pushUrl)
         initView()
 
     }
@@ -142,6 +192,9 @@ class PushActivity : BaseActivity() {
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
         if (keyCode == KeyEvent.KEYCODE_BACK){
+            if (pushType==2){
+                ScreenShareKit.stop()
+            }
             pusher.stopPush()
             ArLiveEngine.release()
             finish()

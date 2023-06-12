@@ -82,8 +82,6 @@ class PullActivity : AppCompatActivity() {
             ) {
                 super.onReceiveSeiMessage(player, payloadType, data)
 
-                binding.tvStatus.setText(String(data!!))
-
             }
 
             override fun onRenderVideoFrame(
@@ -169,9 +167,12 @@ class PullActivity : AppCompatActivity() {
             }
         }
 
+    }
 
-
-
+    override fun onBackPressed() {
+        player.stopPlay()
+        ArLiveEngine.release()
+        finish()
     }
 
     inner class PlayStatus{

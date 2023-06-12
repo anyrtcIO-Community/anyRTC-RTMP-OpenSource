@@ -279,7 +279,7 @@ public class ArLivePlayerImpl extends ArLivePlayer {
                 @Override
                 public void run() {
                    if (arLivePlayEvent!=null){
-                       arLivePlayEvent.onRenderVideoFrame(arLivePlayer,new ArLiveDef.ArLiveVideoFrame(ArLiveDef.ArLivePixelFormat.values()[pixelFormat], ArLiveDef.ArLiveBufferType.values()[bufferType],null,data,buffer,width,height,rotation));
+                       arLivePlayEvent.onRenderVideoFrame(arLivePlayer,new ArLiveDef.ArLiveVideoFrame(ArLiveDef.ArLivePixelFormat.values()[pixelFormat], ArLiveDef.ArLiveBufferType.values()[bufferType],null,data,buffer,width,height,rotation,0));
                    }
                 }
             });

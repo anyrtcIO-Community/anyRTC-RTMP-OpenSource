@@ -22,6 +22,8 @@ class InputActivity : BaseActivity(),RadioGroup.OnCheckedChangeListener,View.OnC
     private var resolution = 0 //0-720 1-540 2-360
     private val config = Config()
     private var requestPermission: ActivityResultLauncher<Array<String>>?=null
+    val VIDEO_1 = "https://www.apple.com/105/media/us/iphone-x/2017/01df5b43-28e4-4848-bf20-490c34a926a7/films/feature/iphone-x-feature-tpl-cc-us-20170912_1920x1080h.mp4"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
@@ -71,8 +73,11 @@ class InputActivity : BaseActivity(),RadioGroup.OnCheckedChangeListener,View.OnC
             R.id.rb_camera-> {
                 this@InputActivity.pushType = 0
             }
-            else->{
+            R.id.rb_screen->{
                 this@InputActivity.pushType = 1
+            }
+            else->{
+                this@InputActivity.pushType = 2
             }
         }
     }
@@ -89,7 +94,7 @@ class InputActivity : BaseActivity(),RadioGroup.OnCheckedChangeListener,View.OnC
                         requestPermission?.launch(arrayOf(android.Manifest.permission.CAMERA,android.Manifest.permission.RECORD_AUDIO))
                     }
                     1->{
-                        go(PullActivity::class.java, Pair("url",binding.etUrl.text.toString()))
+                        go(PullActivity::class.java, Pair("url",VIDEO_1))
                     }
                 }
             }

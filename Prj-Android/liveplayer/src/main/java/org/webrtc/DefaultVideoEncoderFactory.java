@@ -34,14 +34,15 @@ public class DefaultVideoEncoderFactory implements VideoEncoderFactory {
   @Nullable
   @Override
   public VideoEncoder createEncoder(VideoCodecInfo info) {
-    final VideoEncoder softwareEncoder = softwareVideoEncoderFactory.createEncoder(info);
-    final VideoEncoder hardwareEncoder = hardwareVideoEncoderFactory.createEncoder(info);
-    if (hardwareEncoder != null && softwareEncoder != null) {
-      // Both hardware and software supported, wrap it in a software fallback
-      return new VideoEncoderFallback(
-          /* fallback= */ softwareEncoder, /* primary= */ hardwareEncoder);
-    }
-    return hardwareEncoder != null ? hardwareEncoder : softwareEncoder;
+    return null;
+//    final VideoEncoder softwareEncoder = softwareVideoEncoderFactory.createEncoder(info);
+//    final VideoEncoder hardwareEncoder = hardwareVideoEncoderFactory.createEncoder(info);
+//    if (hardwareEncoder != null && softwareEncoder != null) {
+//      // Both hardware and software supported, wrap it in a software fallback
+//      return new VideoEncoderFallback(
+//          /* fallback= */ softwareEncoder, /* primary= */ hardwareEncoder);
+//    }
+//    return hardwareEncoder != null ? hardwareEncoder : softwareEncoder;
   }
 
   @Override

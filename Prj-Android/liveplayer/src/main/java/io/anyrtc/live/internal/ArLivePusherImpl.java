@@ -458,7 +458,7 @@ public class ArLivePusherImpl extends ArLivePusher {
 
     @Override
     public int sendCustomVideoFrame(ArLiveDef.ArLiveVideoFrame var1) {
-        return nativeInstance.nativeSendCustomVideoFrame(nativeId,var1.pixelFormat.ordinal(),var1.bufferType.ordinal(),var1.data,var1.buffer,var1.width,var1.height,var1.rotation);
+        return nativeInstance.nativeSendCustomVideoFrame(nativeId,var1.pixelFormat.ordinal(),var1.bufferType.ordinal(),var1.data,var1.buffer,var1.width,var1.height,var1.rotation, var1.stride);
     }
 
     @Override

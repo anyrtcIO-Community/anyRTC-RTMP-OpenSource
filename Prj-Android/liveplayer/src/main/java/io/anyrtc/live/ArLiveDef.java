@@ -246,6 +246,7 @@ public class ArLiveDef {
         public int width;
         public int height;
         public int rotation;
+        public int stride;
 
 
         public ArLiveVideoFrame() {
@@ -254,7 +255,7 @@ public class ArLiveDef {
         }
 
         @CalledByNative
-        public ArLiveVideoFrame(ArLivePixelFormat pixelFormat, ArLiveBufferType bufferType, ArLiveTexture texture, byte[] data, ByteBuffer buffer, int width, int height, int rotation) {
+        public ArLiveVideoFrame(ArLivePixelFormat pixelFormat, ArLiveBufferType bufferType, ArLiveTexture texture, byte[] data, ByteBuffer buffer, int width, int height, int rotation,int stride) {
             this.pixelFormat = pixelFormat;
             this.bufferType = bufferType;
             this.texture = texture;
@@ -263,6 +264,7 @@ public class ArLiveDef {
             this.width = width;
             this.height = height;
             this.rotation = rotation;
+            this.stride = stride;
         }
     }
 

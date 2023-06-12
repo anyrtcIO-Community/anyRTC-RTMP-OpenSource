@@ -400,7 +400,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSendCustomVideoFrame(JNIEnv *e
                                                                        jint buffer_type,
                                                                        jbyteArray data,
                                                                        jobject buffer, jint width,
-                                                                       jint height, jint rotation) {
+                                                                       jint height, jint rotation,jint stride) {
     IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
     jint result = -1;
     if (arLivePushKit!= NULL){
@@ -412,6 +412,7 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeSendCustomVideoFrame(JNIEnv *e
         frame->rotation = static_cast<ArLiveRotation>(rotation);
         jbyte* arrayData=(env)->GetByteArrayElements(data, NULL);
         frame->data = reinterpret_cast<char *>(arrayData);
+        frame->stride = stride;
         result = arLivePushKit->sendCustomVideoFrame(frame);
         env->ReleaseByteArrayElements(data, arrayData, 0);
     }

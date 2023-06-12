@@ -178,6 +178,21 @@
                     android:layout_height="44dp"
                     android:layout_weight="1"/>
 
+                <Space
+                    android:layout_width="25dp"
+                    android:layout_height="wrap_content"/>
+
+                <RadioButton
+                    android:id="@+id/rb_custom"
+                    android:layout_width="0dp"
+                    android:button="@null"
+                    android:text="自定义采集"
+                    android:textColor="@color/color_options"
+                    android:background="@drawable/select_options"
+                    android:gravity="center"
+                    android:layout_height="44dp"
+                    android:layout_weight="1"/>
+
             </RadioGroup>
 
         </LinearLayout>
