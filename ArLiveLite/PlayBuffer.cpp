@@ -91,11 +91,11 @@ static int MixAudio(int iChannelNum, short* sourceData1, short* sourceData2, flo
 
 #ifdef WEBRTC_ANDROID
 //android 的某些机型，音频播放的线程实时性不高，所以一次性需要更多的数据
-const int kMaxAudioPlaySize = 15;
+const int kMaxAudioPlaySize = 30;
 #else
-const int kMaxAudioPlaySize = 5;
+const int kMaxAudioPlaySize = 20;
 #endif
-const int kMaxVedeoPlaySize = 3;
+const int kMaxVedeoPlaySize = kMaxAudioPlaySize / 2;
 
 
 PlayBuffer::PlayBuffer(void)
@@ -104,6 +104,8 @@ PlayBuffer::PlayBuffer(void)
 	, b_video_decoded_(false)
 	, b_audio_decoded_(false)
 	, b_app_in_background_(false)
+	, n_last_render_video_time_(0)
+	, n_last_render_video_pts_(0)
 {
 	aud_data_resamp_ = new char[kMaxDataSizeSamples];
 	memset(aud_data_resamp_, 0, kMaxDataSizeSamples);
@@ -120,22 +122,40 @@ PlayBuffer::~PlayBuffer(void)
 
 int PlayBuffer::DoVidRender(bool bVideoPaused)
 {
-	VideoData* vidPkt = NULL;
-	{
-		rtc::CritScope cs(&cs_video_play_);
-		if (lst_video_play_.size() > 0) {
-			vidPkt = lst_video_play_.front();
-			lst_video_play_.pop_front();
+	bool bRender = false;
+	while (1) {
+		VideoData* vidPkt = NULL;
+		{
+			rtc::CritScope cs(&cs_video_play_);
+			if (lst_video_play_.size() > 0) {
+				vidPkt = lst_video_play_.front();
+				if (n_last_render_video_pts_ == 0 || n_last_render_video_pts_ > vidPkt->pts_) {
+					n_last_render_video_time_ = rtc::TimeUTCMillis();
+					n_last_render_video_pts_ = vidPkt->pts_;
+				}
+				if (vidPkt->pts_ <= (rtc::TimeUTCMillis() - n_last_render_video_time_) + n_last_render_video_pts_) {
+					lst_video_play_.pop_front();
+				}
+				else {
+					vidPkt = NULL;
+				}
+			}
 		}
-	}
 
-	if (vidPkt != NULL) {
-		//RTC_LOG(LS_INFO) << "DoRender video pts: " << vidPkt->pts_ << " plytime: " << play_pts_time_;
-		if (!bVideoPaused && !b_app_in_background_) {
-			OnBufferVideoRender(vidPkt, vidPkt->pts_);
+		if (vidPkt != NULL) {
+			//RTC_LOG(LS_INFO) << "DoRender video pts: " << vidPkt->pts_ << " plytime: " << play_pts_time_;
+			if (!bVideoPaused && !b_app_in_background_) {
+				if (!bRender) {//@Eric - 跳帧处理，防止一次性输出过多
+					OnBufferVideoRender(vidPkt, vidPkt->pts_);
+				}
+				bRender = true;
+			}
+			delete vidPkt;
+			vidPkt = NULL;
 		}
-		delete vidPkt;
-		vidPkt = NULL;
+		else {
+			break;
+		}
 	}
 
 	return 0;
@@ -148,9 +168,11 @@ int PlayBuffer::DoAudRender(bool mix, void* audioSamples, uint32_t samplesPerSec
 	{//*
 		rtc::CritScope cs(&cs_audio_play_);
 		//RTC_LOG(LS_INFO) << "Audio list size: " << lst_audio_play_.size();
+
 		if (lst_audio_play_.size() > 0) {
 			audPkt = lst_audio_play_.front();
 			lst_audio_play_.pop_front();
+
 		}
 
 	}
@@ -181,6 +203,10 @@ int PlayBuffer::DoAudRender(bool mix, void* audioSamples, uint32_t samplesPerSec
 				}
 				memcpy(audioSamples, pOutputPcm, a_frame_size);
 			}
+		}
+		{
+			n_last_render_video_time_ = rtc::TimeUTCMillis();
+			n_last_render_video_pts_ = audPkt->pts_;
 		}
 		delete audPkt;
 		audPkt = NULL;
@@ -298,6 +324,10 @@ bool PlayBuffer::NeedMoreVideoPlyData()
 	rtc::CritScope cs(&cs_video_play_);
 	return lst_video_play_.size() <= kMaxVedeoPlaySize;
 }
+bool PlayBuffer::AppIsBackground()
+{
+	return b_app_in_background_;
+}
 void PlayBuffer::PlayVideoData(VideoData* videoData)
 {
 	//RTC_LOG(LS_INFO) << "PlayVideoData pts: " << videoData->pts_;
@@ -341,7 +371,7 @@ void PlayBuffer::PlayVideoData(VideoData* videoData)
 	//@Eric - 跳帧处理 - 防止缓存太多：内存报警，渲染延时增大
 	while (lst_video_play_.size() > 1) {
 		int64_t timeGap = lst_video_play_.back()->pts_ - lst_video_play_.front()->pts_;
-		if (timeGap < (kMaxAudioPlaySize << 1) * 10) {
+		if (timeGap < (kMaxVideoPlaySize << 1) * 10) {
 			break;
 		}
 		VideoData* pkt = lst_video_play_.front();
@@ -363,17 +393,29 @@ void PlayBuffer::PlayAudioData(PcmData*pcmData)
 	int64_t dropPts = -1;
 	{
 		rtc::CritScope cs(&cs_audio_play_);
+		lst_audio_play_.push_back(pcmData);
+
 		//@Eric - 跳帧处理 - 防止缓存太多：延时增大
-		while (lst_audio_play_.size() > (kMaxAudioPlaySize << 1)) {
+		if (lst_audio_play_.size() >= kMaxAudioPlaySize) {//清一半缓存
+			while (lst_audio_play_.size() > kMaxAudioPlaySize/2) {
+				PcmData* pkt = lst_audio_play_.front();
+				dropPts = pkt->pts_;
+				lst_audio_play_.pop_front();
+				delete pkt;
+
+				OnBufferAudioDropped();
+			}
+		}
+	}
+
+#if 0
+	if (b_app_in_background_) {
+		if (lst_audio_play_.size() > 0) {
 			PcmData* pkt = lst_audio_play_.front();
 			dropPts = pkt->pts_;
-			lst_audio_play_.pop_front();
-			delete pkt;
-
-			OnBufferAudioDropped();
 		}
-		lst_audio_play_.push_back(pcmData);
 	}
+#endif
 
 	if (dropPts != -1) {
 		//@Eric - 跳帧处理 - 防止缓存太多：内存报警，渲染延时增大
@@ -381,9 +423,9 @@ void PlayBuffer::PlayAudioData(PcmData*pcmData)
 			if (lst_video_play_.front()->pts_ > dropPts) {
 				break;
 			}
-			VideoData* pkt = lst_video_play_.front();
+			VideoData* vidPkt = lst_video_play_.front();
 			lst_video_play_.pop_front();
-			delete pkt;
+			delete vidPkt;
 
 			OnBufferVideoDropped();
 		}

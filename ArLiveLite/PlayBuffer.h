@@ -77,6 +77,7 @@ public:
 
 	bool NeedMoreAudioPlyData();
 	bool NeedMoreVideoPlyData();
+	bool AppIsBackground();
 	void PlayVideoData(VideoData *videoData);
 	void PlayAudioData(PcmData*pcmData);
 
@@ -91,6 +92,8 @@ private:
 	bool	b_video_decoded_;
 	bool	b_audio_decoded_;
 	bool	b_app_in_background_;		// app 是否进入后台
+	int64_t n_last_render_video_time_;
+	int64_t n_last_render_video_pts_;
 
 	//* 显示缓存
 	rtc::RecursiveCriticalSection	cs_audio_play_;

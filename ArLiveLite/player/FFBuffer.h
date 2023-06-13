@@ -74,7 +74,7 @@ public:
 	void DoClear();
 	void DoTick();
 	bool DoDecodeAudio();
-	bool DoDecodeVideo();
+	bool DoDecodeVideo(bool bBackground);
 	
 	void SetPlaySetting(bool bAuto, int nCacheTime, int nMinCacheTime, int nMaxCacheTime, int nVideoBlockThreshold);
 	void ResetTime();
@@ -90,6 +90,7 @@ public:
 	virtual void OnBufferDecodeAudioData(AVPacket* pkt) {};
 	virtual void OnBufferDecodeVideoData(AVPacket* pkt) {};
 	virtual void OnBufferStatusChanged(PlayStatus playStatus) {};
+	virtual bool OnBufferIsKeyFrame(AVPacket* pkt) { return true; };
 	virtual bool OnBufferGetPuased() { return false; }
 	virtual float OnBufferGetSpeed() { return 1.0; };
 	
@@ -97,6 +98,7 @@ private:
 	PlayStatus	play_status_;			// 当前状态
 	PlayMode	play_mode_;				// 播放的模式
 	bool		b_reset_time_;
+	bool		b_need_keyframe_;		// 视频解码需要关键帧
 	int32_t		n_cacheing_time_;		// 缓冲区时间，如果低于这个时间，就需要从网络库中读取
 	int32_t     n_cache_to_play_time_;	// 缓冲播放时间，开始或卡顿后，必须达到这个时间才能重新播放
 	int32_t		n_cache_to_play_max_;	// 最大的缓冲播放时间

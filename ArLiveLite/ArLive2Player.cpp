@@ -4,7 +4,6 @@
 #include "rtc_base/bind.h"
 #include "rtc_base/time_utils.h"
 
-
 static const size_t kMaxDataSizeSamples = 3840;
 
 
@@ -302,6 +301,7 @@ void ArLive2Player::OnTick()
 	if (ar_player_ != NULL) {
 		ar_player_->RunOnce();
 	}
+
 	PlayBuffer::DoVidRender(b_video_paused_);
 }
 void ArLive2Player::OnTickUnAttach()
@@ -487,6 +487,10 @@ bool ArLive2Player::OnArPlyNeedMoreAudioData(void*player)
 bool ArLive2Player::OnArPlyNeedMoreVideoData(void*player)
 {
 	return PlayBuffer::NeedMoreVideoPlyData();
+}
+bool ArLive2Player::OnArPlyAppIsBackground(void* player)
+{
+	return PlayBuffer::AppIsBackground();
 }
 void ArLive2Player::OnArPlyAudio(void*player, const char*pData, int nSampleHz, int nChannels, int64_t pts)
 {

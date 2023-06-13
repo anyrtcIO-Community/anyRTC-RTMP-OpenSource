@@ -122,6 +122,7 @@ private:
 
 	// Control or logic
 	bool	b_running_;
+	bool	b_app_background_;
 	bool	b_aud_cap_exception_;
 	bool	b_aud_ply_exception_;
 	bool	b_video_preview_;

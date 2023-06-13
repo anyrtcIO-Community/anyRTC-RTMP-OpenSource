@@ -57,6 +57,7 @@ ArLive2Engine::ArLive2Engine(void)
 	: rtc::Thread(rtc::CreateDefaultSocketServer())
 	, observer_(NULL)
 	, b_running_(false)
+	, b_app_background_(false)
 	, b_aud_cap_exception_(false)
 	, b_aud_ply_exception_(false)
 	, b_video_preview_(false)
@@ -208,6 +209,7 @@ void ArLive2Engine::releaseArLivePlayer(AR::IArLivePlayer* player)
 
 void ArLive2Engine::setAppInBackground(bool bBackground)
 {
+	b_app_background_ = bBackground;
 	rtc::CritScope l(&cs_arlive2_player_);
 	MapArLive2Player::iterator itpr = map_arlive2_player_.begin();
 	while (itpr != map_arlive2_player_.end()) {
@@ -307,12 +309,11 @@ void ArLive2Engine::Run()
 			}
 		}
 
-
-		rtc::Thread::SleepMs(1);
 		rtc::Thread::ProcessMessages(1);
 #ifdef WIN32
 		w32_thread.ProcessMessages(1);
 #endif
+		rtc::Thread::SleepMs(1);
 	}
 }
 

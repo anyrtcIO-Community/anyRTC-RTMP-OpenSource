@@ -13,10 +13,6 @@ static const AVRational TIMEBASE_MS = { 1, 1000 };
 #define fftime_to_milliseconds(ts) (av_rescale(ts, 1000, AV_TIME_BASE))
 #define milliseconds_to_fftime(ms) (av_rescale(ms, AV_TIME_BASE, 1000))
 
-
-
-
-
 int16_t WebRtcSpl_MaxAbsValueW16_I(const int16_t* vector, size_t length) {
 	size_t i = 0;
 	int absolute = 0, maximum = 0;
@@ -451,7 +447,7 @@ void ARFFPlayer::RunOnce()
 		}
 	}
 	while (callback_.OnArPlyNeedMoreVideoData(this)) {
-		if (!FFBuffer::DoDecodeVideo()) {
+		if (!FFBuffer::DoDecodeVideo(callback_.OnArPlyAppIsBackground(this))) {
 			break;
 		}
 	}
@@ -744,6 +740,13 @@ void ARFFPlayer::OnBufferStatusChanged(PlayStatus playStatus)
 	else if (playStatus == PS_Playing) {
 		callback_.OnArPlyPlaying(this, user_set_.b_audio_enabled_, user_set_.b_video_enabled_);
 	}
+}
+bool ARFFPlayer::OnBufferIsKeyFrame(AVPacket* pkt)
+{
+	if (pkt->flags & AV_PKT_FLAG_KEY) {
+		return true;
+	}
+	return false;
 }
 bool ARFFPlayer::OnBufferGetPuased()
 {

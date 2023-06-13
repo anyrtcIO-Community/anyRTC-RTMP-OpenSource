@@ -74,6 +74,7 @@ public:
 
 	virtual bool OnArPlyNeedMoreAudioData(void*player);
 	virtual bool OnArPlyNeedMoreVideoData(void*player);
+	virtual bool OnArPlyAppIsBackground(void* player);
 	virtual void OnArPlyAudio(void*player, const char*pData, int nSampleHz, int nChannels, int64_t pts);
 	virtual void OnArPlyVideo(void*player, int fmt, int ww, int hh, uint8_t**pData, int*linesize, int64_t pts);
 	virtual void OnArPlySeiData(void* player, const char* pData, int nLen, int64_t pts);

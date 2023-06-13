@@ -9,6 +9,7 @@ FFBuffer::FFBuffer()
 	: play_status_(PS_Init)
 	, play_mode_(PM_Fluent)
 	, b_reset_time_(false)
+	, b_need_keyframe_(true)
 	, n_cacheing_time_(DFT_CACHEING_TIME)
 	, n_cache_to_play_max_(1000)	
 	, n_cache_to_play_time_(1000)
@@ -283,32 +284,46 @@ void FFBuffer::DoTick()
 
 bool  FFBuffer::DoDecodeAudio()
 {
+	bool bRet = false;
 	rtc::CritScope l(&cs_audio_decode_);
-	while (lst_audio_decode_.size() > 0) {
+	if (lst_audio_decode_.size() > 0) {
 		RecvPacket* audPkt = lst_audio_decode_.front();
 		lst_audio_decode_.pop_front();
 
 		OnBufferDecodeAudioData(audPkt->pkt_);
 		delete audPkt;
 		audPkt = NULL;
-		return true;
+		bRet = true;
 	}
 
-	return false;
+	return bRet;
 }
-bool  FFBuffer::DoDecodeVideo()
+bool  FFBuffer::DoDecodeVideo(bool bBackground)
 {
+	bool bRet = false;
 	rtc::CritScope l(&cs_video_decode_);
-	while (lst_video_decode_.size() > 0) {
+	if (lst_video_decode_.size() > 0) {
 		RecvPacket* vidPkt = lst_video_decode_.front();
 		lst_video_decode_.pop_front();
-		OnBufferDecodeVideoData(vidPkt->pkt_);
+		
+		if (bBackground) {
+			b_need_keyframe_ = true;
+		}
+		else {
+			if (b_need_keyframe_ && OnBufferIsKeyFrame(vidPkt->pkt_)) {
+				b_need_keyframe_ = false;
+			}
+		}
+	
+		if (!b_need_keyframe_ && !bBackground) {
+			OnBufferDecodeVideoData(vidPkt->pkt_);
+		}
 		delete vidPkt;
 		vidPkt = NULL;
-		return true;
+		bRet = true;
 	}
 
-	return false;
+	return bRet;
 }
 
 void FFBuffer::SetPlaySetting(bool bAuto, int nCacheTime, int nMinCacheTime, int nMaxCacheTime, int nVideoBlockThreshold)

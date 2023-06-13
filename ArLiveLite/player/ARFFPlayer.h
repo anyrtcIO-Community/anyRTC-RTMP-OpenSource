@@ -77,6 +77,7 @@ public:
 	virtual void OnBufferDecodeAudioData(AVPacket* pkt);
 	virtual void OnBufferDecodeVideoData(AVPacket* pkt);
 	virtual void OnBufferStatusChanged(PlayStatus playStatus);
+	virtual bool OnBufferIsKeyFrame(AVPacket* pkt);
 	virtual bool OnBufferGetPuased();
 	virtual float OnBufferGetSpeed();
 
