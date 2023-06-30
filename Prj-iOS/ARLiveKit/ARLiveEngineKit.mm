@@ -55,6 +55,9 @@ extern void* GetLiveEngine() {
         if (liveEngine == NULL) {
             liveEngine = anyrtc::createArLive2Engine();
             liveEngine->initialize(nil);
+            
+            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(enterBackground:) name:UIApplicationDidEnterBackgroundNotification object:nil];
+            [NSNotificationCenter.defaultCenter addObserver:self selector:@selector(becomeActive:) name:UIApplicationDidBecomeActiveNotification object:nil];
         } else {
             return nil;
         }
@@ -97,6 +100,20 @@ extern void* GetLiveEngine() {
     /// 析构 ARLivePlayer 对象
     if (liveEngine && player) {
         [player releaseLivePlayer];
+    }
+}
+
+// MARK: - private
+
+- (void)enterBackground:(NSNotification *)notification {
+    if (liveEngine) {
+        liveEngine->setAppInBackground(true);
+    }
+}
+
+- (void)becomeActive:(NSNotification *)notification {
+    if (liveEngine) {
+        liveEngine->setAppInBackground(false);
     }
 }
 

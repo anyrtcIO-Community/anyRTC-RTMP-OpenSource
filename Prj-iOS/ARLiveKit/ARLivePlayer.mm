@@ -122,17 +122,16 @@ class ARLivePlayHandle: public anyrtc::ArLivePlayerObserver {
     
     void onStatisticsUpdate(anyrtc::IArLivePlayer *player, anyrtc::ArLivePlayerStatistics statistics) override {
         /// 直播播放器统计数据回调
+        ARLivePlayerStatistics *playerStatistics = [[ARLivePlayerStatistics alloc] init];
+        playerStatistics.width = statistics.width;
+        playerStatistics.height = statistics.height;
+        playerStatistics.fps = statistics.fps;
+        playerStatistics.videoBitrate = statistics.videoBitrate;
+        playerStatistics.audioBitrate = statistics.audioBitrate;
+        
         void(^functionBlock)() = ^(){
             if (!isDestroy()) {
                 if ([play_delegate_ respondsToSelector:@selector(onStatisticsUpdate:statistics:)]) {
-                    ARLivePlayerStatistics *playerStatistics = [[ARLivePlayerStatistics alloc] init];
-                    playerStatistics.appCpu = statistics.appCpu;
-                    playerStatistics.systemCpu = statistics.systemCpu;
-                    playerStatistics.width = statistics.width;
-                    playerStatistics.height = statistics.height;
-                    playerStatistics.fps = statistics.fps;
-                    playerStatistics.videoBitrate = statistics.videoBitrate;
-                    playerStatistics.audioBitrate = statistics.audioBitrate;
                     [play_delegate_ onStatisticsUpdate:playerKit_ statistics:playerStatistics];
                 }
             }
@@ -161,10 +160,10 @@ class ARLivePlayHandle: public anyrtc::ArLivePlayerObserver {
     
     void onReceiveSeiMessage(anyrtc::IArLivePlayer *player, int payloadType, const uint8_t *data, uint32_t dataSize) override {
         /// 收到 SEI 消息的回调，发送端通过 {@link ArLivePusher} 中的 `sendSeiMessage` 来发送 SEI 消息
+        NSData *seiData = [NSData dataWithBytes:data length:dataSize];
         void(^functionBlock)() = ^(){
             if (!isDestroy()) {
                 if ([play_delegate_ respondsToSelector:@selector(onReceiveSeiMessage:payloadType:data:)]) {
-                    NSData *seiData = [NSData dataWithBytes:data length:dataSize];
                     [play_delegate_ onReceiveSeiMessage:playerKit_ payloadType:payloadType data:seiData];
                 }
             }
@@ -303,16 +302,25 @@ extern void* GetLiveEngine();
 
 - (int)seekTo:(int)seekTimeS {
     /// 跳转进度
+    if (_livePlayer) {
+        return _livePlayer->seekTo(seekTimeS);
+    }
     return -1;
 }
 
 - (int)setSpeed:(CGFloat)speed {
     /// 倍速播放
+    if (_livePlayer) {
+        return _livePlayer->setSpeed(speed);
+    }
     return -1;
 }
 
 - (int)replay {
     /// 重新开始播放。一般用于点播场景
+    if (_livePlayer) {
+        _livePlayer->rePlay();
+    }
     return -1;
 }
 
