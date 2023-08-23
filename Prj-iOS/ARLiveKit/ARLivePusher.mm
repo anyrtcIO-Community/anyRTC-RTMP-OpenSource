@@ -94,16 +94,15 @@ class ARLivePushHandle: public anyrtc::ArLivePusherObserver {
 
     virtual void onStatisticsUpdate(anyrtc::ArLivePusherStatistics statistics) {
         /// 直播推流器统计数据回调
+        ARLivePusherStatistics *playerStatistics = [[ARLivePusherStatistics alloc] init];
+        playerStatistics.width = statistics.width;
+        playerStatistics.height = statistics.height;
+        playerStatistics.fps = statistics.fps;
+        playerStatistics.videoBitrate = statistics.videoBitrate;
+        playerStatistics.audioBitrate = statistics.audioBitrate;
+        
         void(^functionBlock)() = ^(){
             if ([push_delegate_ respondsToSelector:@selector(onStatisticsUpdate:)]) {
-                ARLivePusherStatistics *playerStatistics = [[ARLivePusherStatistics alloc] init];
-                playerStatistics.appCpu = statistics.appCpu;
-                playerStatistics.systemCpu = statistics.systemCpu;
-                playerStatistics.width = statistics.width;
-                playerStatistics.height = statistics.height;
-                playerStatistics.fps = statistics.fps;
-                playerStatistics.videoBitrate = statistics.videoBitrate;
-                playerStatistics.audioBitrate = statistics.audioBitrate;
                 [push_delegate_ onStatisticsUpdate:playerStatistics];
             }
         };
