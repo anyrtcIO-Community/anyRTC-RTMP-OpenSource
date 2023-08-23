@@ -71,6 +71,14 @@ NS_ASSUME_NONNULL_BEGIN
 - (int)stopPlay;
 
 /**
+ * 设置视频播放模式
+ *
+ * @param mode 播放模式，详见 ARLivePlayMode。
+ * @return 0方法调用成功，<0方法调用失败
+ */
+- (int)setPlayMode:(ARLivePlayMode)mode;
+
+/**
  * 播放器是否正在播放中。
  *
  * @return 是否正在播放

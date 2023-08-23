@@ -10,7 +10,6 @@
 		6339F26E278685AA009C2348 /* MgrRender.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1CE278685AA009C2348 /* MgrRender.cpp */; };
 		6339F26F278685AA009C2348 /* ArNetTcpClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1CF278685AA009C2348 /* ArNetTcpClient.cpp */; };
 		6339F270278685AA009C2348 /* RtcTick.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1D3278685AA009C2348 /* RtcTick.cpp */; };
-		6339F271278685AA009C2348 /* ARRtmpPusher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1DF278685AA009C2348 /* ARRtmpPusher.cpp */; };
 		6339F272278685AA009C2348 /* AvCodec.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1F6278685AA009C2348 /* AvCodec.cc */; };
 		6339F273278685AA009C2348 /* aacencode.cc in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1F7278685AA009C2348 /* aacencode.cc */; };
 		6339F274278685AA009C2348 /* url.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1FA278685AA009C2348 /* url.cpp */; };
@@ -18,39 +17,6 @@
 		6339F277278685AA009C2348 /* PlayBuffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1FE278685AA009C2348 /* PlayBuffer.cpp */; };
 		6339F278278685AA009C2348 /* VcmCapturer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F1FF278685AA009C2348 /* VcmCapturer.cpp */; };
 		6339F27A278685AA009C2348 /* ArLive2Player.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F202278685AA009C2348 /* ArLive2Player.cpp */; };
-		6339F27C278685AA009C2348 /* rtmp-netstream.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F219278685AA009C2348 /* rtmp-netstream.c */; };
-		6339F27D278685AA009C2348 /* rtmp-chunk-write.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F21A278685AA009C2348 /* rtmp-chunk-write.c */; };
-		6339F27E278685AA009C2348 /* rtmp-netconnection.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F21B278685AA009C2348 /* rtmp-netconnection.c */; };
-		6339F27F278685AA009C2348 /* rtmp-control-handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F21C278685AA009C2348 /* rtmp-control-handler.c */; };
-		6339F280278685AA009C2348 /* rtmp-client.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F21E278685AA009C2348 /* rtmp-client.c */; };
-		6339F281278685AA009C2348 /* rtmp-event.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F21F278685AA009C2348 /* rtmp-event.c */; };
-		6339F282278685AA009C2348 /* rtmp-handshake.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F220278685AA009C2348 /* rtmp-handshake.c */; };
-		6339F283278685AA009C2348 /* rtmp-handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F221278685AA009C2348 /* rtmp-handler.c */; };
-		6339F284278685AA009C2348 /* rtmp-invoke-handler.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F222278685AA009C2348 /* rtmp-invoke-handler.c */; };
-		6339F285278685AA009C2348 /* rtmp-control-message.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F223278685AA009C2348 /* rtmp-control-message.c */; };
-		6339F286278685AA009C2348 /* rtmp-chunk-header.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F224278685AA009C2348 /* rtmp-chunk-header.c */; };
-		6339F287278685AA009C2348 /* rtmp-chunk-read.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F225278685AA009C2348 /* rtmp-chunk-read.c */; };
-		6339F28B278685AA009C2348 /* aom-av1.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F241278685AA009C2348 /* aom-av1.c */; };
-		6339F28C278685AA009C2348 /* mpeg4-mp4toannexb.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F242278685AA009C2348 /* mpeg4-mp4toannexb.c */; };
-		6339F28D278685AA009C2348 /* mp3-header.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F243278685AA009C2348 /* mp3-header.c */; };
-		6339F28E278685AA009C2348 /* flv-writer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F244278685AA009C2348 /* flv-writer.c */; };
-		6339F28F278685AA009C2348 /* amf0.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F245278685AA009C2348 /* amf0.c */; };
-		6339F290278685AA009C2348 /* mpeg4-aac-asc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F246278685AA009C2348 /* mpeg4-aac-asc.c */; };
-		6339F291278685AA009C2348 /* webm-vpx.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F247278685AA009C2348 /* webm-vpx.c */; };
-		6339F292278685AA009C2348 /* hevc-annexbtomp4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F248278685AA009C2348 /* hevc-annexbtomp4.c */; };
-		6339F293278685AA009C2348 /* mpeg4-hevc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F249278685AA009C2348 /* mpeg4-hevc.c */; };
-		6339F294278685AA009C2348 /* flv-demuxer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F24A278685AA009C2348 /* flv-demuxer.c */; };
-		6339F295278685AA009C2348 /* amf3.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F24B278685AA009C2348 /* amf3.c */; };
-		6339F296278685AA009C2348 /* mpeg4-aac.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F24C278685AA009C2348 /* mpeg4-aac.c */; };
-		6339F297278685AA009C2348 /* flv-reader.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F24D278685AA009C2348 /* flv-reader.c */; };
-		6339F298278685AA009C2348 /* flv-header.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F24E278685AA009C2348 /* flv-header.c */; };
-		6339F299278685AA009C2348 /* flv-demuxer-script.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F24F278685AA009C2348 /* flv-demuxer-script.c */; };
-		6339F29A278685AA009C2348 /* mpeg4-annexbtomp4.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F250278685AA009C2348 /* mpeg4-annexbtomp4.c */; };
-		6339F29B278685AA009C2348 /* flv-parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F251278685AA009C2348 /* flv-parser.c */; };
-		6339F29C278685AA009C2348 /* flv-muxer.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F252278685AA009C2348 /* flv-muxer.c */; };
-		6339F29D278685AA009C2348 /* mpeg4-avc.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F253278685AA009C2348 /* mpeg4-avc.c */; };
-		6339F29E278685AA009C2348 /* opus-head.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F254278685AA009C2348 /* opus-head.c */; };
-		6339F29F278685AA009C2348 /* hevc-mp4toannexb.c in Sources */ = {isa = PBXBuildFile; fileRef = 6339F255278685AA009C2348 /* hevc-mp4toannexb.c */; };
 		6339F2A1278685AA009C2348 /* ArNetClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F25D278685AA009C2348 /* ArNetClient.cpp */; };
 		6339F2A2278685AA009C2348 /* ArLive2Pusher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F261278685AA009C2348 /* ArLive2Pusher.cpp */; };
 		6339F2A3278685AA009C2348 /* ARFFPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6339F266278685AA009C2348 /* ARFFPlayer.cpp */; };
@@ -124,6 +90,8 @@
 		63E6AA8B2704066C009BC628 /* video_renderer.cc in Sources */ = {isa = PBXBuildFile; fileRef = 63E6AA7F2704066C009BC628 /* video_renderer.cc */; };
 		8A275DF127D5B0A800444565 /* ArLive2Engine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A275DF027D5B0A800444565 /* ArLive2Engine.cpp */; };
 		8A275DF327D5B0C300444565 /* PlatformImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8A275DF227D5B0C300444565 /* PlatformImpl.cpp */; };
+		8AE68AF52A95E7AE002069F0 /* ArFFWriter.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AE68AF12A95E7AD002069F0 /* ArFFWriter.cpp */; };
+		8AE68AF62A95E7AE002069F0 /* ARFFPusher.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8AE68AF32A95E7AD002069F0 /* ARFFPusher.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -148,9 +116,7 @@
 		6339F1D3278685AA009C2348 /* RtcTick.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RtcTick.cpp; sourceTree = "<group>"; };
 		6339F1D4278685AA009C2348 /* ArNetTcpClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArNetTcpClient.h; sourceTree = "<group>"; };
 		6339F1DD278685AA009C2348 /* IArVidCodec.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IArVidCodec.h; sourceTree = "<group>"; };
-		6339F1DF278685AA009C2348 /* ARRtmpPusher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ARRtmpPusher.cpp; sourceTree = "<group>"; };
 		6339F1E0278685AA009C2348 /* ARPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARPusher.h; sourceTree = "<group>"; };
-		6339F1E1278685AA009C2348 /* ARRtmpPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARRtmpPusher.h; sourceTree = "<group>"; };
 		6339F1E4278685AA009C2348 /* ArLivePlayerObserver.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ArLivePlayerObserver.hpp; sourceTree = "<group>"; };
 		6339F1E5278685AA009C2348 /* ArMediaBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArMediaBase.h; sourceTree = "<group>"; };
 		6339F1E6278685AA009C2348 /* ArLivePremier.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ArLivePremier.hpp; sourceTree = "<group>"; };
@@ -184,67 +150,6 @@
 		6339F205278685AA009C2348 /* string.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = string.hpp; sourceTree = "<group>"; };
 		6339F206278685AA009C2348 /* IArLive2Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IArLive2Engine.h; sourceTree = "<group>"; };
 		6339F208278685AA009C2348 /* ArLive2Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArLive2Player.h; sourceTree = "<group>"; };
-		6339F20D278685AA009C2348 /* rtmp-server.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-server.h"; sourceTree = "<group>"; };
-		6339F20E278685AA009C2348 /* rtmp-control-message.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-control-message.h"; sourceTree = "<group>"; };
-		6339F20F278685AA009C2348 /* rtmp-handshake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-handshake.h"; sourceTree = "<group>"; };
-		6339F210278685AA009C2348 /* rtmp-msgtypeid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-msgtypeid.h"; sourceTree = "<group>"; };
-		6339F211278685AA009C2348 /* rtmp-internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-internal.h"; sourceTree = "<group>"; };
-		6339F212278685AA009C2348 /* rtmp-chunk-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-chunk-header.h"; sourceTree = "<group>"; };
-		6339F213278685AA009C2348 /* rtmp-util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-util.h"; sourceTree = "<group>"; };
-		6339F214278685AA009C2348 /* rtmp-netconnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-netconnection.h"; sourceTree = "<group>"; };
-		6339F215278685AA009C2348 /* rtmp-netstream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-netstream.h"; sourceTree = "<group>"; };
-		6339F216278685AA009C2348 /* rtmp-event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-event.h"; sourceTree = "<group>"; };
-		6339F217278685AA009C2348 /* rtmp-client.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "rtmp-client.h"; sourceTree = "<group>"; };
-		6339F219278685AA009C2348 /* rtmp-netstream.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-netstream.c"; sourceTree = "<group>"; };
-		6339F21A278685AA009C2348 /* rtmp-chunk-write.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-chunk-write.c"; sourceTree = "<group>"; };
-		6339F21B278685AA009C2348 /* rtmp-netconnection.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-netconnection.c"; sourceTree = "<group>"; };
-		6339F21C278685AA009C2348 /* rtmp-control-handler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-control-handler.c"; sourceTree = "<group>"; };
-		6339F21E278685AA009C2348 /* rtmp-client.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-client.c"; sourceTree = "<group>"; };
-		6339F21F278685AA009C2348 /* rtmp-event.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-event.c"; sourceTree = "<group>"; };
-		6339F220278685AA009C2348 /* rtmp-handshake.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-handshake.c"; sourceTree = "<group>"; };
-		6339F221278685AA009C2348 /* rtmp-handler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-handler.c"; sourceTree = "<group>"; };
-		6339F222278685AA009C2348 /* rtmp-invoke-handler.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-invoke-handler.c"; sourceTree = "<group>"; };
-		6339F223278685AA009C2348 /* rtmp-control-message.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-control-message.c"; sourceTree = "<group>"; };
-		6339F224278685AA009C2348 /* rtmp-chunk-header.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-chunk-header.c"; sourceTree = "<group>"; };
-		6339F225278685AA009C2348 /* rtmp-chunk-read.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "rtmp-chunk-read.c"; sourceTree = "<group>"; };
-		6339F22F278685AA009C2348 /* flv-reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flv-reader.h"; sourceTree = "<group>"; };
-		6339F230278685AA009C2348 /* mpeg4-bits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mpeg4-bits.h"; sourceTree = "<group>"; };
-		6339F231278685AA009C2348 /* mpeg4-aac.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mpeg4-aac.h"; sourceTree = "<group>"; };
-		6339F232278685AA009C2348 /* flv-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flv-header.h"; sourceTree = "<group>"; };
-		6339F233278685AA009C2348 /* flv-proto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flv-proto.h"; sourceTree = "<group>"; };
-		6339F234278685AA009C2348 /* flv-parser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flv-parser.h"; sourceTree = "<group>"; };
-		6339F235278685AA009C2348 /* flv-muxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flv-muxer.h"; sourceTree = "<group>"; };
-		6339F236278685AA009C2348 /* opus-head.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "opus-head.h"; sourceTree = "<group>"; };
-		6339F237278685AA009C2348 /* mpeg4-avc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mpeg4-avc.h"; sourceTree = "<group>"; };
-		6339F238278685AA009C2348 /* aom-av1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "aom-av1.h"; sourceTree = "<group>"; };
-		6339F239278685AA009C2348 /* amf0.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amf0.h; sourceTree = "<group>"; };
-		6339F23A278685AA009C2348 /* flv-writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flv-writer.h"; sourceTree = "<group>"; };
-		6339F23B278685AA009C2348 /* mp3-header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mp3-header.h"; sourceTree = "<group>"; };
-		6339F23C278685AA009C2348 /* webm-vpx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "webm-vpx.h"; sourceTree = "<group>"; };
-		6339F23D278685AA009C2348 /* mpeg4-hevc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "mpeg4-hevc.h"; sourceTree = "<group>"; };
-		6339F23E278685AA009C2348 /* amf3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = amf3.h; sourceTree = "<group>"; };
-		6339F23F278685AA009C2348 /* flv-demuxer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "flv-demuxer.h"; sourceTree = "<group>"; };
-		6339F241278685AA009C2348 /* aom-av1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "aom-av1.c"; sourceTree = "<group>"; };
-		6339F242278685AA009C2348 /* mpeg4-mp4toannexb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mpeg4-mp4toannexb.c"; sourceTree = "<group>"; };
-		6339F243278685AA009C2348 /* mp3-header.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mp3-header.c"; sourceTree = "<group>"; };
-		6339F244278685AA009C2348 /* flv-writer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "flv-writer.c"; sourceTree = "<group>"; };
-		6339F245278685AA009C2348 /* amf0.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amf0.c; sourceTree = "<group>"; };
-		6339F246278685AA009C2348 /* mpeg4-aac-asc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mpeg4-aac-asc.c"; sourceTree = "<group>"; };
-		6339F247278685AA009C2348 /* webm-vpx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "webm-vpx.c"; sourceTree = "<group>"; };
-		6339F248278685AA009C2348 /* hevc-annexbtomp4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "hevc-annexbtomp4.c"; sourceTree = "<group>"; };
-		6339F249278685AA009C2348 /* mpeg4-hevc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mpeg4-hevc.c"; sourceTree = "<group>"; };
-		6339F24A278685AA009C2348 /* flv-demuxer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "flv-demuxer.c"; sourceTree = "<group>"; };
-		6339F24B278685AA009C2348 /* amf3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = amf3.c; sourceTree = "<group>"; };
-		6339F24C278685AA009C2348 /* mpeg4-aac.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mpeg4-aac.c"; sourceTree = "<group>"; };
-		6339F24D278685AA009C2348 /* flv-reader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "flv-reader.c"; sourceTree = "<group>"; };
-		6339F24E278685AA009C2348 /* flv-header.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "flv-header.c"; sourceTree = "<group>"; };
-		6339F24F278685AA009C2348 /* flv-demuxer-script.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "flv-demuxer-script.c"; sourceTree = "<group>"; };
-		6339F250278685AA009C2348 /* mpeg4-annexbtomp4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mpeg4-annexbtomp4.c"; sourceTree = "<group>"; };
-		6339F251278685AA009C2348 /* flv-parser.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "flv-parser.c"; sourceTree = "<group>"; };
-		6339F252278685AA009C2348 /* flv-muxer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "flv-muxer.c"; sourceTree = "<group>"; };
-		6339F253278685AA009C2348 /* mpeg4-avc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "mpeg4-avc.c"; sourceTree = "<group>"; };
-		6339F254278685AA009C2348 /* opus-head.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "opus-head.c"; sourceTree = "<group>"; };
-		6339F255278685AA009C2348 /* hevc-mp4toannexb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "hevc-mp4toannexb.c"; sourceTree = "<group>"; };
 		6339F257278685AA009C2348 /* VidDeviceEvent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VidDeviceEvent.h; sourceTree = "<group>"; };
 		6339F258278685AA009C2348 /* ArLive2Engine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArLive2Engine.h; sourceTree = "<group>"; };
 		6339F25A278685AA009C2348 /* ARDef.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARDef.h; sourceTree = "<group>"; };
@@ -381,6 +286,11 @@
 		63E6AA92270408F1009BC628 /* RTCVideoRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RTCVideoRender.h; sourceTree = "<group>"; };
 		8A275DF027D5B0A800444565 /* ArLive2Engine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArLive2Engine.cpp; sourceTree = "<group>"; };
 		8A275DF227D5B0C300444565 /* PlatformImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PlatformImpl.cpp; sourceTree = "<group>"; };
+		8AE68AF02A95E7AD002069F0 /* ByteOder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ByteOder.h; sourceTree = "<group>"; };
+		8AE68AF12A95E7AD002069F0 /* ArFFWriter.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ArFFWriter.cpp; sourceTree = "<group>"; };
+		8AE68AF22A95E7AD002069F0 /* ARFFPusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARFFPusher.h; sourceTree = "<group>"; };
+		8AE68AF32A95E7AD002069F0 /* ARFFPusher.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ARFFPusher.cpp; sourceTree = "<group>"; };
+		8AE68AF42A95E7AD002069F0 /* ArWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ArWriter.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -430,7 +340,6 @@
 				6339F1DE278685AA009C2348 /* pusher */,
 				6339F1D3278685AA009C2348 /* RtcTick.cpp */,
 				6339F26C278685AA009C2348 /* RtcTick.h */,
-				6339F209278685AA009C2348 /* rtmp */,
 				6339F205278685AA009C2348 /* string.hpp */,
 				6339F1FA278685AA009C2348 /* url.cpp */,
 				6339F204278685AA009C2348 /* url.hpp */,
@@ -447,9 +356,12 @@
 		6339F1DE278685AA009C2348 /* pusher */ = {
 			isa = PBXGroup;
 			children = (
+				8AE68AF32A95E7AD002069F0 /* ARFFPusher.cpp */,
+				8AE68AF22A95E7AD002069F0 /* ARFFPusher.h */,
+				8AE68AF12A95E7AD002069F0 /* ArFFWriter.cpp */,
+				8AE68AF42A95E7AD002069F0 /* ArWriter.h */,
+				8AE68AF02A95E7AD002069F0 /* ByteOder.h */,
 				6339F1E0278685AA009C2348 /* ARPusher.h */,
-				6339F1DF278685AA009C2348 /* ARRtmpPusher.cpp */,
-				6339F1E1278685AA009C2348 /* ARRtmpPusher.h */,
 			);
 			path = pusher;
 			sourceTree = "<group>";
@@ -487,122 +399,6 @@
 				6339F1F8278685AA009C2348 /* pluginaac.h */,
 			);
 			path = codec;
-			sourceTree = "<group>";
-		};
-		6339F209278685AA009C2348 /* rtmp */ = {
-			isa = PBXGroup;
-			children = (
-				6339F22D278685AA009C2348 /* libflv */,
-				6339F20B278685AA009C2348 /* librtmp */,
-			);
-			path = rtmp;
-			sourceTree = "<group>";
-		};
-		6339F20B278685AA009C2348 /* librtmp */ = {
-			isa = PBXGroup;
-			children = (
-				6339F20C278685AA009C2348 /* include */,
-				6339F218278685AA009C2348 /* source */,
-			);
-			path = librtmp;
-			sourceTree = "<group>";
-		};
-		6339F20C278685AA009C2348 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				6339F212278685AA009C2348 /* rtmp-chunk-header.h */,
-				6339F217278685AA009C2348 /* rtmp-client.h */,
-				6339F20E278685AA009C2348 /* rtmp-control-message.h */,
-				6339F216278685AA009C2348 /* rtmp-event.h */,
-				6339F20F278685AA009C2348 /* rtmp-handshake.h */,
-				6339F211278685AA009C2348 /* rtmp-internal.h */,
-				6339F210278685AA009C2348 /* rtmp-msgtypeid.h */,
-				6339F214278685AA009C2348 /* rtmp-netconnection.h */,
-				6339F215278685AA009C2348 /* rtmp-netstream.h */,
-				6339F20D278685AA009C2348 /* rtmp-server.h */,
-				6339F213278685AA009C2348 /* rtmp-util.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		6339F218278685AA009C2348 /* source */ = {
-			isa = PBXGroup;
-			children = (
-				6339F224278685AA009C2348 /* rtmp-chunk-header.c */,
-				6339F225278685AA009C2348 /* rtmp-chunk-read.c */,
-				6339F21A278685AA009C2348 /* rtmp-chunk-write.c */,
-				6339F21E278685AA009C2348 /* rtmp-client.c */,
-				6339F21C278685AA009C2348 /* rtmp-control-handler.c */,
-				6339F223278685AA009C2348 /* rtmp-control-message.c */,
-				6339F21F278685AA009C2348 /* rtmp-event.c */,
-				6339F221278685AA009C2348 /* rtmp-handler.c */,
-				6339F220278685AA009C2348 /* rtmp-handshake.c */,
-				6339F222278685AA009C2348 /* rtmp-invoke-handler.c */,
-				6339F21B278685AA009C2348 /* rtmp-netconnection.c */,
-				6339F219278685AA009C2348 /* rtmp-netstream.c */,
-			);
-			path = source;
-			sourceTree = "<group>";
-		};
-		6339F22D278685AA009C2348 /* libflv */ = {
-			isa = PBXGroup;
-			children = (
-				6339F22E278685AA009C2348 /* include */,
-				6339F240278685AA009C2348 /* source */,
-			);
-			path = libflv;
-			sourceTree = "<group>";
-		};
-		6339F22E278685AA009C2348 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				6339F239278685AA009C2348 /* amf0.h */,
-				6339F23E278685AA009C2348 /* amf3.h */,
-				6339F238278685AA009C2348 /* aom-av1.h */,
-				6339F23F278685AA009C2348 /* flv-demuxer.h */,
-				6339F232278685AA009C2348 /* flv-header.h */,
-				6339F235278685AA009C2348 /* flv-muxer.h */,
-				6339F234278685AA009C2348 /* flv-parser.h */,
-				6339F233278685AA009C2348 /* flv-proto.h */,
-				6339F22F278685AA009C2348 /* flv-reader.h */,
-				6339F23A278685AA009C2348 /* flv-writer.h */,
-				6339F23B278685AA009C2348 /* mp3-header.h */,
-				6339F231278685AA009C2348 /* mpeg4-aac.h */,
-				6339F237278685AA009C2348 /* mpeg4-avc.h */,
-				6339F230278685AA009C2348 /* mpeg4-bits.h */,
-				6339F23D278685AA009C2348 /* mpeg4-hevc.h */,
-				6339F236278685AA009C2348 /* opus-head.h */,
-				6339F23C278685AA009C2348 /* webm-vpx.h */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		6339F240278685AA009C2348 /* source */ = {
-			isa = PBXGroup;
-			children = (
-				6339F245278685AA009C2348 /* amf0.c */,
-				6339F24B278685AA009C2348 /* amf3.c */,
-				6339F241278685AA009C2348 /* aom-av1.c */,
-				6339F24F278685AA009C2348 /* flv-demuxer-script.c */,
-				6339F24A278685AA009C2348 /* flv-demuxer.c */,
-				6339F24E278685AA009C2348 /* flv-header.c */,
-				6339F252278685AA009C2348 /* flv-muxer.c */,
-				6339F251278685AA009C2348 /* flv-parser.c */,
-				6339F24D278685AA009C2348 /* flv-reader.c */,
-				6339F244278685AA009C2348 /* flv-writer.c */,
-				6339F248278685AA009C2348 /* hevc-annexbtomp4.c */,
-				6339F255278685AA009C2348 /* hevc-mp4toannexb.c */,
-				6339F243278685AA009C2348 /* mp3-header.c */,
-				6339F246278685AA009C2348 /* mpeg4-aac-asc.c */,
-				6339F24C278685AA009C2348 /* mpeg4-aac.c */,
-				6339F250278685AA009C2348 /* mpeg4-annexbtomp4.c */,
-				6339F253278685AA009C2348 /* mpeg4-avc.c */,
-				6339F249278685AA009C2348 /* mpeg4-hevc.c */,
-				6339F242278685AA009C2348 /* mpeg4-mp4toannexb.c */,
-				6339F254278685AA009C2348 /* opus-head.c */,
-				6339F247278685AA009C2348 /* webm-vpx.c */,
-			);
-			path = source;
 			sourceTree = "<group>";
 		};
 		6339F264278685AA009C2348 /* player */ = {
@@ -897,10 +693,7 @@
 				6384B31026F6212700B2DF00 /* cpu_id.cc in Sources */,
 				6384B33326F6212700B2DF00 /* convert_to_i420.cc in Sources */,
 				6384B30B26F6212700B2DF00 /* rotate.cc in Sources */,
-				6339F29F278685AA009C2348 /* hevc-mp4toannexb.c in Sources */,
-				6339F28E278685AA009C2348 /* flv-writer.c in Sources */,
 				8A275DF327D5B0C300444565 /* PlatformImpl.cpp in Sources */,
-				6339F27E278685AA009C2348 /* rtmp-netconnection.c in Sources */,
 				6339F26F278685AA009C2348 /* ArNetTcpClient.cpp in Sources */,
 				6384B31426F6212700B2DF00 /* rotate_neon64.cc in Sources */,
 				6384B32A26F6212700B2DF00 /* scale_neon64.cc in Sources */,
@@ -908,21 +701,15 @@
 				6384B33426F6212700B2DF00 /* row_gcc.cc in Sources */,
 				6384B43126F6235900B2DF00 /* kiss_fft.c in Sources */,
 				6384B43426F6235900B2DF00 /* backpred.c in Sources */,
-				6339F29B278685AA009C2348 /* flv-parser.c in Sources */,
+				8AE68AF52A95E7AE002069F0 /* ArFFWriter.cpp in Sources */,
 				6384B30A26F6212700B2DF00 /* rotate_any.cc in Sources */,
 				6384B42B26F6235900B2DF00 /* aacquant.c in Sources */,
-				6339F294278685AA009C2348 /* flv-demuxer.c in Sources */,
-				6339F29C278685AA009C2348 /* flv-muxer.c in Sources */,
-				6339F284278685AA009C2348 /* rtmp-invoke-handler.c in Sources */,
 				6384B31526F6212700B2DF00 /* scale.cc in Sources */,
 				6384B33526F6212700B2DF00 /* rotate_argb.cc in Sources */,
-				6339F27F278685AA009C2348 /* rtmp-control-handler.c in Sources */,
 				6384B33126F6212700B2DF00 /* video_common.cc in Sources */,
 				6384B31226F6212700B2DF00 /* mjpeg_decoder.cc in Sources */,
-				6339F290278685AA009C2348 /* mpeg4-aac-asc.c in Sources */,
 				6384B33626F6212700B2DF00 /* compare_gcc.cc in Sources */,
 				6339F272278685AA009C2348 /* AvCodec.cc in Sources */,
-				6339F281278685AA009C2348 /* rtmp-event.c in Sources */,
 				6384B42926F6235900B2DF00 /* util.c in Sources */,
 				6384B42826F6235900B2DF00 /* psychkni.c in Sources */,
 				6339F2A3278685AA009C2348 /* ARFFPlayer.cpp in Sources */,
@@ -933,12 +720,10 @@
 				6384B42726F6235900B2DF00 /* ltp.c in Sources */,
 				6339F277278685AA009C2348 /* PlayBuffer.cpp in Sources */,
 				6384B31C26F6212700B2DF00 /* convert_argb.cc in Sources */,
-				6339F29D278685AA009C2348 /* mpeg4-avc.c in Sources */,
 				8A275DF127D5B0A800444565 /* ArLive2Engine.cpp in Sources */,
 				6384B33726F6212700B2DF00 /* compare_neon64.cc in Sources */,
 				6384B31326F6212700B2DF00 /* row_neon.cc in Sources */,
 				6384B32B26F6212700B2DF00 /* mjpeg_validate.cc in Sources */,
-				6339F296278685AA009C2348 /* mpeg4-aac.c in Sources */,
 				6339F2A1278685AA009C2348 /* ArNetClient.cpp in Sources */,
 				6384B42F26F6235900B2DF00 /* channels.c in Sources */,
 				6384B31D26F6212700B2DF00 /* row_common.cc in Sources */,
@@ -948,68 +733,47 @@
 				6384B32E26F6212700B2DF00 /* rotate_msa.cc in Sources */,
 				6384B42E26F6235900B2DF00 /* huffman.c in Sources */,
 				6384B30826F6212700B2DF00 /* compare_mmi.cc in Sources */,
-				6339F28F278685AA009C2348 /* amf0.c in Sources */,
 				6384B43026F6235900B2DF00 /* fft.c in Sources */,
-				6339F27D278685AA009C2348 /* rtmp-chunk-write.c in Sources */,
 				6384B42A26F6235900B2DF00 /* midside.c in Sources */,
 				6384B43226F6235900B2DF00 /* kiss_fftr.c in Sources */,
 				6384B31A26F6212700B2DF00 /* planar_functions.cc in Sources */,
-				6339F27C278685AA009C2348 /* rtmp-netstream.c in Sources */,
 				6384B43326F6235900B2DF00 /* frame.c in Sources */,
 				6339F2A5278685AA009C2348 /* FFBuffer.cpp in Sources */,
-				6339F280278685AA009C2348 /* rtmp-client.c in Sources */,
 				6384B31E26F6212700B2DF00 /* scale_any.cc in Sources */,
-				6339F295278685AA009C2348 /* amf3.c in Sources */,
 				6384B33826F6212700B2DF00 /* scale_argb.cc in Sources */,
 				6339F2A2278685AA009C2348 /* ArLive2Pusher.cpp in Sources */,
 				6339F2B127868AB9009C2348 /* IosRenderer.mm in Sources */,
 				6339F273278685AA009C2348 /* aacencode.cc in Sources */,
-				6339F286278685AA009C2348 /* rtmp-chunk-header.c in Sources */,
 				6384B32326F6212700B2DF00 /* rotate_mmi.cc in Sources */,
 				6384B31826F6212700B2DF00 /* convert_from_argb.cc in Sources */,
 				6339F2AE27868A72009C2348 /* ObjcNetWorkManager.mm in Sources */,
 				6384B33026F6212700B2DF00 /* rotate_neon.cc in Sources */,
 				6339F2AD27868A72009C2348 /* ArHttpClientiOS.mm in Sources */,
 				6384B32D26F6212700B2DF00 /* compare_common.cc in Sources */,
-				6339F285278685AA009C2348 /* rtmp-control-message.c in Sources */,
 				6384B32226F6212700B2DF00 /* scale_common.cc in Sources */,
 				6384B30E26F6212700B2DF00 /* convert_jpeg.cc in Sources */,
-				6339F29E278685AA009C2348 /* opus-head.c in Sources */,
 				6339F27A278685AA009C2348 /* ArLive2Player.cpp in Sources */,
 				6384B31F26F6212700B2DF00 /* rotate_gcc.cc in Sources */,
-				6339F28B278685AA009C2348 /* aom-av1.c in Sources */,
 				6384B31B26F6212700B2DF00 /* row_msa.cc in Sources */,
 				6384B32926F6212700B2DF00 /* scale_msa.cc in Sources */,
 				6384B33226F6212700B2DF00 /* scale_mmi.cc in Sources */,
 				6339F270278685AA009C2348 /* RtcTick.cpp in Sources */,
-				6339F28D278685AA009C2348 /* mp3-header.c in Sources */,
 				6384B32026F6212700B2DF00 /* convert.cc in Sources */,
 				63E6AA8B2704066C009BC628 /* video_renderer.cc in Sources */,
 				6384B31926F6212700B2DF00 /* compare_msa.cc in Sources */,
 				6384B32526F6212700B2DF00 /* scale_uv.cc in Sources */,
-				6339F283278685AA009C2348 /* rtmp-handler.c in Sources */,
 				6384B32726F6212700B2DF00 /* compare_neon.cc in Sources */,
 				6384B30926F6212700B2DF00 /* rotate_common.cc in Sources */,
 				6384B42D26F6235900B2DF00 /* filtbank.c in Sources */,
+				8AE68AF62A95E7AE002069F0 /* ARFFPusher.cpp in Sources */,
 				6339F278278685AA009C2348 /* VcmCapturer.cpp in Sources */,
 				6384B30C26F6212700B2DF00 /* row_mmi.cc in Sources */,
 				6384B32426F6212700B2DF00 /* row_any.cc in Sources */,
 				6384B31626F6212700B2DF00 /* compare.cc in Sources */,
-				6339F298278685AA009C2348 /* flv-header.c in Sources */,
 				6384B32F26F6212700B2DF00 /* scale_neon.cc in Sources */,
-				6339F287278685AA009C2348 /* rtmp-chunk-read.c in Sources */,
-				6339F293278685AA009C2348 /* mpeg4-hevc.c in Sources */,
-				6339F29A278685AA009C2348 /* mpeg4-annexbtomp4.c in Sources */,
-				6339F299278685AA009C2348 /* flv-demuxer-script.c in Sources */,
 				6339F26E278685AA009C2348 /* MgrRender.cpp in Sources */,
 				6339F275278685AA009C2348 /* WinVideoTrackSource.cpp in Sources */,
-				6339F292278685AA009C2348 /* hevc-annexbtomp4.c in Sources */,
-				6339F297278685AA009C2348 /* flv-reader.c in Sources */,
-				6339F28C278685AA009C2348 /* mpeg4-mp4toannexb.c in Sources */,
-				6339F291278685AA009C2348 /* webm-vpx.c in Sources */,
 				6339F274278685AA009C2348 /* url.cpp in Sources */,
-				6339F282278685AA009C2348 /* rtmp-handshake.c in Sources */,
-				6339F271278685AA009C2348 /* ARRtmpPusher.cpp in Sources */,
 				6384B42C26F6235900B2DF00 /* tns.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

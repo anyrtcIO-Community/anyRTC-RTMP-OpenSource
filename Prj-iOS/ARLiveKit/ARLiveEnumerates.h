@@ -365,6 +365,18 @@ typedef NS_ENUM(NSInteger, ARLiveVideoScaleMode) {
     ARLiveVideoScaleModeAuto
 };
 
+/**
+ * @brief 视频播放模式。
+ */
+typedef NS_ENUM(NSInteger, ARLivePlayMode) {
+    
+    /// 直播模式 - 暂停的过程中，数据会丢失，保证实时性
+    ARLivePlayModeLive,
+
+    /// 点播模式 - 暂停的过程中，数据不会丢失，恢复后会继续播放
+    ARLivePlayModeVod
+};
+
 
 
 #endif /* ARLiveEnumerates_h */
