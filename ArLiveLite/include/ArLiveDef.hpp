@@ -428,6 +428,19 @@ enum ArLiveFillMode {
 };
 
 /**
+ * @brief 视频播放模式。
+ */
+enum ArLivePlayMode {
+
+    /// 直播模式 - 暂停的过程中，数据会丢失，保证实时性
+    ArLivePlayModeLive,
+
+    /// 点播模式 - 暂停的过程中，数据不会丢失，恢复后会继续播放
+    ArLivePlayModeVod
+
+};
+
+/**
  * @brief 视频画面顺时针旋转角度。
  */
 enum ArLiveRotation {

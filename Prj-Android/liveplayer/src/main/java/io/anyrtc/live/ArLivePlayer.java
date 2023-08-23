@@ -176,6 +176,18 @@ public abstract class ArLivePlayer {
      */
     public abstract int enableReceiveSeiMessage(boolean enable, int payloadType);
 
+
+    /**
+     * 设置播放模式。
+     *
+     * @param mode 播放模式 {@link ArLiveDef.ArLivePlayMode}。
+     *         - ArLivePlayModeLive 【默认值】: 直播模式 - 暂停的过程中，数据会丢失，保证实时性
+     *         - ArLivePlayModeVod: 点播模式 - 暂停的过程中，数据不会丢失，恢复后会继续播放
+     * @return 返回值 {@link ArLiveCode}
+     *         - ArLIVE_OK: 成功
+     */
+    public abstract int setPlayMode(ArLiveDef.ArLivePlayMode mode);
+
 //    public abstract void showDebugView(boolean var1);
 
 

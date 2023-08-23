@@ -175,6 +175,12 @@ public class ArLivePlayerImpl extends ArLivePlayer {
         return nativeInstance.nativeEnableReceiveSeiMessage(nativeId,var1,payloadType);
     }
 
+    @Override
+    public int setPlayMode(ArLiveDef.ArLivePlayMode mode) {
+        return nativeInstance.nativeSetPlayMode(nativeId,mode.ordinal());
+    }
+
+
 //    @Override
 //    public void showDebugView(boolean isShow) {
 //        nativeInstance.nativeShowDebugView(nativeId,isShow);

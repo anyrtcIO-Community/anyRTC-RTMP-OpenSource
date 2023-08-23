@@ -70,6 +70,7 @@ class PushActivity : BaseActivity() {
                 .build()
             binding.ivGif.load("https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F60ed9921abb8a968651aae697626dc816624cc4770c32-uwUmhP_fw658&refer=http%3A%2F%2Fhbimg.b0.upaiyun.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=jpeg?sec=1645166781&t=ff39058ea3e782746361d8b2bea68511",imageLoader)
             pusher.startScreenCapture()
+	        pusher.startMicrophone()
             pusher.startPush(pushUrl)
         }else{//自定义音视频采集
             pusher.enableCustomAudioCapture(true)

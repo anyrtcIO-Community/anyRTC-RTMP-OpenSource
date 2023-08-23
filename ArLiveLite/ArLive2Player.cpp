@@ -17,6 +17,7 @@ ArLive2Player::ArLive2Player(ArLive2Engine*pEngine, const std::string& strPlayId
 	, b_shutdown_(false)
 	, b_audio_paused_(false)
 	, b_video_paused_(false)
+	, e_play_mode_(AR::ArLivePlayModeLive)
 	, n_sei_payload_type_(0)
 	, n_rgba_width_(0)
 	, n_rgba_height_(0)
@@ -51,9 +52,6 @@ void ArLive2Player::setObserver(AR::ArLivePlayerObserver* observer)
 {
 	observer_ = observer;
 }
-void ArLive2Player::setLiveOem(AR::ArLiveOem oem)
-{
-}
 int32_t ArLive2Player::setRenderView(void* view)
 {
     AR::VideoCanvas vidCanvas;
@@ -71,6 +69,14 @@ int32_t ArLive2Player::setRenderRotation(AR::ArLiveRotation rotation)
 int32_t ArLive2Player::setRenderFillMode(AR::ArLiveFillMode mode)
 {
 	ar_engine_->setVideoRenderFillMode(str_local_play_id_.c_str(), mode);
+	return AR::ArLIVE_OK;
+}
+int32_t ArLive2Player::setPlayMode(AR::ArLivePlayMode mode)
+{
+	if (ar_player_ != NULL) {
+		return AR::ArLIVE_ERROR_REFUSED;
+	}
+	e_play_mode_ = mode;
 	return AR::ArLIVE_OK;
 }
 int32_t ArLive2Player::startPlay(const char* strPlayUrl)
@@ -308,7 +314,6 @@ void ArLive2Player::OnTickUnAttach()
 {
 
 }
-
 //* For PlayBuffer
 void ArLive2Player::OnBufferVideoRender(VideoData *videoData, int64_t pts)
 {
@@ -405,6 +410,10 @@ void ArLive2Player::OnFirstAudioDecoded()
 int ArLive2Player::MixAudioData(bool mix, void* audioSamples, uint32_t samplesPerSec, int nChannels)
 {
 	if (b_audio_paused_ && b_video_paused_) {
+		if (e_play_mode_ == AR::ArLivePlayModeLive) {//@Eric - 如果是直播，保持播放进度
+			char pMixData[1920];
+			PlayBuffer::DoAudRender(false, pMixData, samplesPerSec, nChannels, true);
+		}
 		return 0;
 	}
 	return PlayBuffer::DoAudRender(mix, audioSamples, samplesPerSec, nChannels, b_audio_paused_);
@@ -491,6 +500,11 @@ bool ArLive2Player::OnArPlyNeedMoreVideoData(void*player)
 bool ArLive2Player::OnArPlyAppIsBackground(void* player)
 {
 	return PlayBuffer::AppIsBackground();
+}
+
+bool ArLive2Player::OnArPlyIsLiveMode(void* player)
+{
+	return e_play_mode_ == AR::ArLivePlayModeLive;
 }
 void ArLive2Player::OnArPlyAudio(void*player, const char*pData, int nSampleHz, int nChannels, int64_t pts)
 {

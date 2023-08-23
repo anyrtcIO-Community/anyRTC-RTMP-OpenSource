@@ -70,6 +70,8 @@ public class NativeInstance {
 
     protected native void nativeShowDebugView(long nativePtr, boolean isShow);
 
+    protected native int nativeSetPlayMode(long nativePtr,int mode);
+
     protected native void nativePlayKitRelease(long nativePtr);
 
     //pusher

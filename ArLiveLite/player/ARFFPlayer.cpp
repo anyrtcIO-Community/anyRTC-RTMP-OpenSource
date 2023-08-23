@@ -342,26 +342,26 @@ bool ARFFPlayer::ReadThreadProcess()
 				if (ret >= 0) {
 					n_last_recv_data_time_ = rtc::Time32();
 					if (packet->stream_index == n_video_stream_idx_) {
-						int64_t pts = 0;
 						n_net_vid_band_ += packet->size;
-						if (packet->flags & AV_PKT_FLAG_KEY) {
-
-						}
-						if (packet->dts != 0) {
-							if (packet->dts == AV_NOPTS_VALUE) {
-								pts = 0;
-							}
-							else {
-								pts = av_rescale_q(packet->dts, vstream_timebase_, TIMEBASE_MS);
-							}
+						int64_t pts = 0;
+						int64_t dts = 0;
+						if (packet->dts == AV_NOPTS_VALUE) {
+							dts = 0;
 						}
 						else {
-							if (packet->pts == AV_NOPTS_VALUE) {
-								pts = 0;
-							}
-							else {
-								pts = av_rescale_q(packet->pts, vstream_timebase_, TIMEBASE_MS);
-							}
+							dts = av_rescale_q(packet->dts, astream_timebase_, TIMEBASE_MS);
+						}
+						if (packet->pts == AV_NOPTS_VALUE) {
+							pts = 0;
+						}
+						else {
+							pts = av_rescale_q(packet->pts, astream_timebase_, TIMEBASE_MS);
+						}
+						if (dts == 0 && pts != 0) {
+							dts = pts;
+						}
+						if (pts == 0 && dts != 0) {
+							pts = dts;
 						}
 						if (b_no_buffer_) {
 							OnBufferDecodeVideoData(packet);
@@ -369,27 +369,30 @@ bool ARFFPlayer::ReadThreadProcess()
 							delete packet;
 						}
 						else {
-							FFBuffer::RecvVideoData(packet, pts, pts, av_rescale_q(packet->duration, vstream_timebase_, TIMEBASE_MS));
+							FFBuffer::RecvVideoData(packet, dts, pts, av_rescale_q(packet->duration, vstream_timebase_, TIMEBASE_MS));
 						}
 					}
 					else if (packet->stream_index == n_audio_stream_idx_) {
-						int64_t pts = 0;
 						n_net_aud_band_ += packet->size;
-						if (packet->dts != 0) {
-							if (packet->dts == AV_NOPTS_VALUE) {
-								pts = 0;
-							}
-							else {
-								pts = av_rescale_q(packet->dts, astream_timebase_, TIMEBASE_MS);
-							}
+						int64_t pts = 0;
+						int64_t dts = 0;
+						if (packet->dts == AV_NOPTS_VALUE) {
+							dts = 0;
 						}
 						else {
-							if (packet->pts == AV_NOPTS_VALUE) {
-								pts = 0;
-							}
-							else {
-								pts = av_rescale_q(packet->pts, astream_timebase_, TIMEBASE_MS);
-							}
+							dts = av_rescale_q(packet->dts, astream_timebase_, TIMEBASE_MS);
+						}
+						if (packet->pts == AV_NOPTS_VALUE) {
+							pts = 0;
+						}
+						else {
+							pts = av_rescale_q(packet->pts, astream_timebase_, TIMEBASE_MS);
+						}
+						if (dts == 0 && pts != 0) {
+							dts = pts;
+						}
+						if (pts == 0 && dts != 0) {
+							pts = dts;
 						}
 						if (b_no_buffer_) {
 							OnBufferDecodeAudioData(packet);
@@ -397,7 +400,7 @@ bool ARFFPlayer::ReadThreadProcess()
 							delete packet;
 						}
 						else {
-							FFBuffer::RecvAudioData(packet, pts, pts, av_rescale_q(packet->duration, astream_timebase_, TIMEBASE_MS));
+							FFBuffer::RecvAudioData(packet, dts, pts, av_rescale_q(packet->duration, astream_timebase_, TIMEBASE_MS));
 						}
 					}
 				}

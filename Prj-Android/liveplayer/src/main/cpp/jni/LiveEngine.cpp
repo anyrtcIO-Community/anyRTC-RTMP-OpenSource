@@ -633,6 +633,19 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeEnableReceiveSeiMessage(JNIEnv
     return (jint)result;
 }
 
+JNIEXPORT jint JNICALL
+Java_io_anyrtc_live_internal_NativeInstance_nativeSetPlayMode(JNIEnv *env, jobject thiz,jlong nativeHandle,jint mode
+) {
+    jint result = -1;
+    IArLivePlayer* arLivePlayKit = reinterpret_cast<IArLivePlayer *>(nativeHandle);
+    if (arLivePlayKit != NULL){
+        result = arLivePlayKit->setPlayMode(static_cast<ArLivePlayMode>(mode));
+    }
+    return (jint)result;
+}
+
+
+
 JNIEXPORT void JNICALL
 Java_io_anyrtc_live_internal_NativeInstance_nativeShowDebugView(JNIEnv *env, jobject thiz,jlong nativeHandle,jboolean isShow
 ) {

@@ -804,11 +804,13 @@ void ArLive2Pusher::RecordedDataIsAvailable(const void* audioSamples, const size
 		while (nAudUsed + nAud10msLen <= nSamples) {
 			const void* ptr = (char*)audioSamples + nAudUsed*nChannels*sizeof(short);
 			if (b_audio_paused_) {
+#if 0
 				char muteAudData[1920] = { 0 };
 				webrtc::MutexLock l(&cs_aac_encoder_);
 				if (aac_encoder_ != NULL) {
 					aac_encoder_->Encode(muteAudData, nSamples, nBytesPerSample, nChannels, samplesPerSec, totalDelayMS);
 				}
+#endif
 			}
 			else {
 				webrtc::MutexLock l(&cs_aac_encoder_);

@@ -96,6 +96,14 @@ void FFBuffer::DoTick()
 			if (lst_video_recv_.size() > 0) {
 				vidCacheTime = lst_video_recv_.back()->dts_ - lst_video_recv_.front()->dts_;
 				vidFirstDtsTime = lst_video_recv_.front()->dts_;
+
+				if (rtc::TimeUTCMillis() - lst_video_recv_.front()->recv_time_ >= n_cacheing_time_) {
+					RTC_LOG(LS_NONE) << "RenderVideo cache pts: " << lst_video_recv_.front()->pts_ << " curTime: " << rtc::TimeMillis();
+					vidCacheTime = n_cacheing_time_;
+					rtc::CritScope l(&cs_video_decode_);
+					lst_video_decode_.push_back(lst_video_recv_.front());
+					lst_video_recv_.pop_front();
+				}
 			}
 		}
 		{
@@ -103,6 +111,13 @@ void FFBuffer::DoTick()
 			if (lst_audio_recv_.size() > 0) {
 				audCacheTime = lst_audio_recv_.back()->dts_ - lst_audio_recv_.front()->dts_;
 				audFirstDtsTime = lst_audio_recv_.front()->dts_;
+
+				if (rtc::TimeUTCMillis() - lst_audio_recv_.front()->recv_time_ >= n_cacheing_time_) {
+					audCacheTime = n_cacheing_time_;
+					rtc::CritScope l(&cs_audio_decode_);
+					lst_audio_decode_.push_back(lst_audio_recv_.front());
+					lst_audio_recv_.pop_front();
+				}
 			}
 		}
 		//RTC_LOG(LS_INFO) << "DoTick audCacheTime: " << audCacheTime << " vidCacheTime: " << vidCacheTime;
@@ -434,6 +449,7 @@ void FFBuffer::RecvVideoData(AVPacket* pkt, int64_t dts, int64_t pts, int64_t du
 	recvPkt->dts_ = dts;
 	recvPkt->pts_ = pts;
 	recvPkt->duration_ = duration;
+	recvPkt->recv_time_ = rtc::TimeUTCMillis();
 
 	rtc::CritScope cs(&cs_video_recv_);
 	lst_video_recv_.push_back(recvPkt);
@@ -454,6 +470,7 @@ void FFBuffer::RecvAudioData(AVPacket* pkt, int64_t dts, int64_t pts, int64_t du
 	recvPkt->dts_ = dts;
 	recvPkt->pts_ = pts;
 	recvPkt->duration_ = duration;
+	recvPkt->recv_time_ = rtc::TimeUTCMillis();
 
 	rtc::CritScope cs(&cs_audio_recv_);
 	lst_audio_recv_.push_back(recvPkt);

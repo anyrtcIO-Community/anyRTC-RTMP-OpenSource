@@ -26,7 +26,7 @@ extern "C" {
 
 struct RecvPacket
 {
-	RecvPacket(void): pkt_(NULL), dts_(0), pts_(0), duration_(0) {
+	RecvPacket(void): pkt_(NULL), dts_(0), pts_(0), duration_(0), recv_time_(0){
 	};
 	virtual ~RecvPacket(void) {
 		if (pkt_ != NULL) {
@@ -40,6 +40,7 @@ struct RecvPacket
 	int64_t dts_;
 	int64_t pts_;
 	int64_t duration_;
+	int64_t recv_time_;
 };
 
 

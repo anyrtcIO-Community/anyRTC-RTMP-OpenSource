@@ -29,10 +29,10 @@ public:
 
 	//* For AR::IArLivePlayer
 	virtual void setObserver(AR::ArLivePlayerObserver* observer);
-	virtual void setLiveOem(AR::ArLiveOem oem);
 	virtual int32_t setRenderView(void* view);
 	virtual int32_t setRenderRotation(AR::ArLiveRotation rotation);
 	virtual int32_t setRenderFillMode(AR::ArLiveFillMode mode);
+	virtual int32_t setPlayMode(AR::ArLivePlayMode mode);
 	virtual int32_t startPlay(const char* url);
 	virtual int32_t stopPlay();
 	virtual int32_t isPlaying();
@@ -75,6 +75,7 @@ public:
 	virtual bool OnArPlyNeedMoreAudioData(void*player);
 	virtual bool OnArPlyNeedMoreVideoData(void*player);
 	virtual bool OnArPlyAppIsBackground(void* player);
+	virtual bool OnArPlyIsLiveMode(void* player);
 	virtual void OnArPlyAudio(void*player, const char*pData, int nSampleHz, int nChannels, int64_t pts);
 	virtual void OnArPlyVideo(void*player, int fmt, int ww, int hh, uint8_t**pData, int*linesize, int64_t pts);
 	virtual void OnArPlySeiData(void* player, const char* pData, int nLen, int64_t pts);
@@ -91,6 +92,7 @@ private:
 	bool						b_shutdown_;
 	bool						b_audio_paused_;
 	bool						b_video_paused_;
+	AR::ArLivePlayMode			e_play_mode_;
 	int							n_sei_payload_type_;
 	std::string					str_play_url_;
 

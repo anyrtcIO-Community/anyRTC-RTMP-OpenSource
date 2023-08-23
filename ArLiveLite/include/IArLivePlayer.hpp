@@ -33,15 +33,6 @@ class IArLivePlayer {
      */
     virtual void setObserver(ArLivePlayerObserver* observer) = 0;
 
-    /**
-    * 设置厂家类型Oem。
-    *
-    * 由于各个厂家的标准不统一，比如webrtc的whip方案，
-    * 需要针对不同厂家用针对性的方案去实现
-    *
-    * @param observer oem的厂家枚举，更多信息请查看 {@link ArLiveOem}
-    */
-    virtual void setLiveOem(ArLiveOem oem) = 0;
 
     /**
      * 设置播放器的视频渲染 View。 该控件负责显示视频内容。
@@ -75,6 +66,17 @@ class IArLivePlayer {
      *         - ArLIVE_OK: 成功
      */
     virtual int32_t setRenderFillMode(ArLiveFillMode mode) = 0;
+
+    /**
+     * 设置播放模式。
+     *
+     * @param mode 播放模式 {@link ArLivePlayMode}。
+     *         - ArLivePlayModeLive 【默认值】: 直播模式 - 暂停的过程中，数据会丢失，保证实时性
+     *         - ArLivePlayModeVod: 点播模式 - 暂停的过程中，数据不会丢失，恢复后会继续播放
+     * @return 返回值 {@link ArLiveCode}
+     *         - ArLIVE_OK: 成功
+     */
+    virtual int32_t setPlayMode(ArLivePlayMode mode) = 0;
 
     /**
      * 开始播放音视频流。

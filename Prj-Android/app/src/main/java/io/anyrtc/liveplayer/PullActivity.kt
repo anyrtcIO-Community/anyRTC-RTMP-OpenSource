@@ -40,6 +40,7 @@ class PullActivity : AppCompatActivity() {
         player.setRenderView(binding.playView)
         player.setRenderFillMode(displayMode)
         val url = intent.getStringExtra("url")
+        player.setPlayMode(ArLiveDef.ArLivePlayMode.ArLivePlayModeLive)
         player.setObserver(object :ArLivePlayerObserver(){
             override fun onAudioPlayStatusUpdate(
                 player: ArLivePlayer?,
@@ -144,6 +145,7 @@ class PullActivity : AppCompatActivity() {
                 super.onWarning(player, code, msg, extraInfo)
             }
         })
+        player.setCacheParams(1f,2f)
         player.startPlay(url)
         binding.run {
             binding.btnExit.setOnClickListener {

@@ -47,7 +47,6 @@ add_library(webrtc STATIC IMPORTED)
 set_target_properties(webrtc PROPERTIES IMPORTED_LOCATION ${STATIC_LIB_DIR}/webrtc/${ANDROID_ABI}/libwebrtc.a)
 
 include(${ROOT_DIR}/third_party/faac-1.28/CMakeLists.txt)
-include(${ARLIVE_DIR}/rtmp/CMakeLists.txt)
 add_library(
         ${NATIVE_LIB}
         SHARED
@@ -71,7 +70,8 @@ add_library(
        ${ARLIVE_DIR}/player/ARFFPlayer.cpp
        ${ARLIVE_DIR}/player/FFBuffer.cpp
        ${ARLIVE_DIR}/player/sonic.c
-       ${ARLIVE_DIR}/pusher/ARRtmpPusher.cpp
+       ${ARLIVE_DIR}/pusher/ARFFPusher.cpp
+       ${ARLIVE_DIR}/pusher/ArFFWriter.cpp
        ${ARLIVE_DIR}/ArNetClient.cpp
        ${ARLIVE_DIR}/ArNetTcpClient.cpp
        ${ARLIVE_DIR}/RtcTick.cpp
@@ -90,7 +90,6 @@ find_library( # Sets the name of the path variable.
 target_link_libraries(
         ${NATIVE_LIB}
         faac
-        rtmp
         -Wl,--start-group
         swscale
         avformat
