@@ -292,6 +292,14 @@ extern void* GetLiveEngine();
     return -1;
 }
 
+- (int)setPlayMode:(ARLivePlayMode)mode {
+    /// 设置视频播放模式
+    if (_livePlayer) {
+        return _livePlayer->setPlayMode((anyrtc::ArLivePlayMode)mode);
+    }
+    return -1;
+}
+
 - (int)isPlaying {
     /// 播放器是否正在播放中
     if (_livePlayer) {

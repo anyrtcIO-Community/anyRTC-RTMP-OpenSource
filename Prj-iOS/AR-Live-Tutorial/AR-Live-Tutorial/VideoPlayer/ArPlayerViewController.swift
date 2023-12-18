@@ -14,7 +14,7 @@ class ArPlayerViewController: UIViewController {
     @IBOutlet var modeLabel: UILabel!
     
     fileprivate var liveStatus: ARLivePlayStatus = .stopped
-    fileprivate var renderMode: ARLiveRenderMode = .hidden
+    fileprivate var renderMode: ARLiveRenderMode = .fit
     /// 拉流url
     var pullUrl: String!
     
@@ -44,6 +44,8 @@ class ArPlayerViewController: UIViewController {
         /// 设置播放器的视频渲染 View
         livePlayer.setRenderView(renderView)
         livePlayer.setRenderFill(renderMode)
+        /// 设置视频播放模式
+        livePlayer.setPlayMode(.live)
         
         /// 设置播放器缓存自动调整的最小和最大时间 ( 单位：秒 )
         livePlayer.setCacheParams(1.0, maxTime: 100)
