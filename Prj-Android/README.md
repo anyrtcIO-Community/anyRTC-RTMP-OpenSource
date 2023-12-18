@@ -9,7 +9,7 @@
 
 下载本工程，使用 AndroidStudio 打开之前，需要下载 webRTC，ffmpeg库。
 
-下载地址：👉[Lib](http://storage.agrtc.cn/share/GqLZRZV3)
+下载地址：👉[Lib](https://storage.agrtc.cn:1000/share/0v2et4RX)
 
 下载解压缩后将lib文件夹移至：**liveplayer/src/main/cpp** 目录下即可
 
