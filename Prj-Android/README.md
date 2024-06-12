@@ -5,6 +5,13 @@
 <img src="https://img.shields.io/badge/NDK-20.0.5594570-lightgrey">
 </p>
 
+## 快速体验🔜
+
+点击下载[Apk](https://www.pgyer.com/qxPXQJiY)
+
+<img src="https://www.pgyer.com/app/qrcode/qxPXQJiY">
+
+
 ## Run
 
 下载本工程，使用 AndroidStudio 打开之前，需要下载 webRTC，ffmpeg库。

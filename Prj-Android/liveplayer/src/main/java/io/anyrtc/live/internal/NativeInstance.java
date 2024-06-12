@@ -117,6 +117,9 @@ public class NativeInstance {
 
     protected native int nativeStopPush(long nativePtr);
 
+    protected native void nativeReleasePusher(long nativePtr);
+
+
     protected native int nativeIsPushing(long nativePtr);
 
     protected native int nativeSetVideoQuality(long nativePtr, int videoResolution, int videoResolutionMode,int fps,int bitrate,int minBitrate,int scaleMode);

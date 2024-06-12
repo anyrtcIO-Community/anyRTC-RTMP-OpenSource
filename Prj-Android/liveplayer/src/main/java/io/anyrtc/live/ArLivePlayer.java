@@ -67,6 +67,8 @@ public abstract class ArLivePlayer {
      */
     public abstract int startPlay(String url);
 
+    public abstract void releasePlayer();
+
     /**
      * 停止播放音视频流。
      * @return 返回值 {@link ArLiveCode}

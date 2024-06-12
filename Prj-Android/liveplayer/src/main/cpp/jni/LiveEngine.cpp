@@ -123,11 +123,21 @@ Java_io_anyrtc_live_internal_NativeInstance_nativeStopPush(JNIEnv *env, jobject 
     
     if (arLivePushKit != NULL&&instance->arLiveEngine!=NULL){
         int result =arLivePushKit->stopPush();
-        instance->arLiveEngine->releaseArLivePusher(arLivePushKit);
         return (jint)result;
     }
     return (jint)-1;
 }
+
+JNIEXPORT void JNICALL
+Java_io_anyrtc_live_internal_NativeInstance_nativeReleasePusher(JNIEnv *env, jobject obj,jlong nativePtr) {
+    InstanceHolder *instance = getInstanceHolder(env, obj);
+    IArLivePusher* arLivePushKit = reinterpret_cast<IArLivePusher *>(nativePtr);
+    if (arLivePushKit != NULL&&instance->arLiveEngine!=NULL){
+        instance->arLiveEngine->releaseArLivePusher(arLivePushKit);
+    }
+}
+
+
 
 
 JNIEXPORT jint JNICALL

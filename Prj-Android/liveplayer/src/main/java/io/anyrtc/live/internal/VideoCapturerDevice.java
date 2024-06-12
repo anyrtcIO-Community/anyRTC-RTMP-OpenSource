@@ -242,7 +242,9 @@ public class VideoCapturerDevice  {
                         public void onCameraSwitchDone(boolean isFrontCamera) {
                             AndroidUtilities.runOnUIThread(() -> {
                                 if (ArLiveEngineImpl.getInstance().getPusher() != null) {
-                                   ArLiveEngineImpl.getInstance().getPusher().setSwitchCamera(false, isFrontCamera);
+                                    for (int i=0;i<ArLiveEngineImpl.getInstance().getPusher().size();i++){
+                                        ArLiveEngineImpl.getInstance().getPusher().get(i).setSwitchCamera(false, isFrontCamera);
+                                    }
                                 }
                             });
                         }

@@ -390,8 +390,12 @@ public class ArLivePusherImpl extends ArLivePusher {
 
     @Override
     public int stopPush() {
+        return nativeInstance.nativeStopPush(nativeId);
+    }
+
+    @Override
+    public void releasePusher() {
         detach();
-        return 0;
     }
 
 
@@ -487,7 +491,7 @@ public class ArLivePusherImpl extends ArLivePusher {
     }
 
     void detach(){
-        nativeInstance.nativeStopPush(nativeId);
+        nativeInstance.nativeReleasePusher(nativeId);
         nativeId = 0;
         if (renderView!=null){
             if (renderView instanceof TextureViewRenderer){

@@ -35,6 +35,9 @@ AndroidDeviceManager::~AndroidDeviceManager(void){
 
 rtc::scoped_refptr<webrtc::VideoTrackSourceInterface> AndroidDeviceManager::createVideoSource(){
     JNIEnv *env = webrtc::AttachCurrentThreadIfNeeded();
+    if (videoSource){
+        return videoSource;
+    }
     videoSource = webrtc::CreateJavaVideoSource(env, arlive::StaticThreads::getThreads()->getMediaThread(), false,
                                                     false);
     return webrtc::VideoTrackSourceProxy::Create(arlive::StaticThreads::getThreads()->getMediaThread(), arlive::StaticThreads::getThreads()->getWorkerThread(),
@@ -196,8 +199,6 @@ void AndroidDeviceManager::destoryCapture(){
     if (_capturer!=nullptr){
         _capturer.reset();
         _capturer = nullptr;
-        _platformContext.reset();
-        _platformContext= nullptr;
     }
 }
 int AndroidDeviceManager::setBeautyEffect(bool enable){

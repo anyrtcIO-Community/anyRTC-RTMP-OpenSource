@@ -101,9 +101,13 @@ public class ArLivePlayerImpl extends ArLivePlayer {
     }
 
     @Override
-    public int stopPlay() {
+    public void releasePlayer() {
         detach();
-        return 0;
+    }
+
+    @Override
+    public int stopPlay() {
+        return nativeInstance.nativeStopPlay(nativeId);
     }
 
     @Override
@@ -208,9 +212,8 @@ public class ArLivePlayerImpl extends ArLivePlayer {
 
      void detach(){
          synchronized (mPlayerLock){
-             nativeId = 0;
-             nativeInstance.nativeStopPlay(nativeId);
              nativeInstance.nativePlayKitRelease(nativeId);
+             nativeId = 0;
              isStartPlay = false;
              if (renderView!=null){
                  if (renderView instanceof TextureViewRenderer){

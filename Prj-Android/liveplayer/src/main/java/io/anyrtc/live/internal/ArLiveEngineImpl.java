@@ -37,13 +37,11 @@ public class ArLiveEngineImpl extends ArLiveEngine {
     protected List<ArLivePusherImpl> pusherList = new ArrayList<>();
     private ProcessLifecycleOwner  mProcessLifecycleOwner = null;
 
-    private ArLivePusherImpl pusher;
     protected ArDeviceManagerImpl deviceManager;
     public ArLiveEngineImpl(Context context) {
         this.context = context;
         ContextUtils.initialize(context);
         applicationHandler = new Handler(context.getMainLooper());
-        WebRtcAudioManager.setBlacklistDeviceForOpenSLESUsage(true);
         nativeInstance = new NativeInstance();
         deviceManager = new ArDeviceManagerImpl(nativeInstance,context);
         try{
@@ -56,26 +54,23 @@ public class ArLiveEngineImpl extends ArLiveEngine {
 
     }
 
-    public ArLivePusherImpl getPusher() {
-        return pusher;
+    public List<ArLivePusherImpl> getPusher() {
+        return pusherList;
     }
 
     @Override
     public ArLivePusher createArLivePusher() {
-        if (pusher == null) {
-            pusher = new ArLivePusherImpl();
-            pusher.setHandler(applicationHandler,context);
-            boolean isSuccess = pusher.attach(nativeInstance);
-            if (isSuccess){
-                return pusher;
-            }else {
-                throw new RuntimeException("not allowed create the ArLivePushKit!");
-            }
-        }else {
+        ArLivePusherImpl pusher = new ArLivePusherImpl();
+        pusher.setHandler(applicationHandler,context);
+        boolean isSuccess = pusher.attach(nativeInstance);
+        if (isSuccess){
+            pusherList.add(pusher);
             return pusher;
+        }else {
+            throw new RuntimeException("not allowed create the ArLivePushKit!");
         }
-
     }
+
 
 
     @Override
@@ -87,7 +82,7 @@ public class ArLiveEngineImpl extends ArLiveEngine {
             playerList.add(arLivePlayKit);
             return arLivePlayKit;
         }else {
-            throw new RuntimeException("not allowed create the ArLivePushKit!");
+            throw new RuntimeException("not allowed create the ArLivePlayerKit!");
         }
     }
 
@@ -97,15 +92,18 @@ public class ArLiveEngineImpl extends ArLiveEngine {
         for (ArLivePlayerImpl arLivePlayer:playerList){
             if (arLivePlayer.isNativeOk()){
                 arLivePlayer.stopPlay();
+                arLivePlayer.releasePlayer();
             }
         }
-        if (pusher!=null){
-            if (pusher.isNativeOk()){
-                pusher.stopPush();
+        for (ArLivePusherImpl arLivePusher:pusherList){
+            if (arLivePusher.isNativeOk()){
+                arLivePusher.stopPush();
+                arLivePusher.releasePusher();
             }
         }
         deviceManager.release();
         playerList.clear();
+		pusherList.clear();
         try {
             if (this.mProcessLifecycleOwner != null) {
                 Application app = (Application)context.getApplicationContext();

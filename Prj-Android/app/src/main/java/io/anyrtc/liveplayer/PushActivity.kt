@@ -124,7 +124,9 @@ class PushActivity : BaseActivity() {
         binding.run {
             tvUrl.text = pushUrl
             ivExit.setOnClickListener {
-                pusher.stopPush()
+                if (pushType==2){
+                    ScreenShareKit.stop()
+                }
                 ArLiveEngine.release()
                 finish()
             }
@@ -191,17 +193,12 @@ class PushActivity : BaseActivity() {
         }
     }
 
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_BACK){
-            if (pushType==2){
-                ScreenShareKit.stop()
-            }
-            pusher.stopPush()
-            ArLiveEngine.release()
-            finish()
-            return true
+    override fun onBackPressed() {
+        if (pushType==2){
+            ScreenShareKit.stop()
         }
-        return super.onKeyDown(keyCode, event)
+        ArLiveEngine.release()
+        finish()
     }
 
 

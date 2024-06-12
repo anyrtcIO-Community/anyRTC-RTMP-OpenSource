@@ -149,7 +149,6 @@ class PullActivity : AppCompatActivity() {
         player.startPlay(url)
         binding.run {
             binding.btnExit.setOnClickListener {
-                player.stopPlay()
                 ArLiveEngine.release()
                 finish()
             }
@@ -172,7 +171,6 @@ class PullActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        player.stopPlay()
         ArLiveEngine.release()
         finish()
     }

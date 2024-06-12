@@ -181,6 +181,14 @@ public abstract class ArLivePusher{
      */
     public abstract int stopPush();
 
+
+    /**
+     * 释放推流器
+     */
+    public abstract void releasePusher();
+
+
+
     /**
      * 当前推流器是否正在推流中。
      * @return 是否正在推流
