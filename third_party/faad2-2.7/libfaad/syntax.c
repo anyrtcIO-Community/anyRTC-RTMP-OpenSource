@@ -2167,11 +2167,11 @@ static uint16_t extension_payload(bitfile *ld, drc_info *drc, uint16_t count)
         return n;
     case EXT_FILL_DATA:
         /* fill_nibble = */ faad_getbits(ld, 4
-            DEBUGVAR(1,136,"extension_payload(): fill_nibble")); /* must be ‘0000’ */
+            DEBUGVAR(1,136,"extension_payload(): fill_nibble")); /* must be ï¿½0000ï¿½ */
         for (i = 0; i < count-1; i++)
         {
             /* fill_byte[i] = */ faad_getbits(ld, 8
-                DEBUGVAR(1,88,"extension_payload(): fill_byte")); /* must be ‘10100101’ */
+                DEBUGVAR(1,88,"extension_payload(): fill_byte")); /* must be ï¿½10100101ï¿½ */
         }
         return count;
     case EXT_DATA_ELEMENT:
@@ -2292,6 +2292,8 @@ static uint8_t excluded_channels(bitfile *ld, drc_info *drc)
     while ((drc->additional_excluded_chns[n-1] = faad_get1bit(ld
         DEBUGVAR(1,104,"excluded_channels(): additional_excluded_chns"))) == 1)
     {
+        if (i >= MAX_CHANNELS - num_excl_chan - 7)
+            return n;
         for (i = num_excl_chan; i < num_excl_chan+7; i++)
         {
             drc->exclude_mask[i] = faad_get1bit(ld
